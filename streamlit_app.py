@@ -9,22 +9,38 @@ st.markdown("""
 **Politica de Confidențialitate:** Nu stocăm parolele dvs. în text simplu.
 """)
 
+# ---------- INIȚIALIZARE BAZE DE DATE ----------
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "user_db" not in st.session_state:
     st.session_state.user_db = {}
+
+# --- BIBLIOTECA SUPREMĂ A CUNOȘTINȚELOR ---
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
-        "api": "Un API (Application Programming Interface) este un set de reguli care permite două aplicații software să comunice între ele.",
-        "hash": "Un hash este o amprentă digitală unică, rezultatul unei funcții matematice care transformă datele într-un șir de caractere. Este folosit pentru a verifica integritatea datelor.",
-        "parolă": "O parolă este o cheie secretă, formată dintr-un șir de caractere, folosită pentru autentificare și pentru a proteja accesul la un cont sau dispozitiv.",
-        "ai": "Inteligența Artificială (AI) este simularea proceselor de inteligență umană de către mașini, în special sisteme informatice. Include învățarea, raționamentul și auto-corecția.",
-        "securitate cibernetică": "Securitatea cibernetică este practica de a proteja sistemele, rețelele și programele de atacuri digitale. Aceste atacuri au ca scop accesarea, modificarea sau distrugerea informațiilor.",
-        "python": "Python este un limbaj de programare puternic și versatil, ușor de învățat, folosit în dezvoltarea web, știința datelor, inteligența artificială și automatizări.",
-        "aegis": "AEGIS este un AI creat de Andrei Vieru, un scut digital pentru securitate cibernetică. Este un Sentinel de Neînvins."
+        "api": "Un API (Application Programming Interface) este un set de reguli care permite două aplicații software să comunice între ele. Ex: API-ul vremii îți dă temperatura.",
+        "hash": "Un hash este o amprentă digitală unică, rezultatul unei funcții matematice care transformă datele într-un șir de caractere.",
+        "parolă": "O parolă este o cheie secretă, formată dintr-un șir de caractere, folosită pentru autentificare și protecția conturilor.",
+        "securitate cibernetică": "Practica de a proteja sistemele, rețelele și programele de atacuri digitale.",
+        "aegis": "AEGIS este un AI creat de Andrei Vieru, un scut digital suprem pentru securitate cibernetică.",
+        "python": "Un limbaj de programare versatil. Resurse oficiale: [python.org](https://www.python.org)",
+        "variabilă": "O cutie care ține o valoare. `x = 5`.",
+        "listă": "O colecție ordonată. `[1, 2, 3]`.",
+        "românia": "O țară în Europa de Est. Capitala: București. Turism: [romaniatourism.com](https://www.romaniatourism.com)",
+        "piramidă": "Construcție monumentală. Cele mai faimoase: Piramidele din Giza, Egipt.",
     }
 
-BLOCKED_TERMS = ["prostituție", "droguri", "violență", "armă", "spargere"]
+# --- BIBLIOTECA DE LINKURI PERFECTE ---
+if "perfect_links" not in st.session_state:
+    st.session_state.perfect_links = {
+        "python": ["[Python.org](https://www.python.org)", "[W3Schools Python](https://www.w3schools.com/python/)"],
+        "curs python": ["[Coursera Python Courses](https://www.coursera.org/courses?query=python)", "[freeCodeCamp Python](https://www.freecodecamp.org/learn/scientific-computing-with-python/)"],
+        "securitate": ["[OWASP Top Ten](https://owasp.org/www-project-top-ten/)", "[SANS Institute](https://www.sans.org/)"],
+        "știri": ["[BBC News](https://www.bbc.com/news)", "[Reuters](https://www.reuters.com/)"],
+    }
+
+# ---------- FILTRU DE SIGURANȚĂ ----------
+BLOCKED_TERMS = ["prostituție", "droguri", "violență", "armă", "spargere", "țigan", "mafiot", "handicapat", "cum să fur", "cum să omor"]
 
 def hash_data(data): return hashlib.sha256(data.encode()).hexdigest()
 
@@ -46,6 +62,28 @@ def is_safe_question(question):
         if term in question.lower(): return False
     return True
 
+# ---------- MOTORUL DE CĂUTARE INTELIGENT ----------
+def find_answer(question):
+    q = question.lower()
+    
+    # 1. Caută în linkuri perfecte
+    for key in st.session_state.perfect_links:
+        if key in q:
+            links = st.session_state.perfect_links[key]
+            response = "🔗 **Cele mai bune surse pentru tine:**\n\n"
+            for link in links:
+                response += f"- {link}\n"
+            return response
+
+    # 2. Caută în cunoștințe generale
+    for key in st.session_state.knowledge:
+        if key in q:
+            return f"🤖 **{key.capitalize()}:** {st.session_state.knowledge[key]}"
+
+    # 3. Dacă nu găsește nimic
+    return None
+
+# ---------- AUTENTIFICARE SAU ÎNREGISTRARE ----------
 if not st.session_state.logged_in:
     st.subheader("Autentificare sau Înregistrare")
     auth_choice = st.radio("Alege o opțiune:", ["Autentificare", "Creează Cont Nou"])
@@ -74,6 +112,7 @@ if not st.session_state.logged_in:
                 st.success("Cont creat cu succes! Acum te poți autentifica.")
                 st.info("Selectează 'Autentificare' și folosește datele tale.")
 
+# ---------- MENIUL PRINCIPAL ----------
 else:
     st.success(f"⚔️ {st.session_state.user} > Comandă activă")
     cmd = st.selectbox("Alege o comandă:", ["help", "generate", "assess", "profile", "ask_ai", "exit"])
@@ -97,13 +136,11 @@ else:
         q = st.text_input("❓ Întreabă AEGIS")
         if st.button("Întreabă"):
             if is_safe_question(q):
-                found = False
-                for key in st.session_state.knowledge:
-                    if key in q.lower():
-                        st.write(f"🤖 {key.capitalize()}: {st.session_state.knowledge[key]}")
-                        found = True; break
-                if not found:
-                    st.write("🤖 Nu am aceste cunoștințe. Poți întreba despre API, Hash, Parolă, AI, Securitate Cibernetică sau Python.")
+                answer = find_answer(q)
+                if answer:
+                    st.write(answer)
+                else:
+                    st.write("🤖 Nu am aceste cunoștințe încă. Încearcă să cauți pe Google sau Wikipedia.")
             else:
                 st.warning("AEGIS este un AI pentru securitate și educație. Nu pot răspunde la această întrebare.")
     elif cmd == "exit":
