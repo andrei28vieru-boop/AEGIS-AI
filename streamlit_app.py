@@ -41,7 +41,7 @@ if "messages" not in st.session_state:
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = {}
 if "premium_users" not in st.session_state:
-    st.session_state.premium_users = {"andrei"}
+    st.session_state.premium_users = {"Andrei Vieru"}
 
 def hash_data(data): return hashlib.sha256(data.encode()).hexdigest()
 
