@@ -16,6 +16,7 @@ Este un expert AI dedicat exclusiv domeniilor IT și Inteligență Artificială.
 # ---------- BAZA DE CUNOȘTINȚE (EXPERTUL TECH) ----------
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
+        # --- Cunoștințe Existente ---
         "api": "Un API (Application Programming Interface) este un set de reguli care permite două aplicații software să comunice între ele.",
         "python": "Python este un limbaj de programare versatil și puternic, folosit în dezvoltarea web, știința datelor, inteligența artificială și automatizări.",
         "variabilă": "O variabilă este ca o cutie în care poți păstra o valoare. În Python, o creezi simplu: `x = 5`.",
@@ -29,6 +30,32 @@ if "knowledge" not in st.session_state:
         "criptomonedă": "O monedă digitală descentralizată. Exemple: Bitcoin (BTC), Ethereum (ETH).",
         "mit": "MIT (Massachusetts Institute of Technology) este una dintre cele mai prestigioase universități din lume, lider în cercetare și inovație tehnologică.",
         "white hat": "White Hat Hacking este practica etică și legală de a testa securitatea sistemelor pentru a le proteja împotriva atacatorilor reali.",
+
+        # --- 1. SECURITATE CIBERNETICĂ ---
+        "firewall": "Un firewall este un sistem de securitate care monitorizează și controlează traficul de rețea, permițând sau blocând accesul.",
+        "vpn": "Un VPN (Virtual Private Network) creează o conexiune criptată și sigură între dispozitivul tău și internet.",
+        "ransomware": "Ransomware este un tip de malware care criptează fișierele victimei și cere o răscumpărare pentru a le debloca.",
+        "phishing": "Phishing-ul este o tentativă de fraudă prin care atacatorii se dau drept entități de încredere pentru a fura date personale.",
+        "criptografie": "Criptografia este știința de a proteja informația prin transformarea ei într-un format care nu poate fi citit fără o cheie.",
+        "hash": "Un hash este o amprentă digitală unică a unui set de date, obținută printr-o funcție matematică ireversibilă.",
+        "parolă": "O parolă este o cheie secretă, formată dintr-un șir de caractere, folosită pentru autentificare și protecția conturilor.",
+        "malware": "Malware (software malițios) este orice program creat pentru a dăuna unui sistem, a fura date sau a prelua controlul.",
+        "antivirus": "Un antivirus este un program care detectează, blochează și elimină malware-ul de pe un dispozitiv.",
+        "ddos": "Un atac DDoS (Distributed Denial of Service) încearcă să supraaglomereze un server cu trafic masiv pentru a-l face inaccesibil.",
+
+        # --- 2. CLOUD COMPUTING ---
+        "cloud": "Cloud computing-ul este livrarea de servicii de calcul (servere, stocare, baze de date) prin internet.",
+        "aws": "AWS (Amazon Web Services) este cea mai mare platformă de cloud computing din lume, oferind peste 200 de servicii.",
+        "azure": "Microsoft Azure este platforma de cloud computing a Microsoft, folosită pentru crearea, testarea și gestionarea aplicațiilor.",
+        "google cloud": "Google Cloud Platform (GCP) este suita de servicii cloud oferită de Google.",
+        "saas": "SaaS (Software as a Service) este un model de livrare software unde utilizatorii accesează aplicația prin internet, fără a o instala.",
+
+        # --- 3. REȚELISTICĂ (NETWORKING) ---
+        "ip": "O adresă IP este o etichetă numerică unică atribuită fiecărui dispozitiv conectat la o rețea.",
+        "dns": "DNS (Domain Name System) este sistemul care traduce numele de domenii (ex: google.com) în adrese IP.",
+        "tcp": "TCP (Transmission Control Protocol) este un protocol de comunicare sigur, care garantează livrarea pachetelor de date.",
+        "http": "HTTP (HyperText Transfer Protocol) este protocolul folosit pentru a transfera pagini web între un server și un browser.",
+        "router": "Un router este un dispozitiv care direcționează traficul de date între diferite rețele.",
     }
 
 # ---------- GESTIUNEA SESIUNII ----------
