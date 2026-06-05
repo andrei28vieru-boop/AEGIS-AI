@@ -56,8 +56,33 @@ if "knowledge" not in st.session_state:
         "tcp": "TCP (Transmission Control Protocol) este un protocol de comunicare sigur, care garantează livrarea pachetelor de date.",
         "http": "HTTP (HyperText Transfer Protocol) este protocolul folosit pentru a transfera pagini web între un server și un browser.",
         "router": "Un router este un dispozitiv care direcționează traficul de date între diferite rețele.",
-    }
 
+        # --- 4. PROGRAMARE (Limbaje & Unelte) ---
+        "javascript": "JavaScript is the programming language of the web. It makes websites interactive and works directly in your browser.",
+        "java": "Java is a powerful, general-purpose programming language used for building Android apps, enterprise software, and large systems.",
+        "c++": "C++ is a high-performance programming language used for game development, operating systems, and applications requiring speed.",
+        "algoritm": "An algorithm is a step-by-step set of instructions to solve a specific problem, like a recipe for a computer.",
+        "structură de date": "A data structure is a way of organizing and storing data so it can be accessed and modified efficiently, like lists or dictionaries.",
+        "debugging": "Debugging is the process of finding and fixing errors (bugs) in your code.",
+        "ide": "An IDE (Integrated Development Environment) is a software application that helps you write code, like PyCharm or VS Code.",
+        "compilator": "A compiler is a program that translates your code into machine language that a computer can understand and run.",
+
+        # --- 5. SISTEME DE OPERARE ---
+        "linux": "Linux is a free, open-source operating system known for its stability and security. It's widely used on servers and by developers.",
+        "windows": "Microsoft Windows is the most popular operating system for personal computers, known for its user-friendly interface.",
+        "macos": "macOS is the operating system developed by Apple for its Mac computers, known for its elegant design and smooth performance.",
+        "terminal": "The terminal is a text-based interface where you can type commands to interact with your computer directly.",
+        "bash": "Bash is a popular command-line shell on Linux and macOS that lets you run commands and write scripts.",
+        "powershell": "PowerShell is a powerful command-line tool from Microsoft for automating tasks on Windows.",
+        "kernel": "The kernel is the heart of an operating system. It manages everything from your hardware to your software.",
+        "driver": "A driver is a small piece of software that allows your operating system to talk to a piece of hardware, like a printer.",
+
+        # --- 6. ISTORIE ȘI CURIOSITĂȚI TECH ---
+        "guido van rossum": "Guido van Rossum is the Dutch programmer who created the Python programming language in the late 1980s.",
+        "silicon valley": "Silicon Valley is a region in California, USA, that is famous for being the global center for technology and innovation.",
+        "istoria internetului": "The internet began in the late 1960s as a US military project called ARPANET and became public in the 1990s.",
+        "alan turing": "Alan Turing was a brilliant British mathematician who is considered the father of computer science and artificial intelligence.",
+    }
 # ---------- GESTIUNEA SESIUNII ----------
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
