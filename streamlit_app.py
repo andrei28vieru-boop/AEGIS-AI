@@ -1,5 +1,6 @@
 import streamlit as st
 import random, string, hashlib
+from deep_translator import GoogleTranslator
 
 st.set_page_config(page_title="AEGIS AI - The IT Expert", page_icon="⚡")
 st.title("AEGIS AI")
@@ -173,3 +174,32 @@ else:
         
         # Salvează istoricul pentru utilizatorul curent
         st.session_state.chat_history[st.session_state.user] = st.session_state.messages
+
+# ============================================
+# 🌐 GLOBAL LANGUAGE SUPPORT
+# ============================================
+if "lang" not in st.session_state:
+    st.session_state.lang = "Romanian"
+
+lang_map = {
+    "Romanian": "ro",
+    "English": "en",
+    "Spanish": "es",
+    "Chinese (Simplified)": "zh-CN",
+    "Hindi": "hi",
+    "Arabic": "ar"
+}
+
+def translate_text(text, target_lang):
+    if target_lang == "ro":
+        return text
+    try:
+        return GoogleTranslator(source='auto', target=target_lang).translate(text)
+    except Exception as e:
+        return f"Translation error: {str(e)}"
+
+# Add language selector to login screen
+if not st.session_state.get("logged_in", False):
+    selected_lang = st.selectbox("🌐 Choose your language / Alege limba", list(lang_map.keys()))
+    st.session_state.lang = selected_lang
+# ============================================
