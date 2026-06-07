@@ -126,7 +126,7 @@ if "knowledge" not in st.session_state:
         "istoria internetului": "The internet began in the late 1960s as a US military project called ARPANET and became public in the 1990s.",
         "alan turing": "Alan Turing was a brilliant British mathematician who is considered the father of computer science and artificial intelligence.",
 
-                # --- 7. PROGRAMARE AVANSATĂ ȘI FRAMEWORKS ---
+        # --- 7. PROGRAMARE AVANSATĂ ȘI FRAMEWORKS ---
         "react": "React is a popular JavaScript library for building user interfaces, developed by Facebook.",
         "angular": "Angular is a TypeScript-based web application framework led by Google.",
         "vue": "Vue.js is a progressive JavaScript framework for building user interfaces.",
