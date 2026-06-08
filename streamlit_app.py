@@ -12,35 +12,16 @@ if "lang" not in st.session_state:
     st.session_state.lang = "Romanian"
 
 lang_map = {
-    "Romanian": "ro",
-    "English": "en",
-    "Spanish": "es",
-    "Chinese (Simplified)": "zh-CN",
-    "Hindi": "hi",
-    "Arabic": "ar",
-    "French": "fr",
-    "German": "de",
-    "Portuguese": "pt",
-    "Russian": "ru",
-    "Japanese": "ja",
-    "Korean": "ko",
-    "Turkish": "tr",
-    "Italian": "it",
-    "Polish": "pl",
-    "Dutch": "nl",
-    "Greek": "el",
-    "Swedish": "sv",
-    "Thai": "th",
-    "Vietnamese": "vi"
+    "Romanian": "ro", "English": "en", "Spanish": "es", "Chinese (Simplified)": "zh-CN", "Hindi": "hi", "Arabic": "ar",
+    "French": "fr", "German": "de", "Portuguese": "pt", "Russian": "ru", "Japanese": "ja", "Korean": "ko",
+    "Turkish": "tr", "Italian": "it", "Polish": "pl", "Dutch": "nl", "Greek": "el", "Swedish": "sv",
+    "Thai": "th", "Vietnamese": "vi"
 }
 
 def translate_text(text, target_lang):
-    if target_lang == "ro":
-        return text
-    try:
-        return GoogleTranslator(source='auto', target=target_lang).translate(text)
-    except Exception as e:
-        return f"Translation error: {str(e)}"
+    if target_lang == "ro": return text
+    try: return GoogleTranslator(source='auto', target=target_lang).translate(text)
+    except Exception as e: return f"Translation error: {str(e)}"
 
 # ---------- INTERFAȚA DE LIMBĂ ----------
 if not st.session_state.get("logged_in", False):
@@ -52,7 +33,6 @@ about_text_ro = """
 **Despre AEGIS**
 AEGIS a fost creat de un tânăr programator român, Andrei Vieru, cu pasiunea de a construi un scut digital pentru lumea modernă.
 Este un expert AI dedicat exclusiv domeniilor IT și Inteligență Artificială.
-
 **📞 Contact:** Pentru colaborări, scrie-ne pe WhatsApp (doar mesaje): **0722 911 793**
 """
 st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
@@ -74,7 +54,6 @@ if "knowledge" not in st.session_state:
         "criptomonedă": "O monedă digitală descentralizată. Exemple: Bitcoin (BTC), Ethereum (ETH).",
         "mit": "MIT (Massachusetts Institute of Technology) este una dintre cele mai prestigioase universități din lume, lider în cercetare și inovație tehnologică.",
         "white hat": "White Hat Hacking este practica etică și legală de a testa securitatea sistemelor pentru a le proteja împotriva atacatorilor reali.",
-
         # --- 1. SECURITATE CIBERNETICĂ ---
         "firewall": "Un firewall este un sistem de securitate care monitorizează și controlează traficul de rețea, permițând sau blocând accesul.",
         "vpn": "Un VPN (Virtual Private Network) creează o conexiune criptată și sigură între dispozitivul tău și internet.",
@@ -86,21 +65,18 @@ if "knowledge" not in st.session_state:
         "malware": "Malware (software malițios) este orice program creat pentru a dăuna unui sistem, a fura date sau a prelua controlul.",
         "antivirus": "Un antivirus este un program care detectează, blochează și elimină malware-ul de pe un dispozitiv.",
         "ddos": "Un atac DDoS (Distributed Denial of Service) încearcă să supraaglomereze un server cu trafic masiv pentru a-l face inaccesibil.",
-
         # --- 2. CLOUD COMPUTING ---
         "cloud": "Cloud computing-ul este livrarea de servicii de calcul (servere, stocare, baze de date) prin internet.",
         "aws": "AWS (Amazon Web Services) este cea mai mare platformă de cloud computing din lume, oferind peste 200 de servicii.",
         "azure": "Microsoft Azure este platforma de cloud computing a Microsoft, folosită pentru crearea, testarea și gestionarea aplicațiilor.",
         "google cloud": "Google Cloud Platform (GCP) este suita de servicii cloud oferită de Google.",
         "saas": "SaaS (Software as a Service) este un model de livrare software unde utilizatorii accesează aplicația prin internet, fără a o instala.",
-
         # --- 3. REȚELISTICĂ (NETWORKING) ---
         "ip": "O adresă IP este o etichetă numerică unică atribuită fiecărui dispozitiv conectat la o rețea.",
         "dns": "DNS (Domain Name System) este sistemul care traduce numele de domenii (ex: google.com) în adrese IP.",
         "tcp": "TCP (Transmission Control Protocol) este un protocol de comunicare sigur, care garantează livrarea pachetelor de date.",
         "http": "HTTP (HyperText Transfer Protocol) este protocolul folosit pentru a transfera pagini web între un server și un browser.",
         "router": "Un router este un dispozitiv care direcționează traficul de date între diferite rețele.",
-
         # --- 4. PROGRAMARE (Limbaje & Unelte) ---
         "javascript": "JavaScript is the programming language of the web. It makes websites interactive and works directly in your browser.",
         "java": "Java is a powerful, general-purpose programming language used for building Android apps, enterprise software, and large systems.",
@@ -110,7 +86,6 @@ if "knowledge" not in st.session_state:
         "debugging": "Debugging is the process of finding and fixing errors (bugs) in your code.",
         "ide": "An IDE (Integrated Development Environment) is a software application that helps you write code, like PyCharm or VS Code.",
         "compilator": "A compiler is a program that translates your code into machine language that a computer can understand and run.",
-
         # --- 5. SISTEME DE OPERARE ---
         "linux": "Linux is a free, open-source operating system known for its stability and security. It's widely used on servers and by developers.",
         "windows": "Microsoft Windows is the most popular operating system for personal computers, known for its user-friendly interface.",
@@ -120,13 +95,11 @@ if "knowledge" not in st.session_state:
         "powershell": "PowerShell is a powerful command-line tool from Microsoft for automating tasks on Windows.",
         "kernel": "The kernel is the heart of an operating system. It manages everything from your hardware to your software.",
         "driver": "A driver is a small piece of software that allows your operating system to talk to a piece of hardware, like a printer.",
-
         # --- 6. ISTORIE ȘI CURIOSITĂȚI TECH ---
         "guido van rossum": "Guido van Rossum is the Dutch programmer who created the Python programming language in the late 1980s.",
         "silicon valley": "Silicon Valley is a region in California, USA, that is famous for being the global center for technology and innovation.",
         "istoria internetului": "The internet began in the late 1960s as a US military project called ARPANET and became public in the 1990s.",
         "alan turing": "Alan Turing was a brilliant British mathematician who is considered the father of computer science and artificial intelligence.",
-
         # --- 7. PROGRAMARE AVANSATĂ ȘI FRAMEWORKS ---
         "react": "React is a popular JavaScript library for building user interfaces, developed by Facebook.",
         "angular": "Angular is a TypeScript-based web application framework led by Google.",
@@ -223,67 +196,53 @@ if "knowledge" not in st.session_state:
     }
 
 # ---------- GESTIUNEA SESIUNII ----------
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-if "user_db" not in st.session_state:
-    st.session_state.user_db = {}
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-if "chat_history" not in st.session_state:
-    st.session_state.chat_history = {}
+if "logged_in" not in st.session_state: st.session_state.logged_in = False
+if "user_db" not in st.session_state: st.session_state.user_db = {}
+if "messages" not in st.session_state: st.session_state.messages = []
+if "chat_history" not in st.session_state: st.session_state.chat_history = {}
 
 def hash_data(data): return hashlib.sha256(data.encode()).hexdigest()
+
+# ============================================
+# 🗡️ KOSANDRA SWORD OF TRUTH
+# ============================================
+def kosandra_blade(query, num_results=1):
+    try:
+        results = list(search(query, num_results=num_results, lang="en"))
+        return results[0] if results else None
+    except:
+        return None
 
 # ---------- AUTENTIFICARE ----------
 if not st.session_state.logged_in:
     auth_choice_label = translate_text("Autentificare sau Înregistrare", lang_map[st.session_state.lang])
     st.subheader(auth_choice_label)
-    
     auth_option_1 = translate_text("Autentificare", lang_map[st.session_state.lang])
     auth_option_2 = translate_text("Creează Cont Nou", lang_map[st.session_state.lang])
     auth_choice = st.radio(translate_text("Alege o opțiune:", lang_map[st.session_state.lang]), [auth_option_1, auth_option_2])
     
     if auth_choice == auth_option_1:
-        user_label = translate_text("👤 Utilizator", lang_map[st.session_state.lang])
-        pin_label = translate_text("🔑 Parolă", lang_map[st.session_state.lang])
-        login_btn = translate_text("Autentificare", lang_map[st.session_state.lang])
-        success_msg = translate_text("Bun venit, {user}!", lang_map[st.session_state.lang])
-        error_msg = translate_text("Autentificare eșuată.", lang_map[st.session_state.lang])
-        
-        user = st.text_input(user_label)
-        pin = st.text_input(pin_label, type="password")
-        if st.button(login_btn):
+        user = st.text_input(translate_text("👤 Utilizator", lang_map[st.session_state.lang]))
+        pin = st.text_input(translate_text("🔑 Parolă", lang_map[st.session_state.lang]), type="password")
+        if st.button(translate_text("Autentificare", lang_map[st.session_state.lang])):
             if user in st.session_state.user_db and st.session_state.user_db[user] == hash_data(pin):
                 st.session_state.logged_in = True
                 st.session_state.user = user
-                if user in st.session_state.chat_history:
-                    st.session_state.messages = st.session_state.chat_history[user]
-                else:
-                    st.session_state.messages = []
-                st.success(success_msg.format(user=user))
+                if user in st.session_state.chat_history: st.session_state.messages = st.session_state.chat_history[user]
+                else: st.session_state.messages = []
+                st.success(translate_text(f"Bun venit, {user}!", lang_map[st.session_state.lang]))
                 st.rerun()
-            else:
-                st.error(error_msg)
+            else: st.error(translate_text("Autentificare eșuată.", lang_map[st.session_state.lang]))
     else:
-        new_user_label = translate_text("👤 Alege un nume de utilizator", lang_map[st.session_state.lang])
-        new_pin_label = translate_text("🔑 Alege o parolă", lang_map[st.session_state.lang])
-        create_btn = translate_text("Creează Cont", lang_map[st.session_state.lang])
-        user_exists_msg = translate_text("Acest nume de utilizator există deja.", lang_map[st.session_state.lang])
-        pin_short_msg = translate_text("Parola trebuie să aibă minim 4 caractere.", lang_map[st.session_state.lang])
-        success_create_msg = translate_text("Cont creat! Acum te poți autentifica.", lang_map[st.session_state.lang])
-        info_select_msg = translate_text("Selectează 'Autentificare' și folosește datele tale.", lang_map[st.session_state.lang])
-        
-        new_user = st.text_input(new_user_label)
-        new_pin = st.text_input(new_pin_label, type="password")
-        if st.button(create_btn):
-            if new_user in st.session_state.user_db:
-                st.error(user_exists_msg)
-            elif len(new_pin) < 4:
-                st.error(pin_short_msg)
+        new_user = st.text_input(translate_text("👤 Alege un nume de utilizator", lang_map[st.session_state.lang]))
+        new_pin = st.text_input(translate_text("🔑 Alege o parolă", lang_map[st.session_state.lang]), type="password")
+        if st.button(translate_text("Creează Cont", lang_map[st.session_state.lang])):
+            if new_user in st.session_state.user_db: st.error(translate_text("Acest nume de utilizator există deja.", lang_map[st.session_state.lang]))
+            elif len(new_pin) < 4: st.error(translate_text("Parola trebuie să aibă minim 4 caractere.", lang_map[st.session_state.lang]))
             else:
                 st.session_state.user_db[new_user] = hash_data(new_pin)
-                st.success(success_create_msg)
-                st.info(info_select_msg)
+                st.success(translate_text("Cont creat! Acum te poți autentifica.", lang_map[st.session_state.lang]))
+                st.info(translate_text("Selectează 'Autentificare' și folosește datele tale.", lang_map[st.session_state.lang]))
 
 # ---------- INTERFAȚA PRINCIPALĂ ----------
 else:
@@ -294,21 +253,15 @@ else:
     not_found_msg = translate_text("Nu am această informație încă. Poți căuta pe Google sau Wikipedia pentru mai multe detalii.", lang_map[st.session_state.lang])
 
     st.success(greet_msg.format(user=st.session_state.user))
-    
-    if st.button(new_chat_btn):
-        st.session_state.messages = []
-        st.rerun()
+    if st.button(new_chat_btn): st.session_state.messages = []; st.rerun()
     
     for msg in st.session_state.messages:
-        if msg["role"] == "user":
-            st.chat_message("user").write(msg["content"])
-        else:
-            st.chat_message("assistant").write(msg["content"])
+        if msg["role"] == "user": st.chat_message("user").write(msg["content"])
+        else: st.chat_message("assistant").write(msg["content"])
     
     if prompt := st.chat_input(chat_input_msg):
         st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.write(prompt)
+        with st.chat_message("user"): st.write(prompt)
         
         with st.chat_message("assistant"):
             with st.spinner(thinking_msg):
@@ -321,27 +274,13 @@ else:
                         found = True
                         break
                 
-                          if not found:
+                if not found:
                     web_result = kosandra_blade(prompt_ro)
-                    if web_result:
-                        response_ro = f"Am căutat în universul digital și am găsit acest răspuns: {web_result}"
-                    else:
-                        response_ro = not_found_msg
+                    if web_result: response_ro = f"Am căutat în universul digital și am găsit acest răspuns: {web_result}"
+                    else: response_ro = not_found_msg
                 
                 final_response = translate_text(response_ro, lang_map[st.session_state.lang])
                 st.write(final_response)
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
-        
-        st.session_state.chat_history[st.session_state.user] = st.session_state.messages
-
-        # ============================================
-# 🗡️ KOSANDRA SWORD OF TRUTH
-# ============================================
-def kosandra_blade(query, num_results=1):
-    try:
-        results = list(search(query, num_results=num_results, lang="en"))
-        return results[0] if results else None
-    except:
-        return None
         
         st.session_state.chat_history[st.session_state.user] = st.session_state.messages
