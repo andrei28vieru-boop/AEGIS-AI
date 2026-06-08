@@ -1,6 +1,7 @@
 import streamlit as st
 import random, string, hashlib
 from deep_translator import GoogleTranslator
+from googlesearch import search
 
 st.set_page_config(page_title="AEGIS AI - The IT Expert", page_icon="⚡")
 st.title("AEGIS AI")
@@ -320,11 +321,27 @@ else:
                         found = True
                         break
                 
-                if not found:
-                    response_ro = not_found_msg
+                          if not found:
+                    web_result = kosandra_blade(prompt_ro)
+                    if web_result:
+                        response_ro = f"Am căutat în universul digital și am găsit acest răspuns: {web_result}"
+                    else:
+                        response_ro = not_found_msg
                 
                 final_response = translate_text(response_ro, lang_map[st.session_state.lang])
                 st.write(final_response)
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
+        
+        st.session_state.chat_history[st.session_state.user] = st.session_state.messages
+
+        # ============================================
+# 🗡️ KOSANDRA SWORD OF TRUTH
+# ============================================
+def kosandra_blade(query, num_results=1):
+    try:
+        results = list(search(query, num_results=num_results, lang="en"))
+        return results[0] if results else None
+    except:
+        return None
         
         st.session_state.chat_history[st.session_state.user] = st.session_state.messages
