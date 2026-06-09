@@ -54,6 +54,7 @@ if "knowledge" not in st.session_state:
         "criptomonedă": "O monedă digitală descentralizată. Exemple: Bitcoin (BTC), Ethereum (ETH).",
         "mit": "MIT (Massachusetts Institute of Technology) este una dintre cele mai prestigioase universități din lume, lider în cercetare și inovație tehnologică.",
         "white hat": "White Hat Hacking este practica etică și legală de a testa securitatea sistemelor pentru a le proteja împotriva atacatorilor reali.",
+        
         # --- 1. SECURITATE CIBERNETICĂ ---
         "firewall": "Un firewall este un sistem de securitate care monitorizează și controlează traficul de rețea, permițând sau blocând accesul.",
         "vpn": "Un VPN (Virtual Private Network) creează o conexiune criptată și sigură între dispozitivul tău și internet.",
@@ -65,18 +66,21 @@ if "knowledge" not in st.session_state:
         "malware": "Malware (software malițios) este orice program creat pentru a dăuna unui sistem, a fura date sau a prelua controlul.",
         "antivirus": "Un antivirus este un program care detectează, blochează și elimină malware-ul de pe un dispozitiv.",
         "ddos": "Un atac DDoS (Distributed Denial of Service) încearcă să supraaglomereze un server cu trafic masiv pentru a-l face inaccesibil.",
+        
         # --- 2. CLOUD COMPUTING ---
         "cloud": "Cloud computing-ul este livrarea de servicii de calcul (servere, stocare, baze de date) prin internet.",
         "aws": "AWS (Amazon Web Services) este cea mai mare platformă de cloud computing din lume, oferind peste 200 de servicii.",
         "azure": "Microsoft Azure este platforma de cloud computing a Microsoft, folosită pentru crearea, testarea și gestionarea aplicațiilor.",
         "google cloud": "Google Cloud Platform (GCP) este suita de servicii cloud oferită de Google.",
         "saas": "SaaS (Software as a Service) este un model de livrare software unde utilizatorii accesează aplicația prin internet, fără a o instala.",
+        
         # --- 3. REȚELISTICĂ (NETWORKING) ---
         "ip": "O adresă IP este o etichetă numerică unică atribuită fiecărui dispozitiv conectat la o rețea.",
         "dns": "DNS (Domain Name System) este sistemul care traduce numele de domenii (ex: google.com) în adrese IP.",
         "tcp": "TCP (Transmission Control Protocol) este un protocol de comunicare sigur, care garantează livrarea pachetelor de date.",
         "http": "HTTP (HyperText Transfer Protocol) este protocolul folosit pentru a transfera pagini web între un server și un browser.",
         "router": "Un router este un dispozitiv care direcționează traficul de date între diferite rețele.",
+        
         # --- 4. PROGRAMARE (Limbaje & Unelte) ---
         "javascript": "JavaScript is the programming language of the web. It makes websites interactive and works directly in your browser.",
         "java": "Java is a powerful, general-purpose programming language used for building Android apps, enterprise software, and large systems.",
@@ -86,6 +90,7 @@ if "knowledge" not in st.session_state:
         "debugging": "Debugging is the process of finding and fixing errors (bugs) in your code.",
         "ide": "An IDE (Integrated Development Environment) is a software application that helps you write code, like PyCharm or VS Code.",
         "compilator": "A compiler is a program that translates your code into machine language that a computer can understand and run.",
+        
         # --- 5. SISTEME DE OPERARE ---
         "linux": "Linux is a free, open-source operating system known for its stability and security. It's widely used on servers and by developers.",
         "windows": "Microsoft Windows is the most popular operating system for personal computers, known for its user-friendly interface.",
@@ -95,11 +100,13 @@ if "knowledge" not in st.session_state:
         "powershell": "PowerShell is a powerful command-line tool from Microsoft for automating tasks on Windows.",
         "kernel": "The kernel is the heart of an operating system. It manages everything from your hardware to your software.",
         "driver": "A driver is a small piece of software that allows your operating system to talk to a piece of hardware, like a printer.",
+        
         # --- 6. ISTORIE ȘI CURIOSITĂȚI TECH ---
         "guido van rossum": "Guido van Rossum is the Dutch programmer who created the Python programming language in the late 1980s.",
         "silicon valley": "Silicon Valley is a region in California, USA, that is famous for being the global center for technology and innovation.",
         "istoria internetului": "The internet began in the late 1960s as a US military project called ARPANET and became public in the 1990s.",
         "alan turing": "Alan Turing was a brilliant British mathematician who is considered the father of computer science and artificial intelligence.",
+        
         # --- 7. PROGRAMARE AVANSATĂ ȘI FRAMEWORKS ---
         "react": "React is a popular JavaScript library for building user interfaces, developed by Facebook.",
         "angular": "Angular is a TypeScript-based web application framework led by Google.",
