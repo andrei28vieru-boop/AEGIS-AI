@@ -1,5 +1,5 @@
 import streamlit as st
-import random, string, hashlib
+import random, string, hashlib, re
 from deep_translator import GoogleTranslator
 from googlesearch import search
 
@@ -136,14 +136,13 @@ if "knowledge" not in st.session_state:
         "ruby": "Ruby is a dynamic, open-source programming language with a focus on simplicity.",
         "scala": "Scala is a language that combines object-oriented and functional programming.",
         "perl": "Perl is a highly capable, feature-rich programming language with over 30 years of development.",
-        "r": "R is a language and environment for statistical computing and graphics.",
-        "matlab": "MATLAB is a high-level language and interactive environment for numerical computation.",
+        "r programming": "R is a programming language and environment specifically designed for statistical analysis and data visualization.",
+        "matlab": "MATLAB is a high-level language and interactive environment used by engineers and scientists for numerical computation.",
         "framework": "A framework is a pre-built set of tools and libraries that provides a foundation for developing software applications.",
         "library": "A library is a collection of pre-written code that developers can use to perform common tasks.",
         "sdk": "An SDK (Software Development Kit) is a collection of tools that allows developers to create applications for a specific platform.",
         "runtime": "A runtime is the environment in which a program is executed, providing necessary services.",
         "interpreter": "An interpreter is a program that directly executes instructions written in a programming language.",
-        "compiler": "A compiler translates source code into machine code before execution.",
         "syntax": "Syntax refers to the set of rules that define the structure of a programming language.",
         "semantics": "Semantics refers to the meaning of a program's instructions, separate from their syntax.",
         "variable scope": "Variable scope determines where a variable can be accessed within a program.",
@@ -197,9 +196,6 @@ if "knowledge" not in st.session_state:
         "octal": "Octal is a base-8 numeral system.",
         "c": "C is a powerful general-purpose programming language. It is fast, portable, and the foundation of many modern languages like Python.",
         "c#": "C# (C-Sharp) is a modern, object-oriented programming language developed by Microsoft for the .NET framework.",
-        "r programming": "R is a programming language and environment specifically designed for statistical analysis and data visualization.",
-        "matlab": "MATLAB is a high-level language and interactive environment used by engineers and scientists for numerical computation.",
-        "perl": "Perl is a versatile scripting language known for its powerful text-processing capabilities. It was widely used for CGI scripting.",
 
         # --- 8. BAZE DE DATE (DATABASES) ---
         "database": "A database is an organized collection of structured information, stored and accessed electronically.",
@@ -455,7 +451,14 @@ if "knowledge" not in st.session_state:
         "mark zuckerberg": "Mark Zuckerberg is the co-founder and CEO of Meta (formerly Facebook).",
         "sundar pichai": "Sundar Pichai is the CEO of Google and Alphabet Inc.",
         "satya nadella": "Satya Nadella is the CEO of Microsoft, credited with its successful pivot to cloud computing.",
-            }
+
+        # --- 18. DISPOZITIVE ȘI GADGETS ---
+        "samsung galaxy watch": "Samsung Galaxy Watch este o serie de smartwatch-uri premium care rulează Wear OS, cu monitorizare avansată a sănătății (ECG, tensiune arterială, somn) și integrare perfectă cu ecosistemul Samsung Galaxy.",
+        "huawei watch": "Huawei Watch este o serie de ceasuri inteligente care rulează HarmonyOS, cunoscute pentru designul elegant, bateria de lungă durată (până la 14 zile) și monitorizarea detaliată a somnului și sănătății.",
+        "smartwatch": "Un smartwatch este un ceas de mână digital care oferă funcții precum notificări, monitorizarea sănătății, GPS și control muzical, conectat la smartphone prin Bluetooth.",
+        "wear os": "Wear OS este sistemul de operare Google pentru smartwatch-uri, folosit de mărci precum Samsung, Google Pixel Watch și Fossil.",
+        "harmonyos": "HarmonyOS este sistemul de operare dezvoltat de Huawei pentru dispozitivele sale, inclusiv smartwatch-uri, telefoane și tablete.",
+    }
 
 # ---------- GESTIUNEA SESIUNII ----------
 if "logged_in" not in st.session_state: st.session_state.logged_in = False
@@ -492,7 +495,8 @@ if not st.session_state.logged_in:
                 st.session_state.user = user
                 if user in st.session_state.chat_history: st.session_state.messages = st.session_state.chat_history[user]
                 else: st.session_state.messages = []
-                st.success(translate_text(f"Bun venit, {user}!", lang_map[st.session_state.lang]))
+                welcome_msg = f"Bun venit, {user}!"
+                st.success(translate_text(welcome_msg, lang_map[st.session_state.lang]))
                 st.rerun()
             else: st.error(translate_text("Autentificare eșuată.", lang_map[st.session_state.lang]))
     else:
@@ -530,8 +534,10 @@ else:
                 prompt_ro = translate_text(prompt, "ro")
                 found = False
                 response_ro = ""
-                for key in st.session_state.knowledge:
-                    if key in prompt_ro.lower():
+                sorted_keys = sorted(st.session_state.knowledge.keys(), key=len, reverse=True)
+                for key in sorted_keys:
+                    pattern = r'\b' + re.escape(key) + r'\b'
+                    if re.search(pattern, prompt_ro.lower()):
                         response_ro = st.session_state.knowledge[key]
                         found = True
                         break
