@@ -194,7 +194,6 @@ if "knowledge" not in st.session_state:
         "binary": "Binary is a base-2 numeral system used by computers.",
         "hexadecimal": "Hexadecimal is a base-16 numeral system used in programming.",
         "octal": "Octal is a base-8 numeral system.",
-        "c": "C is a powerful general-purpose programming language. It is fast, portable, and the foundation of many modern languages like Python.",
         "c#": "C# (C-Sharp) is a modern, object-oriented programming language developed by Microsoft for the .NET framework.",
 
         # --- 8. BAZE DE DATE (DATABASES) ---
@@ -288,7 +287,6 @@ if "knowledge" not in st.session_state:
         "tls": "TLS (Transport Layer Security) is the successor to SSL, providing encrypted communication over the internet.",
         "https": "HTTPS is the secure version of HTTP, using TLS/SSL to encrypt data between browser and server.",
         "certificate": "An SSL/TLS certificate is a digital file that authenticates a website's identity and enables encrypted connections.",
-        "ca": "A Certificate Authority (CA) is a trusted entity that issues digital certificates.",
         "xss": "XSS (Cross-Site Scripting) is a security vulnerability that allows attackers to inject malicious scripts into web pages.",
         "csrf": "CSRF (Cross-Site Request Forgery) is an attack that tricks a user into performing unwanted actions on a web application.",
         "sql injection": "SQL Injection is a code injection technique that exploits vulnerabilities in database queries.",
@@ -305,6 +303,7 @@ if "knowledge" not in st.session_state:
         "oauth": "OAuth is an open standard for access delegation, allowing users to grant third-party access without sharing passwords.",
         "jwt": "JWT (JSON Web Token) is a compact, URL-safe way to represent claims between two parties.",
         "social engineering": "Social engineering is the psychological manipulation of people to trick them into revealing confidential information.",
+        "certificate authority": "A Certificate Authority (CA) is a trusted entity that issues digital certificates.",
 
         # --- 12. HARDWARE ȘI ELECTRONICĂ ---
         "cpu": "CPU (Central Processing Unit) is the primary component of a computer that executes instructions. Often called the brain of the computer.",
@@ -452,12 +451,200 @@ if "knowledge" not in st.session_state:
         "sundar pichai": "Sundar Pichai is the CEO of Google and Alphabet Inc.",
         "satya nadella": "Satya Nadella is the CEO of Microsoft, credited with its successful pivot to cloud computing.",
 
-        # --- 18. DISPOZITIVE ȘI GADGETS ---
+        # --- 18. DISPOZITIVE, COMPANII & SISTEME DE OPERARE ---
+        
+        # === SMARTPHONES ===
+        "samsung galaxy s24 ultra": "Samsung Galaxy S24 Ultra este smartphone-ul flagship Samsung din 2024, cu procesor Snapdragon 8 Gen 3, cameră 200MP, S Pen integrat și AI Galaxy.",
+        "samsung galaxy s25 ultra": "Samsung Galaxy S25 Ultra este cel mai avansat smartphone Samsung, lansat în 2025, cu procesor Snapdragon 8 Elite, AI avansat și cameră îmbunătățită.",
+        "samsung galaxy a56": "Samsung Galaxy A56 este telefonul tău, Andrei! Un mid-range excelent cu ecran Super AMOLED 120Hz, baterie 5000mAh și suport AI.",
+        "iphone 16 pro max": "iPhone 16 Pro Max este flagship-ul Apple din 2024, cu procesor A18 Pro, cameră tetraprism 5x zoom și Apple Intelligence AI.",
+        "iphone 17 pro max": "iPhone 17 Pro Max este cel mai nou iPhone, lansat în 2025, cu design ultra-subțire, Dynamic Island îmbunătățit și cameră revoluționară.",
+        "google pixel 9 pro": "Google Pixel 9 Pro este telefonul Google flagship cu procesor Tensor G4, cameră AI avansată și Android curat.",
+        "oneplus 13": "OnePlus 13 este un flagship killer cu procesor Snapdragon 8 Elite, încărcare 100W și ecran AMOLED 120Hz.",
+        "xiaomi 15 ultra": "Xiaomi 15 Ultra este telefonul premium Xiaomi cu cameră Leica, procesor Snapdragon 8 Elite și ecran AMOLED superb.",
+        "huawei pura 70 ultra": "Huawei Pura 70 Ultra (fost P Series) este flagship-ul Huawei cu cameră retractabilă și procesor Kirin.",
+        "nothing phone 3": "Nothing Phone 3 este telefonul inovator cu design transparent, Glyph Interface LED și sistem Android curat.",
+        
+        # === SMARTWATCHES ===
         "samsung galaxy watch": "Samsung Galaxy Watch este o serie de smartwatch-uri premium care rulează Wear OS, cu monitorizare avansată a sănătății (ECG, tensiune arterială, somn) și integrare perfectă cu ecosistemul Samsung Galaxy.",
+        "samsung galaxy watch ultra": "Samsung Galaxy Watch Ultra este cel mai rezistent smartwatch Samsung, cu carcasă din titan, baterie 590mAh și certificare militară MIL-STD-810H.",
+        "apple watch ultra 3": "Apple Watch Ultra 3 este smartwatch-ul premium Apple pentru sportivi extremi, cu carcasă din titan, GPS precis și rezistență la scufundări.",
         "huawei watch": "Huawei Watch este o serie de ceasuri inteligente care rulează HarmonyOS, cunoscute pentru designul elegant, bateria de lungă durată (până la 14 zile) și monitorizarea detaliată a somnului și sănătății.",
+        "google pixel watch 3": "Google Pixel Watch 3 este smartwatch-ul Google cu Wear OS, integrare Fitbit și design rotund elegant.",
+        "garmin fenix 8": "Garmin Fenix 8 este un smartwatch premium pentru atleți, cu baterie solară, GPS multi-band și hărți topografice.",
         "smartwatch": "Un smartwatch este un ceas de mână digital care oferă funcții precum notificări, monitorizarea sănătății, GPS și control muzical, conectat la smartphone prin Bluetooth.",
         "wear os": "Wear OS este sistemul de operare Google pentru smartwatch-uri, folosit de mărci precum Samsung, Google Pixel Watch și Fossil.",
-        "harmonyos": "HarmonyOS este sistemul de operare dezvoltat de Huawei pentru dispozitivele sale, inclusiv smartwatch-uri, telefoane și tablete.",
+        "ceas samsung": "Samsung Galaxy Watch este o serie de smartwatch-uri premium care rulează Wear OS, cu monitorizare avansată a sănătății (ECG, tensiune arterială, somn) și integrare perfectă cu ecosistemul Samsung Galaxy.",
+        "ceas huawei": "Huawei Watch este o serie de ceasuri inteligente care rulează HarmonyOS, cunoscute pentru designul elegant, bateria de lungă durată (până la 14 zile) și monitorizarea detaliată a somnului și sănătății.",
+        "galaxy watch": "Samsung Galaxy Watch este o serie de smartwatch-uri premium care rulează Wear OS, cu monitorizare avansată a sănătății și integrare perfectă cu ecosistemul Samsung.",
+        
+        # === LAPTOPS ===
+        "samsung galaxy book5 pro 360": "Samsung Galaxy Book5 Pro 360 este laptopul tău viitor, Andrei! Ecran AMOLED 2X 16\" tactil, Intel Core Ultra 7 Series 2, 16GB RAM DDR5, 1TB SSD, S Pen, baterie 25 ore, Wi-Fi 7, doar 1.66 kg.",
+        "samsung galaxy book5 pro": "Samsung Galaxy Book5 Pro este varianta clasică (non-360) cu același hardware premium: AMOLED 2X, Intel Ultra 7, 16GB RAM, baterie 25 ore.",
+        "samsung galaxy book4 pro 360": "Samsung Galaxy Book4 Pro 360 este generația anterioară (2024) cu Intel Core Ultra Series 1, ecran AMOLED 2X și design convertibil.",
+        "macbook pro 16": "MacBook Pro 16 este laptopul profesional Apple cu cip M4 Pro/Max, ecran Liquid Retina XDR, baterie 22 ore și macOS Sequoia.",
+        "macbook air 15": "MacBook Air 15 este laptopul subțire Apple cu cip M4, ecran Liquid Retina 15.3\", design fanless și baterie 18 ore.",
+        "dell xps 16": "Dell XPS 16 este laptopul premium Windows cu design futurist, ecran OLED 4K, Intel Core Ultra și trackpad invizibil.",
+        "lenovo yoga 9i": "Lenovo Yoga 9i este un laptop convertibil premium cu soundbar rotativ Bowers & Wilkins, ecran OLED 4K și stylus inclus.",
+        "hp spectre x360": "HP Spectre x360 este un laptop convertibil de lux cu ecran OLED 3K2K, design din aluminiu și cameră 9MP.",
+        "asus zenbook duo": "ASUS Zenbook Duo are două ecrane OLED 14\" și tastatură detașabilă, perfect pentru multitasking extrem.",
+        "microsoft surface laptop 7": "Microsoft Surface Laptop 7 este primul laptop Surface cu procesor Snapdragon X Elite ARM, baterie 20 ore și AI Copilot+.",
+        
+        # === TABLETE ===
+        "samsung galaxy tab s10 ultra": "Samsung Galaxy Tab S10 Ultra este cea mai mare tabletă Samsung, cu ecran Dynamic AMOLED 2X 14.6\", S Pen, AI Galaxy și mod DeX pentru productivitate.",
+        "ipad pro m4": "iPad Pro M4 este cea mai puternică tabletă Apple, cu ecran Ultra Retina XDR (OLED tandem), cip M4 și Apple Pencil Pro.",
+        "ipad air m3": "iPad Air M3 este tableta versatilă Apple cu ecran Liquid Retina 11\" sau 13\", cip M3 și suport Apple Pencil.",
+        "oneplus pad 2": "OnePlus Pad 2 este o tabletă Android premium cu ecran 12.1\" 144Hz, stylus și tastatură detașabilă.",
+        "xiaomi pad 7 pro": "Xiaomi Pad 7 Pro este tableta Xiaomi cu ecran 144Hz, procesor Snapdragon 8 Gen 2 și HyperOS.",
+        
+        # === SISTEME DE OPERARE ===
+        "android 15": "Android 15 este cea mai recentă versiune Android (2025), cu AI Gemini integrat, securitate îmbunătățită și Private Space.",
+        "android 16": "Android 16 este următoarea versiune majoră Android, așteptată în 2026, cu AI și mai profund integrat.",
+        "ios 19": "iOS 19 este cel mai nou sistem de operare Apple pentru iPhone (2025), cu Apple Intelligence, redesign și funcții AI avansate.",
+        "macos sequoia": "macOS Sequoia este sistemul de operare Apple pentru Mac (2024-2025), cu iPhone Mirroring, Apple Intelligence și window tiling.",
+        "windows 11": "Windows 11 este cel mai recent sistem de operare Microsoft, cu Copilot AI integrat, design modern și suport pentru aplicații Android.",
+        "windows 12": "Windows 12 este următoarea versiune Windows (așteptată 2026-2027), promițând AI profund și design revoluționar.",
+        "harmonyos next": "HarmonyOS NEXT este noul sistem de operare Huawei, complet independent de Android, cu AI nativ și ecosistem unificat.",
+        "one ui 7": "One UI 7 este interfața Samsung peste Android, cu Galaxy AI, design simplificat și funcții exclusive pentru dispozitive Samsung.",
+        "hyperos": "HyperOS este sistemul de operare Xiaomi care înlocuiește MIUI, unificând telefoane, tablete, smart home și mașini electrice.",
+        "linux ubuntu": "Ubuntu este cea mai populară distribuție Linux pentru desktop, folosită de dezvoltatori și servere worldwide.",
+        "linux fedora": "Fedora este o distribuție Linux de vârf cu software nou, sponsorizată de Red Hat.",
+        "linux mint": "Linux Mint este o distribuție Linux prietenoasă pentru începători, bazată pe Ubuntu, cu interfață Cinnamon.",
+        "debian": "Debian este o distribuție Linux stabilă și fundamentală, baza pentru Ubuntu și multe altele.",
+        "chrome os": "Chrome OS este sistemul de operare Google bazat pe cloud, folosit pe Chromebook-uri, simplu și rapid.",
+        
+        # === ASISTENȚI AI & ECOSISTEME ===
+        "google gemini": "Google Gemini este asistentul AI Google, integrat în Android, Search și Workspace, rival cu ChatGPT.",
+        "chatgpt": "ChatGPT este asistentul AI creat de OpenAI, bazat pe GPT-4 și GPT-5, capabil de conversații și generare de conținut.",
+        "samsung bixby": "Bixby este asistentul vocal Samsung, integrat în dispozitive Galaxy, cu Galaxy AI și control smart home.",
+        "siri": "Siri este asistentul vocal Apple, integrat în iPhone, Mac și HomePod, acum cu Apple Intelligence.",
+        "alexa": "Alexa este asistentul vocal Amazon, folosit pe dispozitive Echo pentru control smart home și informații.",
+        "copilot microsoft": "Microsoft Copilot este asistentul AI Microsoft integrat în Windows 11, Edge și Office 365.",
+        "galaxy ai": "Galaxy AI este suita de funcții AI de la Samsung, inclusiv Circle to Search, Live Translate și Photo Assist.",
+        "apple intelligence": "Apple Intelligence este suita AI Apple lansată în 2024-2025, integrată în iOS, macOS și aplicațiile Apple.",
+        
+        # === ALTE DISPOZITIVE ===
+        "samsung galaxy buds3 pro": "Samsung Galaxy Buds3 Pro sunt căști wireless premium cu ANC adaptiv, sunet 360 și integrare Galaxy AI pentru traducere.",
+        "airpods pro 3": "AirPods Pro 3 sunt căștile wireless Apple cu ANC îmbunătățit, Adaptive Audio și integrare perfectă cu ecosistemul Apple.",
+        "samsung galaxy ring": "Galaxy Ring este inelul inteligent Samsung pentru monitorizarea sănătății 24/7, cu senzori pentru somn, ritm cardiac și activitate.",
+        "meta quest 3": "Meta Quest 3 este casca VR/MR de la Meta cu procesor Snapdragon XR2 Gen 2, mixed reality și bibliotecă vastă de jocuri.",
+        "playstation 6": "PlayStation 6 este viitoarea consolă Sony (așteptată după 2027), succesoarea PS5 cu grafică revoluționară.",
+        "xbox next": "Next Xbox este viitoarea consolă Microsoft, promițând putere masivă și integrare cu cloud gaming.",
+        "nintendo switch 2": "Nintendo Switch 2 este noua consolă hibridă Nintendo, lansată în 2025, cu hardware îmbunătățit și joy-con-uri magnetice.",
+        "steam deck 2": "Steam Deck 2 este următoarea consolă portabilă Valve pentru jocuri PC, cu hardware mai puternic și baterie îmbunătățită.",
+    }
+        
+        # --- 19. ROBOTICĂ ȘI AUTOMATIZARE ---
+        "robotics": "Robotics is the interdisciplinary field of engineering and science that designs, builds, and operates robots.",
+        "robot": "A robot is a programmable machine capable of carrying out complex actions automatically.",
+        "automation": "Automation is the technology by which a process or procedure is performed with minimal human assistance.",
+        "rpa": "RPA (Robotic Process Automation) uses software robots to automate repetitive digital tasks normally done by humans.",
+        "cobot": "A cobot (collaborative robot) is designed to work safely alongside humans in a shared workspace.",
+        "ros": "ROS (Robot Operating System) is an open-source framework for writing robot software.",
+        "lidar": "LiDAR (Light Detection and Ranging) uses laser pulses to measure distances and create 3D maps, used in autonomous vehicles.",
+        "actuator": "An actuator is a component of a machine that moves or controls a mechanism, like a motor or hydraulic cylinder.",
+        "sensor": "A sensor detects changes in the environment and sends the information to a computer or controller.",
+        "computer vision robot": "Computer vision in robotics allows machines to interpret visual data from cameras to navigate and manipulate objects.",
+        "agv": "AGV (Automated Guided Vehicle) is a portable robot that follows markers or wires on the floor for material handling.",
+        "drone": "A drone is an unmanned aerial vehicle (UAV) that can fly autonomously or be remotely controlled.",
+        "humanoid robot": "A humanoid robot is designed to resemble the human body, often used for research and human-robot interaction.",
+        "asimo": "ASIMO was Honda's humanoid robot, famous for walking, running, and interacting with humans.",
+        "boston dynamics": "Boston Dynamics is a robotics company known for advanced robots like Spot (dog robot) and Atlas (humanoid robot).",
+        "tesla bot": "Tesla Bot (Optimus) is a humanoid robot under development by Tesla for general-purpose tasks.",
+        "ros2": "ROS 2 is the next generation of the Robot Operating System with improved security and real-time capabilities.",
+        "slam": "SLAM (Simultaneous Localization and Mapping) allows a robot to build a map of an unknown environment while tracking its location.",
+        "gripper": "A gripper is an end-effector on a robot arm designed to grasp and hold objects.",
+        "industrial robot": "An industrial robot is used in manufacturing for tasks like welding, painting, assembly, and packaging.",
+
+        # --- 20. REALITATE VIRTUALĂ ȘI AUGMENTATĂ ---
+        "vr": "VR (Virtual Reality) is a fully immersive digital environment that replaces the real world, experienced through headsets.",
+        "ar": "AR (Augmented Reality) overlays digital information onto the real world, viewed through smartphones or AR glasses.",
+        "mr": "MR (Mixed Reality) blends real and virtual worlds where physical and digital objects interact in real-time.",
+        "oculus": "Oculus is Meta's VR headset brand, now called Meta Quest, popular for gaming and social experiences.",
+        "apple vision pro": "Apple Vision Pro is Apple's mixed reality headset, blending AR and VR with advanced spatial computing.",
+        "microsoft hololens": "Microsoft HoloLens is an AR headset used in enterprise, medicine, and engineering for holographic computing.",
+        "metaverse": "The Metaverse is a network of 3D virtual worlds focused on social connection, using VR and AR technologies.",
+        "haptic": "Haptic technology provides tactile feedback (vibrations or forces) to simulate the sense of touch in virtual environments.",
+        "spatial computing": "Spatial computing uses 3D space to interact with digital content, as seen in Apple Vision Pro.",
+        "360 video": "360-degree video captures every direction simultaneously, allowing viewers to look around in VR.",
+
+        # --- 21. GAME DEVELOPMENT ---
+        "game engine": "A game engine is software for building video games, providing rendering, physics, and scripting. Examples: Unity, Unreal Engine.",
+        "unity": "Unity is a cross-platform game engine used for 2D, 3D, VR, and AR game development.",
+        "unreal engine": "Unreal Engine is a powerful 3D game engine by Epic Games known for high-fidelity graphics.",
+        "godot": "Godot is a free and open-source game engine for 2D and 3D game development.",
+        "game design": "Game design is the art of creating the rules, mechanics, story, and world of a video game.",
+        "npc": "NPC (Non-Player Character) is a character in a game not controlled by the player, often part of the story or environment.",
+        "fps game": "FPS (Frames Per Second) measures how smoothly a game runs. 60 FPS is the standard for smooth gameplay.",
+        "ray tracing": "Ray tracing is a rendering technique that simulates realistic lighting by tracing the path of light rays.",
+        "open world": "An open world game allows players to explore a large, non-linear virtual world freely.",
+        "indie game": "An indie game is created by independent developers without major publisher backing, often innovative and experimental.",
+        "steam": "Steam is the largest digital distribution platform for PC games, developed by Valve.",
+        "epic games store": "Epic Games Store is a digital game distribution platform competing with Steam.",
+        "minecraft": "Minecraft is the best-selling video game of all time, a sandbox game about building and exploring block worlds.",
+        "roblox": "Roblox is an online platform where users create and play games made by other users.",
+        "fortnite": "Fortnite is a popular battle royale game by Epic Games, known for its building mechanics and live events.",
+
+        # --- 22. GREEN TECH & SUSTAINABILITY ---
+        "green tech": "Green technology uses science to create products and services that are environmentally friendly.",
+        "solar panel": "A solar panel converts sunlight into electricity using photovoltaic cells.",
+        "ev": "EV (Electric Vehicle) runs on electric motors instead of internal combustion engines. Examples: Tesla, Nissan Leaf.",
+        "carbon footprint": "Carbon footprint is the total amount of greenhouse gases generated by human activities.",
+        "recycling tech": "Recycling technology uses advanced processes to recover materials from waste for reuse.",
+        "smart grid": "A smart grid is an electricity network that uses digital technology to monitor and manage energy flow efficiently.",
+        "wind turbine": "A wind turbine converts kinetic energy from wind into electrical power.",
+        "biodegradable": "Biodegradable materials can be broken down naturally by microorganisms without harming the environment.",
+        "e-waste": "E-waste is discarded electronic devices and components, a growing global environmental problem.",
+        "sustainable computing": "Sustainable computing aims to reduce the environmental impact of computers through energy-efficient design and recycling.",
+
+        # --- 23. TECH ACRONYMS & INTERNET CULTURE ---
+        "url": "URL (Uniform Resource Locator) is the address used to access resources on the internet, like https://www.google.com.",
+        "isp": "ISP (Internet Service Provider) is a company that provides internet access. Examples: RCS-RDS, Orange, Vodafone.",
+        "lan": "LAN (Local Area Network) connects computers in a small area like a home, office, or school.",
+        "wan": "WAN (Wide Area Network) spans a large geographic area, like the internet itself.",
+        "vpn acronim": "VPN (Virtual Private Network) encrypts your internet connection and hides your IP address for privacy.",
+        "gui": "GUI (Graphical User Interface) allows users to interact with computers using visual elements like windows and icons.",
+        "cli": "CLI (Command Line Interface) is a text-based way to interact with a computer by typing commands.",
+        "os": "OS (Operating System) manages hardware and software on a computer. Examples: Windows, Linux, macOS.",
+        "foss": "FOSS (Free and Open Source Software) is software that anyone can use, modify, and distribute freely.",
+        "drm": "DRM (Digital Rights Management) controls how digital content is used and distributed to prevent piracy.",
+        "captcha": "CAPTCHA is a test used to determine if a user is human or a bot, often requiring image recognition.",
+        "emoji": "Emoji are small digital icons used to express emotions or ideas in electronic messages. 😊🚀💻",
+        "meme": "A meme is a humorous image, video, or text that spreads rapidly online, often modified by users.",
+        "troll": "A troll is someone who posts inflammatory messages online to provoke others.",
+        "streaming": "Streaming delivers audio or video content over the internet in real-time without downloading. Examples: Netflix, YouTube, Spotify.",
+        "podcast": "A podcast is a digital audio program available for streaming or download, covering countless topics.",
+        "influencer": "An influencer is a person who uses social media to affect the purchasing decisions of followers.",
+        "viral": "Viral content spreads rapidly and widely across the internet through social sharing.",
+        "dark web": "The dark web is a hidden part of the internet requiring special software to access, often associated with anonymity.",
+        "deep web": "The deep web includes all web pages not indexed by search engines, like private databases and email inboxes.",
+
+        # --- 24. PROGRAMARE AVANSATĂ (EXTRA) ---
+        "async": "Asynchronous programming allows a program to handle multiple tasks concurrently without waiting for each to finish.",
+        "multithreading": "Multithreading runs multiple threads simultaneously within a single process to improve performance.",
+        "lambda": "A lambda function is a small anonymous function in Python defined with `lambda` keyword, used for short operations.",
+        "decorator": "A decorator in Python modifies or enhances a function without changing its code, using the `@` syntax.",
+        "generator": "A generator is a function in Python that yields values one at a time using `yield`, saving memory.",
+        "virtual environment": "A virtual environment in Python isolates project dependencies to avoid conflicts between packages.",
+        "pip": "pip is the package installer for Python, used to install and manage libraries from PyPI.",
+        "pypi": "PyPI (Python Package Index) is the official repository of Python packages, hosting thousands of libraries.",
+        "pep 8": "PEP 8 is the official style guide for Python code, promoting readability and consistency.",
+        "jupyter": "Jupyter Notebook is an interactive web-based environment for writing and running Python code, popular in data science.",
+        "anaconda": "Anaconda is a distribution of Python and R for scientific computing and data science.",
+        "pandas": "Pandas is a Python library for data manipulation and analysis, especially with tabular data.",
+        "numpy": "NumPy is a Python library for numerical computing, supporting arrays and mathematical functions.",
+        "matplotlib": "Matplotlib is a Python library for creating static, animated, and interactive visualizations.",
+        "scikit-learn": "Scikit-learn is a Python machine learning library with tools for classification, regression, and clustering.",
+        "tensorflow": "TensorFlow is an open-source ML framework by Google for building and deploying AI models.",
+        "pytorch": "PyTorch is an open-source ML framework by Meta, popular in research for its flexibility.",
+        "keras": "Keras is a high-level neural network API running on top of TensorFlow, designed for fast experimentation.",
+        "opencv": "OpenCV (Open Source Computer Vision Library) is used for real-time image and video processing.",
+        "flask python": "Flask is a lightweight Python web framework for building web applications and APIs quickly.",
+        "fastapi": "FastAPI is a modern Python web framework for building APIs with automatic interactive documentation.",
+        "streamlit library": "Streamlit is a Python library for building interactive data apps and AI dashboards quickly, used to create AEGIS.",
+        "gradio": "Gradio is a Python library for creating simple web interfaces for machine learning models.",
+        "tkinter": "Tkinter is Python's standard GUI library for creating desktop applications.",
+        "pygame": "Pygame is a Python library for writing 2D video games with graphics and sound.",
     }
 
 # ---------- GESTIUNEA SESIUNII ----------
@@ -474,8 +661,11 @@ def hash_data(data): return hashlib.sha256(data.encode()).hexdigest()
 def kosandra_blade(query, num_results=1):
     try:
         results = list(search(query, num_results=num_results, lang="en"))
-        return results[0] if results else None
-    except:
+        if results:
+            return results[0]
+        return None
+    except Exception as e:
+        st.warning(f"⚠️ Kosandra Blade: {str(e)}")
         return None
 
 # ---------- AUTENTIFICARE ----------
