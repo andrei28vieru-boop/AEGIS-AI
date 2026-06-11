@@ -3,9 +3,9 @@ import random, string, hashlib, re
 from deep_translator import GoogleTranslator
 from googlesearch import search
 
-st.set_page_config(page_title="AEGIS AI - The IT Expert", page_icon="⚡")
-st.title("AEGIS AI")
-st.caption("The IT Expert - Your Personal Guide to Technology")
+st.set_page_config(page_title="AEGIS AI - The Ultimate IT Mentor", page_icon="💎")
+st.title("💎 AEGIS AI")
+st.caption("The Ultimate IT Mentor — Learn. Build. Conquer.")
 
 # ---------- SECȚIUNEA DE LIMBI ----------
 if "lang" not in st.session_state:
@@ -23,40 +23,244 @@ def translate_text(text, target_lang):
     try: return GoogleTranslator(source='auto', target=target_lang).translate(text)
     except Exception as e: return f"Translation error: {str(e)}"
 
-# ---------- INTERFAȚA DE LIMBĂ ----------
 if not st.session_state.get("logged_in", False):
     selected_lang = st.selectbox("🌐 Choose your language / Alege limba", list(lang_map.keys()))
     st.session_state.lang = selected_lang
 
-# ---------- DESPRE AEGIS (TRADUS) ----------
 about_text_ro = """
-**Despre AEGIS**
+**💎 Despre AEGIS**
 AEGIS a fost creat de un tânăr programator român, Andrei Vieru, cu pasiunea de a construi un scut digital pentru lumea modernă.
-Este un expert AI dedicat exclusiv domeniilor IT și Inteligență Artificială.
+Este un mentor IT interactiv — te învață, te testează, te ghidează.
 **📞 Contact:** Pentru colaborări, scrie-ne pe WhatsApp (doar mesaje): **0722 911 793**
 """
 st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 
-# ---------- BAZA DE CUNOȘTINȚE (EXPERTUL TECH) ----------
+# ---------- BAZA DE CUNOȘTINȚE HYBRID ----------
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
+        
+        # ============================================
+        # 💎 AEGIS LEVEL — Interactive Mentor (20 terms)
+        # ============================================
+        
+        "api": {
+            "beginner": "Un API e ca un chelner într-un restaurant. Tu comanzi mâncarea, el merge la bucătărie și îți aduce farfuria. API-ul duce cererea ta la un server și aduce răspunsul înapoi.",
+            "professional": "Un API (Application Programming Interface) este un set de reguli și protocoale care permite două aplicații software să comunice. API-urile REST folosesc HTTP și JSON pentru a transfera date între client și server.",
+            "expert": "La nivel arhitectural, un API trebuie proiectat cu versionare, rate limiting, autentificare OAuth 2.0, și documentație OpenAPI. Performanța depinde de caching strategies, paginare și optimizarea query-urilor.",
+            "code": "# Exemplu Python: Apelarea unui API\nimport requests\nresponse = requests.get('https://api.example.com/data')\ndata = response.json()\nprint(data)",
+            "real_world": "Când folosești aplicația Meteo, ea folosește un API să ceară date de la serverul de vreme. Când postezi pe Instagram, aplicația folosește API-ul Instagram să trimită poza ta.",
+            "quiz": {"question": "Ce protocol folosesc majoritatea API-urilor moderne?", "options": ["HTTP", "FTP", "SMTP", "SSH"], "answer": "HTTP"},
+            "related": ["api rest", "json", "oauth", "http"]
+        },
+        
+        "python": {
+            "beginner": "Python e ca un limbaj pe care îl vorbești cu computerul. E simplu, ca engleza. Scrii ce vrei să facă, iar el execută. E perfect pentru începători!",
+            "professional": "Python este un limbaj de programare high-level, interpretat, cu tipare dinamică. Este folosit în web development, data science, AI/ML și automatizări.",
+            "expert": "Python 3.x oferă async/await, GIL pentru thread safety, și un ecosistem vast prin PyPI. Arhitectura permite OOP și programare funcțională.",
+            "code": "print('Salut, lume!')\n\ndef salut(nume):\n    return f'Bun venit, {nume}!'\n\nprint(salut('Andrei'))",
+            "real_world": "Python e folosit de NASA, Google, Netflix și Spotify.",
+            "quiz": {"question": "Ce keyword definește o funcție în Python?", "options": ["func", "def", "function", "define"], "answer": "def"},
+            "related": ["variabilă", "funcție", "clasă", "pip", "django"]
+        },
+        
+        "ai": {
+            "beginner": "Inteligența Artificială e ca un copil care învață. Îi arăți multe poze cu pisici, și el învață să recunoască o pisică. AI face același lucru — învață din date.",
+            "professional": "AI este simularea proceselor de inteligență umană. Subdomenii: Machine Learning, Deep Learning, NLP, Computer Vision.",
+            "expert": "Implementările moderne folosesc Transformer, difuzie și reinforcement learning. Optimizarea necesită GPU-uri și tehnici de fine-tuning.",
+            "code": "# Exemplu ML cu Scikit-learn\nfrom sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.fit(X_train, y_train)\nprint(model.score(X_test, y_test))",
+            "real_world": "AI e peste tot: Face ID, Google Maps, Netflix, Alexa, Siri.",
+            "quiz": {"question": "Care este un subset al AI?", "options": ["Machine Learning", "Word", "Chrome", "Photoshop"], "answer": "Machine Learning"},
+            "related": ["machine learning", "deep learning", "neural network", "nlp"]
+        },
+        
+        "samsung": {
+            "beginner": "Samsung e ca un magazin imens de tehnologie. Fac telefoane Galaxy, laptopuri Galaxy Book, ceasuri Galaxy Watch, și multe altele!",
+            "professional": "Samsung Electronics este lider global în tehnologie: procesoare, ecrane AMOLED, memorii și dispozitive Galaxy.",
+            "expert": "Samsung domină semiconductori (DRAM, NAND), display-uri și inovația pliabilă. Ecosistemul Galaxy integrează telefoane, tablete, laptopuri, watch-uri și IoT.",
+            "code": "# Conectare SmartThings API\nimport requests\nheaders = {'Authorization': 'Bearer TOKEN'}\nr = requests.get('https://api.smartthings.com/v1/devices', headers=headers)",
+            "real_world": "Samsung face de la telefoane la frigidere inteligente. Galaxy Book5 Pro 360 e laptopul tău viitor!",
+            "quiz": {"question": "Cum se numește asistentul AI Samsung?", "options": ["Siri", "Alexa", "Bixby", "Cortana"], "answer": "Bixby"},
+            "related": ["samsung galaxy book5 pro 360", "galaxy ai", "one ui 7"]
+        },
+        
+        "cpu": {
+            "beginner": "CPU-ul e creierul computerului. Tot ce faci — click, tastare, deschidere aplicație — trece prin CPU.",
+            "professional": "CPU execută instrucțiuni prin ciclul fetch-decode-execute. Performanța: frecvență, core-uri, cache, arhitectură.",
+            "expert": "Procesoarele moderne (Intel Core Ultra, Apple M4) folosesc 3nm, NPU pentru AI, DDR5 și PCIe 5.0.",
+            "code": "import platform, os\nprint(platform.processor())\nprint(os.cpu_count())",
+            "real_world": "CPU-ul e în laptop, telefon, PlayStation, mașini Tesla. Fiecare click e procesat de CPU.",
+            "quiz": {"question": "Ce înseamnă CPU?", "options": ["Central Processing Unit", "Computer Personal Unit", "Central Power Utility", "Core Processing Utility"], "answer": "Central Processing Unit"},
+            "related": ["gpu", "ram", "ssd", "intel", "amd"]
+        },
+        
+        "samsung galaxy book5 pro 360": {
+            "beginner": "E laptopul visurilor tale, Andrei! Subțire, se pliază, ecran superb, baterie toată ziua. Perfect pentru AEGIS!",
+            "professional": "Laptop convertibil premium: AMOLED 2X 16\", Intel Core Ultra 7 Series 2, 16GB DDR5, 1TB SSD, S Pen, Wi-Fi 7, 25 ore baterie.",
+            "expert": "Arhitectura Lunar Lake cu NPU 48 TOPS, display 500 nits HDR 120Hz, vapor chamber cooling, 1.66 kg.",
+            "code": "book5 = {'display': '16 AMOLED 2X', 'cpu': 'Ultra 7 256V', 'ram': '16GB', 'ssd': '1TB', 'price': '13298 RON'}\nfor k,v in book5.items(): print(f'{k}: {v}')",
+            "real_world": "Tu îl vei folosi pentru AEGIS — pe plajă în Spania, la Tucano în Sinaia, sau acasă noaptea.",
+            "quiz": {"question": "Ce procesor are Book5 Pro 360?", "options": ["Ultra 7 256V", "M4", "Snapdragon", "Ryzen 9"], "answer": "Ultra 7 256V"},
+            "related": ["samsung", "laptop", "intel", "windows 11"]
+        },
+        
+        # ============================================
+        # 💎 AEGIS LEVEL — Interactive Mentor (continued)
+        # ============================================
+
+        "cloud": {
+            "beginner": "Cloud-ul e ca un hard disk uriaș pe internet. În loc să ții fișierele doar pe laptop, le pui 'în nor' și poți să le accesezi de oriunde, de pe orice dispozitiv.",
+            "professional": "Cloud computing-ul livrează servicii de calcul (servere, stocare, baze de date, rețele) prin internet. Modele: IaaS (infrastructură), PaaS (platformă), SaaS (software). Lideri: AWS, Azure, Google Cloud.",
+            "expert": "Arhitecturile cloud-native folosesc microservicii, containere (Docker, Kubernetes), serverless (AWS Lambda) și CI/CD. Optimizarea costurilor implică auto-scaling, reserved instances și FinOps.",
+            "code": "# Upload fișier pe AWS S3\nimport boto3\ns3 = boto3.client('s3')\ns3.upload_file('fisier.txt', 'bucket', 'fisier.txt')\nprint('Upload complet!')",
+            "real_world": "Google Drive, iCloud, Netflix, Instagram — toate folosesc cloud. Pozele tale de pe telefon sunt în cloud. AEGIS rulează pe Streamlit Cloud chiar acum!",
+            "quiz": {"question": "Ce înseamnă SaaS?", "options": ["Software as a Service", "Storage as a System", "Server and Application Setup", "System as a Software"], "answer": "Software as a Service"},
+            "related": ["aws", "azure", "google cloud", "saas", "docker", "serverless"]
+        },
+
+        "blockchain": {
+            "beginner": "Blockchain-ul e ca un caiet de notițe pe care toată lumea poate scrie, dar nimeni nu poate șterge. Fiecare pagină e un 'bloc' legat de cel anterior — de aici 'lanț de blocuri'.",
+            "professional": "Blockchain este un registru distribuit și descentralizat care înregistrează tranzacții immutable. Folosește consens (PoW, PoS), criptografie și smart contracts. Aplicații: criptomonede, DeFi, NFT-uri, supply chain.",
+            "expert": "Implementările enterprise (Hyperledger, Corda) oferă blockchain privat. Scalabilitatea se rezolvă prin Layer 2 (Lightning Network, Polygon), sharding și rollups.",
+            "code": "# Hash blockchain în Python\nimport hashlib, json\ndef create_block(data, prev):\n    block = {'data': data, 'prev': prev}\n    block['hash'] = hashlib.sha256(json.dumps(block).encode()).hexdigest()\n    return block",
+            "real_world": "Bitcoin e cel mai faimos blockchain. Ethereum permite smart contracts. NFT-urile se vând pe blockchain.",
+            "quiz": {"question": "Cine a creat Bitcoin?", "options": ["Elon Musk", "Satoshi Nakamoto", "Bill Gates", "Vitalik Buterin"], "answer": "Satoshi Nakamoto"},
+            "related": ["bitcoin", "ethereum", "nft", "defi", "web3", "smart contract"]
+        },
+
+        "cybersecurity": {
+            "beginner": "Securitatea cibernetică e ca o alarmă pentru casa ta digitală. Te protejează de hoți (hackeri), încuie ușile (parole) și te avertizează când cineva încearcă să intre.",
+            "professional": "Cybersecurity protejează sisteme, rețele și date împotriva atacurilor digitale. Domenii: network security, application security, cryptography, incident response. Amenințări: malware, phishing, ransomware, DDoS, zero-day.",
+            "expert": "Strategiile defense-in-depth implementează multiple layere: firewall (L3/L4), WAF (L7), IDS/IPS, SIEM, EDR/XDR. Zero Trust Architecture elimină perimetrul tradițional.",
+            "code": "# Hash securizat parolă\nimport hashlib, os\ndef hash_pwd(p):\n    salt = os.urandom(32)\n    return salt + hashlib.pbkdf2_hmac('sha256', p.encode(), salt, 100000)",
+            "real_world": "Când intri pe internet banking, conexiunea e criptată. WhatsApp folosește criptare end-to-end. Antivirusul blochează viruși.",
+            "quiz": {"question": "Ce atac criptează fișierele și cere răscumpărare?", "options": ["Phishing", "Ransomware", "DDoS", "SQL Injection"], "answer": "Ransomware"},
+            "related": ["firewall", "vpn", "encryption", "malware", "phishing"]
+        },
+
+        "git": {
+            "beginner": "Git e ca un jurnal al codului tău. De fiecare dată când faci o schimbare, Git o salvează. Dacă strici ceva, poți să te întorci la o versiune anterioară. E ca un 'undo' infinit!",
+            "professional": "Git este un sistem de versionare distribuit care urmărește modificările în codul sursă. Concepte: commit, branch, merge, rebase, pull request. Platforme: GitHub, GitLab, Bitbucket.",
+            "expert": "Git flow avansat: GitFlow, trunk-based development, semantic versioning, conventional commits. CI/CD integrat prin GitHub Actions/GitLab CI.",
+            "code": "# Comenzi Git\ngit init\ngit add .\ngit commit -m 'mesaj'\ngit push origin main\ngit pull\ngit branch nou\ngit checkout nou\ngit merge nou",
+            "real_world": "AEGIS e pe GitHub chiar acum! Toate companiile mari — Google, Microsoft, Facebook — folosesc Git pentru codul lor.",
+            "quiz": {"question": "Ce comandă Git salvează schimbările local?", "options": ["git push", "git commit", "git pull", "git merge"], "answer": "git commit"},
+            "related": ["github", "github actions", "gitlab", "devops", "ci/cd"]
+        },
+
+        "docker": {
+            "beginner": "Docker e ca o cutie magică în care pui codul tău cu tot ce are nevoie ca să ruleze. Poți să muți cutia pe orice computer și va funcționa la fel. Gata cu 'pe laptopul meu merge'!",
+            "professional": "Docker este o platformă de containerizare care pachetează aplicațiile cu toate dependențele într-un container izolat. Containerele sunt lightweight față de VM-uri și rulează pe Docker Engine.",
+            "expert": "Arhitectura Docker: Dockerfile → Image → Container. Orchestration cu Kubernetes, Docker Compose pentru multi-container, registry cu Docker Hub. Best practices: multi-stage builds, layer caching, non-root users.",
+            "code": "# Dockerfile exemplu\nFROM python:3.11\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\nCOPY . .\nCMD ['streamlit', 'run', 'app.py']",
+            "real_world": "AEGIS ar putea rula într-un container Docker! Așa l-ai putea deploya oriunde — pe orice server, în orice țară. Netflix, Spotify, Uber — toate folosesc containere.",
+            "quiz": {"question": "Ce fișier definește un container Docker?", "options": ["Dockerfile", "docker.txt", "container.yml", "docker.cfg"], "answer": "Dockerfile"},
+            "related": ["kubernetes", "docker compose", "container", "devops", "serverless"]
+        },
+
+        "machine learning": {
+            "beginner": "Machine Learning e ca un copil care învață din exemple. Îi arăți 1000 de poze cu pisici, și el învață singur cum arată o pisică. Nu-i spui tu regulile — le descoperă singur!",
+            "professional": "ML este un subset al AI unde algoritmii învață din date fără a fi programați explicit. Tipuri: supervised (date etichetate), unsupervised (pattern-uri ascunse), reinforcement (recompense).",
+            "expert": "Algoritmi: Random Forest, XGBoost, SVM, Neural Networks. Optimizare: gradient descent, backpropagation. Evaluare: cross-validation, confusion matrix, ROC-AUC. Feature engineering și hyperparameter tuning.",
+            "code": "# ML cu Scikit-learn\nfrom sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.fit(X_train, y_train)\nprint(f'Acuratețe: {model.score(X_test, y_test):.2%}')",
+            "real_world": "Când Netflix îți recomandă un film, când Google Maps prezice traficul, când banca detectează o tranzacție frauduloasă — Machine Learning e în spate.",
+            "quiz": {"question": "Ce tip de ML folosește date etichetate?", "options": ["Supervised", "Unsupervised", "Reinforcement", "Manual"], "answer": "Supervised"},
+            "related": ["deep learning", "neural network", "ai", "data science", "tensorflow"]
+        },
+
+        "firewall": {
+            "beginner": "Un firewall e ca un bodyguard la intrarea într-un club. El verifică pe toți cei care vor să intre. Dacă ești pe listă, intri. Dacă nu, rămâi afară. Firewall-ul face același lucru cu datele.",
+            "professional": "Un firewall monitorizează și filtrează traficul de rețea pe baza unor reguli de securitate predefinite. Poate fi hardware sau software și operează la nivel de rețea (Layer 3/4) sau aplicație (Layer 7).",
+            "expert": "Next-Generation Firewall (NGFW) integrează IPS, DPI, SSL inspection și application awareness. Arhitecturi: perimeter firewall, distributed firewall, cloud firewall (AWS Security Groups, Azure NSG).",
+            "code": "# Reguli firewall simplificate\nfirewall_rules = {\n    'allow': ['80', '443', '22'],\n    'deny': ['23', '21', '3389']\n}\ndef check_port(port):\n    return 'ALLOW' if port in firewall_rules['allow'] else 'DENY'",
+            "real_world": "Routerul tău de acasă are un firewall încorporat. Windows are Windows Defender Firewall. Fiecare site web e protejat de un WAF (Web Application Firewall).",
+            "quiz": {"question": "Ce face un firewall?", "options": ["Filtrează traficul", "Scrie cod", "Editează poze", "Trimite email-uri"], "answer": "Filtrează traficul"},
+            "related": ["vpn", "ids", "ips", "encryption", "cybersecurity"]
+        },
+
+        "neural network": {
+            "beginner": "O rețea neuronală e ca un creier artificial făcut din mulți 'neuroni' mici conectați între ei. Fiecare neuron primește informație, o procesează și o trimite mai departe. Împreună, rezolvă probleme complexe.",
+            "professional": "O rețea neuronală artificială este inspirată de creierul uman, formată din straturi de neuroni interconectați. Fiecare conexiune are o pondere (weight) care se ajustează prin backpropagation.",
+            "expert": "Arhitecturi: CNN (imagini), RNN/LSTM (secvențe), Transformer (NLP). Antrenare: forward pass, loss calculation, backward pass (gradient descent). Optimizare: Adam, SGD, learning rate scheduling.",
+            "code": "# Rețea neuronală simplă cu Keras\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Dense\nmodel = Sequential([\n    Dense(64, activation='relu'),\n    Dense(32, activation='relu'),\n    Dense(1, activation='sigmoid')\n])\nmodel.compile(optimizer='adam', loss='binary_crossentropy')",
+            "real_world": "Când deblochezi telefonul cu fața, o rețea neuronală recunoaște fața ta. Când Google Translate traduce un text, o rețea neuronală face traducerea.",
+            "quiz": {"question": "Ce algoritm ajustează ponderile într-o rețea neuronală?", "options": ["Backpropagation", "Quick Sort", "Binary Search", "Dijkstra"], "answer": "Backpropagation"},
+            "related": ["deep learning", "machine learning", "cnn", "rnn", "transformer"]
+        },
+
+        "encryption": {
+            "beginner": "Criptarea e ca un limbaj secret. Scrii un mesaj, îl transformi în ceva de necitit (criptezi), și doar persoana care are 'cheia' poate să-l citească (decripteze).",
+            "professional": "Criptarea transformă datele într-un format codificat folosind algoritmi matematici. Tipuri: simetrică (AES — aceeași cheie) și asimetrică (RSA — cheie publică + privată).",
+            "expert": "Standarde: AES-256 (guvernamental), RSA-4096, ECC. TLS 1.3 pentru web. Criptarea end-to-end (Signal Protocol). Hashing: SHA-256, bcrypt. Quantum-resistant cryptography în dezvoltare.",
+            "code": "# Criptare simetrică cu Python\nfrom cryptography.fernet import Fernet\nkey = Fernet.generate_key()\ncipher = Fernet(key)\nencrypted = cipher.encrypt(b'Mesaj secret')\ndecrypted = cipher.decrypt(encrypted)",
+            "real_world": "WhatsApp folosește criptare end-to-end. HTTPS (lacătul verde din browser) e criptare. Când plătești cu cardul online, datele sunt criptate.",
+            "quiz": {"question": "Ce tip de criptare folosește două chei diferite?", "options": ["Asimetrică", "Simetrică", "Hashing", "Compresie"], "answer": "Asimetrică"},
+            "related": ["decryption", "aes", "rsa", "ssl", "tls", "https"]
+        },
+
+        "kubernetes": {
+            "beginner": "Kubernetes e ca un dirijor de orchestră. Ai multe containere (muzicieni) și Kubernetes se asigură că toate cântă la timp, că niciunul nu lipsește și că totul sună perfect.",
+            "professional": "Kubernetes (K8s) este o platformă open-source pentru automatizarea deployment-ului, scalării și managementului containerelor. Componente: Pods, Nodes, Services, Deployments, ConfigMaps.",
+            "expert": "Arhitectură: Control Plane (API Server, etcd, Scheduler) + Worker Nodes (kubelet, kube-proxy). Networking: CNI (Calico, Cilium). Service Mesh: Istio. GitOps: ArgoCD, Flux.",
+            "code": "# Deployment Kubernetes (YAML)\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: aegis-app\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: aegis\n  template:\n    spec:\n      containers:\n      - name: aegis\n        image: aegis:latest\n        ports:\n        - containerPort: 8501",
+            "real_world": "Google, Netflix, Spotify — toate rulează pe Kubernetes. Când Netflix are milioane de utilizatori simultan, Kubernetes scalează automat serverele.",
+            "quiz": {"question": "Ce e un Pod în Kubernetes?", "options": ["Cel mai mic obiect deployabil", "Un tip de bază de date", "Un limbaj de programare", "Un protocol de rețea"], "answer": "Cel mai mic obiect deployabil"},
+            "related": ["docker", "docker compose", "helm", "istio", "devops", "microservices"]
+        },
+
+        "iot": {
+            "beginner": "IoT (Internet of Things) e când obiectele din casa ta devin 'smart' și se conectează la internet. Frigiderul îți spune că ai rămas fără lapte, ceasul îți monitorizează somnul, becurile se aprind singure.",
+            "professional": "IoT conectează dispozitive fizice (senzori, actuatori) la internet pentru colectare de date și control. Protocoale: MQTT, CoAP, Zigbee. Platforme: AWS IoT, Azure IoT Hub.",
+            "expert": "Arhitecturi: Edge Computing (procesare locală), Fog Computing, Cloud IoT. Securitate: PKI pentru device-uri, OTA updates. Provocări: scalabilitate miliarde de device-uri, latență, interoperabilitate.",
+            "code": "# Simulare senzor IoT\nimport random, time\nwhile True:\n    temp = random.uniform(20.0, 30.0)\n    print(f'Temperatură: {temp:.1f}°C')\n    time.sleep(5)",
+            "real_world": "Galaxy Watch-ul tău e un dispozitiv IoT! La fel și Alexa, becurile Philips Hue, termostatele Nest, și mașinile Tesla conectate la internet.",
+            "quiz": {"question": "Ce înseamnă IoT?", "options": ["Internet of Things", "Internet of Technology", "Input Output Transfer", "Internal Operating Tool"], "answer": "Internet of Things"},
+            "related": ["arduino", "raspberry pi", "sensor", "cloud", "5g"]
+        },
+
+        "5g": {
+            "beginner": "5G e a cincea generație de internet mobil. E ca și cum ai trece de la o șosea cu 2 benzi la o autostradă cu 100 de benzi. Totul e mai rapid, mai instant.",
+            "professional": "5G este standardul de rețea mobilă cu viteze de până la 20 Gbps, latență sub 1ms și capacitate pentru 1 milion de device-uri pe km². Benzi: low-band, mid-band, mmWave.",
+            "expert": "Arhitectură 5G: Network Slicing (rețele virtuale dedicate), MEC (Multi-access Edge Computing), beamforming. 3GPP Release 17/18. Aplicații critice: V2X (vehicule autonome), remote surgery, Industry 4.0.",
+            "code": "# Verifică viteza internetului (conceptual)\nimport speedtest\nst = speedtest.Speedtest()\nprint(f'Download: {st.download()/1e6:.1f} Mbps')\nprint(f'Upload: {st.upload()/1e6:.1f} Mbps')\nprint(f'Ping: {st.results.ping} ms')",
+            "real_world": "Telefonul tău Galaxy A56 suportă 5G! Când vezi '5G' în bara de sus, ești conectat la cea mai rapidă rețea mobilă din lume.",
+            "quiz": {"question": "Ce viteză maximă teoretică are 5G?", "options": ["20 Gbps", "100 Mbps", "1 Gbps", "500 Mbps"], "answer": "20 Gbps"},
+            "related": ["iot", "wifi 7", "bandwidth", "latency", "network"]
+        },
+
+        "wifi 7": {
+            "beginner": "Wi-Fi 7 e cea mai nouă și mai rapidă tehnologie de internet wireless. E ca Wi-Fi-ul pe care îl știi, dar pe steroizi. Perfect pentru gaming, streaming 8K și realitate virtuală.",
+            "professional": "Wi-Fi 7 (802.11be) oferă viteze de până la 46 Gbps, canale de 320 MHz, 4096-QAM, Multi-Link Operation (MLO) și latență ultra-scăzută.",
+            "expert": "MLO permite conectarea simultană pe mai multe benzi (2.4, 5, 6 GHz). 16x16 MU-MIMO, OFDMA îmbunătățit. Compatibilitate cu Wi-Fi 6/6E. Aplicații enterprise: AR/VR fără fir, Industry 4.0.",
+            "code": "# Verifică rețelele Wi-Fi disponibile (Windows)\n# import subprocess\n# result = subprocess.run(['netsh', 'wlan', 'show', 'networks'], capture_output=True, text=True)\n# print(result.stdout)",
+            "real_world": "Samsung Galaxy Book5 Pro 360 are Wi-Fi 7! Când îl vei avea, vei putea descărca un film 4K în câteva secunde.",
+            "quiz": {"question": "Ce viteză maximă teoretică are Wi-Fi 7?", "options": ["46 Gbps", "10 Gbps", "1 Gbps", "100 Gbps"], "answer": "46 Gbps"},
+            "related": ["5g", "bandwidth", "latency", "router", "network"]
+        },
+
+        "ssd": {
+            "beginner": "SSD-ul e ca o bibliotecă ultra-rapidă pentru fișierele tale. Spre deosebire de HDD (care are piese care se învârt), SSD-ul nu are piese mișcătoare și e de 10 ori mai rapid.",
+            "professional": "SSD (Solid State Drive) folosește memorie NAND flash pentru stocare persistentă. Interfețe: SATA III (până la 550 MB/s), NVMe PCIe 4.0/5.0 (până la 14 GB/s).",
+            "expert": "Tehnologii: 3D NAND (straturi multiple), SLC/MLC/TLC/QLC caching, DRAM cache vs DRAM-less. NVMe 2.0, ZNS (Zoned Namespaces) pentru centre de date. Endurance: TBW (Total Bytes Written).",
+            "code": "# Verifică viteza discului (conceptual)\nimport time, os\nsize = 1024*1024*100  # 100MB\nstart = time.time()\nwith open('test.bin', 'wb') as f:\n    f.write(os.urandom(size))\nend = time.time()\nprint(f'Viteză scriere: {size/(end-start)/1e6:.0f} MB/s')",
+            "real_world": "Laptopul tău viitor (Book5 Pro 360) are SSD NVMe de 1TB. Se deschide în 5 secunde. Jocurile se încarcă instant. Aplicațiile pornesc fără delay.",
+            "quiz": {"question": "Ce interfață e mai rapidă pentru SSD?", "options": ["NVMe PCIe", "SATA III", "USB 3.0", "FireWire"], "answer": "NVMe PCIe"},
+            "related": ["hdd", "ram", "nvme", "storage", "motherboard"]
+        },
+
+        # ============================================
+        # 📚 EXPERT TERMS — Quick Definitions
+        # ============================================
+        
         # --- Cunoștințe Existente ---
-        "api": "Un API (Application Programming Interface) este un set de reguli care permite două aplicații software să comunice între ele.",
-        "python": "Python este un limbaj de programare versatil și puternic, folosit în dezvoltarea web, știința datelor, inteligența artificială și automatizări.",
         "variabilă": "O variabilă este ca o cutie în care poți păstra o valoare. În Python, o creezi simplu: `x = 5`.",
         "listă": "O listă este o colecție ordonată de elemente, care poate fi modificată. Se scrie între paranteze pătrate: `[1, 2, 3]`.",
         "dicționar": "Un dicționar este o colecție de perechi cheie-valoare. Se scrie între acolade: `{'nume': 'Andrei', 'vârstă': 15}`.",
         "funcție": "O funcție este un bloc de cod reutilizabil care face o anumită sarcină. Se definește cu `def`: `def salut(): print('Salut!')`.",
         "buclă": "O buclă (loop) este o instrucțiune care repetă o bucată de cod. `for` și `while` sunt cele mai comune în Python.",
         "clasă": "O clasă (class) este un șablon pentru crearea de obiecte. Este fundamentul Programării Orientate pe Obiecte (OOP).",
-        "ai": "Inteligența Artificială (AI) este simularea proceselor de inteligență umană de către mașini, în special sisteme informatice.",
-        "samsung": "Samsung este o companie globală, lider în tehnologie, care produce telefoane Galaxy, laptopuri Galaxy Book, ceasuri și alte dispozitive inteligente.",
         "criptomonedă": "O monedă digitală descentralizată. Exemple: Bitcoin (BTC), Ethereum (ETH).",
         "mit": "MIT (Massachusetts Institute of Technology) este una dintre cele mai prestigioase universități din lume, lider în cercetare și inovație tehnologică.",
         "white hat": "White Hat Hacking este practica etică și legală de a testa securitatea sistemelor pentru a le proteja împotriva atacatorilor reali.",
-        
-        # --- 1. SECURITATE CIBERNETICĂ ---
-        "firewall": "Un firewall este un sistem de securitate care monitorizează și controlează traficul de rețea, permițând sau blocând accesul.",
         "vpn": "Un VPN (Virtual Private Network) creează o conexiune criptată și sigură între dispozitivul tău și internet.",
         "ransomware": "Ransomware este un tip de malware care criptează fișierele victimei și cere o răscumpărare pentru a le debloca.",
         "phishing": "Phishing-ul este o tentativă de fraudă prin care atacatorii se dau drept entități de încredere pentru a fura date personale.",
@@ -66,22 +270,15 @@ if "knowledge" not in st.session_state:
         "malware": "Malware (software malițios) este orice program creat pentru a dăuna unui sistem, a fura date sau a prelua controlul.",
         "antivirus": "Un antivirus este un program care detectează, blochează și elimină malware-ul de pe un dispozitiv.",
         "ddos": "Un atac DDoS (Distributed Denial of Service) încearcă să supraaglomereze un server cu trafic masiv pentru a-l face inaccesibil.",
-        
-        # --- 2. CLOUD COMPUTING ---
-        "cloud": "Cloud computing-ul este livrarea de servicii de calcul (servere, stocare, baze de date) prin internet.",
         "aws": "AWS (Amazon Web Services) este cea mai mare platformă de cloud computing din lume, oferind peste 200 de servicii.",
         "azure": "Microsoft Azure este platforma de cloud computing a Microsoft, folosită pentru crearea, testarea și gestionarea aplicațiilor.",
         "google cloud": "Google Cloud Platform (GCP) este suita de servicii cloud oferită de Google.",
         "saas": "SaaS (Software as a Service) este un model de livrare software unde utilizatorii accesează aplicația prin internet, fără a o instala.",
-        
-        # --- 3. REȚELISTICĂ (NETWORKING) ---
         "ip": "O adresă IP este o etichetă numerică unică atribuită fiecărui dispozitiv conectat la o rețea.",
         "dns": "DNS (Domain Name System) este sistemul care traduce numele de domenii (ex: google.com) în adrese IP.",
         "tcp": "TCP (Transmission Control Protocol) este un protocol de comunicare sigur, care garantează livrarea pachetelor de date.",
         "http": "HTTP (HyperText Transfer Protocol) este protocolul folosit pentru a transfera pagini web între un server și un browser.",
         "router": "Un router este un dispozitiv care direcționează traficul de date între diferite rețele.",
-        
-        # --- 4. PROGRAMARE (Limbaje & Unelte) ---
         "javascript": "JavaScript is the programming language of the web. It makes websites interactive and works directly in your browser.",
         "java": "Java is a powerful, general-purpose programming language used for building Android apps, enterprise software, and large systems.",
         "c++": "C++ is a high-performance programming language used for game development, operating systems, and applications requiring speed.",
@@ -90,8 +287,6 @@ if "knowledge" not in st.session_state:
         "debugging": "Debugging is the process of finding and fixing errors (bugs) in your code.",
         "ide": "An IDE (Integrated Development Environment) is a software application that helps you write code, like PyCharm or VS Code.",
         "compilator": "A compiler is a program that translates your code into machine language that a computer can understand and run.",
-        
-        # --- 5. SISTEME DE OPERARE ---
         "linux": "Linux is a free, open-source operating system known for its stability and security. It's widely used on servers and by developers.",
         "windows": "Microsoft Windows is the most popular operating system for personal computers, known for its user-friendly interface.",
         "macos": "macOS is the operating system developed by Apple for its Mac computers, known for its elegant design and smooth performance.",
@@ -100,29 +295,22 @@ if "knowledge" not in st.session_state:
         "powershell": "PowerShell is a powerful command-line tool from Microsoft for automating tasks on Windows.",
         "kernel": "The kernel is the heart of an operating system. It manages everything from your hardware to your software.",
         "driver": "A driver is a small piece of software that allows your operating system to talk to a piece of hardware, like a printer.",
-        
-        # --- 6. ISTORIE ȘI CURIOSITĂȚI TECH ---
         "guido van rossum": "Guido van Rossum is the Dutch programmer who created the Python programming language in the late 1980s.",
         "silicon valley": "Silicon Valley is a region in California, USA, that is famous for being the global center for technology and innovation.",
         "istoria internetului": "The internet began in the late 1960s as a US military project called ARPANET and became public in the 1990s.",
         "alan turing": "Alan Turing was a brilliant British mathematician who is considered the father of computer science and artificial intelligence.",
-        
-        # --- 7. PROGRAMARE AVANSATĂ ȘI FRAMEWORKS ---
         "react": "React is a popular JavaScript library for building user interfaces, developed by Facebook.",
         "angular": "Angular is a TypeScript-based web application framework led by Google.",
         "vue": "Vue.js is a progressive JavaScript framework for building user interfaces.",
         "django": "Django is a high-level Python web framework that encourages rapid development.",
         "flask": "Flask is a micro web framework written in Python, known for its simplicity.",
         "sql": "SQL (Structured Query Language) is a language for managing and querying relational databases.",
-        "git": "Git is a distributed version control system for tracking changes in source code.",
         "github": "GitHub is a platform for hosting and collaborating on Git repositories.",
         "oop": "OOP (Object-Oriented Programming) is a paradigm based on objects containing data and code.",
         "recursivitate": "Recursion is a technique where a function calls itself to solve a problem.",
         "api rest": "A REST API is an API that follows the principles of Representational State Transfer.",
         "json": "JSON (JavaScript Object Notation) is a lightweight data-interchange format.",
         "xml": "XML (eXtensible Markup Language) is a markup language for storing and transporting data.",
-        "docker": "Docker is a platform for developing, shipping, and running applications in containers.",
-        "kubernetes": "Kubernetes is an open-source system for automating deployment of containerized applications.",
         "agile": "Agile is a methodology for software development that emphasizes flexibility and collaboration.",
         "scrum": "Scrum is a framework within Agile for managing complex projects.",
         "devops": "DevOps is a set of practices that combines software development and IT operations.",
@@ -195,8 +383,6 @@ if "knowledge" not in st.session_state:
         "hexadecimal": "Hexadecimal is a base-16 numeral system used in programming.",
         "octal": "Octal is a base-8 numeral system.",
         "c#": "C# (C-Sharp) is a modern, object-oriented programming language developed by Microsoft for the .NET framework.",
-
-        # --- 8. BAZE DE DATE (DATABASES) ---
         "database": "A database is an organized collection of structured information, stored and accessed electronically.",
         "relational database": "A relational database organizes data into tables with rows and columns, connected by relationships. Example: MySQL, PostgreSQL.",
         "nosql": "NoSQL databases store data in a non-tabular format, like documents or graphs. Examples: MongoDB, Cassandra, Redis.",
@@ -217,11 +403,7 @@ if "knowledge" not in st.session_state:
         "stored procedure": "A stored procedure is a set of precompiled SQL statements that can be executed on demand.",
         "trigger": "A trigger is a stored procedure that automatically executes when a specific event occurs in a database.",
         "transaction": "A transaction is a sequence of database operations treated as a single unit of work.",
-
-        # --- 9. INTELIGENȚĂ ARTIFICIALĂ ȘI MACHINE LEARNING ---
-        "machine learning": "Machine Learning (ML) is a subset of AI where systems learn from data without being explicitly programmed.",
         "deep learning": "Deep Learning is a subset of ML using artificial neural networks with many layers to model complex patterns.",
-        "neural network": "A neural network is a computing system inspired by the human brain, composed of interconnected nodes (neurons).",
         "supervised learning": "Supervised learning trains an AI model on labeled data, where the correct answer is provided.",
         "unsupervised learning": "Unsupervised learning finds hidden patterns in data without pre-existing labels.",
         "reinforcement learning": "Reinforcement learning trains an agent to make decisions by rewarding desired behaviors and punishing undesired ones.",
@@ -255,8 +437,6 @@ if "knowledge" not in st.session_state:
         "prompt": "A prompt is the input text given to an AI model to guide its response.",
         "prompt engineering": "Prompt engineering is the practice of designing effective prompts to get desired outputs from AI models.",
         "temperature": "Temperature is a parameter that controls randomness in AI model outputs. Lower = more focused, Higher = more creative.",
-
-        # --- 10. DEZVOLTARE WEB (WEB DEVELOPMENT) ---
         "html": "HTML (HyperText Markup Language) is the standard language for creating web pages and web applications.",
         "css": "CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML.",
         "sass": "Sass is a CSS preprocessor that extends CSS with features like variables, nesting, and mixins.",
@@ -277,9 +457,6 @@ if "knowledge" not in st.session_state:
         "webpack": "Webpack is a module bundler for JavaScript applications, processing and bundling assets for the browser.",
         "vite": "Vite is a modern build tool that provides a fast development server and optimized build for web projects.",
         "cors": "CORS (Cross-Origin Resource Sharing) is a security mechanism that controls how web pages can request resources from another domain.",
-
-        # --- 11. SECURITATE AVANSATĂ ȘI ETHICAL HACKING ---
-        "encryption": "Encryption is the process of converting data into a coded form to prevent unauthorized access.",
         "decryption": "Decryption is the process of converting encrypted data back to its original, readable form.",
         "aes": "AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used worldwide.",
         "rsa": "RSA is an asymmetric encryption algorithm used for secure data transmission and digital signatures.",
@@ -304,13 +481,9 @@ if "knowledge" not in st.session_state:
         "jwt": "JWT (JSON Web Token) is a compact, URL-safe way to represent claims between two parties.",
         "social engineering": "Social engineering is the psychological manipulation of people to trick them into revealing confidential information.",
         "certificate authority": "A Certificate Authority (CA) is a trusted entity that issues digital certificates.",
-
-        # --- 12. HARDWARE ȘI ELECTRONICĂ ---
-        "cpu": "CPU (Central Processing Unit) is the primary component of a computer that executes instructions. Often called the brain of the computer.",
         "gpu": "GPU (Graphics Processing Unit) is a specialized processor designed to accelerate graphics rendering and parallel computations.",
         "ram": "RAM (Random Access Memory) is temporary memory that stores data actively being used by the computer.",
         "rom": "ROM (Read-Only Memory) is non-volatile memory that stores firmware and cannot be easily modified.",
-        "ssd": "SSD (Solid State Drive) is a fast storage device using flash memory, with no moving parts.",
         "hdd": "HDD (Hard Disk Drive) is a traditional storage device that uses spinning magnetic disks.",
         "motherboard": "The motherboard is the main circuit board that connects all components of a computer.",
         "bios": "BIOS (Basic Input/Output System) is firmware that initializes hardware during the boot process. Now largely replaced by UEFI.",
@@ -319,14 +492,10 @@ if "knowledge" not in st.session_state:
         "cache": "Cache is a small, high-speed memory that stores frequently accessed data for quick retrieval.",
         "bandwidth": "Bandwidth is the maximum rate of data transfer across a network path, measured in bits per second.",
         "latency": "Latency is the time delay between a request and its response in a network.",
-        "iot": "IoT (Internet of Things) refers to the network of physical objects embedded with sensors and software to connect and exchange data.",
         "arduino": "Arduino is an open-source electronics platform based on easy-to-use hardware and software.",
         "raspberry pi": "Raspberry Pi is a small, affordable single-board computer used for learning programming and building projects.",
         "firmware": "Firmware is software programmed into the read-only memory of a hardware device, providing low-level control.",
         "bios update": "A BIOS update is a process of upgrading the firmware that controls the motherboard to fix bugs or add features.",
-
-        # --- 13. BLOCKCHAIN, CRIPTOMONEDE ȘI WEB3 ---
-        "blockchain": "Blockchain is a decentralized, distributed ledger technology that records transactions across many computers.",
         "bitcoin": "Bitcoin (BTC) is the first and most well-known cryptocurrency, created in 2009 by an anonymous entity called Satoshi Nakamoto.",
         "ethereum": "Ethereum is a decentralized blockchain platform that enables smart contracts and decentralized applications (dApps).",
         "smart contract": "A smart contract is a self-executing program stored on a blockchain that runs when predetermined conditions are met.",
@@ -354,8 +523,6 @@ if "knowledge" not in st.session_state:
         "dapp": "A dApp (Decentralized Application) runs on a blockchain network rather than a centralized server.",
         "ipfs": "IPFS (InterPlanetary File System) is a peer-to-peer protocol for storing and sharing files in a decentralized manner.",
         "consensus": "Consensus is the mechanism by which blockchain participants agree on the validity of transactions.",
-        
-        # --- 14. DEZVOLTARE MOBILĂ (MOBILE DEVELOPMENT) ---
         "android": "Android is a mobile operating system developed by Google, used by billions of devices worldwide.",
         "ios": "iOS is Apple's mobile operating system for iPhone and iPad, known for its security and smooth user experience.",
         "flutter": "Flutter is Google's open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
@@ -377,8 +544,6 @@ if "knowledge" not in st.session_state:
         "firebase": "Firebase is Google's platform for building mobile and web apps with features like databases, auth, and analytics.",
         "swiftui": "SwiftUI is Apple's modern framework for building user interfaces across all Apple platforms using declarative Swift code.",
         "jetpack compose": "Jetpack Compose is Android's modern toolkit for building native UI using declarative Kotlin code.",
-        
-        # --- 15. DevOps, INFRASTRUCTURĂ ȘI AUTOMATIZARE ---
         "terraform": "Terraform is an Infrastructure as Code (IaC) tool by HashiCorp for building and managing cloud infrastructure.",
         "ansible": "Ansible is an open-source automation tool for configuration management, application deployment, and task automation.",
         "jenkins": "Jenkins is an open-source automation server used for Continuous Integration and Continuous Delivery (CI/CD).",
@@ -402,8 +567,6 @@ if "knowledge" not in st.session_state:
         "helm": "Helm is a package manager for Kubernetes that helps deploy and manage applications.",
         "istio": "Istio is an open-source service mesh for connecting, securing, and monitoring microservices.",
         "gitops": "GitOps is a framework that uses Git as the single source of truth for declarative infrastructure and applications.",
-        
-        # --- 16. MATEMATICĂ PENTRU COMPUTER SCIENCE ---
         "big o notation": "Big O Notation describes the performance or complexity of an algorithm, specifically its worst-case scenario.",
         "time complexity": "Time complexity measures how the runtime of an algorithm grows as the input size increases.",
         "space complexity": "Space complexity measures how much memory an algorithm uses relative to the input size.",
@@ -426,8 +589,6 @@ if "knowledge" not in st.session_state:
         "logic gate": "A logic gate is an electronic component that performs a Boolean function. Examples: AND, OR, NOT, XOR.",
         "set theory": "Set theory is the mathematical study of collections of objects, foundational to databases and logic programming.",
         "graph theory": "Graph theory is the study of graphs — mathematical structures used to model pairwise relations between objects.",
-        
-        # --- 17. COMPANII TECH ȘI PERSONALITĂȚI ---
         "apple": "Apple Inc. is a global technology company known for the iPhone, Mac, iPad, and innovative design.",
         "google": "Google is a technology company specializing in internet services like search, cloud computing, and AI.",
         "microsoft": "Microsoft is a leading tech corporation behind Windows, Azure, Office, and Xbox.",
@@ -450,10 +611,6 @@ if "knowledge" not in st.session_state:
         "mark zuckerberg": "Mark Zuckerberg is the co-founder and CEO of Meta (formerly Facebook).",
         "sundar pichai": "Sundar Pichai is the CEO of Google and Alphabet Inc.",
         "satya nadella": "Satya Nadella is the CEO of Microsoft, credited with its successful pivot to cloud computing.",
-
-        # --- 18. DISPOZITIVE, COMPANII & SISTEME DE OPERARE ---
-        
-        # === SMARTPHONES ===
         "samsung galaxy s24 ultra": "Samsung Galaxy S24 Ultra este smartphone-ul flagship Samsung din 2024, cu procesor Snapdragon 8 Gen 3, cameră 200MP, S Pen integrat și AI Galaxy.",
         "samsung galaxy s25 ultra": "Samsung Galaxy S25 Ultra este cel mai avansat smartphone Samsung, lansat în 2025, cu procesor Snapdragon 8 Elite, AI avansat și cameră îmbunătățită.",
         "samsung galaxy a56": "Samsung Galaxy A56 este telefonul tău, Andrei! Un mid-range excelent cu ecran Super AMOLED 120Hz, baterie 5000mAh și suport AI.",
@@ -464,8 +621,6 @@ if "knowledge" not in st.session_state:
         "xiaomi 15 ultra": "Xiaomi 15 Ultra este telefonul premium Xiaomi cu cameră Leica, procesor Snapdragon 8 Elite și ecran AMOLED superb.",
         "huawei pura 70 ultra": "Huawei Pura 70 Ultra (fost P Series) este flagship-ul Huawei cu cameră retractabilă și procesor Kirin.",
         "nothing phone 3": "Nothing Phone 3 este telefonul inovator cu design transparent, Glyph Interface LED și sistem Android curat.",
-        
-        # === SMARTWATCHES ===
         "samsung galaxy watch": "Samsung Galaxy Watch este o serie de smartwatch-uri premium care rulează Wear OS, cu monitorizare avansată a sănătății (ECG, tensiune arterială, somn) și integrare perfectă cu ecosistemul Samsung Galaxy.",
         "samsung galaxy watch ultra": "Samsung Galaxy Watch Ultra este cel mai rezistent smartwatch Samsung, cu carcasă din titan, baterie 590mAh și certificare militară MIL-STD-810H.",
         "apple watch ultra 3": "Apple Watch Ultra 3 este smartwatch-ul premium Apple pentru sportivi extremi, cu carcasă din titan, GPS precis și rezistență la scufundări.",
@@ -477,9 +632,6 @@ if "knowledge" not in st.session_state:
         "ceas samsung": "Samsung Galaxy Watch este o serie de smartwatch-uri premium care rulează Wear OS, cu monitorizare avansată a sănătății (ECG, tensiune arterială, somn) și integrare perfectă cu ecosistemul Samsung Galaxy.",
         "ceas huawei": "Huawei Watch este o serie de ceasuri inteligente care rulează HarmonyOS, cunoscute pentru designul elegant, bateria de lungă durată (până la 14 zile) și monitorizarea detaliată a somnului și sănătății.",
         "galaxy watch": "Samsung Galaxy Watch este o serie de smartwatch-uri premium care rulează Wear OS, cu monitorizare avansată a sănătății și integrare perfectă cu ecosistemul Samsung.",
-        
-        # === LAPTOPS ===
-        "samsung galaxy book5 pro 360": "Samsung Galaxy Book5 Pro 360 este laptopul tău viitor, Andrei! Ecran AMOLED 2X 16\" tactil, Intel Core Ultra 7 Series 2, 16GB RAM DDR5, 1TB SSD, S Pen, baterie 25 ore, Wi-Fi 7, doar 1.66 kg.",
         "samsung galaxy book5 pro": "Samsung Galaxy Book5 Pro este varianta clasică (non-360) cu același hardware premium: AMOLED 2X, Intel Ultra 7, 16GB RAM, baterie 25 ore.",
         "samsung galaxy book4 pro 360": "Samsung Galaxy Book4 Pro 360 este generația anterioară (2024) cu Intel Core Ultra Series 1, ecran AMOLED 2X și design convertibil.",
         "macbook pro 16": "MacBook Pro 16 este laptopul profesional Apple cu cip M4 Pro/Max, ecran Liquid Retina XDR, baterie 22 ore și macOS Sequoia.",
@@ -489,15 +641,11 @@ if "knowledge" not in st.session_state:
         "hp spectre x360": "HP Spectre x360 este un laptop convertibil de lux cu ecran OLED 3K2K, design din aluminiu și cameră 9MP.",
         "asus zenbook duo": "ASUS Zenbook Duo are două ecrane OLED 14\" și tastatură detașabilă, perfect pentru multitasking extrem.",
         "microsoft surface laptop 7": "Microsoft Surface Laptop 7 este primul laptop Surface cu procesor Snapdragon X Elite ARM, baterie 20 ore și AI Copilot+.",
-        
-        # === TABLETE ===
         "samsung galaxy tab s10 ultra": "Samsung Galaxy Tab S10 Ultra este cea mai mare tabletă Samsung, cu ecran Dynamic AMOLED 2X 14.6\", S Pen, AI Galaxy și mod DeX pentru productivitate.",
         "ipad pro m4": "iPad Pro M4 este cea mai puternică tabletă Apple, cu ecran Ultra Retina XDR (OLED tandem), cip M4 și Apple Pencil Pro.",
         "ipad air m3": "iPad Air M3 este tableta versatilă Apple cu ecran Liquid Retina 11\" sau 13\", cip M3 și suport Apple Pencil.",
         "oneplus pad 2": "OnePlus Pad 2 este o tabletă Android premium cu ecran 12.1\" 144Hz, stylus și tastatură detașabilă.",
         "xiaomi pad 7 pro": "Xiaomi Pad 7 Pro este tableta Xiaomi cu ecran 144Hz, procesor Snapdragon 8 Gen 2 și HyperOS.",
-        
-        # === SISTEME DE OPERARE ===
         "android 15": "Android 15 este cea mai recentă versiune Android (2025), cu AI Gemini integrat, securitate îmbunătățită și Private Space.",
         "android 16": "Android 16 este următoarea versiune majoră Android, așteptată în 2026, cu AI și mai profund integrat.",
         "ios 19": "iOS 19 este cel mai nou sistem de operare Apple pentru iPhone (2025), cu Apple Intelligence, redesign și funcții AI avansate.",
@@ -512,8 +660,6 @@ if "knowledge" not in st.session_state:
         "linux mint": "Linux Mint este o distribuție Linux prietenoasă pentru începători, bazată pe Ubuntu, cu interfață Cinnamon.",
         "debian": "Debian este o distribuție Linux stabilă și fundamentală, baza pentru Ubuntu și multe altele.",
         "chrome os": "Chrome OS este sistemul de operare Google bazat pe cloud, folosit pe Chromebook-uri, simplu și rapid.",
-        
-        # === ASISTENȚI AI & ECOSISTEME ===
         "google gemini": "Google Gemini este asistentul AI Google, integrat în Android, Search și Workspace, rival cu ChatGPT.",
         "chatgpt": "ChatGPT este asistentul AI creat de OpenAI, bazat pe GPT-4 și GPT-5, capabil de conversații și generare de conținut.",
         "samsung bixby": "Bixby este asistentul vocal Samsung, integrat în dispozitive Galaxy, cu Galaxy AI și control smart home.",
@@ -522,8 +668,6 @@ if "knowledge" not in st.session_state:
         "copilot microsoft": "Microsoft Copilot este asistentul AI Microsoft integrat în Windows 11, Edge și Office 365.",
         "galaxy ai": "Galaxy AI este suita de funcții AI de la Samsung, inclusiv Circle to Search, Live Translate și Photo Assist.",
         "apple intelligence": "Apple Intelligence este suita AI Apple lansată în 2024-2025, integrată în iOS, macOS și aplicațiile Apple.",
-        
-        # === ALTE DISPOZITIVE ===
         "samsung galaxy buds3 pro": "Samsung Galaxy Buds3 Pro sunt căști wireless premium cu ANC adaptiv, sunet 360 și integrare Galaxy AI pentru traducere.",
         "airpods pro 3": "AirPods Pro 3 sunt căștile wireless Apple cu ANC îmbunătățit, Adaptive Audio și integrare perfectă cu ecosistemul Apple.",
         "samsung galaxy ring": "Galaxy Ring este inelul inteligent Samsung pentru monitorizarea sănătății 24/7, cu senzori pentru somn, ritm cardiac și activitate.",
@@ -532,9 +676,6 @@ if "knowledge" not in st.session_state:
         "xbox next": "Next Xbox este viitoarea consolă Microsoft, promițând putere masivă și integrare cu cloud gaming.",
         "nintendo switch 2": "Nintendo Switch 2 este noua consolă hibridă Nintendo, lansată în 2025, cu hardware îmbunătățit și joy-con-uri magnetice.",
         "steam deck 2": "Steam Deck 2 este următoarea consolă portabilă Valve pentru jocuri PC, cu hardware mai puternic și baterie îmbunătățită.",
-    }
-        
-        # --- 19. ROBOTICĂ ȘI AUTOMATIZARE ---
         "robotics": "Robotics is the interdisciplinary field of engineering and science that designs, builds, and operates robots.",
         "robot": "A robot is a programmable machine capable of carrying out complex actions automatically.",
         "automation": "Automation is the technology by which a process or procedure is performed with minimal human assistance.",
@@ -555,8 +696,6 @@ if "knowledge" not in st.session_state:
         "slam": "SLAM (Simultaneous Localization and Mapping) allows a robot to build a map of an unknown environment while tracking its location.",
         "gripper": "A gripper is an end-effector on a robot arm designed to grasp and hold objects.",
         "industrial robot": "An industrial robot is used in manufacturing for tasks like welding, painting, assembly, and packaging.",
-
-        # --- 20. REALITATE VIRTUALĂ ȘI AUGMENTATĂ ---
         "vr": "VR (Virtual Reality) is a fully immersive digital environment that replaces the real world, experienced through headsets.",
         "ar": "AR (Augmented Reality) overlays digital information onto the real world, viewed through smartphones or AR glasses.",
         "mr": "MR (Mixed Reality) blends real and virtual worlds where physical and digital objects interact in real-time.",
@@ -567,8 +706,6 @@ if "knowledge" not in st.session_state:
         "haptic": "Haptic technology provides tactile feedback (vibrations or forces) to simulate the sense of touch in virtual environments.",
         "spatial computing": "Spatial computing uses 3D space to interact with digital content, as seen in Apple Vision Pro.",
         "360 video": "360-degree video captures every direction simultaneously, allowing viewers to look around in VR.",
-
-        # --- 21. GAME DEVELOPMENT ---
         "game engine": "A game engine is software for building video games, providing rendering, physics, and scripting. Examples: Unity, Unreal Engine.",
         "unity": "Unity is a cross-platform game engine used for 2D, 3D, VR, and AR game development.",
         "unreal engine": "Unreal Engine is a powerful 3D game engine by Epic Games known for high-fidelity graphics.",
@@ -584,8 +721,6 @@ if "knowledge" not in st.session_state:
         "minecraft": "Minecraft is the best-selling video game of all time, a sandbox game about building and exploring block worlds.",
         "roblox": "Roblox is an online platform where users create and play games made by other users.",
         "fortnite": "Fortnite is a popular battle royale game by Epic Games, known for its building mechanics and live events.",
-
-        # --- 22. GREEN TECH & SUSTAINABILITY ---
         "green tech": "Green technology uses science to create products and services that are environmentally friendly.",
         "solar panel": "A solar panel converts sunlight into electricity using photovoltaic cells.",
         "ev": "EV (Electric Vehicle) runs on electric motors instead of internal combustion engines. Examples: Tesla, Nissan Leaf.",
@@ -596,8 +731,6 @@ if "knowledge" not in st.session_state:
         "biodegradable": "Biodegradable materials can be broken down naturally by microorganisms without harming the environment.",
         "e-waste": "E-waste is discarded electronic devices and components, a growing global environmental problem.",
         "sustainable computing": "Sustainable computing aims to reduce the environmental impact of computers through energy-efficient design and recycling.",
-
-        # --- 23. TECH ACRONYMS & INTERNET CULTURE ---
         "url": "URL (Uniform Resource Locator) is the address used to access resources on the internet, like https://www.google.com.",
         "isp": "ISP (Internet Service Provider) is a company that provides internet access. Examples: RCS-RDS, Orange, Vodafone.",
         "lan": "LAN (Local Area Network) connects computers in a small area like a home, office, or school.",
@@ -609,7 +742,7 @@ if "knowledge" not in st.session_state:
         "foss": "FOSS (Free and Open Source Software) is software that anyone can use, modify, and distribute freely.",
         "drm": "DRM (Digital Rights Management) controls how digital content is used and distributed to prevent piracy.",
         "captcha": "CAPTCHA is a test used to determine if a user is human or a bot, often requiring image recognition.",
-        "emoji": "Emoji are small digital icons used to express emotions or ideas in electronic messages. 😊🚀💻",
+        "emoji": "Emoji are small digital icons used to express emotions or ideas in electronic messages.",
         "meme": "A meme is a humorous image, video, or text that spreads rapidly online, often modified by users.",
         "troll": "A troll is someone who posts inflammatory messages online to provoke others.",
         "streaming": "Streaming delivers audio or video content over the internet in real-time without downloading. Examples: Netflix, YouTube, Spotify.",
@@ -618,8 +751,6 @@ if "knowledge" not in st.session_state:
         "viral": "Viral content spreads rapidly and widely across the internet through social sharing.",
         "dark web": "The dark web is a hidden part of the internet requiring special software to access, often associated with anonymity.",
         "deep web": "The deep web includes all web pages not indexed by search engines, like private databases and email inboxes.",
-
-        # --- 24. PROGRAMARE AVANSATĂ (EXTRA) ---
         "async": "Asynchronous programming allows a program to handle multiple tasks concurrently without waiting for each to finish.",
         "multithreading": "Multithreading runs multiple threads simultaneously within a single process to improve performance.",
         "lambda": "A lambda function is a small anonymous function in Python defined with `lambda` keyword, used for short operations.",
@@ -652,20 +783,15 @@ if "logged_in" not in st.session_state: st.session_state.logged_in = False
 if "user_db" not in st.session_state: st.session_state.user_db = {}
 if "messages" not in st.session_state: st.session_state.messages = []
 if "chat_history" not in st.session_state: st.session_state.chat_history = {}
+if "user_level" not in st.session_state: st.session_state.user_level = "beginner"
 
 def hash_data(data): return hashlib.sha256(data.encode()).hexdigest()
 
-# ============================================
-# 🗡️ KOSANDRA SWORD OF TRUTH
-# ============================================
 def kosandra_blade(query, num_results=1):
     try:
         results = list(search(query, num_results=num_results, lang="en"))
-        if results:
-            return results[0]
-        return None
-    except Exception as e:
-        st.warning(f"⚠️ Kosandra Blade: {str(e)}")
+        return results[0] if results else None
+    except:
         return None
 
 # ---------- AUTENTIFICARE ----------
@@ -683,62 +809,68 @@ if not st.session_state.logged_in:
             if user in st.session_state.user_db and st.session_state.user_db[user] == hash_data(pin):
                 st.session_state.logged_in = True
                 st.session_state.user = user
-                if user in st.session_state.chat_history: st.session_state.messages = st.session_state.chat_history[user]
-                else: st.session_state.messages = []
-                welcome_msg = f"Bun venit, {user}!"
-                st.success(translate_text(welcome_msg, lang_map[st.session_state.lang]))
+                st.session_state.messages = st.session_state.chat_history.get(user, [])
+                st.success(translate_text(f"Bun venit, {user}!", lang_map[st.session_state.lang]))
                 st.rerun()
             else: st.error(translate_text("Autentificare eșuată.", lang_map[st.session_state.lang]))
     else:
         new_user = st.text_input(translate_text("👤 Alege un nume de utilizator", lang_map[st.session_state.lang]))
         new_pin = st.text_input(translate_text("🔑 Alege o parolă", lang_map[st.session_state.lang]), type="password")
         if st.button(translate_text("Creează Cont", lang_map[st.session_state.lang])):
-            if new_user in st.session_state.user_db: st.error(translate_text("Acest nume de utilizator există deja.", lang_map[st.session_state.lang]))
-            elif len(new_pin) < 4: st.error(translate_text("Parola trebuie să aibă minim 4 caractere.", lang_map[st.session_state.lang]))
+            if new_user in st.session_state.user_db: st.error(translate_text("Utilizator existent.", lang_map[st.session_state.lang]))
+            elif len(new_pin) < 4: st.error(translate_text("Parola minim 4 caractere.", lang_map[st.session_state.lang]))
             else:
                 st.session_state.user_db[new_user] = hash_data(new_pin)
-                st.success(translate_text("Cont creat! Acum te poți autentifica.", lang_map[st.session_state.lang]))
-                st.info(translate_text("Selectează 'Autentificare' și folosește datele tale.", lang_map[st.session_state.lang]))
+                st.success(translate_text("Cont creat!", lang_map[st.session_state.lang]))
 
 # ---------- INTERFAȚA PRINCIPALĂ ----------
 else:
-    greet_msg = translate_text("Salut, {user}! Cu ce te pot ajuta?", lang_map[st.session_state.lang])
-    new_chat_btn = translate_text("➕ Chat Nou", lang_map[st.session_state.lang])
-    chat_input_msg = translate_text("Scrie un mesaj...", lang_map[st.session_state.lang])
-    thinking_msg = translate_text("AEGIS se gândește...", lang_map[st.session_state.lang])
-    not_found_msg = translate_text("Nu am această informație încă. Poți căuta pe Google sau Wikipedia pentru mai multe detalii.", lang_map[st.session_state.lang])
-
-    st.success(greet_msg.format(user=st.session_state.user))
-    if st.button(new_chat_btn): st.session_state.messages = []; st.rerun()
+    level_map = {"beginner": "🟢 Începător", "professional": "🟡 Profesionist", "expert": "🔴 Expert"}
+    st.session_state.user_level = st.selectbox("📊 Nivelul tău:", ["beginner", "professional", "expert"], format_func=lambda x: level_map[x])
+    
+    st.success(translate_text(f"Salut, {st.session_state.user}!", lang_map[st.session_state.lang]))
+    if st.button(translate_text("➕ Chat Nou", lang_map[st.session_state.lang])): st.session_state.messages = []; st.rerun()
     
     for msg in st.session_state.messages:
-        if msg["role"] == "user": st.chat_message("user").write(msg["content"])
-        else: st.chat_message("assistant").write(msg["content"])
+        with st.chat_message(msg["role"]): st.write(msg["content"])
     
-    if prompt := st.chat_input(chat_input_msg):
+    if prompt := st.chat_input(translate_text("Scrie un mesaj...", lang_map[st.session_state.lang])):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"): st.write(prompt)
         
         with st.chat_message("assistant"):
-            with st.spinner(thinking_msg):
-                prompt_ro = translate_text(prompt, "ro")
+            with st.spinner(translate_text("AEGIS se gândește...", lang_map[st.session_state.lang])):
+                prompt_ro = translate_text(prompt, "ro").lower()
                 found = False
                 response_ro = ""
-                sorted_keys = sorted(st.session_state.knowledge.keys(), key=len, reverse=True)
-                for key in sorted_keys:
-                    pattern = r'\b' + re.escape(key) + r'\b'
-                    if re.search(pattern, prompt_ro.lower()):
-                        response_ro = st.session_state.knowledge[key]
+                
+                for key in st.session_state.knowledge:
+                    if key in prompt_ro:
+                        term_data = st.session_state.knowledge[key]
+                        
+                        if isinstance(term_data, dict):
+                            level = st.session_state.user_level
+                            parts = [f"**📚 Definiție:**\n{term_data[level]}"]
+                            if "code" in term_data: parts.append(f"\n**💻 Cod:**\n```python\n{term_data['code']}\n```")
+                            if "real_world" in term_data: parts.append(f"\n**🌍 În viața reală:**\n{term_data['real_world']}")
+                            if "quiz" in term_data:
+                                q = term_data['quiz']
+                                parts.append(f"\n**🧠 Quiz:**\n{q['question']}")
+                                for opt in q['options']: parts.append(f"  {'✅' if opt == q['answer'] else '⬜'} {opt}")
+                            if "related" in term_data: parts.append(f"\n**🔗 Vezi și:** {', '.join(term_data['related'])}")
+                            response_ro = "\n".join(parts)
+                        else:
+                            response_ro = term_data
+                        
                         found = True
                         break
                 
                 if not found:
                     web_result = kosandra_blade(prompt_ro)
-                    if web_result: response_ro = f"Am căutat în universul digital și am găsit acest răspuns: {web_result}"
-                    else: response_ro = not_found_msg
+                    response_ro = f"Am căutat în universul digital și am găsit: {web_result}" if web_result else translate_text("Nu am această informație încă.", lang_map[st.session_state.lang])
                 
                 final_response = translate_text(response_ro, lang_map[st.session_state.lang])
-                st.write(final_response)
+                st.markdown(final_response)
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
         
         st.session_state.chat_history[st.session_state.user] = st.session_state.messages
