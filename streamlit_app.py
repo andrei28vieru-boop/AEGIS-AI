@@ -542,8 +542,206 @@ if "knowledge" not in st.session_state:
             "related": ["https", "api", "dns", "tcp", "rest api"]
         },
     
-    
-    
+            "dns": {
+            "beginner": "DNS e ca o agendă telefonică a internetului. În loc să ții minte numere (adrese IP), scrii numele site-ului (google.com) și DNS-ul îl traduce automat în adresa corectă.",
+            "professional": "DNS (Domain Name System) este sistemul care traduce numele de domenii în adrese IP. Funcționează ca o bază de date distribuită global, cu servere recursive și authoritative.",
+            "expert": "DNS: record types (A, AAAA, CNAME, MX, TXT, NS, SOA), DNSSEC pentru autentificare, TTL pentru caching, Anycast pentru reziliență. DNS over HTTPS (DoH) și DNS over TLS (DoT) pentru confidențialitate.",
+            "code": "# Verifică înregistrări DNS cu Python\nimport socket\ndomain = 'google.com'\nip = socket.gethostbyname(domain)\nprint(f\"{domain} → {ip}\")\n# Output: google.com → 142.250.185.46",
+            "real_world": "De fiecare dată când scrii un site în browser, DNS-ul lucrează în fundal. Fără DNS, ar trebui să ții minte numere IP pentru fiecare site. E ca și cum ai ține minte toate numerele de telefon din lume.",
+            "quiz": {"question": "Ce face DNS-ul?", "options": ["Traduce nume de domenii în IP-uri", "Criptează date", "Stochează fișiere", "Rulează aplicații"], "answer": "Traduce nume de domenii în IP-uri"},
+            "related": ["ip", "http", "https", "domain", "network"]
+        },
+
+            "https": {
+            "beginner": "HTTPS e ca un plic securizat pentru datele tale pe internet. Când vezi lacătul verde în browser, înseamnă că nimeni nu poate citi ce trimiți — parolele și cardul tău sunt în siguranță.",
+            "professional": "HTTPS (HyperText Transfer Protocol Secure) combină HTTP cu TLS/SSL pentru criptare end-to-end, autentificare a serverului și integritatea datelor transmise.",
+            "expert": "TLS 1.3: handshake redus la 1-RTT, forward secrecy obligatorie, ciphersuite-uri moderne (AES-GCM, ChaCha20-Poly1305). Certificate X.509, PKI, Certificate Transparency. HSTS pentru forțare HTTPS.",
+            "code": "# Verifică certificatul SSL al unui site\nimport ssl\nimport socket\nctx = ssl.create_default_context()\nwith ctx.wrap_socket(socket.socket(), server_hostname='google.com') as s:\n    s.connect(('google.com', 443))\n    cert = s.getpeercert()\n    print(f\"Emis de: {cert['issuer']}\")\n    print(f\"Expiră: {cert['notAfter']}\")",
+            "real_world": "Când faci cumpărături online sau intri pe internet banking, HTTPS îți protejează datele. Site-urile fără HTTPS sunt marcate ca 'Not Secure' de browsere.",
+            "quiz": {"question": "Ce indică lacătul verde în browser?", "options": ["Conexiune securizată HTTPS", "Site-ul e rapid", "Site-ul are viruși", "E nevoie de parolă"], "answer": "Conexiune securizată HTTPS"},
+            "related": ["http", "ssl", "tls", "encryption", "certificate"]
+        },
+
+            "tcp": {
+            "beginner": "TCP e ca un poștaș foarte atent. Nu doar că duce pachetele la destinație, dar verifică să ajungă TOATE și în ordinea corectă. Dacă unul se pierde, îl retrimite.",
+            "professional": "TCP (Transmission Control Protocol) oferă comunicare fiabilă, orientată pe conexiune. Garantează livrarea pachetelor în ordine, fără erori, prin three-way handshake și acknowledgment.",
+            "expert": "TCP: congestion control (Slow Start, Congestion Avoidance, Fast Retransmit, Fast Recovery), flow control cu sliding window, segmentare și reassembly. TCP vs UDP: fiabilitate vs viteză.",
+            "code": "# Client TCP simplu în Python\nimport socket\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient.connect(('example.com', 80))\nclient.send(b'GET / HTTP/1.1\\r\\nHost: example.com\\r\\n\\r\\n')\nresponse = client.recv(4096)\nprint(response.decode())\nclient.close()",
+            "real_world": "Când descarci un fișier, trimiți un email, sau încarci o pagină web, TCP se asigură că fiecare bucățică de date ajunge corect și completă. E fundamentul internetului modern.",
+            "quiz": {"question": "TCP garantează...?", "options": ["Livrare fiabilă în ordine", "Cea mai rapidă viteză", "Anonimitate", "Criptare automată"], "answer": "Livrare fiabilă în ordine"},
+            "related": ["ip", "http", "dns", "udp", "network"]
+        },
+
+            "ip address": {
+            "beginner": "O adresă IP e ca adresa casei tale, dar pe internet. Când trimiți un pachet de date, adresa IP spune exact unde trebuie să ajungă — ca un GPS pentru informație.",
+            "professional": "IP (Internet Protocol) adrese identifică unic fiecare dispozitiv pe o rețea. IPv4: 32 biți (4 miliarde adrese). IPv6: 128 biți (adrese practic nelimitate).",
+            "expert": "IPv6: adrese hexazecimale pe 8 grupuri, elimină nevoia de NAT, suportă autoconfigurare (SLAAC), IPsec nativ. Subnetting, CIDR notation, private vs public IP ranges (RFC 1918).",
+            "code": "# Verifică adresa IP publică și locală\nimport requests\nimport socket\n# IP public\npublic_ip = requests.get('https://api.ipify.org').text\nprint(f\"IP Public: {public_ip}\")\n# IP local\nlocal_ip = socket.gethostbyname(socket.gethostname())\nprint(f\"IP Local: {local_ip}\")",
+            "real_world": "Fiecare dispozitiv conectat la internet are o adresă IP — laptopul tău, telefonul Galaxy A56, serverele AEGIS. Poliția folosește IP-uri pentru a găsi infractori online.",
+            "quiz": {"question": "Câte adrese are IPv6?", "options": ["Practic nelimitate (2^128)", "4 miliarde", "1 milion", "65,000"], "answer": "Practic nelimitate (2^128)"},
+            "related": ["dns", "tcp", "http", "router", "network"]
+        },
+
+            "router": {
+            "beginner": "Router-ul e ca un polițist de trafic pentru internetul din casa ta. Dirijează datele între dispozitivele tale și internet, asigurându-se că fiecare pachet ajunge unde trebuie.",
+            "professional": "Un router direcționează pachetele de date între rețele, folosind tabele de rutare și protocoale ca OSPF, BGP. Router-ul de acasă combină funcții de routing, switch și access point Wi-Fi.",
+            "expert": "Routing: static vs dynamic (RIP, OSPF, BGP), NAT/PAT pentru partajare IP public, port forwarding, QoS pentru prioritizare trafic, firewall integrat. MESH networking pentru acoperire extinsă.",
+            "code": "# Verifică ruta către o destinație (traceroute)\nimport subprocess\nresult = subprocess.run(['tracert', 'google.com'], capture_output=True, text=True)\nprint(result.stdout)",
+            "real_world": "Router-ul tău de acasă conectează laptopul, telefonul și televizorul la internet simultan. Router-ele enterprise dirijează traficul pentru companii întregi și provideri de internet.",
+            "quiz": {"question": "Ce face un router?", "options": ["Direcționează traficul între rețele", "Stochează fișiere", "Rulează aplicații", "Editează documente"], "answer": "Direcționează traficul între rețele"},
+            "related": ["ip", "dns", "tcp", "wifi 7", "network"]
+        },
+
+            "ethernet": {
+            "beginner": "Ethernet e ca o șosea pentru date în interiorul casei tale. Conectează laptopul, PC-ul și router-ul prin cabluri, oferind internet stabil și rapid.",
+            "professional": "Ethernet (IEEE 802.3) este tehnologia standard pentru rețele locale (LAN) prin cablu. Viteze: de la 10 Mbps (Ethernet) până la 400 Gbps (400 Gigabit Ethernet).",
+            "expert": "Ethernet standards: 10GBASE-T (cupru), 100GBASE-LR4 (fibră), PoE pentru alimentare prin cablu. Frame structure: preamble, MAC dest/src, EtherType, payload, FCS. Switching vs routing la Layer 2.",
+            "code": "# Verifică adresa MAC a interfeței de rețea\nimport uuid\nmac = uuid.getnode()\nmac_address = ':'.join(f'{(mac >> 8*i) & 0xff:02x}' for i in range(5, -1, -1))\nprint(f\"Adresa MAC: {mac_address}\")",
+            "real_world": "Când conectezi laptopul la router prin cablu, folosești Ethernet. E mai rapid și mai stabil decât Wi-Fi-ul. Toate centrele de date folosesc Ethernet pentru servere.",
+            "quiz": {"question": "Ethernet este o tehnologie pentru...?", "options": ["Rețele locale prin cablu", "Internet wireless", "Stocare de date", "Procesare AI"], "answer": "Rețele locale prin cablu"},
+            "related": ["router", "ip", "wifi 7", "lan", "network"]
+        },
+
+            "lan": {
+            "beginner": "LAN-ul e ca o petrecere privată pentru dispozitivele din casa ta. Laptopul, telefonul și imprimanta vorbesc între ele prin LAN, fără să iasă pe internetul mare.",
+            "professional": "LAN (Local Area Network) conectează dispozitive într-o zonă restrânsă (casă, birou). Folosește Ethernet și Wi-Fi, cu switch-uri și access point-uri pentru conectivitate.",
+            "expert": "LAN topologii: star, mesh, bus. VLAN-uri pentru segmentare logică. Subnetting pentru organizare IP. Protocoale: ARP pentru rezolvare MAC, STP pentru prevenire bucle. 802.1X pentru autentificare de port.",
+            "code": "# Scanează dispozitivele din LAN\nimport os\nnetwork = '192.168.1.'\nfor i in range(1, 255):\n    ip = network + str(i)\n    response = os.system(f'ping -n 1 -w 100 {ip}')\n    if response == 0:\n        print(f\"Dispozitiv găsit: {ip}\")",
+            "real_world": "LAN-ul tău de acasă conectează toate dispozitivele la același router. Când trimiți un fișier de pe laptop pe telefon prin Wi-Fi, folosești LAN-ul.",
+            "quiz": {"question": "Ce înseamnă LAN?", "options": ["Local Area Network", "Large Access Node", "Limited Area Net", "Long-range Antenna Network"], "answer": "Local Area Network"},
+            "related": ["wan", "ethernet", "wifi 7", "router", "network"]
+        },
+
+            "wan": {
+            "beginner": "WAN-ul e ca o autostradă care leagă orașe întregi. În timp ce LAN-ul e casa ta, WAN-ul e internetul întreg — conectează milioane de LAN-uri din toată lumea.",
+            "professional": "WAN (Wide Area Network) acoperă arii geografice extinse, conectând LAN-uri prin routere și link-uri de telecomunicații. Internetul este cel mai mare WAN.",
+            "expert": "WAN technologies: MPLS, SD-WAN, VPN site-to-site, leased lines, satelit. Protocoale: BGP pentru rutare inter-domenii, MPLS pentru traffic engineering. SD-WAN optimizează traficul pe multiple link-uri.",
+            "code": "# Verifică latența către un server extern\nimport subprocess\nresult = subprocess.run(['ping', '-n', '4', 'google.com'], capture_output=True, text=True)\nprint(result.stdout)\n# Măsoară timpul de răspuns prin WAN",
+            "real_world": "Când accesezi un site din America sau Asia, datele călătoresc prin WAN. Companiile cu birouri în mai multe țări folosesc WAN pentru a conecta echipele.",
+            "quiz": {"question": "Internetul este un exemplu de...?", "options": ["WAN", "LAN", "PAN", "MAN"], "answer": "WAN"},
+            "related": ["lan", "router", "ip", "dns", "network"]
+        },
+
+            "subnet mask": {
+            "beginner": "Subnet mask e ca un separator care îți spune care parte din adresa IP e numele străzii și care e numărul casei. Ajută router-ul să știe unde să trimită datele.",
+            "professional": "Subnet mask separă adresa IP în porțiunea de rețea și porțiunea de host. Notație: zecimală punctată (255.255.255.0) sau CIDR (/24).",
+            "expert": "Subnetting: împărțirea unui spațiu IP în subrețele mai mici. VLSM (Variable Length Subnet Masking) pentru utilizare eficientă. Calcul: network address, broadcast address, usable hosts. Supernetting pentru agregare de rute.",
+            "code": "# Calculează adresa de rețea dintr-un IP și subnet mask\nimport ipaddress\nip = ipaddress.IPv4Address('192.168.1.100')\nsubnet = ipaddress.IPv4Network('192.168.1.0/24', strict=False)\nprint(f\"Adresa IP: {ip}\")\nprint(f\"Rețea: {subnet.network_address}\")\nprint(f\"Broadcast: {subnet.broadcast_address}\")\nprint(f\"Host-uri utilizabile: {subnet.num_addresses - 2}\")",
+            "real_world": "Administratorii de rețea folosesc subnet mask-uri pentru a organiza rețelele pe departamente. Acasă, router-ul tău folosește de obicei 255.255.255.0 (254 de dispozitive maxime).",
+            "quiz": {"question": "Ce înseamnă /24 în notație CIDR?", "options": ["255.255.255.0", "255.0.0.0", "255.255.0.0", "255.255.255.255"], "answer": "255.255.255.0"},
+            "related": ["ip address", "router", "lan", "dns", "network"]
+        },
+
+            "mac address": {
+            "beginner": "Adresa MAC e ca o amprentă digitală unică pentru fiecare dispozitiv. Niciun telefon, laptop sau imprimantă nu are aceeași adresă MAC — e înscrisă în hardware din fabrică.",
+            "professional": "MAC (Media Access Control) address este un identificator unic de 48 de biți asignat interfeței de rețea. Format: șase perechi hexazecimale (00:1A:2B:3C:4D:5E).",
+            "expert": "MAC: OUI (Organizationally Unique Identifier) — primii 24 biți identifică producătorul. MAC filtering pentru securitate, MAC spoofing pentru bypass. ARP (Address Resolution Protocol) leagă IP-ul de MAC.",
+            "code": "# Obține adresa MAC a mașinii curente\nimport uuid\nmac = uuid.getnode()\nmac_address = ':'.join(f'{(mac >> 8*i) & 0xff:02x}' for i in range(5, -1, -1))\nprint(f\"Adresa MAC: {mac_address}\")\n# Primele 6 caractere identifică producătorul",
+            "real_world": "Când te conectezi la un Wi-Fi, router-ul îți înregistrează adresa MAC. Unele rețele folosesc MAC filtering pentru a permite doar dispozitivelor autorizate să se conecteze.",
+            "quiz": {"question": "Adresa MAC are...?", "options": ["48 biți (6 perechi hexa)", "32 biți (4 perechi)", "64 biți (8 perechi)", "16 biți (2 perechi)"], "answer": "48 biți (6 perechi hexa)"},
+            "related": ["ip address", "ethernet", "router", "lan", "network"]
+        },
+
+            "ssl": {
+            "beginner": "SSL e ca un bodyguard care-ți păzește conversațiile pe internet. Când vezi lacătul în browser, SSL-ul lucrează să țină hackerii departe de datele tale.",
+            "professional": "SSL (Secure Sockets Layer) și succesorul său TLS criptează comunicarea între browser și server. TLS 1.3 este standardul actual, oferind securitate pentru HTTPS.",
+            "expert": "TLS 1.3: elimină algoritmi slabi (RC4, MD5), suportă doar forward secrecy, handshake redus la 1-RTT. Certificate X.509, PKI, chain of trust, certificate pinning, OCSP stapling.",
+            "code": "# Verifică versiunea TLS a unui server\nimport ssl\nimport socket\nctx = ssl.create_default_context()\nwith ctx.wrap_socket(socket.socket(), server_hostname='google.com') as s:\n    s.connect(('google.com', 443))\n    print(f\"Versiune TLS: {s.version()}\")",
+            "real_world": "Când faci cumpărături online, SSL/TLS îți criptează datele cardului. Orice site cu 'https://' și lacătul verde folosește această tehnologie.",
+            "quiz": {"question": "Care este succesorul modern al SSL?", "options": ["TLS (Transport Layer Security)", "SSH", "FTP", "HTTP"], "answer": "TLS (Transport Layer Security)"},
+            "related": ["https", "encryption", "certificate", "tls", "cybersecurity"]
+        },
+
+            "tls": {
+            "beginner": "TLS e versiunea modernă a SSL-ului. E ca un scut invizibil care-ți protejează parolele, mesajele și plățile online de ochii curioșilor.",
+            "professional": "TLS (Transport Layer Security) asigură confidențialitatea, integritatea și autentificarea în comunicațiile web. TLS 1.3 oferă securitate îmbunătățită față de versiunile anterioare.",
+            "expert": "TLS 1.3: elimină suportul pentru ciphersuite-uri nesigure, impune Perfect Forward Secrecy, reduce latența handshake-ului. 0-RTT pentru reconectări rapide. Certificate Transparency pentru detectarea certificatelor malițioase.",
+            "code": "# Testează suportul TLS al unui server\nimport subprocess\nresult = subprocess.run(['openssl', 's_client', '-connect', 'google.com:443', '-tls1_3'], capture_output=True, text=True)\nif 'CONNECTED' in result.stdout:\n    print(\"Serverul suportă TLS 1.3!\")\nelse:\n    print(\"Serverul nu suportă TLS 1.3\")",
+            "real_world": "Băncile, magazinele online și rețelele sociale folosesc TLS să-ți protejeze datele. Fără TLS, oricine ar putea să-ți fure parolele pe Wi-Fi-ul public.",
+            "quiz": {"question": "Ce oferă Perfect Forward Secrecy în TLS?", "options": ["Chei de sesiune unice, neafectate de compromiterea cheii private", "Criptare mai rapidă", "Compatibilitate cu dispozitive vechi", "Conexiune fără parolă"], "answer": "Chei de sesiune unice, neafectate de compromiterea cheii private"},
+            "related": ["ssl", "https", "encryption", "certificate", "cybersecurity"]
+        },
+
+            "certificate": {
+            "beginner": "Un certificat digital e ca un pașaport pentru site-uri web. Demonstrează că site-ul este cine pretinde că e, nu un fals. E eliberat de autorități de încredere.",
+            "professional": "Certificatele SSL/TLS (X.509) autentifică identitatea unui website și permit criptarea conexiunilor. Sunt emise de Certificate Authorities (CA) precum Let's Encrypt, DigiCert, Sectigo.",
+            "expert": "Certificate: Domain Validation (DV), Organization Validation (OV), Extended Validation (EV). Chain of trust: root CA → intermediate CA → leaf certificate. Wildcard (*.domain.com), SAN (multi-domain). ACME protocol pentru automatizare (Let's Encrypt).",
+            "code": "# Generează certificat self-signed (test)\nimport subprocess\nsubprocess.run([\n    'openssl', 'req', '-x509', '-newkey', 'rsa:4096',\n    '-keyout', 'key.pem', '-out', 'cert.pem',\n    '-days', '365', '-nodes',\n    '-subj', '/CN=localhost'\n])\nprint(\"Certificat self-signed generat!\")",
+            "real_world": "Let's Encrypt oferă certificate SSL GRATUITE pentru milioane de site-uri. Înainte, certificatele costau sute de dolari pe an. Acum orice site poate fi securizat gratuit.",
+            "quiz": {"question": "Ce organizație oferă certificate SSL gratuite?", "options": ["Let's Encrypt", "Microsoft", "Google", "Amazon"], "answer": "Let's Encrypt"},
+            "related": ["ssl", "tls", "https", "certificate authority", "encryption"]
+        },
+
+            "ssh": {
+            "beginner": "SSH e ca o cheie magică ce-ți deschide ușa către servere de la distanță. Poți controla un computer din altă parte a lumii, în siguranță, prin criptare.",
+            "professional": "SSH (Secure Shell) oferă acces terminal criptat la servere remote. Înlocuiește Telnet și FTP nesecurizate. Folosește autentificare prin parolă sau chei publice/private.",
+            "expert": "SSH: key-based auth (RSA 4096, Ed25519), agent forwarding, port forwarding (local/remote/dynamic), SSH tunneling, config file (~/.ssh/config), multiplexing pentru conexiuni rapide, SSHFP DNS records.",
+            "code": "# Conectare SSH cu Python\nimport paramiko\nclient = paramiko.SSHClient()\nclient.set_missing_host_key_policy(paramiko.AutoAddPolicy())\nclient.connect('example.com', username='user', key_filename='/path/to/key')\nstdin, stdout, stderr = client.exec_command('ls -la')\nprint(stdout.read().decode())\nclient.close()",
+            "real_world": "Administratorii de servere folosesc SSH zilnic. GitHub folosește SSH pentru push securizat de cod. Fără SSH, internetul ar fi mult mai nesigur.",
+            "quiz": {"question": "SSH înlocuiește ce protocol nesecurizat?", "options": ["Telnet", "HTTPS", "FTP", "SMTP"], "answer": "Telnet"},
+            "related": ["encryption", "linux", "terminal", "ssl", "cybersecurity"]
+        },
+
+            "flask": {
+            "beginner": "Flask e ca un set de piese LEGO pentru site-uri web în Python. E atât de simplu încât poți face un site funcțional în doar 5 linii de cod.",
+            "professional": "Flask este un micro-framework Python pentru aplicații web, oferind routing, template-uri Jinja2 și suport pentru extensii. Ideal pentru API-uri și aplicații mici până la medii.",
+            "expert": "Flask: application factory pattern, blueprints pentru modularizare, context locals (request, session, g), before/after request hooks, error handlers. Extensii: Flask-SQLAlchemy, Flask-Migrate, Flask-Login, Flask-CORS.",
+            "code": "from flask import Flask, jsonify\napp = Flask(__name__)\n\n@app.route('/')\ndef home():\n    return jsonify({'message': 'Salut, Andrei!', 'project': 'AEGIS'})\n\nif __name__ == '__main__':\n    app.run(debug=True, port=5000)",
+            "real_world": "Pinterest, LinkedIn și Reddit au folosit Flask la început. E perfect pentru prototipuri rapide și API-uri. AEGIS ar putea avea un backend Flask!",
+            "quiz": {"question": "Flask este un framework pentru...?", "options": ["Python", "JavaScript", "Ruby", "PHP"], "answer": "Python"},
+            "related": ["python", "django", "api rest", "json", "fastapi"]
+        },
+
+            "django": {
+            "beginner": "Django e ca un supermarket complet pentru site-uri web. Vine cu TOT inclus — autentificare, bază de date, panou admin. E framework-ul Python preferat pentru proiecte mari.",
+            "professional": "Django este un framework Python full-stack, urmând principiul 'batteries included'. Oferă ORM, admin panel, autentificare, formulare și securitate încorporată.",
+            "expert": "Django: MTV architecture (Model-Template-View), QuerySet lazy evaluation, middleware stack, class-based views, Django REST Framework pentru API-uri. Migrații automate de schemă. Suport pentru PostgreSQL, MySQL, SQLite.",
+            "code": "# Django: views.py\nfrom django.http import JsonResponse\n\ndef home(request):\n    return JsonResponse({\n        'message': 'Salut, Andrei!',\n        'project': 'AEGIS',\n        'framework': 'Django'\n    })",
+            "real_world": "Instagram, Spotify, YouTube și NASA folosesc Django. E alegerea #1 pentru startup-uri care vor să construiască rapid aplicații web complexe și sigure.",
+            "quiz": {"question": "Django urmează principiul...?", "options": ["Batteries included (totul inclus)", "Micro-framework minimalist", "Doar frontend", "Doar pentru mobile"], "answer": "Batteries included (totul inclus)"},
+            "related": ["python", "flask", "sql", "orm", "fastapi"]
+        },
+
+            "fastapi": {
+            "beginner": "FastAPI e ca Flask, dar pe steroizi. E cel mai rapid framework Python pentru API-uri și vine cu documentație automată. Scrii codul și primești un site de testare GRATIS.",
+            "professional": "FastAPI este un framework Python modern pentru API-uri, folosind type hints și async/await. Oferă validare automată, documentație OpenAPI și performanță comparabilă cu Node.js.",
+            "expert": "FastAPI: Pydantic pentru validare, Starlette pentru performanță asincronă, dependency injection, background tasks, WebSocket support. Generare automată de OpenAPI/Swagger docs. Testare cu TestClient.",
+            "code": "from fastapi import FastAPI\napp = FastAPI(title='AEGIS API', version='1.0')\n\n@app.get('/')\nasync def home():\n    return {'message': 'Salut, Andrei!', 'project': 'AEGIS'}\n\n@app.get('/terms/{term_id}')\nasync def get_term(term_id: str):\n    return {'term': term_id, 'definition': 'Coming soon...'}",
+            "real_world": "Netflix, Uber și Microsoft folosesc FastAPI pentru API-uri rapide. E framework-ul Python cu cea mai rapidă creștere. Perfect pentru un API AEGIS în viitor!",
+            "quiz": {"question": "FastAPI generează automat...?", "options": ["Documentație OpenAPI/Swagger", "Aplicații mobile", "Jocuri video", "Editoare de text"], "answer": "Documentație OpenAPI/Swagger"},
+            "related": ["python", "flask", "django", "api rest", "json"]
+        },
+
+            "pandas": {
+            "beginner": "Pandas e ca un Excel ultra-inteligent pentru programatori. Analizezi date, faci grafice, filtrezi informații — totul în câteva linii de cod Python.",
+            "professional": "Pandas este o bibliotecă Python pentru manipularea și analiza datelor, oferind structuri DataFrame și Series pentru date tabulare și time series.",
+            "expert": "Pandas: vectorized operations, groupby aggregation, merge/join/concat, pivot tables, handling missing data, multi-index, datetime operations. Integrare cu NumPy, Matplotlib, Scikit-learn. Performanță prin Cython backend.",
+            "code": "import pandas as pd\n\ndata = {\n    'nume': ['Andrei', 'Ana', 'Maria'],\n    'varsta': [15, 17, 14],\n    'proiect': ['AEGIS', 'Design', 'Web']\n}\ndf = pd.DataFrame(data)\nprint(df.describe())\nprint(f\"Vârsta medie: {df['varsta'].mean():.1f} ani\")",
+            "real_world": "Toate companiile mari — Google, Facebook, Goldman Sachs — folosesc Pandas pentru analiză de date. E folosit în știință, finanțe, marketing și sport.",
+            "quiz": {"question": "Care e structura principală de date în Pandas?", "options": ["DataFrame", "Array", "List", "Dictionary"], "answer": "DataFrame"},
+            "related": ["python", "numpy", "matplotlib", "data science", "machine learning"]
+        },
+
+            "numpy": {
+            "beginner": "NumPy e ca un calculator științific ultra-rapid pentru Python. Face calcule matematice complexe în milisecunde — matrice, vectori, statistică.",
+            "professional": "NumPy este fundamentul științei datelor în Python, oferind array-uri N-dimensionale și funcții matematice optimizate în C pentru performanță.",
+            "expert": "NumPy: ndarray cu broadcasting, vectorization, slicing avansat, fancy indexing, universal functions (ufuncs), linear algebra (numpy.linalg), random sampling, FFT. Integrare cu C prin ctypes și Cython.",
+            "code": "import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\nprint(f\"Medie: {np.mean(arr)}\")\nprint(f\"Deviație standard: {np.std(arr):.2f}\")\nprint(f\"Maxim: {np.max(arr)}, Minim: {np.min(arr)}\")\n\n# Operații pe matrice\nmatrix = np.array([[1, 2], [3, 4]])\nprint(f\"Determinant: {np.linalg.det(matrix):.0f}\")",
+            "real_world": "NASA, CERN și toate companiile de AI folosesc NumPy. E biblioteca #1 pentru calcule științifice în Python. Toate framework-urile de ML (TensorFlow, PyTorch) se bazează pe concepte NumPy.",
+            "quiz": {"question": "NumPy optimizează calculele prin...?", "options": ["Vectorizare și cod C", "JavaScript în browser", "CSS și HTML", "Machine learning"], "answer": "Vectorizare și cod C"},
+            "related": ["python", "pandas", "matplotlib", "data science", "scikit-learn"]
+        },
+
+            "tensorflow": {
+            "beginner": "TensorFlow e ca o fabrică de inteligență artificială creată de Google. Construiești modele AI care recunosc poze, traduc limbi și prezic viitorul — totul cu cod Python.",
+            "professional": "TensorFlow este un framework open-source de la Google pentru machine learning și deep learning. Oferă Keras API pentru construirea rapidă de rețele neuronale.",
+            "expert": "TensorFlow: static și dynamic graphs (Eager Execution), TensorBoard pentru vizualizare, TF Serving pentru deployment, TF Lite pentru mobile/IoT, distribuție pe GPU/TPU, mixed precision training.",
+            "code": "import tensorflow as tf\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Dense\n\nmodel = Sequential([\n    Dense(128, activation='relu', input_shape=(784,)),\n    Dense(64, activation='relu'),\n    Dense(10, activation='softmax')\n])\nmodel.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])\nprint(\"Model TensorFlow creat cu succes!\")",
+            "real_world": "Google Translate, Google Photos și YouTube recomandări folosesc TensorFlow. E folosit de Airbnb, Uber, Twitter și mii de companii pentru AI.",
+            "quiz": {"question": "Cine a creat TensorFlow?", "options": ["Google", "Facebook", "Microsoft", "Apple"], "answer": "Google"},
+            "related": ["pytorch", "keras", "deep learning", "machine learning", "ai"]
+        },
+
 
         # ============================================
         # 📚 EXPERT TERMS — Quick Definitions
@@ -1361,7 +1559,248 @@ if "knowledge" not in st.session_state:
         "smart dust": "Smart dust refers to tiny wireless sensors smaller than a grain of sand, used for distributed environmental monitoring.",
         "quantum internet": "Quantum internet uses entangled particles for ultra-secure communication that cannot be intercepted without detection.",
         "fusion energy": "Fusion energy replicates the sun's power on Earth, promising nearly unlimited clean energy if successfully commercialized.",
+
+                # --- 46. STANDARDE ȘI CERTIFICĂRI IT ---
+        "iso 27001": "ISO 27001 is the international standard for information security management systems (ISMS), providing a framework for protecting data assets.",
+        "comptia a+": "CompTIA A+ is an entry-level IT certification covering hardware, software, networking, and troubleshooting fundamentals.",
+        "comptia security+": "CompTIA Security+ is a globally recognized certification for foundational cybersecurity skills and knowledge.",
+        "comptia network+": "CompTIA Network+ certifies knowledge of networking concepts, infrastructure, operations, and security.",
+        "cisco ccna": "Cisco CCNA (Cisco Certified Network Associate) validates skills in network fundamentals, access, IP services, and security.",
+        "aws certified": "AWS Certified Solutions Architect validates expertise in designing distributed systems on Amazon Web Services.",
+        "google cloud certified": "Google Cloud Certified Professional Cloud Architect validates skills in designing and managing Google Cloud solutions.",
+        "microsoft certified azure": "Microsoft Certified Azure Administrator validates skills in managing Azure subscriptions, resources, and services.",
+        "pmp": "PMP (Project Management Professional) is a globally recognized project management certification by PMI.",
+        "itil": "ITIL (Information Technology Infrastructure Library) is a framework for IT service management best practices.",
+
+        # --- 47. TEHNOLOGII DE STOCARE ---
+        "nvme": "NVMe (Non-Volatile Memory Express) is a high-performance protocol for SSDs using PCIe lanes, offering much faster speeds than SATA.",
+        "sata": "SATA (Serial Advanced Technology Attachment) is an interface for connecting storage devices like HDDs and SSDs to a computer.",
+        "sas": "SAS (Serial Attached SCSI) is a high-performance storage interface for enterprise hard drives, offering better reliability than SATA.",
+        "iscsi": "iSCSI (Internet Small Computer System Interface) transports SCSI commands over IP networks for storage area networks.",
+        "nas": "NAS (Network Attached Storage) is a dedicated file storage device connected to a network, allowing multiple users to access shared files.",
+        "san": "SAN (Storage Area Network) is a high-speed network that provides block-level storage access to servers, used in data centers.",
+        "raid 0": "RAID 0 stripes data across multiple drives for maximum performance, but offers no redundancy — if one drive fails, all data is lost.",
+        "raid 1": "RAID 1 mirrors data across two drives, providing full redundancy — if one drive fails, data remains available on the other.",
+        "raid 5": "RAID 5 stripes data with distributed parity across at least three drives, offering a balance of performance and fault tolerance.",
+        "raid 10": "RAID 10 combines mirroring and striping, requiring at least four drives, offering both high performance and full redundancy.",
+
+        # --- 48. COMUNICAȚII ȘI MESAGERIE ---
+        "smtp server": "An SMTP server sends outgoing emails from a client to a recipient's mail server using the SMTP protocol on port 25, 465, or 587.",
+        "exchange server": "Microsoft Exchange Server is a mail server and calendaring platform for businesses, integrating with Outlook.",
+        "slack": "Slack is a cloud-based team communication platform with channels, direct messaging, and integrations with hundreds of tools.",
+        "discord": "Discord is a communication platform originally for gamers, now used broadly for voice, video, and text chat in communities.",
+        "teams": "Microsoft Teams is a collaboration platform integrating chat, video meetings, file storage, and Office 365 applications.",
+        "zoom": "Zoom is a video conferencing platform known for its ease of use, supporting large meetings, webinars, and screen sharing.",
+        "webhook": "A webhook is a way for an app to provide real-time information to another app by sending HTTP POST requests when events occur.",
+        "pub sub": "Pub/Sub (Publish-Subscribe) is a messaging pattern where senders (publishers) send messages without knowing who receives them (subscribers).",
+        "websocket vs socket": "WebSocket provides full-duplex communication over a single connection for web apps; raw sockets are lower-level network programming interfaces.",
+        "webrtc": "WebRTC (Web Real-Time Communication) enables peer-to-peer audio, video, and data sharing in browsers without plugins.",
+
+        # --- 49. DESIGN ȘI ARHITECTURĂ SOFTWARE ---
+        "uml": "UML (Unified Modeling Language) is a standardized way to visualize the design of a software system using diagrams.",
+        "class diagram": "A class diagram shows the structure of a system by displaying classes, attributes, methods, and relationships between objects.",
+        "sequence diagram": "A sequence diagram shows how objects interact in a particular scenario, displaying the sequence of messages exchanged.",
+        "entity relationship diagram": "An ERD (Entity Relationship Diagram) visualizes database structure, showing entities (tables), attributes (columns), and relationships.",
+        "design system": "A design system is a collection of reusable UI components, patterns, and guidelines for building consistent user interfaces.",
+        "responsive vs adaptive": "Responsive design fluidly adjusts to any screen size; adaptive design uses fixed layouts for specific screen sizes.",
+        "accessibility": "Web accessibility (a11y) ensures websites are usable by people with disabilities, following standards like WCAG.",
+        "i18n": "i18n (Internationalization) prepares software to support multiple languages and regional differences without code changes.",
+        "l10n": "l10n (Localization) adapts software for a specific region or language by translating text and adjusting cultural conventions.",
+        "micro frontend": "Micro frontends extend the microservices concept to the frontend, splitting a web app into independently deployable features.",
+
+        # --- 50. DEZVOLTARE JOCURI ---
+        "game loop": "A game loop is the core cycle of a video game that processes input, updates game state, and renders frames continuously.",
+        "collision detection": "Collision detection determines when two objects in a game intersect, triggering events like damage, bouncing, or collecting items.",
+        "sprite": "A sprite is a 2D image or animation integrated into a game scene, representing characters, objects, or effects.",
+        "shader": "A shader is a program that runs on a GPU to calculate rendering effects like lighting, shadows, and textures.",
+        "physics engine": "A physics engine simulates real-world physics in games, handling gravity, collisions, and object movement.",
+        "asset pipeline": "The asset pipeline manages the creation, import, and optimization of game assets like textures, models, and sounds.",
+        "level design": "Level design creates the stages, maps, and environments of a game, balancing challenge, exploration, and storytelling.",
+        "procedural generation": "Procedural generation creates game content algorithmically rather than manually, used for maps, levels, and items.",
+        "multiplayer netcode": "Netcode handles communication between players in online games, managing latency, synchronization, and lag compensation.",
+        "game ai": "Game AI controls non-player character behavior, pathfinding (A* algorithm), and decision-making in video games.",
+
+        # --- 51. SECURITATE PERSONALĂ ȘI PRIVACY ---
+        "password manager": "A password manager securely stores and generates complex passwords, requiring only one master password to access all accounts.",
+        "phishing detection": "Phishing detection identifies fraudulent attempts to steal personal information, often using email filtering and AI analysis.",
+        "vpn vs proxy": "VPN encrypts all traffic and routes it through a server for privacy; a proxy only routes specific traffic without encryption.",
+        "incognito mode": "Incognito mode prevents local browser history and cookies from being saved, but does not hide activity from ISPs or websites.",
+        "end to end encryption": "End-to-end encryption ensures only the communicating users can read messages — not even the service provider has access.",
+        "metadata": "Metadata is data about data — like who you called, when, and for how long — often more revealing than content itself.",
+        "digital footprint": "A digital footprint is the trail of data you leave online through social media, browsing, and online activity.",
+        "cookies tracking": "Tracking cookies follow your browsing across websites to build a profile for advertising and analytics purposes.",
+        "gdpr": "GDPR (General Data Protection Regulation) is an EU law protecting personal data and privacy, with strict rules for companies handling data.",
+        "ccpa": "CCPA (California Consumer Privacy Act) gives California residents rights over their personal data, including the right to know, delete, and opt-out.",
+
+        # --- 52. PROGRAMARE FUNCȚIONALĂ ---
+        "functional programming": "Functional programming treats computation as the evaluation of mathematical functions, avoiding side effects and mutable data.",
+        "pure function": "A pure function always returns the same output for the same input and has no side effects, making it predictable and testable.",
+        "immutable data": "Immutable data cannot be changed after creation. Instead of modifying, new copies are made, preventing unexpected bugs.",
+        "higher order function": "A higher-order function takes other functions as arguments or returns them, enabling powerful abstractions like map, filter, and reduce.",
+        "currying": "Currying transforms a function with multiple arguments into a sequence of functions, each taking a single argument.",
+        "closure": "A closure is a function that remembers variables from its outer scope even after the outer function has finished executing.",
+        "monad": "A monad is an abstraction that wraps values and chains operations, common in languages like Haskell and used in JavaScript Promises.",
+        "tail recursion": "Tail recursion is a recursive function where the recursive call is the last operation, allowing compilers to optimize it into a loop.",
+        "lazy evaluation": "Lazy evaluation delays computation until the result is needed, improving performance by avoiding unnecessary calculations.",
+        "pattern matching": "Pattern matching checks a value against patterns and executes code based on which pattern fits, used extensively in functional languages.",
+
+        # --- 53. BAZE DE DATE AVANSATE 2 ---
+        "graph database": "Graph databases like Neo4j store data as nodes and edges, ideal for relationships like social networks and recommendations.",
+        "time series database": "Time series databases like InfluxDB optimize storage and queries for time-stamped data like sensor readings and stock prices.",
+        "columnar database": "Columnar databases like Cassandra store data by columns instead of rows, optimizing for analytical queries over large datasets.",
+        "in memory database": "In-memory databases like Redis keep all data in RAM for sub-millisecond access, used for caching and real-time applications.",
+        "bloom filter": "A Bloom filter is a space-efficient probabilistic data structure that tests if an element is in a set, with possible false positives.",
+        "write ahead log": "WAL (Write-Ahead Log) records changes before they are written to the database, ensuring data integrity after crashes.",
+        "two phase commit": "Two-phase commit is a protocol ensuring all participants in a distributed transaction agree to commit or abort.",
+        "paxos": "Paxos is a consensus algorithm used in distributed systems to agree on a single value, forming the basis of many distributed databases.",
+        "raft": "Raft is a consensus algorithm designed to be easier to understand than Paxos, used in etcd, CockroachDB, and other systems.",
+        "eventual consistency": "Eventual consistency guarantees that if no new updates are made, all replicas will eventually converge to the same value.",
+
+        # --- 54. LINUX ȘI ADMINISTRARE SISTEM ---
+        "ssh": "SSH (Secure Shell) provides encrypted remote terminal access to servers, replacing insecure protocols like Telnet.",
+        "scp": "SCP (Secure Copy Protocol) transfers files securely between hosts using SSH for encryption and authentication.",
+        "rsync": "rsync efficiently synchronizes files between systems, transferring only changed parts of files for speed.",
+        "iptables": "iptables is a Linux firewall tool that configures packet filtering rules in the kernel's netfilter framework.",
+        "systemctl": "systemctl controls the systemd system and service manager, used to start, stop, and manage services on Linux.",
+        "journalctl": "journalctl queries and displays logs from systemd's journal, offering powerful filtering by time, service, and priority.",
+        "top": "top displays real-time Linux system information including running processes, CPU usage, and memory consumption.",
+        "htop": "htop is an interactive process viewer for Linux with a better interface than top, supporting mouse controls and visual bars.",
+        "netstat": "netstat shows network connections, routing tables, and interface statistics for monitoring network activity.",
+        "lsof": "lsof (List Open Files) displays all open files and the processes using them — on Unix, everything is a file.",
+
+        # --- 55. TEHNOLOGII VIITOARE ---
+        "spintronics": "Spintronics uses electron spin instead of charge for data processing and storage, promising faster and more efficient devices.",
+        "photonic computing": "Photonic computing uses light instead of electricity for computation, enabling ultra-fast data processing with minimal heat.",
+        "biocomputing": "Biocomputing uses biological molecules like DNA for computation, offering massive parallelism for specific problem types.",
+        "carbon nanotubes": "Carbon nanotubes are cylindrical molecules with extraordinary strength and electrical properties, promising faster transistors than silicon.",
+        "room temperature superconductor": "Room temperature superconductors would transmit electricity with zero resistance without cooling, revolutionizing energy and computing.",
+        "swarm robotics": "Swarm robotics coordinates large numbers of simple robots to accomplish complex tasks through decentralized control.",
+        "autonomous vehicles": "Autonomous vehicles use AI, lidar, and cameras to navigate without human input, classified from Level 0 (no automation) to Level 5 (full automation).",
+        "space internet": "Space internet uses satellite constellations like Starlink to provide global broadband coverage, even in remote areas.",
+        "lab grown meat": "Lab-grown meat is cultured from animal cells without slaughtering animals, offering sustainable protein production.",
+        "vertical farming": "Vertical farming grows crops in stacked layers indoors, using LED lighting and hydroponics for year-round food production.",
+
+                # --- 56. INSTRUMENTE DE MONITORIZARE ---
+        "nagios": "Nagios is an open-source monitoring system that watches hosts and services, alerting when problems occur.",
+        "zabbix": "Zabbix is an enterprise monitoring platform for networks, servers, and applications with auto-discovery and visualization.",
+        "datadog": "Datadog is a cloud monitoring and analytics platform providing infrastructure, application, and log monitoring.",
+        "new relic": "New Relic is an observability platform for real-time application performance monitoring and analytics.",
+        "splunk": "Splunk collects, indexes, and analyzes machine data for security, IT operations, and business analytics.",
+        "elasticsearch": "Elasticsearch is a distributed search and analytics engine used for full-text search, logging, and data analysis.",
+        "kibana": "Kibana is a visualization tool for Elasticsearch data, creating dashboards and charts for log and metrics analysis.",
+        "logstash": "Logstash processes and transforms data before sending it to Elasticsearch, handling logs, metrics, and events.",
+        "pagerduty": "PagerDuty is an incident management platform that alerts teams and coordinates responses to outages.",
+        "uptime": "Uptime measures the percentage of time a system is operational, typically expressed as 99.9% ('three nines') availability.",
+
+        # --- 57. CONTAINERE ȘI ORCHESTRARE ---
+        "container vs vm": "Containers share the host OS kernel and isolate applications; VMs run full guest OS on hypervisor for stronger isolation.",
+        "docker hub": "Docker Hub is a cloud registry for sharing and managing Docker container images, public and private.",
+        "dockerfile": "A Dockerfile is a text file with instructions to build a Docker image, defining the environment and dependencies.",
+        "docker network": "Docker network allows containers to communicate with each other, supporting bridge, host, overlay, and custom drivers.",
+        "docker volume": "Docker volumes persist data independently of container lifecycle, used for databases and file storage.",
+        "kubectl": "kubectl is the command-line tool for interacting with Kubernetes clusters, used to deploy and manage applications.",
+        "kubeconfig": "kubeconfig is a configuration file used by kubectl to connect to Kubernetes clusters with authentication details.",
+        "helm chart": "A Helm chart is a package of pre-configured Kubernetes resources, making application deployment repeatable and shareable.",
+        "ingress": "Kubernetes Ingress manages external access to services, typically HTTP/HTTPS routing with load balancing and SSL termination.",
+        "configmap": "A ConfigMap stores non-sensitive configuration data as key-value pairs, decoupling configuration from application code.",
+
+        # --- 58. SISTEME DE OPERARE MOBILE ---
+        "ios vs android": "iOS is Apple's closed mobile OS with strict control; Android is Google's open-source OS with broader device support.",
+        "ipados": "iPadOS is Apple's tablet-optimized version of iOS with multitasking, Apple Pencil support, and desktop-class features.",
+        "wear os vs watchos": "Wear OS is Google's smartwatch platform for multiple brands; watchOS is Apple's exclusive Watch operating system.",
+        "huawei harmonyos": "HarmonyOS is Huawei's distributed operating system designed for phones, tablets, IoT, and smart home devices.",
+        "samsung one ui": "One UI is Samsung's Android overlay with a clean design, one-handed usability, and Galaxy ecosystem features.",
+        "xiaomi hyperos": "HyperOS is Xiaomi's unified operating system replacing MIUI, connecting phones, cars, and smart home products.",
+        "google play vs app store": "Google Play serves Android apps with more openness; Apple App Store has stricter review and higher revenue per app.",
+        "sideloading": "Sideloading installs apps from outside the official store, allowed on Android with warnings, restricted on iOS.",
+        "mobile device management": "MDM allows organizations to manage, secure, and enforce policies on employee mobile devices remotely.",
+        "huawei mobile services": "HMS is Huawei's alternative to Google Mobile Services, providing APIs, app store, and cloud for Huawei devices.",
+
+        # --- 59. REALITATE VIRTUALĂ ȘI AUGMENTATĂ 2 ---
+        "inside out tracking": "Inside-out tracking uses cameras on the headset to map surroundings and track movement, without external sensors.",
+        "outside in tracking": "Outside-in tracking uses external sensors placed in the room to track headset and controller movements precisely.",
+        "foveated rendering": "Foveated rendering renders only the area the user is looking at in high detail, saving GPU resources.",
+        "passthrough": "Passthrough uses cameras on VR headsets to show the real world, enabling mixed reality experiences.",
+        "haptic gloves": "Haptic gloves provide tactile feedback in VR, letting users feel virtual objects through vibrations and force.",
+        "volumetric capture": "Volumetric capture records subjects in 3D space using multiple cameras, creating holographic video content.",
+        "lightfield": "Lightfield technology captures both intensity and direction of light rays, enabling realistic 3D displays.",
+        "eye tracking": "Eye tracking follows where a user is looking, enabling foveated rendering and more intuitive interfaces.",
+        "full body tracking": "Full body tracking captures entire body movement for VR, enabling realistic avatars and motion in virtual spaces.",
+        "omnidirectional treadmill": "Omnidirectional treadmills let users walk naturally in any direction in VR while staying in place.",
+
+        # --- 60. ENERGIE ȘI SUSTENABILITATE ---
+        "carbon neutral": "Carbon neutral means balancing emitted carbon with equivalent carbon removal or offsets, achieving net zero carbon footprint.",
+        "net zero": "Net zero extends carbon neutrality by eliminating all avoidable emissions and offsetting remaining unavoidable ones.",
+        "circular economy": "Circular economy designs products for reuse, repair, and recycling, minimizing waste and resource consumption.",
+        "right to repair": "Right to repair gives consumers legal access to repair their own devices, opposing manufacturer restrictions.",
+        "green data center": "Green data centers minimize environmental impact through renewable energy, efficient cooling, and sustainable design.",
+        "e-waste recycling": "E-waste recycling recovers valuable materials like gold, copper, and lithium from discarded electronics.",
+        "low power chip": "Low-power chips use energy-efficient architectures like ARM big.LITTLE and Intel E-cores to reduce consumption.",
+        "solar efficiency": "Solar efficiency measures what percentage of sunlight a panel converts to electricity, with current records around 47%.",
+        "battery recycling": "Battery recycling extracts lithium, cobalt, and nickel from used batteries for reuse in new battery production.",
+        "smart home energy": "Smart home energy systems optimize electricity use through smart thermostats, automated lights, and real-time monitoring.",
+
+        # --- 61. ROBOTICĂ ȘI AUTOMATIZARE 2 ---
+        "ros topics": "ROS topics are named buses over which nodes exchange messages in a publish-subscribe pattern.",
+        "ros services": "ROS services allow synchronous request-reply communication between ROS nodes for specific tasks.",
+        "ros actions": "ROS actions provide asynchronous goal-oriented communication with feedback, suitable for long-running tasks.",
+        "gazebo": "Gazebo is a 3D robot simulation environment with physics engine, used with ROS for testing algorithms.",
+        "rviz": "RViz is a 3D visualization tool for ROS, displaying robot models, sensor data, and maps in real-time.",
+        "slam algorithm": "SLAM (Simultaneous Localization and Mapping) builds maps while tracking robot position, using lidar or cameras.",
+        "inverse kinematics": "Inverse kinematics calculates joint angles needed to position a robot's end-effector at a desired point.",
+        "forward kinematics": "Forward kinematics calculates the position of a robot's end-effector given specific joint angles.",
+        "pid controller": "PID (Proportional-Integral-Derivative) controller adjusts robot motors by calculating error correction for smooth movement.",
+        "ros bag": "ROS bag files record and play back ROS message data, used for debugging and testing robotic systems.",
+
+        # --- 62. CERCETARE ȘI ACADEMIC ---
+        "peer review": "Peer review is the evaluation of scientific work by others in the same field before publication.",
+        "arxiv": "arXiv is a free online repository of scientific papers, widely used in physics, computer science, and mathematics.",
+        "impact factor": "Impact factor measures the frequency a journal's articles are cited, indicating its influence in the field.",
+        "open access": "Open access makes research freely available to everyone without paywalls, increasing knowledge accessibility.",
+        "h index": "h-index measures a researcher's productivity and citation impact — an h-index of 10 means 10 papers with at least 10 citations each.",
+        "moore's law": "Moore's Law observed that transistor density doubles about every two years, though it's slowing in recent years.",
+        "turing test": "The Turing Test evaluates if a machine can exhibit intelligent behavior indistinguishable from a human.",
+        "singularity": "The technological singularity hypothesizes AI surpassing human intelligence, causing runaway technological growth.",
+        "bell's theorem": "Bell's theorem proves quantum mechanics cannot be explained by local hidden variables, confirming quantum entanglement.",
+        "p vs np": "P vs NP asks if every problem whose solution can be verified quickly can also be solved quickly — one of the greatest unsolved problems in computer science.",
+
+        # --- 63. BUSINESS ȘI MANAGEMENT ---
+        "agile vs waterfall": "Agile iterates in small cycles with continuous feedback; Waterfall follows sequential phases with upfront planning.",
+        "scrum master": "Scrum Master facilitates Agile Scrum processes, removing obstacles and ensuring team productivity.",
+        "product owner": "Product Owner represents stakeholders' interests, managing the product backlog and prioritizing features.",
+        "mvp product": "MVP (Minimum Viable Product) is the simplest version of a product that can be released to test market demand.",
+        "okr": "OKR (Objectives and Key Results) is a goal-setting framework aligning company, team, and individual goals.",
+        "kpi": "KPI (Key Performance Indicator) measures progress toward specific business objectives, like revenue, retention, and uptime.",
+        "swot": "SWOT analysis evaluates Strengths, Weaknesses, Opportunities, and Threats for strategic business planning.",
+        "lean startup": "Lean Startup methodology emphasizes rapid experimentation, customer feedback, and iterative product releases.",
+        "venture capital": "Venture capital firms invest in high-growth startups in exchange for equity, often after Series A rounds.",
+        "private equity": "Private equity invests in mature companies, often restructuring or improving them before selling for profit.",
+
+        # --- 64. DEZVOLTARE API ---
+        "openapi": "OpenAPI (formerly Swagger) is a specification for describing REST APIs, enabling auto-generated docs and client SDKs.",
+        "postman collection": "Postman Collections group API requests for testing, documentation, and automation workflows.",
+        "rate limiting": "Rate limiting restricts how many API requests a client can make in a time period, preventing abuse and overload.",
+        "api versioning": "API versioning manages changes to APIs over time, using URL paths (/v1/, /v2/) or request headers.",
+        "bearer token": "Bearer token is an access token sent in the Authorization header of HTTP requests for API authentication.",
+        "api monetization": "API monetization charges for API access through subscription tiers, pay-per-call, or freemium models.",
+        "api gateway vs load balancer": "API Gateway routes requests and handles auth; Load Balancer distributes traffic across servers for availability.",
+        "sdk vs api": "SDK is a full development kit with tools and libraries; API is just the interface for service communication.",
+        "idempotent": "An idempotent operation produces the same result whether called once or multiple times, important for API safety.",
+        "throttling": "Throttling slows down API requests exceeding limits rather than rejecting them immediately.",
+
+        # --- 65. ETICĂ ȘI LEGAL ÎN TECH ---
+        "algorithmic bias": "Algorithmic bias occurs when AI systems produce unfair outcomes due to biased training data or flawed design.",
+        "explainable ai": "XAI (Explainable AI) makes AI decisions transparent and understandable to humans, critical for trust and compliance.",
+        "facial recognition ethics": "Facial recognition ethics debates the balance between security benefits and privacy rights in public surveillance.",
+        "data sovereignty": "Data sovereignty requires data to follow the laws of the country where it's collected and stored.",
+        "digital divide": "The digital divide is the gap between those with internet/tech access and those without, affecting education and opportunity.",
+        "net neutrality": "Net neutrality requires ISPs to treat all internet traffic equally, without blocking or prioritizing paid content.",
+        "right to be forgotten": "The right to be forgotten allows individuals to request removal of personal data from search engines under GDPR.",
+        "open source license": "Open source licenses like MIT, GPL, and Apache grant permission to use, modify, and share code with varying conditions.",
+        "patent troll": "A patent troll acquires patents solely to sue companies for infringement, without producing any products.",
+        "whistleblower": "A whistleblower exposes unethical or illegal activities within an organization, often protected by law from retaliation.",
     }
+    
     
 
 # ---------- GESTIUNEA SESIUNII ----------
