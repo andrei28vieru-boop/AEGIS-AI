@@ -35,7 +35,7 @@ Este un mentor IT interactiv — te învață, te testează, te ghidează.
 """
 st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 
-# ---------- BAZA DE CUNOȘTINȚE HYBRID ----------
+# ---- BAZA DE CUNOȘTINȚE HYBRID ----
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
         
@@ -246,6 +246,207 @@ if "knowledge" not in st.session_state:
             "quiz": {"question": "Ce interfață e mai rapidă pentru SSD?", "options": ["NVMe PCIe", "SATA III", "USB 3.0", "FireWire"], "answer": "NVMe PCIe"},
             "related": ["hdd", "ram", "nvme", "storage", "motherboard"]
         },
+                "html": {
+            "beginner": "HTML e ca scheletul unei case. Fiecare pagină web e construită pe un schelet HTML — el ține totul în picioare: texte, poze, butoane.",
+            "professional": "HTML (HyperText Markup Language) este limbajul standard pentru structurarea paginilor web, folosind elemente și tag-uri pentru a defini conținutul.",
+            "expert": "HTML5 aduce semantic elements (article, section, nav), suport multimedia nativ (video, audio), canvas pentru grafică și API-uri moderne (localStorage, Web Workers).",
+            "code": "<!DOCTYPE html>\n<html>\n<head><title>Pagina mea</title></head>\n<body>\n  <h1>Salut, Andrei!</h1>\n  <p>Acesta e AEGIS.</p>\n</body>\n</html>",
+            "real_world": "Fiecare site pe care-l vizitezi — Google, YouTube, Instagram — e construit pe HTML. E prima limbă pe care o învață orice web developer.",
+            "quiz": {"question": "Ce înseamnă HTML?", "options": ["HyperText Markup Language", "High Tech Modern Language", "Hyper Transfer Markup Language", "Home Tool Markup Language"], "answer": "HyperText Markup Language"},
+            "related": ["css", "javascript", "dom", "frontend", "web development"]
+        },
+
+        "css": {
+            "beginner": "Dacă HTML e scheletul casei, CSS e vopseaua, mobila și decorațiunile. CSS face site-urile să arate FRUMOS — culori, fonturi, layout-uri.",
+            "professional": "CSS (Cascading Style Sheets) controlează prezentarea vizuală a paginilor web: layout, culori, fonturi, animații și responsive design.",
+            "expert": "CSS modern include Flexbox și Grid pentru layout, custom properties (variabile), animații keyframe, media queries pentru responsive design și preprocesoare ca Sass.",
+            "code": "/* CSS simplu */\nbody {\n  background-color: #0a0a0a;\n  color: white;\n  font-family: Arial, sans-serif;\n}\n\nh1 {\n  color: #00ffcc;\n  text-align: center;\n}",
+            "real_world": "Când vezi un site frumos — cu culori, animații, butoane stilizate — totul e făcut cu CSS. Fără CSS, internetul ar fi alb-negru și urât.",
+            "quiz": {"question": "Ce face CSS într-o pagină web?", "options": ["Stilizează conținutul", "Rulează pe server", "Gestionează baza de date", "Face calcule matematice"], "answer": "Stilizează conținutul"},
+            "related": ["html", "javascript", "frontend", "responsive design", "bootstrap"]
+        },
+
+        "javascript": {
+            "beginner": "JavaScript e magicianul paginii web. Face butoanele să reacționeze, animațiile să se miște și totul să fie INTERACTIV. E ca un creier pentru site-uri.",
+            "professional": "JavaScript este un limbaj de scripting pentru web, permițând conținut dinamic, manipulare DOM și comunicare asincronă cu serverele.",
+            "expert": "JS modern (ES2024+) suportă async/await, modules, arrow functions, destructuring, spread operators. Rulează pe server prin Node.js, Deno, Bun. Framework-uri: React, Vue, Angular.",
+            "code": "// JavaScript simplu\ndocument.querySelector('button').addEventListener('click', () => {\n  alert('Salut, Andrei! AEGIS e cel mai tare!');\n});",
+            "real_world": "Google Maps, YouTube, Facebook, Instagram — toate folosesc JavaScript. Orice site pe care dai click și se întâmplă ceva — acolo e JavaScript.",
+            "quiz": {"question": "Unde rulează JavaScript?", "options": ["În browser și pe server (Node.js)", "Doar pe server", "Doar în browser", "Pe Marte"], "answer": "În browser și pe server (Node.js)"},
+            "related": ["html", "css", "react", "node.js", "typescript"]
+        },
+
+        "sql": {
+            "beginner": "SQL e ca un bibliotecar care găsește orice carte într-o bibliotecă imensă. Îi spui ce cauți, și el știe exact unde e. SQL face același lucru cu datele.",
+            "professional": "SQL (Structured Query Language) gestionează și interoghează baze de date relaționale. Operații: SELECT, INSERT, UPDATE, DELETE, JOIN-uri între tabele.",
+            "expert": "Optimizare SQL: indexing (B-tree, hash), query execution plans, normalization vs denormalization, stored procedures, triggers, window functions, CTE-uri.",
+            "code": "-- SQL simplu\nSELECT nume, varsta\nFROM utilizatori\nWHERE oras = 'Ploiesti'\nORDER BY nume ASC;",
+            "real_world": "Când faci login pe un site, SQL caută numele tău în baza de date. Când verifici soldul la bancă, SQL îți aduce tranzacțiile. E peste tot.",
+            "quiz": {"question": "Ce comandă SQL extrage date?", "options": ["SELECT", "GET", "FETCH", "EXTRACT"], "answer": "SELECT"},
+            "related": ["database", "mysql", "postgresql", "nosql", "orm"]
+        },
+
+        "react": {
+            "beginner": "React e ca un set de piese LEGO pentru site-uri. Construiești bucăți mici (componente) și le îmbini într-o pagină web interactivă și rapidă.",
+            "professional": "React este o bibliotecă JavaScript pentru construirea interfețelor utilizator, bazată pe componente reutilizabile și Virtual DOM pentru performanță.",
+            "expert": "React avansat: hooks (useState, useEffect, useContext), state management (Redux, Zustand), server components, Next.js pentru SSR, React Native pentru mobile.",
+            "code": "// Componentă React simplă\nfunction Salut({nume}) {\n  return <h1>Salut, {nume}! Bine ai venit la AEGIS!</h1>;\n}\n\nexport default function App() {\n  return <Salut nume='Andrei' />;\n}",
+            "real_world": "Facebook, Instagram, Netflix, Airbnb — toate folosesc React. E una dintre cele mai populare tehnologii web din lume.",
+            "quiz": {"question": "Cine a creat React?", "options": ["Facebook (Meta)", "Google", "Microsoft", "Amazon"], "answer": "Facebook (Meta)"},
+            "related": ["javascript", "angular", "vue", "frontend", "next.js"]
+        },
+
+        "linux": {
+            "beginner": "Linux e ca un motor invizibil care rulează lumea. Nu-l vezi, dar e în telefoane, servere, supercomputere și chiar în mașina Tesla. E gratuit și foarte puternic.",
+            "professional": "Linux este un kernel open-source pentru sisteme de operare. Distribuții populare: Ubuntu, Fedora, Debian, Arch. Domină serverele, cloud-ul și dispozitivele embedded.",
+            "expert": "Linux kernel: process scheduling (CFS), memory management, VFS, namespaces/cgroups pentru containere. Administrare: systemd, iptables/nftables, LVM, kernel tuning.",
+            "code": "# Comenzi Linux esențiale\nls -la           # Listare fișiere\ncd /var/log      # Navigare\nsudo systemctl restart nginx   # Restart serviciu\ngrep 'error' app.log           # Căutare în fișiere\nchmod +x script.sh             # Permisiuni executare",
+            "real_world": "Android rulează pe kernel Linux. Google, Facebook, NASA — toate folosesc Linux pe servere. 100% din supercomputerele lumii rulează Linux.",
+            "quiz": {"question": "Cine a creat Linux?", "options": ["Linus Torvalds", "Bill Gates", "Steve Jobs", "Elon Musk"], "answer": "Linus Torvalds"},
+            "related": ["ubuntu", "bash", "terminal", "kernel", "debian"]
+        },
+
+        "vpn": {
+            "beginner": "Un VPN e ca un tunel secret între tine și internet. Nimeni nu poate vedea ce faci — nici hackerii, nici furnizorul de internet. E ca o pelerină de invizibilitate digitală.",
+            "professional": "VPN (Virtual Private Network) criptează traficul de internet și îl direcționează printr-un server securizat, ascunzând adresa IP și protejând confidențialitatea.",
+            "expert": "Protocoale VPN: WireGuard (modern, rapid), OpenVPN (flexibil), IKEv2/IPSec (mobil). Arhitecturi: site-to-site, remote access, split tunneling, kill switch.",
+            "code": "# Configurare WireGuard (exemplu)\n[Interface]\nPrivateKey = <cheia-ta-privata>\nAddress = 10.0.0.2/24\nDNS = 1.1.1.1\n\n[Peer]\nPublicKey = <cheia-serverului>\nEndpoint = vpn.example.com:51820\nAllowedIPs = 0.0.0.0/0",
+            "real_world": "Când te conectezi la Wi-Fi-ul unui hotel sau cafenea, un VPN te protejează de hackeri. Jurnaliștii și activiștii folosesc VPN-uri pentru siguranță.",
+            "quiz": {"question": "Ce face un VPN?", "options": ["Criptează conexiunea și ascunde IP-ul", "Accelerează internetul", "Repară viruși", "Editează poze"], "answer": "Criptează conexiunea și ascunde IP-ul"},
+            "related": ["encryption", "cybersecurity", "firewall", "privacy", "proxy"]
+        },
+
+        "android": {
+            "beginner": "Android e ca un sistem de operare care face telefonul tău să fie SMART. E creat de Google și e folosit de miliarde de telefoane, tablete și ceasuri din toată lumea.",
+            "professional": "Android este un sistem de operare open-source bazat pe kernel Linux, dezvoltat de Google. Domină piața mobilă cu peste 70% cotă globală.",
+            "expert": "Arhitectura Android: kernel Linux, HAL, Android Runtime (ART), framework Java/Kotlin. Componente: Activities, Services, Broadcast Receivers, Content Providers. Jetpack Compose pentru UI modern.",
+            "code": "// Kotlin — Activitate Android simplă\nclass MainActivity : ComponentActivity() {\n  override fun onCreate(savedInstanceState: Bundle?) {\n    super.onCreate(savedInstanceState)\n    setContent {\n      Text('Salut, Andrei! AEGIS rulează pe Android!')\n    }\n  }\n}",
+            "real_world": "Telefonul tău Galaxy A56 rulează Android! Samsung, Xiaomi, OnePlus — toate folosesc Android. E cel mai folosit sistem de operare din lume.",
+            "quiz": {"question": "Cine deține Android?", "options": ["Google", "Samsung", "Microsoft", "Apple"], "answer": "Google"},
+            "related": ["ios", "kotlin", "flutter", "google play", "linux"]
+        },
+
+        "windows": {
+            "beginner": "Windows e ca un birou digital pe care îl folosești zilnic. E sistemul de operare care pornește când deschizi laptopul — cu pictograme, ferestre și bara de start.",
+            "professional": "Microsoft Windows este cel mai popular sistem de operare pentru PC-uri. Windows 11 oferă Copilot AI, suport pentru aplicații Android și securitate avansată.",
+            "expert": "Windows 11 arhitectură: kernel NT, Hyper-V virtualization, WSL2 pentru Linux, DirectStorage pentru gaming, TPM 2.0 pentru securitate. PowerShell pentru administrare avansată.",
+            "code": "# PowerShell — Comenzi utile\nGet-Process | Sort-Object CPU -Descending\nGet-Service | Where-Object Status -eq 'Running'\nwinget install Python.Python.3.12",
+            "real_world": "Majoritatea laptopurilor din lume rulează Windows. Samsung Galaxy Book5 Pro 360 al tău va rula Windows 11 cu Copilot AI integrat.",
+            "quiz": {"question": "Ce companie creează Windows?", "options": ["Microsoft", "Apple", "Google", "IBM"], "answer": "Microsoft"},
+            "related": ["linux", "macos", "powershell", "kernel", "uefi"]
+        },
+
+        "github": {
+            "beginner": "GitHub e ca o bibliotecă uriașă unde programatorii își pun codul. E și o rețea socială pentru developeri — poți colabora, învăța și arăta ce ai construit.",
+            "professional": "GitHub este cea mai mare platformă de găzduire a codului sursă, folosind Git pentru versionare. Oferă CI/CD prin GitHub Actions, code review și project management.",
+            "expert": "GitHub avansat: Actions workflows, Codespaces, Dependabot, code scanning cu CodeQL, branch protection rules, GitHub Pages, API REST și GraphQL.",
+            "code": "# Comenzi Git + GitHub\ngit clone https://github.com/andrei28vieru-boop/AEGIS-AI.git\ngit add .\ngit commit -m 'Added new AEGIS LEVEL terms'\ngit push origin main",
+            "real_world": "AEGIS e pe GitHub chiar acum! Toate companiile mari — Google, Microsoft, Facebook — au codul pe GitHub. E portofoliul tău de developer.",
+            "quiz": {"question": "Ce sistem de versionare folosește GitHub?", "options": ["Git", "SVN", "Mercurial", "CVS"], "answer": "Git"},
+            "related": ["git", "github actions", "devops", "ci/cd", "repository"]
+        },
+
+                "json": {
+            "beginner": "JSON e ca un translator universal pentru computere. Orice limbaj de programare înțelege JSON — e modul în care aplicațiile vorbesc între ele pe internet.",
+            "professional": "JSON (JavaScript Object Notation) este un format lightweight de schimb de date, ușor de citit pentru oameni și simplu de procesat pentru mașini. Folosește perechi cheie-valoare și array-uri.",
+            "expert": "JSON suportă tipuri: string, number, boolean, null, object, array. Validare prin JSON Schema. Alternativă la XML, mai compact. JSON Lines pentru streaming. JSONB în PostgreSQL pentru interogări rapide.",
+            "code": "{\n  \"nume\": \"Andrei\",\n  \"varsta\": 15,\n  \"proiect\": \"AEGIS\",\n  \"termeni\": 725,\n  \"obiectiv\": \"Billionaire\"\n}",
+            "real_world": "Când verifici vremea pe telefon, aplicația primește datele în JSON. API-urile Google, Facebook, Instagram — toate returnează JSON. E limba universală a internetului.",
+            "quiz": {"question": "Ce înseamnă JSON?", "options": ["JavaScript Object Notation", "Java System Online Network", "Just Simple Object Name", "JSON Standard Object Notation"], "answer": "JavaScript Object Notation"},
+            "related": ["api", "xml", "api rest", "database", "mongodb"]
+        },
+
+        "bitcoin": {
+            "beginner": "Bitcoin e ca aurul digital. Nu există fizic — e doar pe internet. Nimeni nu-l controlează: nici bănci, nici guverne. Oamenii îl trimit direct unul altuia, ca pe un email cu bani.",
+            "professional": "Bitcoin (BTC) este prima criptomonedă descentralizată, creată în 2009 de Satoshi Nakamoto. Rulează pe tehnologia blockchain și folosește Proof of Work pentru securitate.",
+            "expert": "Bitcoin: supply limitat la 21 milioane, mining cu SHA-256, halving la fiecare 210,000 blocuri, Lightning Network pentru Layer 2 scaling. UTXO model, non-Turing complete scripting.",
+            "code": "# Verifică prețul Bitcoin în timp real\nimport requests\nresponse = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')\ndata = response.json()\nprint(f\"BTC: ${data['bpi']['USD']['rate']}\")",
+            "real_world": "El Salvador a adoptat Bitcoin ca monedă națională. Companii ca Tesla și MicroStrategy dețin Bitcoin. Poți cumpăra Bitcoin pe Binance sau Coinbase.",
+            "quiz": {"question": "Care e supply-ul maxim de Bitcoin?", "options": ["21 milioane", "100 milioane", "Nelimitat", "1 miliard"], "answer": "21 milioane"},
+            "related": ["blockchain", "ethereum", "criptomonedă", "mining", "wallet"]
+        },
+
+        "gpu": {
+            "beginner": "GPU-ul e ca un artist care pictează tot ce vezi pe ecran — jocuri, filmulețe, poze. Face asta de sute de ori pe secundă, mult mai rapid decât CPU-ul la grafică.",
+            "professional": "GPU (Graphics Processing Unit) este un procesor specializat pentru calcule paralele masive, esențial pentru randare 3D, gaming, AI și mining crypto.",
+            "expert": "GPU-urile moderne (NVIDIA CUDA, AMD ROCm) au mii de core-uri pentru parallel computing. Tensor Cores pentru AI, RT Cores pentru ray tracing. VRAM (GDDR6X, HBM3) oferă bandwidth masiv.",
+            "code": "# Verifică GPU-ul disponibil pentru AI\nimport torch\nprint(f\"CUDA disponibil: {torch.cuda.is_available()}\")\nprint(f\"GPU: {torch.cuda.get_device_name(0)}\")\nprint(f\"Memorie: {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB\")",
+            "real_world": "NVIDIA face GPU-uri care antrenează AI-ul din spatele ChatGPT. GPU-ul tău integrat Intel Arc din viitorul Book5 Pro 360 poate rula jocuri și accelerare AI.",
+            "quiz": {"question": "Ce companie domină piața de GPU-uri pentru AI?", "options": ["NVIDIA", "Intel", "AMD", "Apple"], "answer": "NVIDIA"},
+            "related": ["cpu", "ram", "nvidia", "deep learning", "ssd"]
+        },
+
+        "ram": {
+            "beginner": "RAM-ul e ca un birou imens. Cu cât ai mai mult birou, cu atât poți lucra la mai multe lucruri simultan fără să se aglomereze. Când închizi calculatorul, biroul se golește.",
+            "professional": "RAM (Random Access Memory) este memoria volatilă care stochează date temporar pentru procesor. DDR5 oferă viteze de până la 6400 MT/s cu consum redus.",
+            "expert": "RAM arhitectură: canale (single/dual/quad), timing-uri CAS, XMP/EXPO pentru overclocking. ECC RAM pentru servere corectează erori. LPDDR5X în laptopuri oferă până la 8533 MT/s.",
+            "code": "# Verifică RAM disponibilă în Python\nimport psutil\nram = psutil.virtual_memory()\nprint(f\"Total: {ram.total / 1e9:.1f} GB\")\nprint(f\"Disponibil: {ram.available / 1e9:.1f} GB\")\nprint(f\"Utilizat: {ram.percent}%\")",
+            "real_world": "Samsung Galaxy Book5 Pro 360 are 16GB DDR5 RAM — poți rula AEGIS, browser cu 50 de tab-uri, PyCharm și Netflix simultan fără lag.",
+            "quiz": {"question": "Ce tip de RAM e în Book5 Pro 360?", "options": ["DDR5", "DDR4", "DDR3", "LPDDR4X"], "answer": "DDR5"},
+            "related": ["cpu", "ssd", "gpu", "motherboard", "ddr5"]
+        },
+
+        "nvidia": {
+            "beginner": "NVIDIA e ca un magician al graficii. Fac plăci video care transformă codul în lumi 3D incredibile și antrenează inteligența artificială. Sunt creierul din spatele ChatGPT și al jocurilor video.",
+            "professional": "NVIDIA este liderul mondial în GPU-uri și AI computing. Seria GeForce pentru gaming, RTX cu ray tracing, și CUDA pentru calcul paralel în deep learning.",
+            "expert": "NVIDIA arhitecturi: Hopper (H100 — datacenter AI), Ada Lovelace (RTX 40 — consumer), Blackwell (2024 — next-gen). CUDA API permite GPU computing. TensorRT pentru inferență optimizată.",
+            "code": "# Verifică GPU NVIDIA cu CUDA\nimport torch\nif torch.cuda.is_available():\n    print(f\"GPU: {torch.cuda.get_device_name(0)}\")\n    print(f\"CUDA Cores: {torch.cuda.get_device_properties(0).multi_processor_count}\")\nelse:\n    print(\"Niciun GPU NVIDIA detectat\")",
+            "real_world": "NVIDIA valorează peste 2 trilioane de dolari în 2024. GPU-urile lor antrenează ChatGPT, conduc mașini autonome și randează filmele Marvel.",
+            "quiz": {"question": "Cum se numește platforma NVIDIA pentru AI?", "options": ["CUDA", "TensorFlow", "PyTorch", "OpenCL"], "answer": "CUDA"},
+            "related": ["gpu", "ai", "deep learning", "intel", "amd"]
+        },
+
+        "intel": {
+            "beginner": "Intel e ca un bucătar-șef care gătește procesoarele din majoritatea laptopurilor. E compania care a inventat microprocesorul și încă e una dintre cele mai mari din lume.",
+            "professional": "Intel Corporation este cel mai mare producător de procesoare x86 pentru PC-uri și servere. Produce procesoare Core Ultra, Xeon și plăci grafice Arc.",
+            "expert": "Intel arhitecturi: Lunar Lake (Core Ultra 200V — 3nm, AI NPU), Arrow Lake (desktop), Granite Rapids (Xeon server). Foundry services (Intel 18A). Gaudi acceleratoare AI.",
+            "code": "# Verifică CPU-ul Intel\nimport platform\ncpu = platform.processor()\nprint(f\"CPU: {cpu}\")\nprint(f\"Arhitectură: {platform.architecture()[0]}\")\n# Intel Core Ultra 7 256V — viitorul tău laptop!",
+            "real_world": "Samsung Galaxy Book5 Pro 360 rulează pe Intel Core Ultra 7 256V. Intel procesoare sunt în miliarde de dispozitive — de la laptopuri la servere NASA.",
+            "quiz": {"question": "Ce serie de procesoare Intel e în Book5 Pro 360?", "options": ["Core Ultra 7", "Core i9", "Pentium", "Atom"], "answer": "Core Ultra 7"},
+            "related": ["cpu", "amd", "nvidia", "gpu", "motherboard"]
+        },
+
+        "amd": {
+            "beginner": "AMD e ca un underdog care a devenit campion. Era mereu pe locul 2 după Intel, dar acum face unele dintre cele mai rapide procesoare din lume. Și plăci video, și cipuri pentru console.",
+            "professional": "AMD (Advanced Micro Devices) produce procesoare Ryzen (desktop/laptop), plăci grafice Radeon și cipuri pentru console (PlayStation 5, Xbox Series X).",
+            "expert": "AMD arhitecturi: Zen 5 (Ryzen 9000), RDNA 3 (Radeon RX 7000), CDNA (instinct AI accelerators). Chiplet design pentru yield și costuri reduse. 3D V-Cache pentru gaming.",
+            "code": "# Verifică CPU AMD Ryzen\nimport platform\ncpu = platform.processor()\nprint(f\"CPU: {cpu}\")\n# AMD Ryzen — popular pentru gaming și productivitate",
+            "real_world": "PlayStation 5 și Xbox Series X rulează pe cipuri AMD. Toate consolele next-gen sunt AMD. Ryzen domină piața de desktop pentru gameri și creatori.",
+            "quiz": {"question": "Care e concurentul principal al AMD?", "options": ["Intel", "NVIDIA", "Apple", "Samsung"], "answer": "Intel"},
+            "related": ["cpu", "intel", "nvidia", "gpu", "motherboard"]
+        },
+
+        "apple": {
+            "beginner": "Apple e ca un designer de lux al tehnologiei. Fac iPhone, MacBook, iPad — toate scumpe, dar elegante și ușor de folosit. E ca Mercedes-ul din lumea tech.",
+            "professional": "Apple Inc. este cea mai valoroasă companie din lume, cunoscută pentru iPhone, Mac, iPad și ecosistemul integrat de hardware și software.",
+            "expert": "Apple Silicon: cipuri M-series (M4 — 3nm, Neural Engine). Arhitectură unificată memory. Ecosistem: iOS, macOS, watchOS, visionOS. App Store cu peste 2 milioane de aplicații.",
+            "code": "// Swift — Limbajul Apple pentru iOS/macOS\nimport SwiftUI\nstruct ContentView: View {\n    var body: some View {\n        Text(\"Salut, Andrei!\")\n            .font(.largeTitle)\n            .foregroundColor(.blue)\n    }\n}",
+            "real_world": "iPhone-ul e cel mai vândut smartphone. Apple Watch domină piața de smartwatch-uri. Apple Vision Pro a lansat era spatial computing.",
+            "quiz": {"question": "Cum se numesc procesoarele Apple pentru Mac?", "options": ["M-series (M1, M2, M3, M4)", "A-series", "S-series", "X-series"], "answer": "M-series (M1, M2, M3, M4)"},
+            "related": ["ios", "macos", "iphone 16 pro max", "samsung", "macbook pro 16"]
+        },
+
+        "tesla": {
+            "beginner": "Tesla e ca un iPhone pe roți. Mașinile lor sunt electrice, rapide și pline de tehnologie. Se conduc singure pe autostradă și primesc update-uri ca un telefon.",
+            "professional": "Tesla Inc. este lider în vehicule electrice și energie curată, fondată de Elon Musk. Produce Model S, 3, X, Y și Cybertruck cu tehnologie de conducere autonomă.",
+            "expert": "Tesla Full Self-Driving (FSD) folosește computer vision și rețele neuronale antrenate pe miliarde de km. Dojo supercomputer pentru training AI. 4680 battery cells pentru eficiență.",
+            "code": "# Simulare autonomie Tesla\nbattery_kwh = 75  # Model 3 Long Range\nefficiency_wh_km = 150  # Wh per km\nautonomie_km = (battery_kwh * 1000) / efficiency_wh_km\nprint(f\"Autonomie estimată: {autonomie_km:.0f} km\")",
+            "real_world": "Tesla Model Y a fost cea mai vândută mașină din lume în 2023. Tesla produce și baterii Powerwall pentru case și panouri solare.",
+            "quiz": {"question": "Cine e CEO-ul Tesla?", "options": ["Elon Musk", "Jeff Bezos", "Tim Cook", "Satya Nadella"], "answer": "Elon Musk"},
+            "related": ["elon musk", "ev", "ai", "nvidia", "green tech"]
+        },
+
+        "spotify": {
+            "beginner": "Spotify e ca un DJ personal care știe exact ce muzică îți place. Cauți orice melodie, asculți podcasturi, și descoperi artiști noi. E ca un radio infinit în buzunar.",
+            "professional": "Spotify este cea mai mare platformă de streaming audio din lume cu peste 500 milioane de utilizatori. Oferă muzică, podcasturi și recomandări bazate pe AI.",
+            "expert": "Spotify arhitectură: microservicii, Kafka pentru streaming de date, Cassandra pentru scalability, ML pentru Discover Weekly și algoritmi de recomandare. Codec Ogg Vorbis/AAC.",
+            "code": "# Caută un artist pe Spotify API\nimport requests\nheaders = {'Authorization': 'Bearer YOUR_TOKEN'}\nresponse = requests.get(\n    'https://api.spotify.com/v1/search',\n    headers=headers,\n    params={'q': 'Depeche Mode', 'type': 'artist'}\n)\ndata = response.json()\nfor artist in data['artists']['items']:\n    print(f\"{artist['name']} — Popularitate: {artist['popularity']}\")",
+            "real_world": "Spotify a schimbat industria muzicală. Artiștii sunt plătiți per stream. Playlist-uri ca Discover Weekly folosesc AI să-ți găsească muzică nouă în fiecare săptămână.",
+            "quiz": {"question": "Câți utilizatori are Spotify?", "options": ["Peste 500 milioane", "100 milioane", "1 miliard", "50 milioane"], "answer": "Peste 500 milioane"},
+            "related": ["streaming", "ai", "machine learning", "podcast", "apple"]
+        },
+    
+    
 
         # ============================================
         # 📚 EXPERT TERMS — Quick Definitions
@@ -776,7 +977,235 @@ if "knowledge" not in st.session_state:
         "gradio": "Gradio is a Python library for creating simple web interfaces for machine learning models.",
         "tkinter": "Tkinter is Python's standard GUI library for creating desktop applications.",
         "pygame": "Pygame is a Python library for writing 2D video games with graphics and sound.",
+
+                # --- 25. REȚELE AVANSATE ---
+        "subnet mask": "Subnet mask separates the IP address into network and host portions, determining which part identifies the network and which identifies the device.",
+        "gateway": "A gateway is a network node that connects two different networks, often serving as the access point to the internet for devices on a local network.",
+        "nat": "NAT (Network Address Translation) allows multiple devices on a private network to share a single public IP address for internet access.",
+        "dhcp": "DHCP (Dynamic Host Configuration Protocol) automatically assigns IP addresses to devices on a network.",
+        "mac address": "MAC address is a unique hardware identifier assigned to a network interface card (NIC) for communication on a physical network.",
+        "packet": "A packet is a small unit of data transmitted over a network, containing source/destination addresses and the actual data being sent.",
+        "ethernet": "Ethernet is a wired networking technology used to connect devices in a LAN, offering reliable high-speed data transfer.",
+        "fiber optic": "Fiber optic cables use light to transmit data at extremely high speeds over long distances with minimal signal loss.",
+        "switch": "A network switch connects devices within a LAN and forwards data only to the specific device it's intended for.",
+        "hub": "A hub is a basic networking device that broadcasts data to all connected devices, unlike a switch which sends data selectively.",
+        "poe": "PoE (Power over Ethernet) delivers electrical power along with data over standard Ethernet cables to devices like cameras and access points.",
+        "vlan": "VLAN (Virtual LAN) logically segments a physical network into separate broadcast domains for security and efficiency.",
+        "ssid": "SSID (Service Set Identifier) is the name of a Wi-Fi network that users see when connecting their devices.",
+        "wpa3": "WPA3 is the latest Wi-Fi security protocol, providing stronger encryption and protection against password guessing attacks.",
+        "captive portal": "A captive portal is a web page that requires user interaction before granting internet access, commonly used in hotels and airports.",
+        "qos": "QoS (Quality of Service) prioritizes certain types of network traffic to ensure performance for critical applications like voice and video.",
+        "snmp": "SNMP (Simple Network Management Protocol) monitors and manages network devices like routers, switches, and servers.",
+        "ftp": "FTP (File Transfer Protocol) transfers files between computers on a network. SFTP adds encryption for security.",
+        "telnet": "Telnet is an old protocol for remote terminal access, now largely replaced by SSH due to lack of encryption.",
+        "rdp": "RDP (Remote Desktop Protocol) allows users to remotely connect to and control a Windows computer over a network.",
+        "smtp": "SMTP (Simple Mail Transfer Protocol) sends emails from a client to a server or between servers.",
+        "pop3": "POP3 downloads emails from a server to a local device, typically deleting them from the server afterward.",
+        "imap": "IMAP allows access to emails stored on a server, keeping them synchronized across multiple devices.",
+
+        # --- 26. PROGRAMARE WEB AVANSATĂ ---
+        "websocket": "WebSocket enables real-time, two-way communication between a browser and a server, used in chat apps and live notifications.",
+        "graphql": "GraphQL is a query language for APIs that lets clients request exactly the data they need, nothing more, nothing less.",
+        "rest": "REST (Representational State Transfer) is an architectural style for designing networked APIs using standard HTTP methods.",
+        "soap": "SOAP is a protocol for exchanging structured data in web services, using XML and often more rigid than REST.",
+        "cdn": "CDN (Content Delivery Network) distributes website content across global servers, improving load times and reducing bandwidth.",
+        "seo": "SEO (Search Engine Optimization) improves a website's visibility in search engine results through keywords, links, and technical optimizations.",
+        "caching": "Caching temporarily stores frequently accessed data for faster retrieval, reducing server load and improving response times.",
+        "session": "A session maintains user state across multiple requests on a website, often tracked with cookies or tokens.",
+        "cookie": "A cookie is a small piece of data stored in the browser by a website, used for sessions, preferences, and tracking.",
+        "local storage": "Local Storage is a browser API that stores key-value data persistently, surviving browser restarts.",
+        "xss attack": "XSS (Cross-Site Scripting) injects malicious scripts into web pages viewed by other users, stealing data or hijacking sessions.",
+        "csrf token": "CSRF token is a unique secret value included in forms to prevent Cross-Site Request Forgery attacks.",
+        "sql injection prevention": "Prepared statements and parameterized queries prevent SQL injection by separating SQL code from user input.",
+        "content security policy": "CSP is a security header that controls which resources (scripts, styles) a browser is allowed to load.",
+        "cors policy": "CORS (Cross-Origin Resource Sharing) controls how a web page can request resources from a different domain.",
+        "authentication": "Authentication verifies a user's identity (who you are), typically through passwords, biometrics, or tokens.",
+        "authorization": "Authorization determines what an authenticated user is allowed to do (what you can access).",
+        "jwt token": "JWT (JSON Web Token) securely transmits information between parties as a compact, URL-safe token.",
+        "openid connect": "OpenID Connect is an authentication layer built on OAuth 2.0, allowing single sign-on across websites.",
+        "saml": "SAML (Security Assertion Markup Language) enables single sign-on between an identity provider and service providers.",
+
+        # --- 27. DEZVOLTARE MOBILĂ AVANSATĂ ---
+        "progressive web app": "PWA uses modern web capabilities to deliver an app-like experience, including offline mode and push notifications.",
+        "native app": "A native app is built specifically for one platform (iOS or Android) using platform-specific languages like Swift or Kotlin.",
+        "cross platform": "Cross-platform development creates apps for multiple platforms from a single codebase, using frameworks like Flutter or React Native.",
+        "app bundle": "Android App Bundle (AAB) is the publishing format that includes all compiled code and resources, letting Google Play optimize delivery.",
+        "testflight": "TestFlight is Apple's platform for beta testing iOS apps before releasing them on the App Store.",
+        "gradle": "Gradle is a build automation tool used primarily for Android development, managing dependencies and compiling code.",
+        "cocoapods": "CocoaPods is a dependency manager for Swift and Objective-C projects on iOS and macOS.",
+        "hot reload": "Hot reload instantly updates a running app with code changes without losing state, speeding up development in Flutter and React Native.",
+        "app permissions": "App permissions control what data and features an app can access on a device (camera, location, contacts).",
+        "deep link": "Deep linking opens a specific screen or content within an app from a URL, improving user navigation and engagement.",
+
+        # --- 28. BAZE DE DATE AVANSATE ---
+        "sharding": "Sharding splits a large database into smaller, faster, more manageable pieces across multiple servers.",
+        "replication": "Database replication copies data from one server to another for redundancy, backup, and improved read performance.",
+        "cap theorem": "CAP Theorem states that a distributed system can provide only two of three guarantees: Consistency, Availability, Partition Tolerance.",
+        "nosql types": "NoSQL database types include document (MongoDB), key-value (Redis), column-family (Cassandra), and graph (Neo4j).",
+        "acid vs base": "ACID (Atomicity, Consistency, Isolation, Durability) vs BASE (Basically Available, Soft state, Eventually consistent) — two database consistency models.",
+        "connection pool": "Connection pooling maintains a cache of database connections for reuse, reducing the overhead of establishing new connections.",
+        "migration": "Database migration tracks and applies schema changes systematically, often using version control for database structure.",
+        "seed data": "Seed data is initial data loaded into a database for testing or to provide default values for an application.",
+        "backup": "Database backup creates copies of data for disaster recovery, available as full, incremental, or differential backups.",
+        "sql vs nosql": "SQL databases are relational with structured schemas; NoSQL databases are non-relational with flexible data models.",
+
+        # --- 29. CLOUD & DEVOPS AVANSAT ---
+        "iaac": "IaC (Infrastructure as Code) manages infrastructure through configuration files instead of manual processes, using tools like Terraform.",
+        "ci pipeline": "CI (Continuous Integration) pipeline automatically builds, tests, and validates code changes when pushed to a repository.",
+        "cd pipeline": "CD (Continuous Delivery/Deployment) pipeline automatically releases validated code changes to staging or production environments.",
+        "blue green deployment": "Blue-Green deployment runs two identical environments, switching traffic between them for zero-downtime releases.",
+        "canary release": "Canary release gradually rolls out a new version to a small subset of users before full deployment.",
+        "feature flag": "Feature flags toggle features on or off without deploying new code, enabling gradual rollouts and A/B testing.",
+        "observability": "Observability measures how well a system's internal state can be understood from its external outputs: logs, metrics, and traces.",
+        "incident response": "Incident response is the process of detecting, investigating, and resolving system outages or security breaches.",
+        "runbook": "A runbook documents step-by-step procedures for handling recurring IT tasks or incidents.",
+        "chaos engineering": "Chaos engineering intentionally introduces failures to test system resilience and identify weaknesses before they cause outages.",
+        "finops": "FinOps is the practice of managing cloud costs through collaboration between finance, engineering, and operations teams.",
+        "sla": "SLA (Service Level Agreement) defines the expected level of service, including uptime guarantees and response times.",
+        "slo": "SLO (Service Level Objective) is a specific measurable target for service performance within an SLA.",
+        "sli": "SLI (Service Level Indicator) is the actual measurement of a service's performance against its SLO.",
+        "multicloud": "Multi-cloud uses services from multiple cloud providers (AWS, Azure, GCP) for flexibility and avoiding vendor lock-in.",
+        "hybrid cloud": "Hybrid cloud combines on-premises infrastructure with public cloud services, sharing data and applications between them.",
+
+        # --- 30. SECURITATE CIBERNETICĂ AVANSATĂ ---
+        "zero trust": "Zero Trust is a security model where no user or device is trusted by default, even inside the network perimeter.",
+        "edr": "EDR (Endpoint Detection and Response) monitors endpoints for threats and provides tools for investigation and remediation.",
+        "soar": "SOAR (Security Orchestration, Automation, and Response) automates security tasks and coordinates responses across tools.",
+        "threat hunting": "Threat hunting proactively searches for hidden threats in a network before they trigger automated alerts.",
+        "forensics": "Digital forensics investigates cyber incidents by collecting and analyzing digital evidence from systems and networks.",
+        "patching": "Patching updates software to fix security vulnerabilities, bugs, or performance issues.",
+        "cve": "CVE (Common Vulnerabilities and Exposures) is a database of publicly known security vulnerabilities with unique identifiers.",
+        "cvss": "CVSS (Common Vulnerability Scoring System) rates the severity of security vulnerabilities on a scale of 0-10.",
+        "waf": "WAF (Web Application Firewall) protects web applications by filtering and monitoring HTTP traffic between the app and the internet.",
+        "dlp": "DLP (Data Loss Prevention) prevents sensitive data from leaving an organization's network unauthorized.",
+        "honeypot": "A honeypot is a decoy system designed to attract attackers and study their methods without risking real data.",
+        "bastion host": "A bastion host is a hardened server placed at the network edge to withstand attacks and provide secure access.",
+        "pki": "PKI (Public Key Infrastructure) manages digital certificates and encryption keys for secure communication.",
+        "2fa": "2FA (Two-Factor Authentication) adds a second verification step (SMS code, authenticator app) to password login.",
+        "biometric auth": "Biometric authentication uses unique physical traits (fingerprint, face, iris) to verify identity.",
+        "fido2": "FIDO2 is a passwordless authentication standard using security keys or biometrics for secure login.",
+
+        # --- 31. INTELIGENȚĂ ARTIFICIALĂ AVANSATĂ ---
+        "generative ai": "Generative AI creates new content — text, images, code, music — based on patterns learned from training data.",
+        "attention mechanism": "Attention mechanism lets AI models focus on relevant parts of input data, key to Transformer architectures.",
+        "self-attention": "Self-attention relates different positions of a single sequence to compute a representation of the sequence.",
+        "bert": "BERT (Bidirectional Encoder Representations from Transformers) is a Google AI model for natural language understanding.",
+        "gpt": "GPT (Generative Pre-trained Transformer) is OpenAI's language model series powering ChatGPT and other AI applications.",
+        "stable diffusion": "Stable Diffusion is an open-source AI model that generates images from text descriptions.",
+        "midjourney": "Midjourney is an AI image generation tool known for creating artistic and photorealistic images from text prompts.",
+        "vector database": "Vector databases store and search embeddings for AI applications like semantic search and recommendations.",
+        "semantic search": "Semantic search understands the intent and meaning behind a query, not just matching keywords.",
+        "reinforcement learning from human feedback": "RLHF trains AI models using human preferences to align outputs with human values and expectations.",
+
+        # --- 32. HARDWARE AVANSAT ---
+        "npu": "NPU (Neural Processing Unit) is a specialized processor designed to accelerate AI and machine learning tasks.",
+        "tpu": "TPU (Tensor Processing Unit) is Google's custom AI accelerator chip for machine learning workloads.",
+        "quantum processor": "Quantum processors use quantum bits (qubits) to perform calculations impossible for classical computers.",
+        "ddr5": "DDR5 is the latest RAM standard, offering higher speeds and better power efficiency than DDR4.",
+        "pcie 5": "PCIe 5.0 doubles the bandwidth of PCIe 4.0, enabling faster data transfer for GPUs and SSDs.",
+        "thunderbolt 5": "Thunderbolt 5 offers up to 120 Gbps bandwidth, supporting multiple 8K displays and high-speed external storage.",
+        "usb4": "USB4 unifies USB and Thunderbolt protocols, offering up to 40 Gbps transfer speeds and better compatibility.",
+        "oled vs amoled": "OLED displays have organic pixels that emit light; AMOLED adds an active matrix for better touch response and refresh rates.",
+        "mini led": "Mini LED uses thousands of tiny LEDs for backlighting LCD displays, offering better contrast and brightness control.",
+        "microled": "MicroLED uses microscopic LEDs for each pixel, combining OLED's perfect blacks with LED's brightness and longevity.",
+
+        # --- 33. TECH BUSINESS & STARTUP ---
+        "unicorn": "A unicorn is a privately held startup valued at over 1 billion dollars. Examples: SpaceX, Stripe, ByteDance.",
+        "pivot": "A pivot is a fundamental change in business strategy when the original plan isn't working.",
+        "mrr": "MRR (Monthly Recurring Revenue) measures predictable subscription income a business earns each month.",
+        "burn rate": "Burn rate is how quickly a company spends its cash reserves, usually calculated monthly.",
+        "runway": "Runway is how many months a startup can operate before running out of cash, based on burn rate.",
+        "equity": "Equity represents ownership shares in a company, often given to employees or investors instead of cash.",
+        "vesting": "Vesting gradually grants ownership of equity over time, typically 4 years with a 1-year cliff.",
+        "accelerator": "An accelerator provides mentorship, funding, and resources to early-stage startups. Examples: Y Combinator, Techstars.",
+        "incubator": "An incubator supports very early-stage startups with workspace, mentorship, and resources for longer periods.",
+        "angel investor": "An angel investor is a wealthy individual who provides capital to startups in exchange for equity or convertible debt.",
+        "series a": "Series A is the first major round of venture capital funding for a startup, typically after initial traction.",
+        "ipo": "IPO (Initial Public Offering) is when a private company first sells shares to the public on a stock exchange.",
+
+        # --- 34. INTERNET CULTURE & TRENDING ---
+        "hashtag": "A hashtag (#) categorizes social media content, making it discoverable to users following that topic.",
+        "thread": "A thread is a series of connected social media posts on a single topic, popular on Twitter/X and Threads.",
+        "algorithm feed": "Algorithmic feeds sort content by predicted user interest rather than chronological order, used by TikTok and Instagram.",
+        "creator economy": "The creator economy allows individuals to earn money directly from content creation through platforms like YouTube, TikTok, and Patreon.",
+        "nft art": "NFT art uses blockchain tokens to prove ownership and authenticity of digital artworks.",
+        "dao governance": "DAO governance allows token holders to vote on organizational decisions without centralized leadership.",
+        "web5": "Web5 is a decentralized web platform combining Web2 convenience with Web3 principles, proposed by Jack Dorsey's TBD.",
+        "digital nomad": "A digital nomad works remotely while traveling, relying on technology and internet connectivity.",
+        "gig economy": "The gig economy is based on temporary, flexible jobs, often facilitated by platforms like Uber, Fiverr, and Upwork.",
+        "quiet quitting": "Quiet quitting means doing the minimum required at work without going above and beyond, prioritizing work-life balance.",
+
+                # --- 35. COMPANII TECH ȘI PRODUSE (EXTRA) ---
+        "spotify": "Spotify is a Swedish audio streaming platform with over 500 million users, known for personalized playlists and podcasts.",
+        "adobe": "Adobe is a software company known for creative tools like Photoshop, Premiere Pro, and the PDF format.",
+        "oracle": "Oracle is a major database software company, also offering cloud services and enterprise applications.",
+        "sap": "SAP is a German software company specializing in enterprise resource planning (ERP) systems for businesses.",
+        "ibm": "IBM is one of the oldest tech companies, known for mainframes, AI (Watson), and quantum computing research.",
+        "cisco": "Cisco is the leading networking hardware company, producing routers, switches, and cybersecurity solutions.",
+        "vmware": "VMware is a leader in virtualization and cloud infrastructure software, now part of Broadcom.",
+        "salesforce": "Salesforce is the world's leading CRM (Customer Relationship Management) platform, delivered entirely via cloud.",
+
+                # --- 36. DEZVOLTARE SOFTWARE ---
+        "ide integrated": "An IDE (Integrated Development Environment) combines code editor, debugger, and build tools in one application. Examples: VS Code, PyCharm, IntelliJ.",
+        "version control": "Version control tracks changes to code over time, allowing multiple developers to collaborate and revert to previous versions.",
+        "code review": "Code review is the process of having other developers examine your code for bugs, style issues, and improvements before merging.",
+        "pair programming": "Pair programming involves two developers working together at one computer — one writes code, the other reviews each line.",
+        "standup": "A daily standup is a short team meeting where each member shares what they did yesterday, what they'll do today, and any blockers.",
+        "sprint": "A sprint is a fixed time period (usually 1-4 weeks) in Agile development where a team completes a set of planned work items.",
+        "backlog": "A backlog is a prioritized list of features, bugs, and tasks for a software project, maintained by the product owner.",
+        "user story": "A user story describes a software feature from the end-user's perspective, typically following the format: 'As a [user], I want [feature] so that [benefit].'",
+        "epic": "An epic is a large user story that spans multiple sprints and is broken down into smaller stories for implementation.",
+        "kanban": "Kanban is a visual workflow management method using boards and cards to track work progress through stages like To Do, In Progress, and Done.",
+
+        # --- 37. TESTING SOFTWARE ---
+        "smoke test": "Smoke testing is a preliminary test to check if the basic functions of a software build work correctly before detailed testing.",
+        "sanity test": "Sanity testing verifies that a specific feature or bug fix works as expected after changes, without testing the entire system.",
+        "regression": "Regression testing ensures that new code changes haven't broken or negatively affected existing features.",
+        "black box testing": "Black box testing evaluates software functionality without knowledge of internal code structure, focusing on inputs and outputs.",
+        "white box testing": "White box testing examines internal code structure, logic, and paths to verify correctness at the source code level.",
+        "mutation testing": "Mutation testing introduces small changes (mutations) to code to verify that tests can detect and reject them.",
+        "test coverage": "Test coverage measures what percentage of code is executed during testing, helping identify untested areas.",
+        "mock": "A mock is a simulated object that mimics the behavior of a real component in controlled ways during testing.",
+        "stub": "A stub provides predetermined responses to calls during testing, simpler than mocks and used for basic dependency replacement.",
+        "assertion": "An assertion is a statement that checks if a condition is true during testing, failing the test if the condition is false.",
+
+        # --- 38. PROTOCOALE DE COMUNICARE ---
+        "mqtt": "MQTT (Message Queuing Telemetry Transport) is a lightweight messaging protocol for IoT devices with limited bandwidth.",
+        "coap": "CoAP (Constrained Application Protocol) is a specialized web transfer protocol for constrained nodes and networks in IoT.",
+        "amqp": "AMQP (Advanced Message Queuing Protocol) is an open standard for message-oriented middleware, used by RabbitMQ.",
+        "grpc": "gRPC is a high-performance RPC framework by Google using Protocol Buffers and HTTP/2 for efficient service communication.",
+        "protobuf": "Protocol Buffers (protobuf) is a compact binary serialization format by Google for structured data, faster than JSON.",
+        "websocket vs http": "WebSocket provides full-duplex, persistent connections ideal for real-time apps; HTTP is request-response and stateless.",
+        "long polling": "Long polling keeps an HTTP connection open until the server has data to send, simulating real-time updates.",
+        "server sent events": "SSE (Server-Sent Events) allows servers to push real-time updates to browsers over a single HTTP connection.",
+        "udp": "UDP (User Datagram Protocol) is a connectionless protocol that sends data without guarantee of delivery, used for streaming and gaming.",
+        "icmp": "ICMP (Internet Control Message Protocol) sends error messages and operational information for network diagnostics, like the 'ping' command.",
+
+        # --- 39. FORMATURI DE DATE ---
+        "yaml": "YAML (YAML Ain't Markup Language) is a human-readable data serialization format used for configuration files.",
+        "csv": "CSV (Comma-Separated Values) stores tabular data in plain text, with each line representing a row and commas separating columns.",
+        "toml": "TOML (Tom's Obvious Minimal Language) is a configuration file format designed to be easy to read and parse.",
+        "ini": "INI files are simple configuration files with sections and key-value pairs, commonly used in Windows and legacy applications.",
+        "parquet": "Parquet is a columnar storage file format optimized for big data processing, used with Apache Spark and Hadoop.",
+        "avro": "Avro is a row-based data serialization framework with schema support, used in Apache Kafka and Hadoop ecosystems.",
+        "bson": "BSON (Binary JSON) extends JSON with additional data types and binary encoding, used by MongoDB for document storage.",
+        "markdown": "Markdown is a lightweight markup language with plain text formatting syntax, widely used for documentation and README files.",
+        "base64": "Base64 encodes binary data as ASCII text using 64 characters, commonly used to embed images in HTML or transmit data in JSON.",
+        "url encoding": "URL encoding converts special characters into a format safe for transmission in URLs, replacing spaces with %20 and symbols with %XX codes.",
+
+        # --- 40. SISTEME DE OPERARE AVANSATE ---
+        "sandbox": "A sandbox is an isolated environment where programs can run without affecting the rest of the system, used for security testing.",
+        "hypervisor": "A hypervisor creates and runs virtual machines by abstracting hardware resources. Type 1 runs on bare metal (VMware ESXi); Type 2 runs on an OS (VirtualBox).",
+        "dual boot": "Dual booting installs two operating systems on one computer, allowing the user to choose which to run at startup.",
+        "live usb": "A live USB runs an operating system directly from a USB drive without installing it on the computer's hard disk.",
+        "package manager": "A package manager automates installing, updating, and removing software. Examples: apt (Debian), brew (macOS), winget (Windows).",
+        "systemd": "systemd is the init system and service manager for many Linux distributions, managing boot processes and system services.",
+        "cron job": "A cron job schedules commands or scripts to run automatically at specific times or intervals on Unix-like systems.",
+        "environment variable": "Environment variables store configuration values outside of code, like PATH, HOME, and API keys, accessible system-wide.",
+        "shell": "A shell is a command-line interpreter that lets users interact with the operating system. Examples: Bash, Zsh, Fish, PowerShell.",
+        "process": "A process is an instance of a running program, with its own memory space and system resources managed by the OS kernel.",
     }
+    
 
 # ---------- GESTIUNEA SESIUNII ----------
 if "logged_in" not in st.session_state: st.session_state.logged_in = False
