@@ -40,10 +40,10 @@ if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
         
         # ============================================
-        # 💎 AEGIS LEVEL — Interactive Mentor (20 terms)
+          # 💎 AEGIS LEVEL — Interactive Mentor 
         # ============================================
         
-        "api": {
+            "api": {
             "beginner": "Un API e ca un chelner într-un restaurant. Tu comanzi mâncarea, el merge la bucătărie și îți aduce farfuria. API-ul duce cererea ta la un server și aduce răspunsul înapoi.",
             "professional": "Un API (Application Programming Interface) este un set de reguli și protocoale care permite două aplicații software să comunice. API-urile REST folosesc HTTP și JSON pentru a transfera date între client și server.",
             "expert": "La nivel arhitectural, un API trebuie proiectat cu versionare, rate limiting, autentificare OAuth 2.0, și documentație OpenAPI. Performanța depinde de caching strategies, paginare și optimizarea query-urilor.",
@@ -53,7 +53,7 @@ if "knowledge" not in st.session_state:
             "related": ["api rest", "json", "oauth", "http"]
         },
         
-        "python": {
+            "python": {
             "beginner": "Python e ca un limbaj pe care îl vorbești cu computerul. E simplu, ca engleza. Scrii ce vrei să facă, iar el execută. E perfect pentru începători!",
             "professional": "Python este un limbaj de programare high-level, interpretat, cu tipare dinamică. Este folosit în web development, data science, AI/ML și automatizări.",
             "expert": "Python 3.x oferă async/await, GIL pentru thread safety, și un ecosistem vast prin PyPI. Arhitectura permite OOP și programare funcțională.",
@@ -63,7 +63,7 @@ if "knowledge" not in st.session_state:
             "related": ["variabilă", "funcție", "clasă", "pip", "django"]
         },
         
-        "ai": {
+            "ai": {
             "beginner": "Inteligența Artificială e ca un copil care învață. Îi arăți multe poze cu pisici, și el învață să recunoască o pisică. AI face același lucru — învață din date.",
             "professional": "AI este simularea proceselor de inteligență umană. Subdomenii: Machine Learning, Deep Learning, NLP, Computer Vision.",
             "expert": "Implementările moderne folosesc Transformer, difuzie și reinforcement learning. Optimizarea necesită GPU-uri și tehnici de fine-tuning.",
@@ -73,7 +73,7 @@ if "knowledge" not in st.session_state:
             "related": ["machine learning", "deep learning", "neural network", "nlp"]
         },
         
-        "samsung": {
+            "samsung": {
             "beginner": "Samsung e ca un magazin imens de tehnologie. Fac telefoane Galaxy, laptopuri Galaxy Book, ceasuri Galaxy Watch, și multe altele!",
             "professional": "Samsung Electronics este lider global în tehnologie: procesoare, ecrane AMOLED, memorii și dispozitive Galaxy.",
             "expert": "Samsung domină semiconductori (DRAM, NAND), display-uri și inovația pliabilă. Ecosistemul Galaxy integrează telefoane, tablete, laptopuri, watch-uri și IoT.",
@@ -83,7 +83,7 @@ if "knowledge" not in st.session_state:
             "related": ["samsung galaxy book5 pro 360", "galaxy ai", "one ui 7"]
         },
         
-        "cpu": {
+            "cpu": {
             "beginner": "CPU-ul e creierul computerului. Tot ce faci — click, tastare, deschidere aplicație — trece prin CPU.",
             "professional": "CPU execută instrucțiuni prin ciclul fetch-decode-execute. Performanța: frecvență, core-uri, cache, arhitectură.",
             "expert": "Procesoarele moderne (Intel Core Ultra, Apple M4) folosesc 3nm, NPU pentru AI, DDR5 și PCIe 5.0.",
@@ -93,7 +93,7 @@ if "knowledge" not in st.session_state:
             "related": ["gpu", "ram", "ssd", "intel", "amd"]
         },
         
-        "samsung galaxy book5 pro 360": {
+            "samsung galaxy book5 pro 360": {
             "beginner": "E laptopul visurilor tale, Andrei! Subțire, se pliază, ecran superb, baterie toată ziua. Perfect pentru AEGIS!",
             "professional": "Laptop convertibil premium: AMOLED 2X 16\", Intel Core Ultra 7 Series 2, 16GB DDR5, 1TB SSD, S Pen, Wi-Fi 7, 25 ore baterie.",
             "expert": "Arhitectura Lunar Lake cu NPU 48 TOPS, display 500 nits HDR 120Hz, vapor chamber cooling, 1.66 kg.",
@@ -103,11 +103,7 @@ if "knowledge" not in st.session_state:
             "related": ["samsung", "laptop", "intel", "windows 11"]
         },
         
-        # ============================================
-        # 💎 AEGIS LEVEL — Interactive Mentor (continued)
-        # ============================================
-
-        "cloud": {
+            "cloud": {
             "beginner": "Cloud-ul e ca un hard disk uriaș pe internet. În loc să ții fișierele doar pe laptop, le pui 'în nor' și poți să le accesezi de oriunde, de pe orice dispozitiv.",
             "professional": "Cloud computing-ul livrează servicii de calcul (servere, stocare, baze de date, rețele) prin internet. Modele: IaaS (infrastructură), PaaS (platformă), SaaS (software). Lideri: AWS, Azure, Google Cloud.",
             "expert": "Arhitecturile cloud-native folosesc microservicii, containere (Docker, Kubernetes), serverless (AWS Lambda) și CI/CD. Optimizarea costurilor implică auto-scaling, reserved instances și FinOps.",
@@ -117,7 +113,7 @@ if "knowledge" not in st.session_state:
             "related": ["aws", "azure", "google cloud", "saas", "docker", "serverless"]
         },
 
-        "blockchain": {
+            "blockchain": {
             "beginner": "Blockchain-ul e ca un caiet de notițe pe care toată lumea poate scrie, dar nimeni nu poate șterge. Fiecare pagină e un 'bloc' legat de cel anterior — de aici 'lanț de blocuri'.",
             "professional": "Blockchain este un registru distribuit și descentralizat care înregistrează tranzacții immutable. Folosește consens (PoW, PoS), criptografie și smart contracts. Aplicații: criptomonede, DeFi, NFT-uri, supply chain.",
             "expert": "Implementările enterprise (Hyperledger, Corda) oferă blockchain privat. Scalabilitatea se rezolvă prin Layer 2 (Lightning Network, Polygon), sharding și rollups.",
@@ -126,8 +122,8 @@ if "knowledge" not in st.session_state:
             "quiz": {"question": "Cine a creat Bitcoin?", "options": ["Elon Musk", "Satoshi Nakamoto", "Bill Gates", "Vitalik Buterin"], "answer": "Satoshi Nakamoto"},
             "related": ["bitcoin", "ethereum", "nft", "defi", "web3", "smart contract"]
         },
-
-        "cybersecurity": {
+        
+            "cybersecurity": {
             "beginner": "Securitatea cibernetică e ca o alarmă pentru casa ta digitală. Te protejează de hoți (hackeri), încuie ușile (parole) și te avertizează când cineva încearcă să intre.",
             "professional": "Cybersecurity protejează sisteme, rețele și date împotriva atacurilor digitale. Domenii: network security, application security, cryptography, incident response. Amenințări: malware, phishing, ransomware, DDoS, zero-day.",
             "expert": "Strategiile defense-in-depth implementează multiple layere: firewall (L3/L4), WAF (L7), IDS/IPS, SIEM, EDR/XDR. Zero Trust Architecture elimină perimetrul tradițional.",
@@ -137,7 +133,7 @@ if "knowledge" not in st.session_state:
             "related": ["firewall", "vpn", "encryption", "malware", "phishing"]
         },
 
-        "git": {
+            "git": {
             "beginner": "Git e ca un jurnal al codului tău. De fiecare dată când faci o schimbare, Git o salvează. Dacă strici ceva, poți să te întorci la o versiune anterioară. E ca un 'undo' infinit!",
             "professional": "Git este un sistem de versionare distribuit care urmărește modificările în codul sursă. Concepte: commit, branch, merge, rebase, pull request. Platforme: GitHub, GitLab, Bitbucket.",
             "expert": "Git flow avansat: GitFlow, trunk-based development, semantic versioning, conventional commits. CI/CD integrat prin GitHub Actions/GitLab CI.",
@@ -147,7 +143,7 @@ if "knowledge" not in st.session_state:
             "related": ["github", "github actions", "gitlab", "devops", "ci/cd"]
         },
 
-        "docker": {
+            "docker": {
             "beginner": "Docker e ca o cutie magică în care pui codul tău cu tot ce are nevoie ca să ruleze. Poți să muți cutia pe orice computer și va funcționa la fel. Gata cu 'pe laptopul meu merge'!",
             "professional": "Docker este o platformă de containerizare care pachetează aplicațiile cu toate dependențele într-un container izolat. Containerele sunt lightweight față de VM-uri și rulează pe Docker Engine.",
             "expert": "Arhitectura Docker: Dockerfile → Image → Container. Orchestration cu Kubernetes, Docker Compose pentru multi-container, registry cu Docker Hub. Best practices: multi-stage builds, layer caching, non-root users.",
@@ -157,7 +153,7 @@ if "knowledge" not in st.session_state:
             "related": ["kubernetes", "docker compose", "container", "devops", "serverless"]
         },
 
-        "machine learning": {
+            "machine learning": {
             "beginner": "Machine Learning e ca un copil care învață din exemple. Îi arăți 1000 de poze cu pisici, și el învață singur cum arată o pisică. Nu-i spui tu regulile — le descoperă singur!",
             "professional": "ML este un subset al AI unde algoritmii învață din date fără a fi programați explicit. Tipuri: supervised (date etichetate), unsupervised (pattern-uri ascunse), reinforcement (recompense).",
             "expert": "Algoritmi: Random Forest, XGBoost, SVM, Neural Networks. Optimizare: gradient descent, backpropagation. Evaluare: cross-validation, confusion matrix, ROC-AUC. Feature engineering și hyperparameter tuning.",
@@ -167,7 +163,7 @@ if "knowledge" not in st.session_state:
             "related": ["deep learning", "neural network", "ai", "data science", "tensorflow"]
         },
 
-        "firewall": {
+            "firewall": {
             "beginner": "Un firewall e ca un bodyguard la intrarea într-un club. El verifică pe toți cei care vor să intre. Dacă ești pe listă, intri. Dacă nu, rămâi afară. Firewall-ul face același lucru cu datele.",
             "professional": "Un firewall monitorizează și filtrează traficul de rețea pe baza unor reguli de securitate predefinite. Poate fi hardware sau software și operează la nivel de rețea (Layer 3/4) sau aplicație (Layer 7).",
             "expert": "Next-Generation Firewall (NGFW) integrează IPS, DPI, SSL inspection și application awareness. Arhitecturi: perimeter firewall, distributed firewall, cloud firewall (AWS Security Groups, Azure NSG).",
@@ -177,7 +173,7 @@ if "knowledge" not in st.session_state:
             "related": ["vpn", "ids", "ips", "encryption", "cybersecurity"]
         },
 
-        "neural network": {
+            "neural network": {
             "beginner": "O rețea neuronală e ca un creier artificial făcut din mulți 'neuroni' mici conectați între ei. Fiecare neuron primește informație, o procesează și o trimite mai departe. Împreună, rezolvă probleme complexe.",
             "professional": "O rețea neuronală artificială este inspirată de creierul uman, formată din straturi de neuroni interconectați. Fiecare conexiune are o pondere (weight) care se ajustează prin backpropagation.",
             "expert": "Arhitecturi: CNN (imagini), RNN/LSTM (secvențe), Transformer (NLP). Antrenare: forward pass, loss calculation, backward pass (gradient descent). Optimizare: Adam, SGD, learning rate scheduling.",
@@ -187,7 +183,7 @@ if "knowledge" not in st.session_state:
             "related": ["deep learning", "machine learning", "cnn", "rnn", "transformer"]
         },
 
-        "encryption": {
+            "encryption": {
             "beginner": "Criptarea e ca un limbaj secret. Scrii un mesaj, îl transformi în ceva de necitit (criptezi), și doar persoana care are 'cheia' poate să-l citească (decripteze).",
             "professional": "Criptarea transformă datele într-un format codificat folosind algoritmi matematici. Tipuri: simetrică (AES — aceeași cheie) și asimetrică (RSA — cheie publică + privată).",
             "expert": "Standarde: AES-256 (guvernamental), RSA-4096, ECC. TLS 1.3 pentru web. Criptarea end-to-end (Signal Protocol). Hashing: SHA-256, bcrypt. Quantum-resistant cryptography în dezvoltare.",
@@ -197,7 +193,7 @@ if "knowledge" not in st.session_state:
             "related": ["decryption", "aes", "rsa", "ssl", "tls", "https"]
         },
 
-        "kubernetes": {
+            "kubernetes": {
             "beginner": "Kubernetes e ca un dirijor de orchestră. Ai multe containere (muzicieni) și Kubernetes se asigură că toate cântă la timp, că niciunul nu lipsește și că totul sună perfect.",
             "professional": "Kubernetes (K8s) este o platformă open-source pentru automatizarea deployment-ului, scalării și managementului containerelor. Componente: Pods, Nodes, Services, Deployments, ConfigMaps.",
             "expert": "Arhitectură: Control Plane (API Server, etcd, Scheduler) + Worker Nodes (kubelet, kube-proxy). Networking: CNI (Calico, Cilium). Service Mesh: Istio. GitOps: ArgoCD, Flux.",
@@ -207,7 +203,7 @@ if "knowledge" not in st.session_state:
             "related": ["docker", "docker compose", "helm", "istio", "devops", "microservices"]
         },
 
-        "iot": {
+            "iot": {
             "beginner": "IoT (Internet of Things) e când obiectele din casa ta devin 'smart' și se conectează la internet. Frigiderul îți spune că ai rămas fără lapte, ceasul îți monitorizează somnul, becurile se aprind singure.",
             "professional": "IoT conectează dispozitive fizice (senzori, actuatori) la internet pentru colectare de date și control. Protocoale: MQTT, CoAP, Zigbee. Platforme: AWS IoT, Azure IoT Hub.",
             "expert": "Arhitecturi: Edge Computing (procesare locală), Fog Computing, Cloud IoT. Securitate: PKI pentru device-uri, OTA updates. Provocări: scalabilitate miliarde de device-uri, latență, interoperabilitate.",
@@ -217,7 +213,7 @@ if "knowledge" not in st.session_state:
             "related": ["arduino", "raspberry pi", "sensor", "cloud", "5g"]
         },
 
-        "5g": {
+            "5g": {
             "beginner": "5G e a cincea generație de internet mobil. E ca și cum ai trece de la o șosea cu 2 benzi la o autostradă cu 100 de benzi. Totul e mai rapid, mai instant.",
             "professional": "5G este standardul de rețea mobilă cu viteze de până la 20 Gbps, latență sub 1ms și capacitate pentru 1 milion de device-uri pe km². Benzi: low-band, mid-band, mmWave.",
             "expert": "Arhitectură 5G: Network Slicing (rețele virtuale dedicate), MEC (Multi-access Edge Computing), beamforming. 3GPP Release 17/18. Aplicații critice: V2X (vehicule autonome), remote surgery, Industry 4.0.",
@@ -227,7 +223,7 @@ if "knowledge" not in st.session_state:
             "related": ["iot", "wifi 7", "bandwidth", "latency", "network"]
         },
 
-        "wifi 7": {
+            "wifi 7": {
             "beginner": "Wi-Fi 7 e cea mai nouă și mai rapidă tehnologie de internet wireless. E ca Wi-Fi-ul pe care îl știi, dar pe steroizi. Perfect pentru gaming, streaming 8K și realitate virtuală.",
             "professional": "Wi-Fi 7 (802.11be) oferă viteze de până la 46 Gbps, canale de 320 MHz, 4096-QAM, Multi-Link Operation (MLO) și latență ultra-scăzută.",
             "expert": "MLO permite conectarea simultană pe mai multe benzi (2.4, 5, 6 GHz). 16x16 MU-MIMO, OFDMA îmbunătățit. Compatibilitate cu Wi-Fi 6/6E. Aplicații enterprise: AR/VR fără fir, Industry 4.0.",
@@ -237,7 +233,7 @@ if "knowledge" not in st.session_state:
             "related": ["5g", "bandwidth", "latency", "router", "network"]
         },
 
-        "ssd": {
+            "ssd": {
             "beginner": "SSD-ul e ca o bibliotecă ultra-rapidă pentru fișierele tale. Spre deosebire de HDD (care are piese care se învârt), SSD-ul nu are piese mișcătoare și e de 10 ori mai rapid.",
             "professional": "SSD (Solid State Drive) folosește memorie NAND flash pentru stocare persistentă. Interfețe: SATA III (până la 550 MB/s), NVMe PCIe 4.0/5.0 (până la 14 GB/s).",
             "expert": "Tehnologii: 3D NAND (straturi multiple), SLC/MLC/TLC/QLC caching, DRAM cache vs DRAM-less. NVMe 2.0, ZNS (Zoned Namespaces) pentru centre de date. Endurance: TBW (Total Bytes Written).",
@@ -246,7 +242,7 @@ if "knowledge" not in st.session_state:
             "quiz": {"question": "Ce interfață e mai rapidă pentru SSD?", "options": ["NVMe PCIe", "SATA III", "USB 3.0", "FireWire"], "answer": "NVMe PCIe"},
             "related": ["hdd", "ram", "nvme", "storage", "motherboard"]
         },
-                "html": {
+            "html": {
             "beginner": "HTML e ca scheletul unei case. Fiecare pagină web e construită pe un schelet HTML — el ține totul în picioare: texte, poze, butoane.",
             "professional": "HTML (HyperText Markup Language) este limbajul standard pentru structurarea paginilor web, folosind elemente și tag-uri pentru a defini conținutul.",
             "expert": "HTML5 aduce semantic elements (article, section, nav), suport multimedia nativ (video, audio), canvas pentru grafică și API-uri moderne (localStorage, Web Workers).",
@@ -256,7 +252,7 @@ if "knowledge" not in st.session_state:
             "related": ["css", "javascript", "dom", "frontend", "web development"]
         },
 
-        "css": {
+            "css": {
             "beginner": "Dacă HTML e scheletul casei, CSS e vopseaua, mobila și decorațiunile. CSS face site-urile să arate FRUMOS — culori, fonturi, layout-uri.",
             "professional": "CSS (Cascading Style Sheets) controlează prezentarea vizuală a paginilor web: layout, culori, fonturi, animații și responsive design.",
             "expert": "CSS modern include Flexbox și Grid pentru layout, custom properties (variabile), animații keyframe, media queries pentru responsive design și preprocesoare ca Sass.",
@@ -266,7 +262,7 @@ if "knowledge" not in st.session_state:
             "related": ["html", "javascript", "frontend", "responsive design", "bootstrap"]
         },
 
-        "javascript": {
+            "javascript": {
             "beginner": "JavaScript e magicianul paginii web. Face butoanele să reacționeze, animațiile să se miște și totul să fie INTERACTIV. E ca un creier pentru site-uri.",
             "professional": "JavaScript este un limbaj de scripting pentru web, permițând conținut dinamic, manipulare DOM și comunicare asincronă cu serverele.",
             "expert": "JS modern (ES2024+) suportă async/await, modules, arrow functions, destructuring, spread operators. Rulează pe server prin Node.js, Deno, Bun. Framework-uri: React, Vue, Angular.",
@@ -276,7 +272,7 @@ if "knowledge" not in st.session_state:
             "related": ["html", "css", "react", "node.js", "typescript"]
         },
 
-        "sql": {
+            "sql": {
             "beginner": "SQL e ca un bibliotecar care găsește orice carte într-o bibliotecă imensă. Îi spui ce cauți, și el știe exact unde e. SQL face același lucru cu datele.",
             "professional": "SQL (Structured Query Language) gestionează și interoghează baze de date relaționale. Operații: SELECT, INSERT, UPDATE, DELETE, JOIN-uri între tabele.",
             "expert": "Optimizare SQL: indexing (B-tree, hash), query execution plans, normalization vs denormalization, stored procedures, triggers, window functions, CTE-uri.",
@@ -285,8 +281,8 @@ if "knowledge" not in st.session_state:
             "quiz": {"question": "Ce comandă SQL extrage date?", "options": ["SELECT", "GET", "FETCH", "EXTRACT"], "answer": "SELECT"},
             "related": ["database", "mysql", "postgresql", "nosql", "orm"]
         },
-
-        "react": {
+    
+            "react": {
             "beginner": "React e ca un set de piese LEGO pentru site-uri. Construiești bucăți mici (componente) și le îmbini într-o pagină web interactivă și rapidă.",
             "professional": "React este o bibliotecă JavaScript pentru construirea interfețelor utilizator, bazată pe componente reutilizabile și Virtual DOM pentru performanță.",
             "expert": "React avansat: hooks (useState, useEffect, useContext), state management (Redux, Zustand), server components, Next.js pentru SSR, React Native pentru mobile.",
@@ -296,7 +292,7 @@ if "knowledge" not in st.session_state:
             "related": ["javascript", "angular", "vue", "frontend", "next.js"]
         },
 
-        "linux": {
+            "linux": {
             "beginner": "Linux e ca un motor invizibil care rulează lumea. Nu-l vezi, dar e în telefoane, servere, supercomputere și chiar în mașina Tesla. E gratuit și foarte puternic.",
             "professional": "Linux este un kernel open-source pentru sisteme de operare. Distribuții populare: Ubuntu, Fedora, Debian, Arch. Domină serverele, cloud-ul și dispozitivele embedded.",
             "expert": "Linux kernel: process scheduling (CFS), memory management, VFS, namespaces/cgroups pentru containere. Administrare: systemd, iptables/nftables, LVM, kernel tuning.",
@@ -306,7 +302,7 @@ if "knowledge" not in st.session_state:
             "related": ["ubuntu", "bash", "terminal", "kernel", "debian"]
         },
 
-        "vpn": {
+            "vpn": {
             "beginner": "Un VPN e ca un tunel secret între tine și internet. Nimeni nu poate vedea ce faci — nici hackerii, nici furnizorul de internet. E ca o pelerină de invizibilitate digitală.",
             "professional": "VPN (Virtual Private Network) criptează traficul de internet și îl direcționează printr-un server securizat, ascunzând adresa IP și protejând confidențialitatea.",
             "expert": "Protocoale VPN: WireGuard (modern, rapid), OpenVPN (flexibil), IKEv2/IPSec (mobil). Arhitecturi: site-to-site, remote access, split tunneling, kill switch.",
@@ -316,7 +312,7 @@ if "knowledge" not in st.session_state:
             "related": ["encryption", "cybersecurity", "firewall", "privacy", "proxy"]
         },
 
-        "android": {
+            "android": {
             "beginner": "Android e ca un sistem de operare care face telefonul tău să fie SMART. E creat de Google și e folosit de miliarde de telefoane, tablete și ceasuri din toată lumea.",
             "professional": "Android este un sistem de operare open-source bazat pe kernel Linux, dezvoltat de Google. Domină piața mobilă cu peste 70% cotă globală.",
             "expert": "Arhitectura Android: kernel Linux, HAL, Android Runtime (ART), framework Java/Kotlin. Componente: Activities, Services, Broadcast Receivers, Content Providers. Jetpack Compose pentru UI modern.",
@@ -326,7 +322,7 @@ if "knowledge" not in st.session_state:
             "related": ["ios", "kotlin", "flutter", "google play", "linux"]
         },
 
-        "windows": {
+            "windows": {
             "beginner": "Windows e ca un birou digital pe care îl folosești zilnic. E sistemul de operare care pornește când deschizi laptopul — cu pictograme, ferestre și bara de start.",
             "professional": "Microsoft Windows este cel mai popular sistem de operare pentru PC-uri. Windows 11 oferă Copilot AI, suport pentru aplicații Android și securitate avansată.",
             "expert": "Windows 11 arhitectură: kernel NT, Hyper-V virtualization, WSL2 pentru Linux, DirectStorage pentru gaming, TPM 2.0 pentru securitate. PowerShell pentru administrare avansată.",
@@ -336,7 +332,7 @@ if "knowledge" not in st.session_state:
             "related": ["linux", "macos", "powershell", "kernel", "uefi"]
         },
 
-        "github": {
+            "github": {
             "beginner": "GitHub e ca o bibliotecă uriașă unde programatorii își pun codul. E și o rețea socială pentru developeri — poți colabora, învăța și arăta ce ai construit.",
             "professional": "GitHub este cea mai mare platformă de găzduire a codului sursă, folosind Git pentru versionare. Oferă CI/CD prin GitHub Actions, code review și project management.",
             "expert": "GitHub avansat: Actions workflows, Codespaces, Dependabot, code scanning cu CodeQL, branch protection rules, GitHub Pages, API REST și GraphQL.",
@@ -346,7 +342,7 @@ if "knowledge" not in st.session_state:
             "related": ["git", "github actions", "devops", "ci/cd", "repository"]
         },
 
-                "json": {
+            "json": {
             "beginner": "JSON e ca un translator universal pentru computere. Orice limbaj de programare înțelege JSON — e modul în care aplicațiile vorbesc între ele pe internet.",
             "professional": "JSON (JavaScript Object Notation) este un format lightweight de schimb de date, ușor de citit pentru oameni și simplu de procesat pentru mașini. Folosește perechi cheie-valoare și array-uri.",
             "expert": "JSON suportă tipuri: string, number, boolean, null, object, array. Validare prin JSON Schema. Alternativă la XML, mai compact. JSON Lines pentru streaming. JSONB în PostgreSQL pentru interogări rapide.",
@@ -356,7 +352,7 @@ if "knowledge" not in st.session_state:
             "related": ["api", "xml", "api rest", "database", "mongodb"]
         },
 
-        "bitcoin": {
+            "bitcoin": {
             "beginner": "Bitcoin e ca aurul digital. Nu există fizic — e doar pe internet. Nimeni nu-l controlează: nici bănci, nici guverne. Oamenii îl trimit direct unul altuia, ca pe un email cu bani.",
             "professional": "Bitcoin (BTC) este prima criptomonedă descentralizată, creată în 2009 de Satoshi Nakamoto. Rulează pe tehnologia blockchain și folosește Proof of Work pentru securitate.",
             "expert": "Bitcoin: supply limitat la 21 milioane, mining cu SHA-256, halving la fiecare 210,000 blocuri, Lightning Network pentru Layer 2 scaling. UTXO model, non-Turing complete scripting.",
@@ -366,7 +362,7 @@ if "knowledge" not in st.session_state:
             "related": ["blockchain", "ethereum", "criptomonedă", "mining", "wallet"]
         },
 
-        "gpu": {
+            "gpu": {
             "beginner": "GPU-ul e ca un artist care pictează tot ce vezi pe ecran — jocuri, filmulețe, poze. Face asta de sute de ori pe secundă, mult mai rapid decât CPU-ul la grafică.",
             "professional": "GPU (Graphics Processing Unit) este un procesor specializat pentru calcule paralele masive, esențial pentru randare 3D, gaming, AI și mining crypto.",
             "expert": "GPU-urile moderne (NVIDIA CUDA, AMD ROCm) au mii de core-uri pentru parallel computing. Tensor Cores pentru AI, RT Cores pentru ray tracing. VRAM (GDDR6X, HBM3) oferă bandwidth masiv.",
@@ -376,7 +372,7 @@ if "knowledge" not in st.session_state:
             "related": ["cpu", "ram", "nvidia", "deep learning", "ssd"]
         },
 
-        "ram": {
+            "ram": {
             "beginner": "RAM-ul e ca un birou imens. Cu cât ai mai mult birou, cu atât poți lucra la mai multe lucruri simultan fără să se aglomereze. Când închizi calculatorul, biroul se golește.",
             "professional": "RAM (Random Access Memory) este memoria volatilă care stochează date temporar pentru procesor. DDR5 oferă viteze de până la 6400 MT/s cu consum redus.",
             "expert": "RAM arhitectură: canale (single/dual/quad), timing-uri CAS, XMP/EXPO pentru overclocking. ECC RAM pentru servere corectează erori. LPDDR5X în laptopuri oferă până la 8533 MT/s.",
@@ -386,7 +382,7 @@ if "knowledge" not in st.session_state:
             "related": ["cpu", "ssd", "gpu", "motherboard", "ddr5"]
         },
 
-        "nvidia": {
+            "nvidia": {
             "beginner": "NVIDIA e ca un magician al graficii. Fac plăci video care transformă codul în lumi 3D incredibile și antrenează inteligența artificială. Sunt creierul din spatele ChatGPT și al jocurilor video.",
             "professional": "NVIDIA este liderul mondial în GPU-uri și AI computing. Seria GeForce pentru gaming, RTX cu ray tracing, și CUDA pentru calcul paralel în deep learning.",
             "expert": "NVIDIA arhitecturi: Hopper (H100 — datacenter AI), Ada Lovelace (RTX 40 — consumer), Blackwell (2024 — next-gen). CUDA API permite GPU computing. TensorRT pentru inferență optimizată.",
@@ -396,7 +392,7 @@ if "knowledge" not in st.session_state:
             "related": ["gpu", "ai", "deep learning", "intel", "amd"]
         },
 
-        "intel": {
+            "intel": {
             "beginner": "Intel e ca un bucătar-șef care gătește procesoarele din majoritatea laptopurilor. E compania care a inventat microprocesorul și încă e una dintre cele mai mari din lume.",
             "professional": "Intel Corporation este cel mai mare producător de procesoare x86 pentru PC-uri și servere. Produce procesoare Core Ultra, Xeon și plăci grafice Arc.",
             "expert": "Intel arhitecturi: Lunar Lake (Core Ultra 200V — 3nm, AI NPU), Arrow Lake (desktop), Granite Rapids (Xeon server). Foundry services (Intel 18A). Gaudi acceleratoare AI.",
@@ -406,7 +402,7 @@ if "knowledge" not in st.session_state:
             "related": ["cpu", "amd", "nvidia", "gpu", "motherboard"]
         },
 
-        "amd": {
+            "amd": {
             "beginner": "AMD e ca un underdog care a devenit campion. Era mereu pe locul 2 după Intel, dar acum face unele dintre cele mai rapide procesoare din lume. Și plăci video, și cipuri pentru console.",
             "professional": "AMD (Advanced Micro Devices) produce procesoare Ryzen (desktop/laptop), plăci grafice Radeon și cipuri pentru console (PlayStation 5, Xbox Series X).",
             "expert": "AMD arhitecturi: Zen 5 (Ryzen 9000), RDNA 3 (Radeon RX 7000), CDNA (instinct AI accelerators). Chiplet design pentru yield și costuri reduse. 3D V-Cache pentru gaming.",
@@ -416,7 +412,7 @@ if "knowledge" not in st.session_state:
             "related": ["cpu", "intel", "nvidia", "gpu", "motherboard"]
         },
 
-        "apple": {
+            "apple": {
             "beginner": "Apple e ca un designer de lux al tehnologiei. Fac iPhone, MacBook, iPad — toate scumpe, dar elegante și ușor de folosit. E ca Mercedes-ul din lumea tech.",
             "professional": "Apple Inc. este cea mai valoroasă companie din lume, cunoscută pentru iPhone, Mac, iPad și ecosistemul integrat de hardware și software.",
             "expert": "Apple Silicon: cipuri M-series (M4 — 3nm, Neural Engine). Arhitectură unificată memory. Ecosistem: iOS, macOS, watchOS, visionOS. App Store cu peste 2 milioane de aplicații.",
@@ -426,7 +422,7 @@ if "knowledge" not in st.session_state:
             "related": ["ios", "macos", "iphone 16 pro max", "samsung", "macbook pro 16"]
         },
 
-        "tesla": {
+            "tesla": {
             "beginner": "Tesla e ca un iPhone pe roți. Mașinile lor sunt electrice, rapide și pline de tehnologie. Se conduc singure pe autostradă și primesc update-uri ca un telefon.",
             "professional": "Tesla Inc. este lider în vehicule electrice și energie curată, fondată de Elon Musk. Produce Model S, 3, X, Y și Cybertruck cu tehnologie de conducere autonomă.",
             "expert": "Tesla Full Self-Driving (FSD) folosește computer vision și rețele neuronale antrenate pe miliarde de km. Dojo supercomputer pentru training AI. 4680 battery cells pentru eficiență.",
@@ -436,15 +432,116 @@ if "knowledge" not in st.session_state:
             "related": ["elon musk", "ev", "ai", "nvidia", "green tech"]
         },
 
-        "spotify": {
+            "spotify": {
             "beginner": "Spotify e ca un DJ personal care știe exact ce muzică îți place. Cauți orice melodie, asculți podcasturi, și descoperi artiști noi. E ca un radio infinit în buzunar.",
             "professional": "Spotify este cea mai mare platformă de streaming audio din lume cu peste 500 milioane de utilizatori. Oferă muzică, podcasturi și recomandări bazate pe AI.",
             "expert": "Spotify arhitectură: microservicii, Kafka pentru streaming de date, Cassandra pentru scalability, ML pentru Discover Weekly și algoritmi de recomandare. Codec Ogg Vorbis/AAC.",
             "code": "# Caută un artist pe Spotify API\nimport requests\nheaders = {'Authorization': 'Bearer YOUR_TOKEN'}\nresponse = requests.get(\n    'https://api.spotify.com/v1/search',\n    headers=headers,\n    params={'q': 'Depeche Mode', 'type': 'artist'}\n)\ndata = response.json()\nfor artist in data['artists']['items']:\n    print(f\"{artist['name']} — Popularitate: {artist['popularity']}\")",
             "real_world": "Spotify a schimbat industria muzicală. Artiștii sunt plătiți per stream. Playlist-uri ca Discover Weekly folosesc AI să-ți găsească muzică nouă în fiecare săptămână.",
             "quiz": {"question": "Câți utilizatori are Spotify?", "options": ["Peste 500 milioane", "100 milioane", "1 miliard", "50 milioane"], "answer": "Peste 500 milioane"},
-            "related": ["streaming", "ai", "machine learning", "podcast", "apple"]
+             "related": ["streaming", "ai", "machine learning", "podcast", "apple"]
         },
+
+            "database": {
+            "beginner": "O bază de date e ca o bibliotecă digitală imensă. În loc de cărți, ține informații organizate — nume, numere, poze. Când cauți ceva, găsești instant.",
+            "professional": "O bază de date este o colecție structurată de date stocate electronic. Tipuri: relaționale (SQL) cu tabele și relații, și non-relaționale (NoSQL) cu documente, grafuri sau cheie-valoare.",
+            "expert": "Arhitecturi de baze de date: master-slave replication, sharding pentru scalare orizontală, ACID vs BASE, indexing (B-tree, hash, GiST), query optimization cu EXPLAIN, connection pooling.",
+            "code": "-- Creează o bază de date și o tabelă\nCREATE DATABASE aegis_db;\nUSE aegis_db;\nCREATE TABLE users (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    name VARCHAR(100),\n    level VARCHAR(20)\n);\nINSERT INTO users (name, level) VALUES ('Andrei', 'Expert');",
+            "real_world": "Când îți verifici soldul la bancă, datele tale sunt într-o bază de date. Facebook stochează miliarde de poze în baze de date. AEGIS însuși ar putea folosi o bază de date pentru termeni.",
+            "quiz": {"question": "Care sunt cele două tipuri principale de baze de date?", "options": ["SQL și NoSQL", "HTML și CSS", "JSON și XML", "RAM și ROM"], "answer": "SQL și NoSQL"},
+            "related": ["sql", "mysql", "postgresql", "mongodb", "nosql"]
+        },
+
+            "mysql": {
+            "beginner": "MySQL e ca un bibliotecar foarte rapid care organizează datele în tabele. E folosit de Facebook, YouTube și milioane de site-uri. E gratuit și foarte popular.",
+            "professional": "MySQL este un sistem de management al bazelor de date relaționale (RDBMS) open-source. Folosește SQL pentru interogări și este parte a stivei LAMP (Linux, Apache, MySQL, PHP).",
+            "expert": "MySQL: engine-uri InnoDB (ACID, foreign keys) și MyISAM (rapid, fără FK). Replication (master-slave, group replication). Indexing: B-tree, full-text. Partitioning, stored procedures, triggers, views.",
+            "code": "-- MySQL: Creează utilizator și acordă permisiuni\nCREATE USER 'andrei'@'localhost' IDENTIFIED BY 'parola_sigura';\nGRANT ALL PRIVILEGES ON aegis_db.* TO 'andrei'@'localhost';\nFLUSH PRIVILEGES;",
+            "real_world": "WordPress rulează pe MySQL. Facebook a pornit cu MySQL. Platforme ca Uber și Airbnb îl folosesc pentru date critice. E peste tot pe web.",
+            "quiz": {"question": "MySQL este un sistem de baze de date de tip...?", "options": ["Relațional (SQL)", "Document (NoSQL)", "Graph", "Key-Value"], "answer": "Relațional (SQL)"},
+            "related": ["sql", "database", "postgresql", "mongodb", "orm"]
+        },
+
+            "mongodb": {
+            "beginner": "MongoDB e ca un caiet de notițe flexibil. În loc de tabele rigide, poți scrie orice fel de notiță, în orice format, și o găsești rapid. E baza de date preferată pentru aplicații moderne.",
+            "professional": "MongoDB este o bază de date NoSQL orientată pe documente, stocând datele în format BSON (similar JSON). Ideală pentru date nestructurate și scalare orizontală.",
+            "expert": "MongoDB: sharding pentru scalare, replica sets pentru high availability, aggregation pipeline pentru analytics. Indexing: compound, text, geospatial, TTL. Schema validation opțională.",
+            "code": "// MongoDB: Inserare și căutare documente\ndb.users.insertOne({\n  name: 'Andrei',\n  level: 'Expert',\n  projects: ['AEGIS', 'Coffee Business']\n});\ndb.users.find({ level: 'Expert' });",
+            "real_world": "Forbes, eBay, și Adobe folosesc MongoDB. E alegerea preferată pentru startup-uri care au nevoie de flexibilitate și scalare rapidă.",
+            "quiz": {"question": "Ce format folosește MongoDB pentru stocare?", "options": ["BSON (Binary JSON)", "CSV", "XML", "YAML"], "answer": "BSON (Binary JSON)"},
+            "related": ["nosql", "database", "mysql", "json", "postgresql"]
+        },
+
+            "node.js": {
+            "beginner": "Node.js e ca un motor care face JavaScript să ruleze pe server, nu doar în browser. Cu Node.js poți construi un site întreg — frontend și backend — folosind aceeași limbă.",
+            "professional": "Node.js este un runtime JavaScript construit pe motorul V8 de la Chrome. Permite dezvoltarea de aplicații server-side cu JavaScript, folosind un model asincron non-blocant.",
+            "expert": "Node.js: event loop pentru I/O non-blocant, libuv pentru operații asincrone, cluster module pentru multi-threading, streams pentru date mari. npm — cel mai mare ecosistem de pachete.",
+            "code": "// Server Node.js simplu\nconst http = require('http');\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, {'Content-Type': 'text/plain'});\n  res.end('Salut, Andrei! AEGIS rulează pe Node.js!');\n});\nserver.listen(3000, () => console.log('Server pornit pe portul 3000'));",
+            "real_world": "Netflix, LinkedIn, și Uber folosesc Node.js. E backend-ul din spatele a milioane de aplicații web moderne.",
+            "quiz": {"question": "Pe ce motor JavaScript rulează Node.js?", "options": ["V8 (Chrome)", "SpiderMonkey (Firefox)", "JavaScriptCore (Safari)", "Chakra (Edge)"], "answer": "V8 (Chrome)"},
+            "related": ["javascript", "npm", "express", "backend", "react"]
+        },
+
+            "typescript": {
+            "beginner": "TypeScript e ca JavaScript, dar cu super-puteri. Adaugă 'tipuri' — etichete care spun exact ce fel de date folosești. E ca și cum ai avea un corector care te avertizează înainte să greșești.",
+            "professional": "TypeScript este un superset tipat al JavaScript, dezvoltat de Microsoft. Adaugă tipuri statice, interfețe, generice și compilare în JavaScript standard.",
+            "expert": "TypeScript: type system avansat (union, intersection, conditional types), decorators, declaration files (.d.ts), strict mode, tsconfig pentru configurare. Integrare perfectă cu VS Code.",
+            "code": "// TypeScript: Funcție cu tipuri\nfunction salut(nume: string, varsta: number): string {\n  return `Salut, ${nume}! Ai ${varsta} ani.`;\n}\nconsole.log(salut('Andrei', 15));",
+            "real_world": "Angular, Deno, și VS Code sunt scrise în TypeScript. Majoritatea companiilor mari migrează de la JavaScript la TypeScript pentru proiecte complexe.",
+            "quiz": {"question": "Cine a creat TypeScript?", "options": ["Microsoft", "Google", "Facebook", "Apple"], "answer": "Microsoft"},
+            "related": ["javascript", "react", "angular", "node.js", "frontend"]
+        },
+
+            "next.js": {
+            "beginner": "Next.js e ca un atelier magic pentru site-uri React. Face site-urile să se încarce instant și să fie găsite ușor de Google. E folosit de cele mai mari companii din lume.",
+            "professional": "Next.js este un framework React pentru producție, oferind Server-Side Rendering (SSR), Static Site Generation (SSG) și routing bazat pe fișiere.",
+            "expert": "Next.js 14+: App Router cu React Server Components, streaming cu Suspense, server actions pentru mutații, ISR (Incremental Static Regeneration), middleware pe edge. Optimizat pentru Vercel.",
+            "code": "// Next.js: Pagină simplă\nexport default function Home() {\n  return (\n    <div>\n      <h1>Salut, Andrei!</h1>\n      <p>AEGIS construit cu Next.js</p>\n    </div>\n  );\n}",
+            "real_world": "TikTok, Twitch, Hulu și Nike folosesc Next.js. E framework-ul React #1 pentru site-uri moderne, rapide și SEO-friendly.",
+            "quiz": {"question": "Ce companie a creat Next.js?", "options": ["Vercel", "Google", "Meta", "Netflix"], "answer": "Vercel"},
+            "related": ["react", "javascript", "typescript", "frontend", "ssr"]
+        },
+
+            "express": {
+            "beginner": "Express e ca un schelet gata-făcut pentru servere web. În loc să construiești totul de la zero, Express îți dă piesele de bază și tu le aranjezi cum vrei. Simplu și rapid.",
+            "professional": "Express.js este un framework minimalist pentru Node.js, oferind routing, middleware și suport pentru API-uri REST. Este cel mai popular framework Node.js.",
+            "expert": "Express: middleware chain (req, res, next), error handling, route parameters, query strings. Combinat cu body-parser, cors, helmet pentru securitate. Alternativă modernă: Fastify.",
+            "code": "// Express server simplu\nconst express = require('express');\nconst app = express();\napp.get('/', (req, res) => {\n  res.json({ message: 'Salut, Andrei!', project: 'AEGIS' });\n});\napp.listen(3000, () => console.log('Server Express pornit!'));",
+            "real_world": "PayPal, Uber, și Twitter au folosit Express la început. Milioane de API-uri rulează pe Express. E fundamentul backend-ului JavaScript modern.",
+            "quiz": {"question": "Express este un framework pentru...?", "options": ["Node.js", "Python", "Ruby", "PHP"], "answer": "Node.js"},
+            "related": ["node.js", "javascript", "api rest", "backend", "fastapi"]
+        },
+
+            "npm": {
+            "beginner": "npm e ca un magazin imens cu piese gratuite pentru proiectele tale de cod. Ai nevoie de ceva — cauți pe npm, instalezi și folosești. E cel mai mare magazin de cod din lume.",
+            "professional": "npm (Node Package Manager) este managerul de pachete implicit pentru Node.js, oferind acces la peste 2 milioane de pachete pentru dezvoltare JavaScript.",
+            "expert": "npm: package.json pentru dependențe, semantic versioning (semver), lock files (package-lock.json), scripts personalizate, npm audit pentru securitate, npx pentru executare one-time.",
+            "code": "# Comenzi npm esențiale\nnpm init -y                    # Inițializează proiect\nnpm install express            # Instalează pachet\nnpm install -g create-react-app  # Instalare globală\nnpm run start                 # Rulează script\nnpm audit fix                 # Repară vulnerabilități",
+            "real_world": "npm e folosit de peste 17 milioane de developeri. Orice proiect JavaScript modern începe cu npm install. Ecosistemul npm e cel mai mare din lume.",
+            "quiz": {"question": "Ce fișier conține dependențele unui proiect Node.js?", "options": ["package.json", "app.js", "config.yml", "docker-compose.yml"], "answer": "package.json"},
+            "related": ["node.js", "javascript", "pip", "pypi", "express"]
+        },
+
+            "rest api": {
+            "beginner": "Un REST API e ca un meniu într-un restaurant. Tu alegi din meniu (faci o cerere), chelnerul o duce la bucătărie (server), și primești mâncarea (răspunsul). Simplu și standardizat.",
+            "professional": "REST (Representational State Transfer) este un stil arhitectural pentru API-uri web, folosind metode HTTP (GET, POST, PUT, DELETE) și resurse identificate prin URL-uri.",
+            "expert": "REST principles: statelessness, cacheability, uniform interface, resource-based URLs. HATEOAS pentru descoperire. Versionare (v1/, header). Paginare, filtrare, rate limiting. OpenAPI/Swagger pentru documentație.",
+            "code": "# API REST cu Flask (Python)\nfrom flask import Flask, jsonify\napp = Flask(__name__)\n@app.route('/api/hello')\ndef hello():\n    return jsonify({'message': 'Salut, Andrei!', 'status': 'success'})\nif __name__ == '__main__':\n    app.run(port=5000)",
+            "real_world": "API-urile Google Maps, Twitter, și GitHub sunt REST. Când o aplicație mobilă comunică cu un server, aproape sigur folosește un REST API.",
+            "quiz": {"question": "Ce metodă HTTP folosești pentru a OBȚINE date?", "options": ["GET", "POST", "PUT", "DELETE"], "answer": "GET"},
+            "related": ["api", "json", "http", "oauth", "express"]
+        },
+
+            "http": {
+            "beginner": "HTTP e ca un poștaș al internetului. Când scrii un site în browser, HTTP duce cererea ta la server și aduce pagina înapoi. E fundamentul pe care rulează tot web-ul.",
+            "professional": "HTTP (HyperText Transfer Protocol) este protocolul de comunicare la baza World Wide Web. Metode: GET, POST, PUT, DELETE. Status codes: 200 (OK), 404 (Not Found), 500 (Server Error).",
+            "expert": "HTTP/2: multiplexing, header compression (HPACK), server push. HTTP/3: bazat pe QUIC (UDP), latență redusă. HTTPS = HTTP + TLS. Caching headers (ETag, Cache-Control), CORS, cookies.",
+            "code": "# Cerere HTTP simplă cu Python\nimport requests\nresponse = requests.get('https://api.github.com')\nprint(f\"Status: {response.status_code}\")\nprint(f\"Headers: {dict(response.headers)}\")\nprint(f\"Body: {response.json()}\")",
+            "real_world": "Fiecare pagină web pe care o vizitezi folosește HTTP sau HTTPS. Status 200 = totul e bine. Status 404 = pagina nu există. Status 500 = eroare pe server.",
+            "quiz": {"question": "Ce înseamnă status code 404?", "options": ["Not Found (Pagină negăsită)", "OK (Totul bine)", "Server Error", "Redirect"], "answer": "Not Found (Pagină negăsită)"},
+            "related": ["https", "api", "dns", "tcp", "rest api"]
+        },
+    
     
     
 
@@ -1204,6 +1301,66 @@ if "knowledge" not in st.session_state:
         "environment variable": "Environment variables store configuration values outside of code, like PATH, HOME, and API keys, accessible system-wide.",
         "shell": "A shell is a command-line interpreter that lets users interact with the operating system. Examples: Bash, Zsh, Fish, PowerShell.",
         "process": "A process is an instance of a running program, with its own memory space and system resources managed by the OS kernel.",
+
+                # --- 41. FRAMEWORKS WEB ---
+        "django rest framework": "Django REST Framework is a powerful toolkit for building Web APIs with Django, featuring serialization, authentication, and browsable APIs.",
+        "spring boot": "Spring Boot is a Java framework that simplifies building production-ready applications with embedded servers and auto-configuration.",
+        "laravel": "Laravel is a PHP web framework with elegant syntax, featuring Eloquent ORM, Blade templating, and Artisan CLI.",
+        "ruby on rails": "Ruby on Rails is a full-stack web framework emphasizing convention over configuration, enabling rapid application development.",
+        "asp.net": "ASP.NET is Microsoft's web framework for building dynamic web applications and APIs using C# and the .NET ecosystem.",
+        "flask vs django": "Flask is a micro-framework for small, flexible apps; Django is a full-stack framework with built-in admin, ORM, and authentication.",
+        "svelte": "Svelte is a radical frontend framework that compiles components to vanilla JavaScript at build time, eliminating the need for a virtual DOM.",
+        "nuxt": "Nuxt.js is a Vue.js framework for building universal applications with SSR, SSG, and automatic code splitting.",
+        "gatsby": "Gatsby is a React-based static site generator using GraphQL, optimized for speed and SEO.",
+        "remix": "Remix is a full-stack React framework focused on web standards, progressive enhancement, and fast user experiences.",
+
+        # --- 42. UNELTE DE DEZVOLTARE ---
+        "postman": "Postman is a popular API testing tool that allows developers to send HTTP requests, inspect responses, and automate API workflows.",
+        "swagger": "Swagger (now OpenAPI) is a specification for describing REST APIs, with tools for auto-generating documentation and client SDKs.",
+        "eslint": "ESLint is a static analysis tool for JavaScript that finds and fixes code problems, enforcing consistent code style.",
+        "prettier": "Prettier is an opinionated code formatter that automatically formats code to a consistent style across multiple languages.",
+        "webpack vs vite": "Webpack is a mature, highly configurable bundler; Vite is a modern, faster alternative using native ES modules for development.",
+        "babel": "Babel is a JavaScript compiler that converts modern JavaScript (ES6+) into backwards-compatible code for older browsers.",
+        "figma": "Figma is a cloud-based design tool for UI/UX design, prototyping, and collaboration, widely used by designers and developers.",
+        "storybook": "Storybook is a frontend workshop for building UI components in isolation, making development and testing easier.",
+        "lighthouse": "Lighthouse is an open-source tool by Google for auditing web page performance, accessibility, SEO, and best practices.",
+        "chrome devtools": "Chrome DevTools is a set of web developer tools built into Google Chrome for debugging, profiling, and inspecting web pages.",
+
+        # --- 43. CONCEPTE DE PROGRAMARE ---
+        "dry": "DRY (Don't Repeat Yourself) is a software principle that reduces duplication by abstracting common code into reusable functions or modules.",
+        "kiss": "KISS (Keep It Simple, Stupid) advocates for simplicity in design, avoiding unnecessary complexity.",
+        "solid": "SOLID is a set of five object-oriented design principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion.",
+        "dependency injection": "Dependency Injection provides objects with their dependencies from outside rather than creating them internally, improving testability and flexibility.",
+        "convention over configuration": "A design paradigm where default conventions reduce the number of decisions developers need to make.",
+        "immutable": "Immutable objects cannot be modified after creation; any change creates a new object, preventing unintended side effects.",
+        "polymorphism": "Polymorphism allows objects of different types to respond to the same method call in their own way, a key OOP concept.",
+        "inheritance": "Inheritance allows a class to inherit properties and methods from a parent class, promoting code reuse.",
+        "encapsulation": "Encapsulation hides internal object state and requires all interaction to go through methods, protecting data integrity.",
+        "abstraction": "Abstraction hides complex implementation details behind a simpler interface, letting developers work at a higher level.",
+
+        # --- 44. SISTEME DE FIȘIERE ---
+        "ntfs": "NTFS (New Technology File System) is Microsoft's file system for Windows, supporting large files, security permissions, and journaling.",
+        "ext4": "ext4 (Fourth Extended File System) is the default Linux file system, offering journaling, large file support, and reliability.",
+        "fat32": "FAT32 is an older file system compatible with most devices, limited to 4GB maximum file size.",
+        "exfat": "exFAT extends FAT32 with support for large files and is optimized for flash drives and SD cards.",
+        "hfs": "APFS (Apple File System) is Apple's modern file system for macOS, iOS, optimized for flash storage with snapshots and encryption.",
+        "zfs": "ZFS is an advanced file system with data integrity verification, snapshots, compression, and massive storage capacity.",
+        "raid": "RAID (Redundant Array of Independent Disks) combines multiple drives for performance (RAID 0), mirroring (RAID 1), or both (RAID 5, 10).",
+        "journaling": "Journaling file systems keep a log of changes before writing them, preventing corruption from crashes or power failures.",
+        "inode": "An inode is a data structure in Unix file systems that stores information about a file, like permissions, size, and location.",
+        "mount": "Mounting makes a file system accessible by attaching it to a directory in the existing file hierarchy.",
+
+        # --- 45. TEHNOLOGII EMERGENTE ---
+        "webassembly": "WebAssembly (Wasm) runs high-performance code in browsers at near-native speed, enabling languages like C++ and Rust on the web.",
+        "edge ai": "Edge AI runs artificial intelligence algorithms directly on devices like phones and sensors, without needing cloud connectivity.",
+        "digital twin": "A digital twin is a virtual replica of a physical object or system, used for simulation, monitoring, and optimization.",
+        "neuromorphic computing": "Neuromorphic computing designs chips that mimic the brain's neural structure for ultra-efficient AI processing.",
+        "holographic storage": "Holographic storage uses light to store data in three dimensions, promising massive capacity increases over traditional methods.",
+        "6g": "6G is the future mobile network beyond 5G, expected around 2030, with terabit speeds, microsecond latency, and AI-native architecture.",
+        "brain computer interface": "BCI connects the human brain directly to computers, enabling thought-controlled devices and restoring sensory functions.",
+        "smart dust": "Smart dust refers to tiny wireless sensors smaller than a grain of sand, used for distributed environmental monitoring.",
+        "quantum internet": "Quantum internet uses entangled particles for ultra-secure communication that cannot be intercepted without detection.",
+        "fusion energy": "Fusion energy replicates the sun's power on Earth, promising nearly unlimited clean energy if successfully commercialized.",
     }
     
 
