@@ -1,5 +1,5 @@
 import streamlit as st
-import random, string, hashlib, re
+import random, string, hashlib, re, time, os
 from deep_translator import GoogleTranslator
 from googlesearch import search
 
@@ -2368,8 +2368,52 @@ if not st.session_state.logged_in:
                 st.session_state.user_db[new_user] = hash_data(new_pin)
                 st.success(translate_text("Cont creat!", lang_map[st.session_state.lang]))
 
+
+# ============================================
+# 🛡️ AEGIS FORTRESS — SELF-DEFENSE SYSTEM
+# ============================================
+class AegisFortress:
+    def __init__(self):
+        self.original_hash = None
+        self.intruders = []
+    
+    def lock(self):
+        try:
+            with open(__file__, 'r', encoding='utf-8') as f:
+                code = f.read()
+            self.original_hash = hashlib.sha256(code.encode()).hexdigest()
+            return True
+        except:
+            return False
+    
+    def verify(self):
+        try:
+            with open(__file__, 'r', encoding='utf-8') as f:
+                current_code = f.read()
+            current_hash = hashlib.sha256(current_code.encode()).hexdigest()
+            if current_hash != self.original_hash:
+                return False
+            return True
+        except:
+            return True
+    
+    def status_report(self):
+        return {
+            'fortress': '🟢 ACTIVE',
+            'integrity': '✅ VERIFIED' if self.verify() else '⚠️ BREACH DETECTED',
+            'intruders': len(self.intruders)
+        }
+
+fortress = AegisFortress()
+fortress.lock()
+
 # ---------- INTERFAȚA PRINCIPALĂ ----------
 else:
+    # 🛡️ FORTRESS CHECK
+    if not fortress.verify():
+        st.error("⚠️ AEGIS FORTRESS: Modificare neautorizată detectată!")
+        st.code("Sistemul a fost blocat pentru protecție.")
+        st.stop()
     level_map = {"beginner": "🟢 Începător", "professional": "🟡 Profesionist", "expert": "🔴 Expert"}
     st.session_state.user_level = st.selectbox("📊 Nivelul tău:", ["beginner", "professional", "expert"], format_func=lambda x: level_map[x])
     
