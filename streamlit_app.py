@@ -742,6 +742,106 @@ if "knowledge" not in st.session_state:
             "related": ["pytorch", "keras", "deep learning", "machine learning", "ai"]
         },
 
+            "pytorch": {
+            "beginner": "PyTorch e ca un atelier de construit inteligență artificială creat de Facebook. E mai flexibil decât TensorFlow și preferat de cercetători pentru experimente rapide.",
+            "professional": "PyTorch este un framework open-source de machine learning dezvoltat de Meta (Facebook). Oferă dynamic computation graphs și este lider în cercetarea AI.",
+            "expert": "PyTorch: autograd pentru diferențiere automată, TorchScript pentru producție, distributed training (DDP, FSDP), mixed precision cu torch.cuda.amp, ONNX export. Domină conferințele AI (NeurIPS, ICML).",
+            "code": "import torch\nimport torch.nn as nn\n\nmodel = nn.Sequential(\n    nn.Linear(784, 128),\n    nn.ReLU(),\n    nn.Linear(128, 10),\n    nn.Softmax(dim=1)\n)\nprint(f\"Model PyTorch creat cu {sum(p.numel() for p in model.parameters())} parametri\")",
+            "real_world": "Tesla folosește PyTorch pentru mașinile autonome. OpenAI a folosit PyTorch pentru a antrena modelele GPT. E framework-ul #1 în cercetarea AI.",
+            "quiz": {"question": "Cine a creat PyTorch?", "options": ["Meta (Facebook)", "Google", "Microsoft", "Amazon"], "answer": "Meta (Facebook)"},
+            "related": ["tensorflow", "deep learning", "machine learning", "ai", "python"]
+        },
+
+            "scikit-learn": {
+            "beginner": "Scikit-learn e ca o cutie de instrumente gata-făcute pentru machine learning. Ai nevoie de un algoritm? E deja acolo. Importi, antrenezi, folosești — în 3 linii de cod.",
+            "professional": "Scikit-learn este o bibliotecă Python pentru machine learning clasic, oferind algoritmi pentru clasificare, regresie, clustering și preprocessing.",
+            "expert": "Scikit-learn: Pipeline API pentru workflows, cross-validation (KFold, Stratified), GridSearchCV/RandomizedSearchCV pentru hyperparameter tuning, feature engineering (OneHotEncoder, StandardScaler), metrics comprehensive.",
+            "code": "from sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import accuracy_score\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)\nmodel = RandomForestClassifier(n_estimators=100)\nmodel.fit(X_train, y_train)\nprint(f\"Acuratețe: {accuracy_score(y_test, model.predict(X_test)):.2%}\")",
+            "real_world": "Spotify folosește Scikit-learn pentru recomandări muzicale. Băncile îl folosesc pentru detectarea fraudelor. E biblioteca #1 pentru ML clasic în Python.",
+            "quiz": {"question": "Scikit-learn e folosit pentru...?", "options": ["Machine Learning clasic", "Deep Learning", "Web Development", "Mobile Apps"], "answer": "Machine Learning clasic"},
+            "related": ["python", "pandas", "numpy", "machine learning", "tensorflow"]
+        },
+
+            "jupyter": {
+            "beginner": "Jupyter e ca un caiet de laborator digital. Scrii cod, vezi rezultatele imediat, adaugi notițe și grafice — totul într-un singur loc. Perfect pentru experimente și învățare.",
+            "professional": "Jupyter Notebook este o aplicație web interactivă pentru crearea și partajarea documentelor cu cod live, ecuații, vizualizări și text narativ.",
+            "expert": "Jupyter: kernel-uri multiple (Python, R, Julia), magics (%timeit, %%bash), widget-uri interactive, JupyterLab ca IDE complet, nbconvert pentru export (PDF, HTML, slides). Voilà pentru dashboard-uri.",
+            "code": "# Într-un notebook Jupyter:\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\nplt.plot(x, y)\nplt.title('Grafic creat în Jupyter')\nplt.show()",
+            "real_world": "Data scientists la Google, Netflix și NASA folosesc Jupyter zilnic. E tool-ul standard pentru analiză de date, cercetare AI și tutoriale de programare.",
+            "quiz": {"question": "Jupyter suportă doar Python?", "options": ["Nu — suportă R, Julia și altele", "Da, doar Python", "Doar JavaScript", "Doar Java"], "answer": "Nu — suportă R, Julia și altele"},
+            "related": ["python", "pandas", "matplotlib", "data science", "anaconda"]
+        },
+
+            "matplotlib": {
+            "beginner": "Matplotlib e ca un pictor pentru datele tale. Transformă numerele în grafice frumoase — linii, bare, puncte. E cel mai vechi și mai folosit tool de vizualizare din Python.",
+            "professional": "Matplotlib este o bibliotecă Python pentru crearea de vizualizări statice, animate și interactive. Oferă control complet asupra fiecărui element al graficului.",
+            "expert": "Matplotlib: Figure și Axes architecture, subplots, custom styling (rcParams), backends (Agg, TkAgg, interactive), animații (FuncAnimation), integrare cu Pandas și Seaborn.",
+            "code": "import matplotlib.pyplot as plt\n\nluni = ['Ian', 'Feb', 'Mar', 'Apr', 'Mai']\ntermeni_aegis = [51, 380, 785, 1010, 1430]\n\nplt.figure(figsize=(10, 6))\nplt.plot(luni, termeni_aegis, marker='o', color='#00ffcc', linewidth=2)\nplt.title('Creșterea AEGIS', fontsize=16)\nplt.xlabel('Luna')\nplt.ylabel('Număr de termeni')\nplt.grid(True, alpha=0.3)\nplt.show()",
+            "real_world": "Toate publicațiile științifice folosesc Matplotlib pentru grafice. NASA îl folosește pentru vizualizarea datelor spațiale. E fundamentul vizualizării în Python.",
+            "quiz": {"question": "Matplotlib este o bibliotecă pentru...?", "options": ["Vizualizare de date", "Machine Learning", "Web Development", "Baze de date"], "answer": "Vizualizare de date"},
+            "related": ["python", "numpy", "pandas", "seaborn", "data science"]
+        },
+
+            "seaborn": {
+            "beginner": "Seaborn e ca un designer de modă pentru grafice. Ia Matplotlib-ul de bază și îl face SUPERB — culori frumoase, stiluri elegante, totul automat.",
+            "professional": "Seaborn este o bibliotecă Python de vizualizare statistică, construită peste Matplotlib. Oferă interfețe simplificate pentru grafice statistice complexe.",
+            "expert": "Seaborn: heatmaps, pairplots, violin plots, swarm plots, facet grids pentru vizualizări multi-dimensionale. Integrare nativă cu Pandas DataFrames. Teme built-in (darkgrid, whitegrid, ticks).",
+            "code": "import seaborn as sns\nimport pandas as pd\n\ndata = pd.DataFrame({\n    'nivel': ['Începător', 'Profesionist', 'Expert'] * 5,\n    'scor': [85, 72, 95, 78, 88, 92, 90, 85, 98, 82, 79, 91, 87, 93, 96]\n})\nsns.barplot(data=data, x='nivel', y='scor', palette='viridis')\nplt.title('Performanță AEGIS pe nivele')\nplt.show()",
+            "real_world": "Cercetătorii în științe sociale și biologie folosesc Seaborn pentru analize statistice vizuale. E standardul pentru grafice științifice elegante.",
+            "quiz": {"question": "Seaborn e construit peste...?", "options": ["Matplotlib", "NumPy", "Pandas", "Scikit-learn"], "answer": "Matplotlib"},
+            "related": ["matplotlib", "pandas", "python", "data science", "numpy"]
+        },
+
+            "opencv": {
+            "beginner": "OpenCV e ca un ochi magic pentru computer. Îl învață să vadă și să înțeleagă poze și video — recunoaște fețe, obiecte, mișcare.",
+            "professional": "OpenCV (Open Source Computer Vision Library) este o bibliotecă open-source pentru computer vision și procesare de imagini, cu peste 2500 de algoritmi optimizați.",
+            "expert": "OpenCV: image processing (filtre, morphing, thresholding), feature detection (SIFT, ORB, FAST), object detection (Haar cascades, DNN module), camera calibration, video analysis, integrare CUDA pentru GPU.",
+            "code": "import cv2\nimport numpy as np\n\n# Citește o imagine și aplică detecție de margini\nimg = cv2.imread('poza.jpg')\nedges = cv2.Canny(img, 100, 200)\ncv2.imshow('Margini detectate', edges)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+            "real_world": "Tesla folosește OpenCV pentru mașini autonome. Instagram și Snapchat pentru filtre faciale. Sistemele de securitate pentru recunoaștere facială.",
+            "quiz": {"question": "OpenCV e specializat în...?", "options": ["Computer Vision", "Web Development", "Baze de date", "Blockchain"], "answer": "Computer Vision"},
+            "related": ["python", "deep learning", "ai", "computer vision", "tensorflow"]
+        },
+
+            "git": {
+            "beginner": "Git e ca un jurnal magic pentru codul tău. Salvează fiecare schimbare și poți să te întorci oricând la o versiune anterioară. E ca un 'undo' infinit și puternic.",
+            "professional": "Git este un sistem de versionare distribuit care urmărește modificările în codul sursă. Concepte fundamentale: commit, branch, merge, rebase, remote.",
+            "expert": "Git avansat: interactive rebase, cherry-pick, bisect pentru debugging, hooks (pre-commit, post-receive), submodules, worktrees, reflog pentru recuperare. GitFlow și trunk-based development workflows.",
+            "code": "# Git workflow zilnic\ngit status                    # Vezi ce ai modificat\ngit add .                     # Adaugă toate schimbările\ngit commit -m \"+420 termeni\"  # Salvează local\ngit push origin main          # Trimite pe GitHub\ngit log --oneline -5          # Vezi ultimele 5 commit-uri",
+            "real_world": "AEGIS e pe Git chiar acum. Linux kernel-ul (cel mai mare proiect open-source) folosește Git. Toate companiile tech — Google, Microsoft, Apple — folosesc Git.",
+            "quiz": {"question": "Ce comandă Git trimite codul pe server?", "options": ["git push", "git send", "git upload", "git deploy"], "answer": "git push"},
+            "related": ["github", "github actions", "devops", "version control", "ci/cd"]
+        },
+
+            "github actions": {
+            "beginner": "GitHub Actions e ca un robot-asistent care lucrează pentru tine. De fiecare dată când pui cod nou pe GitHub, robotul îl testează automat și îți spune dacă e totul bine.",
+            "professional": "GitHub Actions este o platformă CI/CD integrată în GitHub pentru automatizarea workflow-urilor: testare, build, deployment direct din repository.",
+            "expert": "GitHub Actions: YAML workflows, events triggers (push, pull_request, schedule), matrix builds pentru testare multiplatformă, secrets management, self-hosted runners, marketplace cu acțiuni comunitare.",
+            "code": "# .github/workflows/test.yml\nname: Test AEGIS\non: [push, pull_request]\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-python@v4\n        with:\n          python-version: '3.11'\n      - run: pip install -r requirements.txt\n      - run: python -m pytest tests/",
+            "real_world": "AEGIS poate folosi GitHub Actions pentru a testa automat codul la fiecare push. Facebook, Google și mii de proiecte open-source îl folosesc zilnic.",
+            "quiz": {"question": "GitHub Actions este un tool de...?", "options": ["CI/CD — Integrare și Deployment Continuu", "Design grafic", "Editare video", "Baze de date"], "answer": "CI/CD — Integrare și Deployment Continuu"},
+            "related": ["github", "git", "devops", "ci/cd", "docker"]
+        },
+
+            "ci/cd": {
+            "beginner": "CI/CD e ca o bandă rulantă magică pentru cod. Scrii codul, iar banda îl testează automat și îl pune pe internet. Fără muncă manuală, fără stres, fără erori.",
+            "professional": "CI/CD (Continuous Integration / Continuous Delivery) automatizează testarea și deployment-ul codului, permițând livrări rapide și sigure în producție.",
+            "expert": "CI/CD pipeline: build → test → stage → deploy. Tools: GitHub Actions, Jenkins, GitLab CI, CircleCI. Strategii: blue-green deployment, canary releases, feature flags. Infrastructure as Code pentru medii consistente.",
+            "code": "# Exemplu: Pipeline CI/CD simplu\n# 1. Developer push-uiește codul\n# 2. CI: Build + Test automat\n# 3. CD: Deploy pe staging\n# 4. Aprobare manuală (opțional)\n# 5. CD: Deploy pe producție\nprint(\"AEGIS deployed successfully!\")",
+            "real_world": "Netflix deploy-ează de mii de ori pe zi folosind CI/CD. Amazon face deploy la fiecare secundă. CI/CD e standardul în industrie pentru livrare rapidă și sigură.",
+            "quiz": {"question": "Ce înseamnă CD în CI/CD?", "options": ["Continuous Delivery/Deployment", "Code Development", "Computer Design", "Cloud Database"], "answer": "Continuous Delivery/Deployment"},
+            "related": ["github actions", "devops", "git", "docker", "jenkins"]
+        },
+
+            "devops": {
+            "beginner": "DevOps e ca o punte între programatori și administratorii de servere. În loc să se certe, lucrează împreună să livreze cod mai repede și mai sigur.",
+            "professional": "DevOps este o cultură și set de practici care unifică development-ul (Dev) și operațiunile (Ops), automatizând întregul ciclu de viață al aplicațiilor.",
+            "expert": "DevOps practices: CI/CD, Infrastructure as Code (Terraform, Ansible), monitoring (Prometheus, Grafana), logging (ELK stack), containerization (Docker, Kubernetes). CALMS framework: Culture, Automation, Lean, Measurement, Sharing.",
+            "code": "# DevOps: Monitorizare simplă cu Prometheus\nfrom prometheus_client import start_http_server, Counter\n\nrequests_total = Counter('aegis_requests_total', 'Total requests to AEGIS')\n\n# Incrementăm la fiecare utilizare AEGIS\nrequests_total.inc()\nstart_http_server(8000)\nprint(\"Metrics available at http://localhost:8000\")",
+            "real_world": "Amazon, Netflix și Etsy au revoluționat DevOps. Companiile care adoptă DevOps deploy-ează de 200x mai frecvent și recuperează din incidente de 24x mai rapid.",
+            "quiz": {"question": "DevOps unește...?", "options": ["Development și Operations", "Design și Operations", "Development și Optimization", "Database și Operations"], "answer": "Development și Operations"},
+            "related": ["ci/cd", "docker", "kubernetes", "github actions", "terraform"]
+        },
+
 
         # ============================================
         # 📚 EXPERT TERMS — Quick Definitions
@@ -1273,7 +1373,7 @@ if "knowledge" not in st.session_state:
         "tkinter": "Tkinter is Python's standard GUI library for creating desktop applications.",
         "pygame": "Pygame is a Python library for writing 2D video games with graphics and sound.",
 
-                # --- 25. REȚELE AVANSATE ---
+        # --- 25. REȚELE AVANSATE ---
         "subnet mask": "Subnet mask separates the IP address into network and host portions, determining which part identifies the network and which identifies the device.",
         "gateway": "A gateway is a network node that connects two different networks, often serving as the access point to the internet for devices on a local network.",
         "nat": "NAT (Network Address Translation) allows multiple devices on a private network to share a single public IP address for internet access.",
@@ -1799,7 +1899,427 @@ if "knowledge" not in st.session_state:
         "open source license": "Open source licenses like MIT, GPL, and Apache grant permission to use, modify, and share code with varying conditions.",
         "patent troll": "A patent troll acquires patents solely to sue companies for infringement, without producing any products.",
         "whistleblower": "A whistleblower exposes unethical or illegal activities within an organization, often protected by law from retaliation.",
-    }
+
+                # --- 66. TEHNOLOGII WEB AVANSATE ---
+        "webpack vs vite": "Webpack is a mature, highly configurable bundler; Vite is a modern, faster alternative using native ES modules for development.",
+        "babel vs swc": "Babel compiles modern JavaScript to backwards-compatible code; SWC is a faster Rust-based alternative used by Next.js.",
+        "tailwind vs bootstrap": "Tailwind is utility-first CSS for custom designs; Bootstrap is component-based with pre-built UI elements.",
+        "svelte vs react": "Svelte compiles components at build time for smaller bundles; React uses a virtual DOM for runtime updates.",
+        "astro": "Astro is a static site builder that ships zero JavaScript by default, ideal for content-focused websites.",
+        "qwik": "Qwik is a framework delivering instant-loading apps by resumability instead of hydration, created by the inventor of Angular.",
+        "solidjs": "SolidJS is a reactive JavaScript framework with no virtual DOM, offering React-like syntax with Svelte-like performance.",
+        "htmx": "HTMX extends HTML with AJAX, CSS transitions, and WebSockets directly in markup, reducing JavaScript complexity.",
+        "alpinejs": "Alpine.js is a lightweight JavaScript framework for adding interactivity with minimal code, ideal for server-rendered pages.",
+        "jquery modern": "jQuery simplified DOM manipulation for older browsers; modern vanilla JavaScript can do most tasks natively without jQuery.",
+
+        # --- 67. BAZE DE DATE ÎN PRACTICĂ ---
+        "orm vs raw sql": "ORM simplifies database operations with objects but can hide complexity; raw SQL offers full control and optimization.",
+        "database indexing types": "B-tree for range queries, hash for equality, GiST for geometric data, GIN for full-text search.",
+        "connection string": "A connection string contains database location, credentials, and parameters for establishing database connections.",
+        "odbc": "ODBC (Open Database Connectivity) is a standard API for accessing different database management systems.",
+        "jdbc": "JDBC (Java Database Connectivity) enables Java applications to interact with databases through standard SQL queries.",
+        "query optimizer": "A query optimizer determines the most efficient way to execute an SQL query based on statistics and indexes.",
+        "database view vs table": "A view is a saved query result that acts like a virtual table; a table stores actual data physically.",
+        "materialized view": "A materialized view stores query results physically for faster access, refreshed periodically or on demand.",
+        "database trigger example": "A trigger automatically logs changes to an audit table when INSERT, UPDATE, or DELETE occurs on a main table.",
+        "cte sql": "CTE (Common Table Expression) creates temporary named result sets, making complex queries more readable and recursive queries possible.",
+
+        # --- 68. SISTEME DE OPERARE SERVER ---
+        "ubuntu server vs desktop": "Ubuntu Server is headless with no GUI, optimized for services; Desktop includes GNOME and user applications.",
+        "centos vs rocky": "CentOS was the free Red Hat clone; Rocky Linux is its spiritual successor after CentOS was discontinued.",
+        "rhel": "RHEL (Red Hat Enterprise Linux) is a commercial Linux distribution with enterprise support and certification ecosystem.",
+        "suse": "SUSE Linux Enterprise Server is a commercial distribution popular in Europe for SAP and mainframe workloads.",
+        "arch linux": "Arch Linux is a rolling-release distribution for advanced users, offering bleeding-edge software and full customization.",
+        "gentoo": "Gentoo is a source-based Linux distribution where packages are compiled locally for optimal performance.",
+        "alpine linux": "Alpine Linux is a lightweight distribution using musl and BusyBox, popular for Docker containers due to small size.",
+        "freebsd": "FreeBSD is a Unix-like operating system known for networking performance, ZFS support, and the ports collection.",
+        "openbsd": "OpenBSD emphasizes security, correctness, and portability, with integrated cryptography and a clean codebase.",
+        "netbsd": "NetBSD runs on more platforms than any other OS, from embedded devices to mainframes, with a focus on portability.",
+
+        # --- 69. AUTENTIFICARE ȘI AUTORIZARE ---
+        "oauth vs jwt": "OAuth 2.0 is an authorization framework for delegated access; JWT is a token format used within OAuth flows.",
+        "openid vs oauth": "OpenID Connect adds authentication (identity) on top of OAuth 2.0 authorization framework.",
+        "sso": "SSO (Single Sign-On) lets users access multiple applications with one set of credentials, using protocols like SAML or OIDC.",
+        "ldap": "LDAP (Lightweight Directory Access Protocol) is a protocol for accessing directory services like Microsoft Active Directory.",
+        "active directory": "Active Directory is Microsoft's identity and access management service for Windows domain networks.",
+        "kerberos": "Kerberos is a network authentication protocol using tickets to allow secure communication over non-secure networks.",
+        "rbac": "RBAC (Role-Based Access Control) assigns permissions to roles rather than individual users, simplifying access management.",
+        "abac": "ABAC (Attribute-Based Access Control) evaluates attributes (user, resource, environment) to make access decisions dynamically.",
+        "password hashing": "Password hashing uses algorithms like bcrypt, Argon2 to securely store passwords — never store plain text passwords.",
+        "session vs token": "Sessions store state on the server with cookies; tokens store state client-side and are validated cryptographically.",
+
+        # --- 70. PERFORMANȚĂ ȘI OPTIMIZARE ---
+        "lazy loading": "Lazy loading defers loading of non-critical resources until needed, improving initial page load speed.",
+        "code splitting": "Code splitting divides JavaScript bundles into smaller chunks loaded on demand, reducing initial download size.",
+        "tree shaking": "Tree shaking removes unused code from final bundles during build, reducing file size for production.",
+        "debounce": "Debouncing limits function execution rate by waiting after the last call, useful for search inputs and resize events.",
+        "throttle": "Throttling ensures a function executes at most once per interval, useful for scroll handlers and API rate limits.",
+        "memoization": "Memoization caches function results based on input parameters, avoiding expensive recalculations.",
+        "cors vs cors preflight": "Simple CORS requests are sent directly; complex requests trigger a preflight OPTIONS request for server approval.",
+        "gzip compression": "Gzip compresses web assets before transmission, reducing transfer size by 60-80% for text-based files.",
+        "brotli": "Brotli is a modern compression algorithm by Google, achieving better ratios than gzip with similar speed.",
+        "http caching headers": "Cache-Control (max-age, public/private), ETag, and Last-Modified headers control how browsers cache responses.",
+
+        # --- 71. DEZVOLTARE CROSS-PLATFORM ---
+        "electron": "Electron builds desktop apps using web technologies (HTML, CSS, JS) with Chromium and Node.js. Used by VS Code, Discord, Slack.",
+        "tauri": "Tauri is a lightweight alternative to Electron using Rust backend, producing smaller and faster desktop applications.",
+        "react native vs flutter": "React Native uses JavaScript with native components; Flutter uses Dart with its own rendering engine.",
+        "xamarin": "Xamarin is Microsoft's cross-platform framework using C# for iOS, Android, and Windows apps with shared code.",
+        "capacitor": "Capacitor is a cross-platform runtime that turns web apps into native mobile apps with access to device APIs.",
+        "cordova": "Apache Cordova wraps web apps in native containers with plugin access to device features like camera and GPS.",
+        "ionic": "Ionic is a UI toolkit for building cross-platform mobile apps using web technologies, integrated with Angular, React, or Vue.",
+        "kotlin multiplatform": "KMP shares business logic across platforms while keeping native UI per platform, as an alternative to Flutter.",
+        "flutter vs dart": "Flutter is the framework; Dart is the language it uses, also used independently for server and CLI applications.",
+        "native vs hybrid": "Native apps have full platform access and best performance; hybrid apps share code across platforms but may lag in complex UIs.",
+
+        # --- 72. TESTING AVANSAT ---
+        "integration vs unit test": "Unit tests verify isolated functions; integration tests verify that modules work together correctly.",
+        "e2e testing tools": "Cypress, Playwright, and Selenium automate browser testing, simulating real user interactions.",
+        "snapshot testing": "Snapshot tests capture component output and compare against saved snapshots to detect unexpected changes.",
+        "mocking vs stubbing": "Mocks verify behavior (expectations on calls); stubs provide predetermined data responses.",
+        "test driven development cycle": "TDD cycle: Write a failing test (Red) → Write minimal code to pass (Green) → Refactor cleanly (Refactor).",
+        "behavior driven development": "BDD describes behavior in natural language (Gherkin: Given-When-Then), bridging technical and business teams.",
+        "code coverage tools": "Istanbul (nyc), Coverage.py measure what percentage of code is exercised by tests, identifying gaps.",
+        "property based testing": "Property-based testing generates random inputs to verify properties hold true for all possible values.",
+        "fuzz testing": "Fuzzing feeds random or malformed inputs to find crashes, memory leaks, and security vulnerabilities.",
+        "regression testing automation": "Automated regression tests run after each change to catch new bugs breaking previously working features.",
+
+        # --- 73. SECURITATE ÎN PRACTICĂ ---
+        "owasp top 10": "OWASP Top 10 lists the most critical web security risks: injection, broken auth, XSS, insecure design, and more.",
+        "csrf prevention": "CSRF tokens, SameSite cookies, and Origin header validation prevent cross-site request forgery attacks.",
+        "xss prevention": "Output encoding, Content Security Policy headers, and input sanitization prevent cross-site scripting attacks.",
+        "clickjacking": "Clickjacking tricks users into clicking invisible elements; prevented with X-Frame-Options and CSP frame-ancestors.",
+        "ssl pinning": "SSL pinning binds a specific certificate to an app, preventing man-in-the-middle attacks with fake certificates.",
+        "dns poisoning": "DNS cache poisoning corrupts DNS records, redirecting users to malicious sites; DNSSEC prevents this.",
+        "arp spoofing": "ARP spoofing associates the attacker's MAC address with a legitimate IP, intercepting network traffic.",
+        "port scanning": "Port scanning discovers open ports and services on a target system, used by both admins and attackers.",
+        "vulnerability scanning": "Automated tools like Nessus, OpenVAS scan systems for known vulnerabilities and misconfigurations.",
+        "bug bounty": "Bug bounty programs reward security researchers for finding and responsibly disclosing vulnerabilities.",
+
+        # --- 74. MANAGEMENTUL PROIECTELOR IT ---
+        "jira": "Jira is an issue tracking and project management tool by Atlassian, widely used in Agile software development.",
+        "confluence": "Confluence is a team workspace for documentation and knowledge sharing, integrated with Jira.",
+        "trello": "Trello is a visual project management tool using Kanban boards, cards, and lists for task organization.",
+        "asana": "Asana is a work management platform helping teams organize, track, and manage projects and tasks.",
+        "notion": "Notion is an all-in-one workspace combining notes, databases, wikis, and project management in one tool.",
+        "gantt chart": "Gantt charts visualize project schedules with bars showing tasks, durations, and dependencies over time.",
+        "burndown chart": "A burndown chart tracks remaining work in a sprint, showing if the team is on track to complete the sprint goal.",
+        "velocity agile": "Velocity measures how many story points a team completes per sprint, used for sprint planning and forecasting.",
+        "retrospective": "A sprint retrospective is a meeting where teams discuss what went well, what to improve, and action items.",
+        "definition of done": "DoD is a checklist ensuring all quality criteria are met before a task is considered complete.",
+
+        # --- 75. CLOUD COMPUTING AVANSAT ---
+        "aws lambda": "AWS Lambda runs code without provisioning servers, executing functions in response to events and scaling automatically.",
+        "aws s3": "Amazon S3 (Simple Storage Service) is object storage with industry-leading scalability, availability, and durability.",
+        "aws ec2": "Amazon EC2 provides resizable virtual servers in the cloud, with full control over computing resources.",
+        "aws rds": "Amazon RDS manages relational databases (MySQL, PostgreSQL, Oracle) with automated backups and scaling.",
+        "aws dynamodb": "DynamoDB is a fully managed NoSQL key-value database with single-digit millisecond performance.",
+        "aws cloudfront": "CloudFront is a CDN service that delivers content globally with low latency through edge locations.",
+        "aws route 53": "Route 53 is a scalable DNS service that routes users to AWS services and external endpoints.",
+        "aws iam": "IAM (Identity and Access Management) controls who can access AWS resources and what they can do.",
+        "aws vpc": "VPC (Virtual Private Cloud) provides an isolated network section of AWS where resources can be launched securely.",
+        "aws sagemaker": "SageMaker is a fully managed service to build, train, and deploy machine learning models at scale.",
+
+                # --- 76. AZURE CLOUD ---
+        "azure functions": "Azure Functions is a serverless compute service running code on-demand without managing infrastructure.",
+        "azure blob storage": "Azure Blob Storage stores massive amounts of unstructured data like images, videos, and backups.",
+        "azure devops": "Azure DevOps provides CI/CD pipelines, Git repos, Kanban boards, and testing tools for development teams.",
+        "azure active directory": "Azure AD is Microsoft's cloud identity service for authentication to Microsoft 365, Azure, and apps.",
+        "azure kubernetes service": "AKS is a managed Kubernetes service simplifying cluster deployment and management on Azure.",
+        "azure cosmos db": "Cosmos DB is a globally distributed NoSQL database with multi-model support and guaranteed SLAs.",
+        "azure sql": "Azure SQL is a managed relational database service built on SQL Server engine with cloud capabilities.",
+        "azure cognitive services": "Azure Cognitive Services offers pre-built AI APIs for vision, speech, language, and decision-making.",
+        "azure virtual machines": "Azure VMs provide scalable computing resources in the cloud with full OS control.",
+        "azure load balancer": "Azure Load Balancer distributes traffic across VMs for high availability and fault tolerance.",
+
+        # --- 77. GOOGLE CLOUD ---
+        "gcp compute engine": "Google Compute Engine offers virtual machines running in Google's data centers with flexible configurations.",
+        "gcp cloud storage": "Google Cloud Storage is unified object storage with multiple classes for different access patterns.",
+        "gcp cloud functions": "Google Cloud Functions is a lightweight serverless platform for event-driven microservices.",
+        "gcp cloud run": "Cloud Run runs containerized applications serverlessly on Google's infrastructure with auto-scaling.",
+        "gcp bigquery": "BigQuery is a serverless data warehouse for analytics with built-in machine learning capabilities.",
+        "gcp cloud sql": "Cloud SQL is a fully managed relational database service for MySQL, PostgreSQL, and SQL Server.",
+        "gcp firestore": "Firestore is a flexible NoSQL document database for mobile and web apps with real-time sync.",
+        "gcp pubsub": "Pub/Sub is a messaging service for asynchronous communication between applications and services.",
+        "gcp cloud spanner": "Spanner is a globally distributed relational database combining SQL with horizontal scalability.",
+        "gcp vertex ai": "Vertex AI is Google's unified ML platform for building, deploying, and scaling AI models.",
+
+        # --- 78. PROGRAMARE FUNCȚIONALĂ AVANSATĂ ---
+        "functor": "A functor is a type that can be mapped over, like arrays with .map() — transforming values inside a container.",
+        "applicative": "An applicative functor applies functions wrapped in a context to values wrapped in a context.",
+        "monad vs promise": "JavaScript Promises behave like monads with .then() chaining, but aren't pure monads in the strict sense.",
+        "either monad": "Either represents a value of one of two types: Right (success) or Left (error), avoiding exceptions.",
+        "maybe monad": "Maybe (or Optional) handles nullable values safely, eliminating null reference errors.",
+        "io monad": "IO monad encapsulates side effects (reading files, HTTP calls) and defers execution until explicitly run.",
+        "function composition": "Function composition applies one function to the result of another: compose(f, g)(x) = f(g(x)).",
+        "point free style": "Point-free (tacit) programming defines functions without naming their arguments, using composition.",
+        "algebraic data types": "ADTs combine types: product types (AND — tuples, records) and sum types (OR — discriminated unions).",
+        "pattern matching functional": "Pattern matching destructures data and branches execution based on structure and values.",
+
+        # --- 79. SISTEME DISTRIBUITE ---
+        "distributed consensus": "Consensus algorithms (Paxos, Raft) ensure agreement among nodes in distributed systems despite failures.",
+        "distributed hash table": "DHT distributes key-value storage across nodes, used in BitTorrent, IPFS, and distributed databases.",
+        "gossip protocol": "Gossip protocols spread information through peer-to-peer communication, like epidemics, used in Cassandra.",
+        "leader election": "Leader election selects a node to coordinate tasks in a distributed system when leaders fail.",
+        "vector clock": "Vector clocks track causality of events in distributed systems without relying on synchronized clocks.",
+        "distributed lock": "Distributed locks prevent concurrent access to shared resources across multiple processes or nodes.",
+        "quorum": "Quorum ensures a minimum number of nodes agree on an operation before it's considered successful.",
+        "split brain": "Split brain occurs when a cluster divides into separate groups, each thinking it's the active cluster.",
+        "event sourcing": "Event sourcing stores state changes as events, allowing full audit trails and temporal queries.",
+        "cqrs": "CQRS (Command Query Responsibility Segregation) separates read and write operations for performance and scalability.",
+
+        # --- 80. INTERNET OF THINGS (IoT) AVANSAT ---
+        "esp32": "ESP32 is a low-cost microcontroller with Wi-Fi and Bluetooth, widely used in IoT and maker projects.",
+        "esp8266": "ESP8266 is an earlier Wi-Fi chip enabling low-cost IoT devices with basic processing capabilities.",
+        "zigbee vs zwave": "Zigbee and Z-Wave are wireless protocols for smart home devices; Zigbee is more open with mesh networking.",
+        "lora": "LoRa (Long Range) enables low-power wide-area communication for IoT devices across kilometers.",
+        "lorawan": "LoRaWAN defines the network protocol on top of LoRa for connecting IoT devices to gateways and servers.",
+        "nb iot": "NB-IoT (Narrowband IoT) uses cellular networks for low-bandwidth, deep-coverage IoT communication.",
+        "bluetooth le": "Bluetooth Low Energy provides short-range wireless with minimal power consumption for wearables and sensors.",
+        "rfid": "RFID uses radio waves to identify and track objects through tags and readers, common in inventory systems.",
+        "nfc": "NFC enables short-range communication between devices for payments, pairing, and data exchange.",
+        "mqtt vs coap": "MQTT uses TCP publish-subscribe for reliable messaging; CoAP uses UDP request-response for constrained devices.",
+
+        # --- 81. CRIPTOMONEDE ȘI BLOCKCHAIN ---
+        "proof of stake vs work": "PoS selects validators by staked coins (energy efficient); PoW requires solving puzzles (energy intensive).",
+        "defi lending": "DeFi lending platforms like Aave allow users to lend and borrow crypto without intermediaries.",
+        "stablecoin types": "Stablecoins: fiat-collateralized (USDC), crypto-collateralized (DAI), algorithmic (UST — risky).",
+        "dao example": "DAOs like Uniswap govern protocols through token-holder voting on proposals and treasury management.",
+        "nft minting": "NFT minting creates a unique token on a blockchain representing ownership of digital art, music, or collectibles.",
+        "gas optimization": "Gas optimization reduces transaction costs on Ethereum through efficient contract code and batch operations.",
+        "smart contract audit": "Smart contract audits review code for security vulnerabilities, logic errors, and gas inefficiencies.",
+        "layer 2 scaling": "Layer 2 solutions like Polygon, Arbitrum process transactions off-chain for faster and cheaper operations.",
+        "zero knowledge proof": "ZK-proofs prove knowledge of a value without revealing it, used for privacy and scaling.",
+        "metamask vs trust wallet": "MetaMask is a browser extension wallet; Trust Wallet is mobile-first with multi-chain support.",
+
+        # --- 82. ȘTIINȚA DATELOR ---
+        "data pipeline": "A data pipeline moves data from sources through processing stages to destinations like warehouses.",
+        "etl vs elt": "ETL transforms before loading into warehouse; ELT loads raw data first then transforms inside warehouse.",
+        "data lake": "A data lake stores raw, unstructured data at scale, using object storage with schema-on-read.",
+        "data warehouse": "A data warehouse stores structured, processed data optimized for querying and business intelligence.",
+        "data mesh": "Data mesh decentralizes data ownership by business domain, treating data as a product with self-serve access.",
+        "feature store": "A feature store manages ML features for training and serving, ensuring consistency across environments.",
+        "model drift": "Model drift occurs when ML model performance degrades as real-world data patterns change over time.",
+        "data cleaning": "Data cleaning handles missing values, duplicates, outliers, and inconsistencies before analysis.",
+        "exploratory data analysis": "EDA uses statistics and visualization to understand data patterns, relationships, and anomalies.",
+        "ab testing statistics": "A/B testing compares two versions statistically to determine which performs better with significance.",
+
+        # --- 83. DESIGN PATTERNS ---
+        "strategy pattern": "Strategy pattern defines interchangeable algorithms and lets the client choose which to use at runtime.",
+        "adapter pattern": "Adapter converts an interface into another expected by clients, enabling incompatible interfaces to work together.",
+        "decorator pattern": "Decorator adds behavior to objects dynamically without modifying their structure or subclassing.",
+        "facade pattern": "Facade provides a simplified interface to a complex subsystem, reducing dependencies for clients.",
+        "builder pattern": "Builder separates object construction from representation, creating complex objects step by step.",
+        "prototype pattern": "Prototype creates new objects by cloning existing ones, avoiding expensive construction.",
+        "chain of responsibility": "Chain passes requests through handlers until one processes it, decoupling sender and receiver.",
+        "state pattern": "State pattern allows objects to change behavior when internal state changes, like a finite state machine.",
+        "command pattern": "Command encapsulates requests as objects, enabling parameterization, queuing, and undo operations.",
+        "mediator pattern": "Mediator centralizes communication between objects, reducing direct dependencies and coupling.",
+
+        # --- 84. MICROSERVICES ȘI ARHITECTURĂ ---
+        "api gateway pattern": "API Gateway is a single entry point routing requests to appropriate microservices with cross-cutting concerns.",
+        "service discovery": "Service discovery automatically detects services in a network, enabling dynamic scaling and failover.",
+        "circuit breaker": "Circuit breaker prevents cascading failures by stopping calls to failing services and allowing recovery.",
+        "saga pattern": "Saga manages distributed transactions across microservices through a sequence of local transactions.",
+        "event driven architecture": "Event-driven architecture uses events to trigger communication between decoupled services.",
+        "cors microservices": "CORS in microservices manages cross-origin access between services on different domains.",
+        "bulkhead pattern": "Bulkhead isolates resources so a failure in one component doesn't exhaust all system resources.",
+        "sidecar pattern": "Sidecar deploys helper components alongside services, used by service meshes like Istio for networking.",
+        "strangler fig": "Strangler Fig pattern gradually migrates from a monolithic system by replacing parts incrementally.",
+        "backends for frontends": "BFF creates separate backend APIs tailored to each frontend type (mobile, web, desktop).",
+
+                # --- 85. DEZVOLTARE MOBILĂ AVANSATĂ 2 ---
+        "swift ui vs uikit": "SwiftUI is Apple's modern declarative framework; UIKit is the older imperative framework still widely used.",
+        "kotlin coroutines": "Kotlin coroutines simplify async programming with sequential code style, replacing callbacks and RxJava.",
+        "jetpack vs compose": "Jetpack is Android's suite of libraries; Compose is the modern declarative UI toolkit within Jetpack.",
+        "flutter widgets": "In Flutter, everything is a widget — stateful for dynamic content, stateless for static content.",
+        "react native bridge": "React Native bridge communicates between JavaScript and native modules asynchronously for performance.",
+        "xcode instruments": "Instruments in Xcode profile iOS apps for performance, memory leaks, and energy usage.",
+        "android profiler": "Android Studio Profiler monitors CPU, memory, network, and battery usage in real-time during development.",
+        "app thinning": "App thinning delivers only the assets needed for a specific device, reducing app size for iOS and Android.",
+        "play store console": "Google Play Console manages app publishing, updates, reviews, and analytics for Android developers.",
+        "app store connect": "App Store Connect manages iOS app submissions, TestFlight beta testing, and sales analytics.",
+
+        # --- 86. REALITATE EXTINSĂ (XR) ---
+        "augmented reality vs virtual": "AR overlays digital on real world (phone camera); VR immerses in fully digital environment (headset).",
+        "mixed reality headsets": "MR headsets like HoloLens blend real and virtual, allowing digital objects to interact with physical space.",
+        "apple vision pro development": "Vision Pro development uses SwiftUI, RealityKit, and ARKit for spatial computing experiences.",
+        "meta quest development": "Meta Quest development uses Unity or Unreal Engine with Oculus SDK for VR applications.",
+        "webxr": "WebXR enables VR and AR experiences directly in browsers without installing apps.",
+        "spatial mapping": "Spatial mapping creates 3D meshes of real environments, enabling realistic AR object placement.",
+        "hand tracking": "Hand tracking uses cameras to detect finger and hand movements as input without controllers.",
+        "haptics in xr": "Haptic feedback in XR provides touch sensations (vibrations, forces) for immersive interactions.",
+        "volumetric video": "Volumetric video captures 3D performances viewable from any angle, used in immersive entertainment.",
+        "digital twin industry": "Digital twins in industry create virtual replicas of factories for simulation and optimization.",
+
+        # --- 87. AUTOMATIZARE ȘI SCRIPTING ---
+        "bash scripting": "Bash scripts automate command-line tasks on Linux/macOS with variables, loops, and conditionals.",
+        "python scripting": "Python scripts automate file operations, API calls, data processing, and system administration.",
+        "cron vs systemd timer": "Cron schedules jobs by time; systemd timers offer more features like randomized delays and dependencies.",
+        "makefile": "Makefile defines rules for building and automating tasks, traditionally for compiling code but used broadly.",
+        "shell vs bash": "Shell is any command interpreter; Bash (Bourne Again Shell) is the most common Unix shell.",
+        "powershell vs cmd": "PowerShell is Microsoft's advanced shell with object-based scripting; CMD is the legacy command prompt.",
+        "sed": "sed (stream editor) filters and transforms text in pipelines, useful for find-and-replace in scripts.",
+        "awk": "awk processes and analyzes text files, extracting columns and performing calculations on structured data.",
+        "jq": "jq is a lightweight command-line JSON processor for parsing, filtering, and transforming JSON data.",
+        "ansible playbook": "Ansible playbooks define automation tasks in YAML for configuration management and deployment.",
+
+        # --- 88. ARHITECTURI DE SISTEM ---
+        "monolith vs microservices": "Monolith is a single deployable unit; microservices split into independent services communicating via APIs.",
+        "serverless architecture": "Serverless runs code in response to events without managing servers, auto-scaling to zero when idle.",
+        "event sourcing architecture": "Event sourcing records all state changes as events, enabling full rebuild and audit of system state.",
+        "hexagonal architecture": "Hexagonal (ports & adapters) isolates core business logic from external dependencies through interfaces.",
+        "clean architecture": "Clean Architecture organizes code in concentric circles with dependencies pointing inward to domain entities.",
+        "onion architecture": "Onion Architecture builds on layers with domain at center, resisting coupling to infrastructure.",
+        "space-based architecture": "Space-based architecture distributes processing and data across nodes to handle high concurrency.",
+        "microkernel architecture": "Microkernel has a minimal core with plug-in modules, used in IDEs like Eclipse and VS Code.",
+        "event bus": "An event bus decouples publishers and subscribers, enabling asynchronous communication in systems.",
+        "api composition": "API composition aggregates data from multiple services into a single response for client convenience.",
+
+        # --- 89. DEVOPS PRACTICES ---
+        "infrastructure as code tools": "Terraform, Pulumi, CloudFormation manage cloud resources through declarative configuration files.",
+        "gitops principles": "GitOps uses Git as single source of truth, with operators ensuring deployed state matches repository.",
+        "canary deployment": "Canary deployment gradually shifts traffic to new version, monitoring for errors before full rollout.",
+        "feature toggle tools": "LaunchDarkly, Flagsmith enable runtime feature control without deployment, enabling dark launches and A/B tests.",
+        "chaos engineering tools": "Gremlin, LitmusChaos inject failures to test system resilience and identify weaknesses.",
+        "site reliability engineering": "SRE applies software engineering to operations, balancing reliability with feature velocity through SLIs and SLOs.",
+        "error budgets": "Error budget is the acceptable downtime derived from SLO (e.g., 99.9% = 8.76 hours/year allowed downtime).",
+        "blameless postmortems": "Blameless postmortems analyze incidents focusing on systemic causes, not individual blame.",
+        "mean time to recovery": "MTTR measures average time to restore service after an incident, a key reliability metric.",
+        "change management": "Change management controls modifications to production systems with approval, testing, and rollback plans.",
+
+        # --- 90. COMPUTER NETWORKING AVANSAT ---
+        "bgp protocol": "BGP (Border Gateway Protocol) routes traffic between autonomous systems, forming the internet backbone.",
+        "ospf vs bgp": "OSPF routes within a network (interior); BGP routes between networks (exterior) on the internet.",
+        "mpls": "MPLS directs data through paths via labels instead of network addresses, improving speed and traffic engineering.",
+        "vpn types": "VPN types: remote access (client to network), site-to-site (network to network), SSL VPN (browser-based).",
+        "proxy vs reverse proxy": "Forward proxy serves clients accessing internet; reverse proxy serves applications to clients.",
+        "load balancer algorithms": "Round-robin, least connections, IP hash, and weighted distribution balance traffic across servers.",
+        "anycast": "Anycast routes traffic to the nearest server sharing the same IP, improving latency and resilience.",
+        "network address translation types": "NAT types: static (1:1), dynamic (pool), PAT (many:1 with ports), enabling multiple devices on one IP.",
+        "ipv6 transition": "IPv6 transition uses dual-stack (both v4/v6), tunneling, and translation to coexist during migration.",
+        "software defined networking": "SDN separates network control from hardware, enabling programmable, centralized network management.",
+
+        # --- 91. BAZE DE DATE PERFORMANȚĂ ---
+        "query execution plan": "EXPLAIN shows how a database executes a query, revealing table scans, index usage, and join strategies.",
+        "database partitioning": "Partitioning splits large tables into smaller pieces by range, list, or hash for performance.",
+        "connection pooling tools": "PgBouncer, HikariCP maintain reusable database connections, reducing overhead of establishing new ones.",
+        "caching strategies database": "Read-through, write-through, write-behind caching strategies balance performance and data consistency.",
+        "full text search engines": "Elasticsearch, Solr, Meilisearch provide advanced search capabilities beyond basic SQL LIKE queries.",
+        "acid compliance test": "ACID transactions ensure atomicity (all or nothing), consistency, isolation, and durability in databases.",
+        "database replication lag": "Replication lag is delay between primary write and replica availability, affecting read-after-write consistency.",
+        "hot vs cold data": "Hot data is frequently accessed (SSD, cache); cold data is rarely accessed (HDD, archive storage).",
+        "schema migration tools": "Flyway, Liquibase version-control database schemas, enabling repeatable and trackable changes.",
+        "database monitoring": "Monitoring tools like Prometheus + Grafana track query performance, connections, and resource usage.",
+
+        # --- 92. CYBERSECURITY OPERATIONS ---
+        "soc": "SOC (Security Operations Center) monitors and defends against cybersecurity threats 24/7 using SIEM tools.",
+        "incident response phases": "IR phases: Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned.",
+        "threat intelligence": "Threat intelligence collects and analyzes data about current and emerging threats for proactive defense.",
+        "mitre att&ck": "MITRE ATT&CK maps adversary tactics, techniques, and procedures (TTPs) for threat modeling.",
+        "security information and event management": "SIEM tools like Splunk, QRadar aggregate and correlate security events for detection.",
+        "user behavior analytics": "UBA/UBA detects anomalies in user activity that may indicate compromised accounts or insider threats.",
+        "endpoint protection platforms": "EPP combines antivirus, firewall, and intrusion prevention on endpoints for defense-in-depth.",
+        "network traffic analysis": "NTA monitors network flows to detect suspicious patterns, C2 communication, and exfiltration.",
+        "deception technology": "Honeypots and decoys create traps for attackers, detecting and analyzing intrusion techniques.",
+        "purple teaming": "Purple team combines red (attack) and blue (defense) teams to improve security through collaboration.",
+
+                # --- 93. ASISTENȚI VOCALI ȘI CHATBOTS ---
+        "alexa skills": "Alexa Skills are voice-driven capabilities adding functionality to Amazon Echo devices.",
+        "google assistant actions": "Google Assistant Actions extend functionality through conversational voice commands.",
+        "siri shortcuts": "Siri Shortcuts automate multi-step tasks on Apple devices with custom voice commands.",
+        "chatbot frameworks": "Dialogflow, Rasa, Microsoft Bot Framework build conversational AI for messaging platforms.",
+        "nlp in chatbots": "NLP enables chatbots to understand intent, extract entities, and manage dialogue context.",
+        "rasa vs dialogflow": "Rasa is open-source with full control; Dialogflow is Google's managed service with easy integration.",
+        "voice user interface": "VUI design creates intuitive voice interactions without visual screens, focusing on conversation flow.",
+        "text to speech engines": "TTS engines like Amazon Polly, Google WaveNet convert text to natural-sounding speech.",
+        "speech to text engines": "STT engines like Whisper, Google Speech-to-Text convert spoken audio into written text.",
+        "sentiment analysis": "Sentiment analysis detects emotions (positive, negative, neutral) in text using machine learning.",
+
+        # --- 94. ANALIZĂ DE DATE ---
+        "power bi": "Power BI is Microsoft's business analytics tool for interactive dashboards and data visualization.",
+        "tableau": "Tableau is a visual analytics platform turning data into interactive, shareable dashboards.",
+        "looker": "Looker is a data platform with modeling language (LookML) for defining business metrics centrally.",
+        "google data studio": "Looker Studio (formerly Data Studio) creates free interactive reports from various data sources.",
+        "dbt": "dbt (data build tool) transforms data in warehouses through modular SQL, version-controlled analytics code.",
+        "apache spark": "Apache Spark is a distributed computing engine for big data processing, ML, and streaming analytics.",
+        "apache hadoop": "Hadoop processes massive datasets across clusters using MapReduce and distributed file system (HDFS).",
+        "apache kafka streams": "Kafka Streams processes data in real-time within Kafka, enabling stream processing applications.",
+        "apache flink": "Flink is a stream processing framework for real-time analytics with low latency and high throughput.",
+        "snowflake": "Snowflake is a cloud data platform separating storage and compute with multi-cluster scaling.",
+
+        # --- 95. SISTEME DE CONTROL AL VERSIUNILOR ---
+        "git vs svn": "Git is distributed — every user has full repository; SVN is centralized — single server stores all history.",
+        "git flow vs trunk": "Git Flow uses develop/main branches with feature releases; trunk-based development uses short-lived branches.",
+        "git merge vs rebase": "Merge preserves history with a merge commit; rebase creates linear history by replaying commits.",
+        "git stash": "git stash temporarily saves uncommitted changes, allowing clean working directory for other tasks.",
+        "git cherry pick": "git cherry-pick applies specific commits from one branch to another without merging entire branch.",
+        "git revert vs reset": "Revert creates a new commit undoing changes safely; reset moves branch pointer, potentially losing history.",
+        "git tag": "Git tags mark specific commits as important (releases, versions) — lightweight or annotated with metadata.",
+        "git hooks": "Git hooks run scripts automatically on events (pre-commit, post-receive) for linting, testing, notifications.",
+        "git submodules": "Submodules include other Git repositories inside a parent repository for dependency management.",
+        "git worktree": "Git worktrees allow multiple working directories from one repository, enabling parallel work on different branches.",
+
+        # --- 96. STANDARDE WEB ---
+        "w3c": "W3C (World Wide Web Consortium) develops web standards for HTML, CSS, accessibility, and APIs.",
+        "whatwg": "WHATWG maintains the HTML Living Standard, the continuously updated specification for HTML.",
+        "ecmascript": "ECMAScript is the specification standardizing JavaScript, with ES6 (2015) being a major modern update.",
+        "tc39": "TC39 is the committee evolving ECMAScript through proposals with stages from 0 (idea) to 4 (finished).",
+        "web components": "Web Components encapsulate HTML, CSS, and JS into reusable custom elements with Shadow DOM.",
+        "shadow dom": "Shadow DOM isolates component styles and markup from the main document, preventing conflicts.",
+        "custom elements": "Custom Elements define new HTML tags with custom behavior and lifecycle callbacks.",
+        "html templates": "HTML templates define inert markup fragments cloned and activated by JavaScript at runtime.",
+        "web workers": "Web Workers run scripts in background threads, enabling parallel processing without blocking UI.",
+        "service workers": "Service Workers act as proxy between browser and network, enabling offline support and push notifications.",
+
+        # --- 97. UNELTE DE PRODUCTIVITATE ---
+        "docker desktop": "Docker Desktop provides GUI and CLI for container development on Windows and macOS.",
+        "postman environments": "Postman environments store variables for different setups (dev, staging, prod) in API testing.",
+        "insomnia": "Insomnia is a REST and GraphQL client for API debugging and testing with environment support.",
+        "ngrok": "ngrok creates secure tunnels to localhost, exposing local servers to the internet for testing.",
+        "wireshark filters": "Wireshark filters (ip.addr, tcp.port, http.request) isolate specific traffic in packet analysis.",
+        "fiddler": "Fiddler is a web debugging proxy capturing HTTP/HTTPS traffic between computer and internet.",
+        "charles proxy": "Charles is an HTTP proxy for viewing and manipulating web traffic during development.",
+        "tmux": "tmux is a terminal multiplexer enabling multiple terminal sessions, panes, and persistent remote work.",
+        "oh my zsh": "Oh My Zsh enhances Zsh shell with plugins, themes, and productivity features for developers.",
+        "raycast": "Raycast is a macOS launcher replacing Spotlight with extensions, scripts, and productivity tools.",
+
+        # --- 98. MACHINE LEARNING OPERATIONS (MLOps) ---
+        "mlflow": "MLflow tracks experiments, packages models, and manages the ML lifecycle from training to deployment.",
+        "kubeflow": "Kubeflow runs ML workflows on Kubernetes, orchestrating training and serving of models.",
+        "weights and biases": "Weights & Biases tracks experiments, visualizes metrics, and manages model artifacts.",
+        "model registry": "Model registry catalogs trained models with versions, metadata, and deployment status.",
+        "feature engineering automation": "Automated feature engineering creates and selects optimal features from raw data.",
+        "model serving": "Model serving (TensorFlow Serving, TorchServe) deploys trained models for real-time inference.",
+        "batch inference": "Batch inference processes large datasets offline through pre-trained models for bulk predictions.",
+        "data versioning": "Data versioning tools like DVC track datasets alongside code, enabling reproducible ML pipelines.",
+        "pipeline orchestration": "Orchestration tools (Airflow, Prefect) schedule and coordinate ML workflow dependencies.",
+        "model monitoring production": "Production model monitoring tracks prediction drift, data quality, and performance degradation over time.",
+
+        # --- 99. PROGRAMARE CONCURENTĂ ---
+        "thread vs process": "Threads share memory within a process; processes have separate memory and are more isolated.",
+        "race condition": "Race conditions occur when multiple threads access shared data without synchronization, causing unpredictable results.",
+        "deadlock": "Deadlock happens when threads wait for each other's resources indefinitely, freezing execution.",
+        "mutex vs semaphore": "Mutex allows one thread at a time; semaphore allows a set number of concurrent accesses to resources.",
+        "async await python": "async/await in Python enables non-blocking concurrent code execution without explicit thread management.",
+        "goroutines": "Goroutines are lightweight threads in Go, multiplexed onto OS threads for efficient concurrency.",
+        "actor model": "Actor model treats actors as concurrent units communicating through messages, avoiding shared state.",
+        "futures and promises": "Futures/Promises represent values that will be available later, enabling asynchronous composition.",
+        "thread pool": "Thread pools reuse threads for tasks, avoiding overhead of creating threads repeatedly.",
+        "concurrent vs parallel": "Concurrent tasks overlap in time; parallel tasks run simultaneously on multiple processors.",
+
+        # --- 100. TEHNOLOGII EMERGENTE ȘI VIITOR ---
+        "crispr technology": "CRISPR gene editing precisely modifies DNA sequences, revolutionizing medicine and biotechnology.",
+        "brain computer interface current": "Current BCIs like Neuralink aim to connect brains to computers for medical and enhancement purposes.",
+        "solid state batteries": "Solid-state batteries replace liquid electrolyte with solid, offering higher density and safety.",
+        "hydrogen fuel cells": "Hydrogen fuel cells generate electricity from hydrogen, emitting only water as byproduct.",
+        "hyperloop": "Hyperloop concept transports pods through low-pressure tubes at near-supersonic speeds.",
+        "autonomous drone delivery": "Drone delivery services (Wing, Amazon Prime Air) transport packages autonomously.",
+        "lab grown diamonds": "Lab-grown diamonds have identical properties to mined ones but are more sustainable and affordable.",
+        "3d printing construction": "3D printing builds houses layer by layer, reducing costs and construction time significantly.",
+        "digital twins in healthcare": "Digital twins of human organs enable personalized medicine and surgical planning.",
+        "space manufacturing": "Manufacturing in microgravity (space) enables production of materials impossible on Earth.",
+       }
     
     
 
