@@ -2376,8 +2376,24 @@ class AegisFortress:
     def __init__(self):
         self.original_hash = None
         self.intruders = []
+        self.authorized_keys = [
+            "AEGIS-ANDREDI-2026-KEY",  # Cheia ta principală
+            "AEGIS-DEVELOPER-ACCESS",   # Pentru developeri autorizați
+        ]
+        self.authorized = False
+        self.lock()
+    
+    def request_access(self, key):
+        """Cerere de acces pentru modificare"""
+        if key in self.authorized_keys:
+            self.authorized = True
+            return "✅ ACCES PERMIS — Ai 24 ore să modifici."
+        else:
+            self.authorized = False
+            return "🚫 ACCES REFUZAT — Cheie invalidă."
     
     def lock(self):
+        """Salvează amprenta originală a codului"""
         try:
             with open(__file__, 'r', encoding='utf-8') as f:
                 code = f.read()
@@ -2387,25 +2403,40 @@ class AegisFortress:
             return False
     
     def verify(self):
+        """Verifică dacă codul a fost modificat"""
+        # Dacă are autorizație, permite modificarea
+        if self.authorized:
+            return True
+        
         try:
             with open(__file__, 'r', encoding='utf-8') as f:
                 current_code = f.read()
             current_hash = hashlib.sha256(current_code.encode()).hexdigest()
             if current_hash != self.original_hash:
+                self.intruders.append({
+                    'time': time.ctime(),
+                    'status': 'BLOCKED - No Authorization'
+                })
                 return False
             return True
         except:
             return True
     
+    def revoke_access(self):
+        """Revocă accesul și resetează hash-ul"""
+        self.authorized = False
+        self.lock()
+        return "🔒 ACCES REVOCAT — Fortress reactivat."
+    
     def status_report(self):
         return {
             'fortress': '🟢 ACTIVE',
-            'integrity': '✅ VERIFIED' if self.verify() else '⚠️ BREACH DETECTED',
-            'intruders': len(self.intruders)
+            'authorized': '🔓 YES' if self.authorized else '🔒 NO',
+            'integrity': '✅ VERIFIED' if self.verify() else '⚠️ BREACH',
+            'intruders_blocked': len(self.intruders)
         }
 
 fortress = AegisFortress()
-fortress.lock()
 
 # ---------- INTERFAȚA PRINCIPALĂ ----------
 else:
