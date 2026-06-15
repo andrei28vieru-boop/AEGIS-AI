@@ -3180,7 +3180,7 @@ if "user_db" not in st.session_state:
 # AUTENTIFICARE
 # -----------------------------
 MAX_FAILED = 5
-LOCKOUT_SECONDS = 300  # 5 minute
+LOCKOUT_SECONDS = 300
 
 def is_locked(user):
     info = st.session_state.failed_logins.get(user)
@@ -3216,7 +3216,6 @@ if not st.session_state.logged_in:
 
     user_db = st.session_state.user_db
 
-    # LOGIN
     if auth_choice == auth_option_1:
         user = st.text_input(translate_text("👤 Utilizator", lang_map[st.session_state.lang]))
         pin = st.text_input(translate_text("🔑 Parolă", lang_map[st.session_state.lang]), type="password")
@@ -3235,7 +3234,6 @@ if not st.session_state.logged_in:
                 register_failed(user)
                 st.error(translate_text("Autentificare eșuată.", lang_map[st.session_state.lang]))
 
-    # REGISTER
     else:
         new_user = st.text_input(translate_text("👤 Alege un nume de utilizator", lang_map[st.session_state.lang]))
         new_pin = st.text_input(translate_text("🔑 Alege o parolă", lang_map[st.session_state.lang]), type="password")
@@ -3261,13 +3259,11 @@ if not st.session_state.logged_in:
 # INTERFAȚA PRINCIPALĂ
 # -----------------------------
 else:
-    # 🛡️ FORTRESS CHECK — ANTI-TAMPERING
     if not fortress.verify():
         st.error("⚠️ AEGIS FORTRESS: Modificare neautorizată detectată!")
         st.code("Sistemul a fost blocat pentru protecție.")
         st.stop()
 
-    # UI principal
     level_map = {
         "beginner": "🟢 Începător",
         "professional": "🟡 Profesionist",
@@ -3286,18 +3282,15 @@ else:
         st.session_state.messages = []
         st.rerun()
 
-    # Afișare mesaje existente
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"]):
             st.write(msg["content"])
 
-    # Input utilizator
     if prompt := st.chat_input(translate_text("Scrie un mesaj...", lang_map[st.session_state.lang])):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.write(prompt)
 
-        # Răspuns AEGIS
         with st.chat_message("assistant"):
             with st.spinner(translate_text("AEGIS se gândește...", lang_map[st.session_state.lang])):
                 prompt_ro = translate_text(prompt, "ro").lower()
@@ -3328,7 +3321,6 @@ else:
                                 parts.append(f"\n**🔗 Vezi și:** {', '.join(term_data['related'])}")
 
                             response_ro = "\n".join(parts)
-
                         else:
                             response_ro = term_data
 
