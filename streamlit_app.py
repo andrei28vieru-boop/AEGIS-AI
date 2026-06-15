@@ -1,7 +1,44 @@
 import streamlit as st
-import random, string, hashlib, re, time, os
-from deep_translator import GoogleTranslator
-from googlesearch import search
+import hashlib
+import bcrypt
+import json
+import time
+from pathlib import Path
+
+# -----------------------------
+# CONSTANTE PERSISTENTE
+# -----------------------------
+USERS_DB_PATH = Path("users_db.json")
+FORTRESS_STATE_PATH = Path("aegis_fortress.json")
+
+# -----------------------------
+# FUNCȚII USER DATABASE
+# -----------------------------
+def load_user_db():
+    try:
+        if USERS_DB_PATH.exists():
+            with open(USERS_DB_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+    except:
+        return {}
+    return {}
+
+def save_user_db(db):
+    tmp = USERS_DB_PATH.with_suffix(".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(db, f, ensure_ascii=False, indent=2)
+    tmp.replace(USERS_DB_PATH)
+
+def hash_pwd(password: str) -> str:
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+
+def verify_pwd(password: str, hashed: str) -> bool:
+    try:
+        return bcrypt.checkpw(password.encode(), hashed.encode())
+    except:
+        return False
+
+
 
 st.set_page_config(page_title="AEGIS AI - The Ultimate IT Mentor", page_icon="💎")
 st.title("💎 AEGIS AI")
@@ -39,7 +76,7 @@ st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
         
-            # ============================================
+         # ============================================
         # 💎 AEGIS LEVEL — Interactive Mentor (90 terms)
         # ============================================
         
@@ -1129,6 +1166,7 @@ if "knowledge" not in st.session_state:
         "buclă": "O buclă (loop) este o instrucțiune care repetă o bucată de cod. `for` și `while` sunt cele mai comune în Python.",
         "clasă": "O clasă (class) este un șablon pentru crearea de obiecte. Este fundamentul Programării Orientate pe Obiecte (OOP).",
         "criptomonedă": "O monedă digitală descentralizată. Exemple: Bitcoin (BTC), Ethereum (ETH).",
+
         "mit": "MIT (Massachusetts Institute of Technology) este una dintre cele mai prestigioase universități din lume, lider în cercetare și inovație tehnologică.",
         "white hat": "White Hat Hacking este practica etică și legală de a testa securitatea sistemelor pentru a le proteja împotriva atacatorilor reali.",
         "vpn": "Un VPN (Virtual Private Network) creează o conexiune criptată și sigură între dispozitivul tău și internet.",
@@ -1139,6 +1177,7 @@ if "knowledge" not in st.session_state:
         "parolă": "O parolă este o cheie secretă, formată dintr-un șir de caractere, folosită pentru autentificare și protecția conturilor.",
         "malware": "Malware (software malițios) este orice program creat pentru a dăuna unui sistem, a fura date sau a prelua controlul.",
         "antivirus": "Un antivirus este un program care detectează, blochează și elimină malware-ul de pe un dispozitiv.",
+
         "ddos": "Un atac DDoS (Distributed Denial of Service) încearcă să supraaglomereze un server cu trafic masiv pentru a-l face inaccesibil.",
         "aws": "AWS (Amazon Web Services) este cea mai mare platformă de cloud computing din lume, oferind peste 200 de servicii.",
         "azure": "Microsoft Azure este platforma de cloud computing a Microsoft, folosită pentru crearea, testarea și gestionarea aplicațiilor.",
@@ -1149,12 +1188,14 @@ if "knowledge" not in st.session_state:
         "tcp": "TCP (Transmission Control Protocol) este un protocol de comunicare sigur, care garantează livrarea pachetelor de date.",
         "http": "HTTP (HyperText Transfer Protocol) este protocolul folosit pentru a transfera pagini web între un server și un browser.",
         "router": "Un router este un dispozitiv care direcționează traficul de date între diferite rețele.",
+
         "javascript": "JavaScript is the programming language of the web. It makes websites interactive and works directly in your browser.",
         "java": "Java is a powerful, general-purpose programming language used for building Android apps, enterprise software, and large systems.",
         "c++": "C++ is a high-performance programming language used for game development, operating systems, and applications requiring speed.",
         "algoritm": "An algorithm is a step-by-step set of instructions to solve a specific problem, like a recipe for a computer.",
         "structură de date": "A data structure is a way of organizing and storing data so it can be accessed and modified efficiently, like lists or dictionaries.",
         "debugging": "Debugging is the process of finding and fixing errors (bugs) in your code.",
+
         "ide": "An IDE (Integrated Development Environment) is a software application that helps you write code, like PyCharm or VS Code.",
         "compilator": "A compiler is a program that translates your code into machine language that a computer can understand and run.",
         "linux": "Linux is a free, open-source operating system known for its stability and security. It's widely used on servers and by developers.",
@@ -1163,6 +1204,7 @@ if "knowledge" not in st.session_state:
         "terminal": "The terminal is a text-based interface where you can type commands to interact with your computer directly.",
         "bash": "Bash is a popular command-line shell on Linux and macOS that lets you run commands and write scripts.",
         "powershell": "PowerShell is a powerful command-line tool from Microsoft for automating tasks on Windows.",
+
         "kernel": "The kernel is the heart of an operating system. It manages everything from your hardware to your software.",
         "driver": "A driver is a small piece of software that allows your operating system to talk to a piece of hardware, like a printer.",
         "guido van rossum": "Guido van Rossum is the Dutch programmer who created the Python programming language in the late 1980s.",
@@ -1170,6 +1212,7 @@ if "knowledge" not in st.session_state:
         "istoria internetului": "The internet began in the late 1960s as a US military project called ARPANET and became public in the 1990s.",
         "alan turing": "Alan Turing was a brilliant British mathematician who is considered the father of computer science and artificial intelligence.",
         "react": "React is a popular JavaScript library for building user interfaces, developed by Facebook.",
+
         "angular": "Angular is a TypeScript-based web application framework led by Google.",
         "vue": "Vue.js is a progressive JavaScript framework for building user interfaces.",
         "django": "Django is a high-level Python web framework that encourages rapid development.",
@@ -1183,6 +1226,7 @@ if "knowledge" not in st.session_state:
         "xml": "XML (eXtensible Markup Language) is a markup language for storing and transporting data.",
         "agile": "Agile is a methodology for software development that emphasizes flexibility and collaboration.",
         "scrum": "Scrum is a framework within Agile for managing complex projects.",
+
         "devops": "DevOps is a set of practices that combines software development and IT operations.",
         "ci/cd": "CI/CD (Continuous Integration/Continuous Delivery) is a method to frequently deliver apps.",
         "typescript": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
@@ -1192,6 +1236,7 @@ if "knowledge" not in st.session_state:
         "go": "Go is a statically typed, compiled language designed at Google.",
         "php": "PHP is a popular general-purpose scripting language especially suited to web development.",
         "ruby": "Ruby is a dynamic, open-source programming language with a focus on simplicity.",
+
         "scala": "Scala is a language that combines object-oriented and functional programming.",
         "perl": "Perl is a highly capable, feature-rich programming language with over 30 years of development.",
         "r programming": "R is a programming language and environment specifically designed for statistical analysis and data visualization.",
@@ -1202,6 +1247,7 @@ if "knowledge" not in st.session_state:
         "runtime": "A runtime is the environment in which a program is executed, providing necessary services.",
         "interpreter": "An interpreter is a program that directly executes instructions written in a programming language.",
         "syntax": "Syntax refers to the set of rules that define the structure of a programming language.",
+
         "semantics": "Semantics refers to the meaning of a program's instructions, separate from their syntax.",
         "variable scope": "Variable scope determines where a variable can be accessed within a program.",
         "global variable": "A global variable is declared outside any function and can be accessed from anywhere in the code.",
@@ -1214,6 +1260,7 @@ if "knowledge" not in st.session_state:
         "block": "A block is a group of statements that are treated as a single unit.",
         "comment": "A comment is a programmer-readable explanation in the source code, ignored by the compiler.",
         "whitespace": "Whitespace refers to characters like spaces and tabs, often used to format code.",
+
         "indentation": "Indentation is the space at the beginning of a code line, used in Python to define code blocks.",
         "exception": "An exception is an error that occurs during the execution of a program.",
         "try-except": "Try-except is a block used in Python to handle exceptions gracefully.",
@@ -1227,6 +1274,7 @@ if "knowledge" not in st.session_state:
         "technical debt": "Technical debt is the implied cost of additional rework caused by choosing an easy solution now.",
         "design pattern": "A design pattern is a general, reusable solution to a commonly occurring problem in software design.",
         "singleton": "Singleton is a design pattern that restricts a class to a single instance.",
+
         "factory": "Factory is a design pattern that creates objects without specifying the exact class.",
         "observer": "Observer is a design pattern where an object maintains a list of its dependents and notifies them of state changes.",
         "mvc": "MVC (Model-View-Controller) is an architectural pattern for building user interfaces.",
@@ -1234,6 +1282,7 @@ if "knowledge" not in st.session_state:
         "unit test": "A unit test is a way to test a small, isolated piece of code to ensure it works correctly.",
         "integration test": "Integration testing is a phase where individual units are combined and tested as a group.",
         "e2e test": "End-to-end testing is a methodology to test an application's flow from start to finish.",
+
         "regression test": "Regression testing ensures that recent code changes have not adversely affected existing features.",
         "performance test": "Performance testing evaluates the speed, responsiveness, and stability of a system under a workload.",
         "load test": "Load testing is putting demand on a system and measuring its response.",
@@ -1245,12 +1294,14 @@ if "knowledge" not in st.session_state:
         "ajax": "AJAX (Asynchronous JavaScript and XML) is a technique for creating fast and dynamic web pages.",
         "dom": "DOM (Document Object Model) is a programming interface for web documents.",
         "regex": "Regex (Regular Expression) is a sequence of characters that define a search pattern.",
+
         "unicode": "Unicode is a universal character encoding standard.",
         "ascii": "ASCII (American Standard Code for Information Interchange) is a character encoding standard.",
         "bit": "A bit is the most basic unit of information in computing.",
         "byte": "A byte is a unit of digital information that most commonly consists of eight bits.",
         "binary": "Binary is a base-2 numeral system used by computers.",
         "hexadecimal": "Hexadecimal is a base-16 numeral system used in programming.",
+
         "octal": "Octal is a base-8 numeral system.",
         "c#": "C# (C-Sharp) is a modern, object-oriented programming language developed by Microsoft for the .NET framework.",
         "database": "A database is an organized collection of structured information, stored and accessed electronically.",
@@ -1259,6 +1310,7 @@ if "knowledge" not in st.session_state:
         "mysql": "MySQL is a popular open-source relational database management system, widely used for web applications.",
         "postgresql": "PostgreSQL is an advanced, open-source relational database known for its reliability and feature set.",
         "mongodb": "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents.",
+
         "redis": "Redis is an in-memory data structure store used as a database, cache, and message broker.",
         "sqlite": "SQLite is a lightweight, file-based SQL database engine often used in mobile apps and small projects.",
         "orm": "ORM (Object-Relational Mapping) is a technique that lets you interact with a database using objects instead of SQL queries.",
@@ -1266,6 +1318,7 @@ if "knowledge" not in st.session_state:
         "normalization": "Normalization is the process of organizing database columns and tables to reduce data redundancy.",
         "index": "A database index is a data structure that improves the speed of data retrieval operations.",
         "query": "A query is a request for data from a database, usually written in SQL.",
+
         "join": "A JOIN clause in SQL combines rows from two or more tables based on a related column.",
         "primary key": "A primary key is a unique identifier for each record in a database table.",
         "foreign key": "A foreign key is a column that creates a link between two tables by referencing the primary key of another table.",
@@ -1276,6 +1329,7 @@ if "knowledge" not in st.session_state:
         "deep learning": "Deep Learning is a subset of ML using artificial neural networks with many layers to model complex patterns.",
         "supervised learning": "Supervised learning trains an AI model on labeled data, where the correct answer is provided.",
         "unsupervised learning": "Unsupervised learning finds hidden patterns in data without pre-existing labels.",
+
         "reinforcement learning": "Reinforcement learning trains an agent to make decisions by rewarding desired behaviors and punishing undesired ones.",
         "overfitting": "Overfitting occurs when a model learns the training data too well, including its noise, and performs poorly on new data.",
         "underfitting": "Underfitting happens when a model is too simple to capture the underlying pattern in the data.",
@@ -1285,6 +1339,7 @@ if "knowledge" not in st.session_state:
         "training": "Training is the process of teaching a machine learning model by feeding it data and adjusting its parameters.",
         "inference": "Inference is the process of using a trained model to make predictions on new, unseen data.",
         "epoch": "An epoch is one complete pass through the entire training dataset during model training.",
+
         "batch": "A batch is a subset of the training data used to update the model's parameters in one iteration.",
         "loss function": "A loss function measures how far a model's predictions are from the actual values. Lower is better.",
         "gradient descent": "Gradient descent is an optimization algorithm that minimizes the loss function by iteratively adjusting parameters.",
@@ -1293,6 +1348,7 @@ if "knowledge" not in st.session_state:
         "cnn": "CNN (Convolutional Neural Network) is a deep learning architecture specialized for processing grid-like data, especially images.",
         "rnn": "RNN (Recurrent Neural Network) is a neural network designed to recognize patterns in sequences of data, like text or time series.",
         "lstm": "LSTM (Long Short-Term Memory) is a type of RNN capable of learning long-term dependencies.",
+
         "transformer": "A Transformer is a deep learning model architecture that uses self-attention, forming the basis of models like GPT and BERT.",
         "nlp": "NLP (Natural Language Processing) is a field of AI focused on the interaction between computers and human language.",
         "computer vision": "Computer vision is a field of AI that trains computers to interpret and understand visual information from images and videos.",
@@ -1301,6 +1357,7 @@ if "knowledge" not in st.session_state:
         "fine-tuning": "Fine-tuning is the process of taking a pre-trained model and training it further on a specific dataset.",
         "tokenization": "Tokenization is the process of splitting text into smaller units (tokens) like words or subwords.",
         "embedding": "An embedding is a dense vector representation of data (like words) that captures semantic meaning.",
+
         "llm": "LLM (Large Language Model) is an AI model trained on massive text datasets. Examples: GPT, Claude, Gemini.",
         "rag": "RAG (Retrieval-Augmented Generation) combines an LLM with a retrieval system to fetch relevant external knowledge.",
         "hallucination": "AI hallucination occurs when a model generates text that sounds plausible but is factually incorrect.",
@@ -1310,6 +1367,7 @@ if "knowledge" not in st.session_state:
         "html": "HTML (HyperText Markup Language) is the standard language for creating web pages and web applications.",
         "css": "CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML.",
         "sass": "Sass is a CSS preprocessor that extends CSS with features like variables, nesting, and mixins.",
+
         "tailwind": "Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces.",
         "responsive design": "Responsive design is an approach where a website adapts its layout to different screen sizes and devices.",
         "media query": "A media query is a CSS technique used to apply styles conditionally based on device characteristics like screen width.",
@@ -1318,6 +1376,7 @@ if "knowledge" not in st.session_state:
         "frontend": "Frontend refers to the client-side part of a web application — what users see and interact with in their browser.",
         "backend": "Backend refers to the server-side part of a web application that handles logic, databases, and authentication.",
         "full stack": "Full Stack development involves working on both the frontend and backend of a web application.",
+
         "spa": "SPA (Single Page Application) is a web app that loads a single HTML page and dynamically updates content as the user interacts.",
         "pwa": "PWA (Progressive Web App) is a web application that uses modern capabilities to deliver an app-like experience.",
         "ssr": "SSR (Server-Side Rendering) is a technique where the server generates the full HTML for a page before sending it to the browser.",
@@ -1329,6 +1388,7 @@ if "knowledge" not in st.session_state:
         "cors": "CORS (Cross-Origin Resource Sharing) is a security mechanism that controls how web pages can request resources from another domain.",
         "decryption": "Decryption is the process of converting encrypted data back to its original, readable form.",
         "aes": "AES (Advanced Encryption Standard) is a symmetric encryption algorithm widely used worldwide.",
+
         "rsa": "RSA is an asymmetric encryption algorithm used for secure data transmission and digital signatures.",
         "ssl": "SSL (Secure Sockets Layer) is a protocol for encrypting data between a web server and a browser. Now replaced by TLS.",
         "tls": "TLS (Transport Layer Security) is the successor to SSL, providing encrypted communication over the internet.",
@@ -1341,6 +1401,7 @@ if "knowledge" not in st.session_state:
         "zero day": "A zero-day exploit is an attack that targets a previously unknown vulnerability, before a fix is available.",
         "penetration testing": "Penetration testing (pen test) is a simulated cyberattack to evaluate the security of a system.",
         "red team": "A Red Team is a group that simulates real-world attacks to test an organization's defenses.",
+
         "blue team": "A Blue Team is a group that defends an organization's systems against cyber threats.",
         "purple team": "A Purple Team combines Red and Blue teams to maximize collaboration and security effectiveness.",
         "siem": "SIEM (Security Information and Event Management) provides real-time analysis of security alerts.",
@@ -1355,6 +1416,7 @@ if "knowledge" not in st.session_state:
         "ram": "RAM (Random Access Memory) is temporary memory that stores data actively being used by the computer.",
         "rom": "ROM (Read-Only Memory) is non-volatile memory that stores firmware and cannot be easily modified.",
         "hdd": "HDD (Hard Disk Drive) is a traditional storage device that uses spinning magnetic disks.",
+
         "motherboard": "The motherboard is the main circuit board that connects all components of a computer.",
         "bios": "BIOS (Basic Input/Output System) is firmware that initializes hardware during the boot process. Now largely replaced by UEFI.",
         "uefi": "UEFI (Unified Extensible Firmware Interface) is the modern replacement for BIOS, with more features and security.",
@@ -1368,6 +1430,7 @@ if "knowledge" not in st.session_state:
         "bios update": "A BIOS update is a process of upgrading the firmware that controls the motherboard to fix bugs or add features.",
         "bitcoin": "Bitcoin (BTC) is the first and most well-known cryptocurrency, created in 2009 by an anonymous entity called Satoshi Nakamoto.",
         "ethereum": "Ethereum is a decentralized blockchain platform that enables smart contracts and decentralized applications (dApps).",
+
         "smart contract": "A smart contract is a self-executing program stored on a blockchain that runs when predetermined conditions are met.",
         "nft": "NFT (Non-Fungible Token) is a unique digital asset verified using blockchain technology, representing ownership of a specific item.",
         "defi": "DeFi (Decentralized Finance) is a financial system built on blockchain that operates without traditional intermediaries like banks.",
@@ -1382,6 +1445,7 @@ if "knowledge" not in st.session_state:
         "wallet": "A crypto wallet stores private keys and allows users to send, receive, and manage their digital assets.",
         "private key": "A private key is a secret alphanumeric code that allows cryptocurrency to be spent. It must never be shared.",
         "public key": "A public key is derived from a private key and serves as an address for receiving cryptocurrency.",
+
         "seed phrase": "A seed phrase is a series of words that can restore a cryptocurrency wallet. It must be kept secret and safe.",
         "exchange": "A crypto exchange is a platform where users can buy, sell, and trade cryptocurrencies. Examples: Binance, Coinbase.",
         "binance": "Binance is one of the world's largest cryptocurrency exchanges by trading volume.",
@@ -1397,6 +1461,7 @@ if "knowledge" not in st.session_state:
         "ios": "iOS is Apple's mobile operating system for iPhone and iPad, known for its security and smooth user experience.",
         "flutter": "Flutter is Google's open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
         "react native": "React Native is a framework by Meta for building mobile apps using JavaScript and React.",
+
         "xcode": "Xcode is Apple's integrated development environment (IDE) for building apps for iOS, macOS, watchOS, and tvOS.",
         "android studio": "Android Studio is the official IDE for Android development, built on IntelliJ IDEA.",
         "apk": "APK (Android Package) is the file format used to distribute and install applications on Android.",
@@ -1410,6 +1475,7 @@ if "knowledge" not in st.session_state:
         "prototype": "A prototype is an early sample or model of a product built to test concepts before full development.",
         "mvp": "MVP (Minimum Viable Product) is a product with just enough features to attract early users and validate an idea.",
         "app lifecycle": "The app lifecycle describes the series of states an app goes through from launch to termination.",
+
         "push notification": "A push notification is a message sent from a server to a user's device, appearing even when the app is closed.",
         "firebase": "Firebase is Google's platform for building mobile and web apps with features like databases, auth, and analytics.",
         "swiftui": "SwiftUI is Apple's modern framework for building user interfaces across all Apple platforms using declarative Swift code.",
@@ -1419,6 +1485,7 @@ if "knowledge" not in st.session_state:
         "jenkins": "Jenkins is an open-source automation server used for Continuous Integration and Continuous Delivery (CI/CD).",
         "github actions": "GitHub Actions is a CI/CD platform integrated with GitHub for automating software workflows.",
         "gitlab": "GitLab is a DevOps platform that provides source code management, CI/CD, and monitoring.",
+
         "prometheus": "Prometheus is an open-source monitoring and alerting toolkit designed for reliability and scalability.",
         "grafana": "Grafana is an open-source platform for data visualization and monitoring dashboards.",
         "elk stack": "The ELK Stack (Elasticsearch, Logstash, Kibana) is a set of tools for searching, analyzing, and visualizing log data.",
@@ -1435,6 +1502,7 @@ if "knowledge" not in st.session_state:
         "rabbitmq": "RabbitMQ is an open-source message broker that implements the Advanced Message Queuing Protocol (AMQP).",
         "docker compose": "Docker Compose is a tool for defining and running multi-container Docker applications using a YAML file.",
         "helm": "Helm is a package manager for Kubernetes that helps deploy and manage applications.",
+
         "istio": "Istio is an open-source service mesh for connecting, securing, and monitoring microservices.",
         "gitops": "GitOps is a framework that uses Git as the single source of truth for declarative infrastructure and applications.",
         "big o notation": "Big O Notation describes the performance or complexity of an algorithm, specifically its worst-case scenario.",
@@ -1447,6 +1515,7 @@ if "knowledge" not in st.session_state:
         "hash table": "A hash table is a data structure that maps keys to values using a hash function for fast lookups.",
         "tree": "A tree is a hierarchical data structure with a root node and child nodes connected by edges.",
         "binary tree": "A binary tree is a tree where each node has at most two children.",
+
         "graph": "A graph is a data structure consisting of nodes (vertices) connected by edges.",
         "sorting algorithm": "A sorting algorithm arranges elements in a specific order. Examples: Quick Sort, Merge Sort, Bubble Sort.",
         "bubble sort": "Bubble Sort is a simple sorting algorithm that repeatedly compares and swaps adjacent elements.",
@@ -1455,6 +1524,7 @@ if "knowledge" not in st.session_state:
         "binary search": "Binary Search is an algorithm that finds an element in a sorted array by repeatedly dividing the search interval in half.",
         "dp": "Dynamic Programming (DP) solves complex problems by breaking them into simpler overlapping subproblems.",
         "greedy algorithm": "A greedy algorithm makes the locally optimal choice at each step, aiming for a global optimum.",
+
         "boolean": "Boolean is a data type with two possible values: true or false.",
         "logic gate": "A logic gate is an electronic component that performs a Boolean function. Examples: AND, OR, NOT, XOR.",
         "set theory": "Set theory is the mathematical study of collections of objects, foundational to databases and logic programming.",
@@ -1462,6 +1532,7 @@ if "knowledge" not in st.session_state:
         "apple": "Apple Inc. is a global technology company known for the iPhone, Mac, iPad, and innovative design.",
         "google": "Google is a technology company specializing in internet services like search, cloud computing, and AI.",
         "microsoft": "Microsoft is a leading tech corporation behind Windows, Azure, Office, and Xbox.",
+
         "meta": "Meta (formerly Facebook) is a social media and technology company focused on connecting people and building the metaverse.",
         "amazon": "Amazon is a multinational company known for e-commerce, AWS cloud, and AI assistant Alexa.",
         "netflix": "Netflix is a streaming service that uses advanced AI algorithms for content recommendation.",
@@ -1471,6 +1542,7 @@ if "knowledge" not in st.session_state:
         "intel": "Intel is a major semiconductor company known for microprocessors that power most personal computers.",
         "amd": "AMD (Advanced Micro Devices) is a semiconductor company producing CPUs and GPUs, a key competitor to Intel and NVIDIA.",
         "arm": "ARM designs processor architectures used in most smartphones and increasingly in laptops and servers.",
+
         "tsmc": "TSMC (Taiwan Semiconductor Manufacturing Company) is the world's largest contract chip manufacturer.",
         "elon musk": "Elon Musk is an entrepreneur involved in Tesla, SpaceX, and xAI, pushing boundaries in tech and space.",
         "tim berners-lee": "Tim Berners-Lee is the inventor of the World Wide Web and a key figure in internet history.",
@@ -1480,6 +1552,7 @@ if "knowledge" not in st.session_state:
         "satoshi nakamoto": "Satoshi Nakamoto is the pseudonymous creator of Bitcoin and the first blockchain.",
         "mark zuckerberg": "Mark Zuckerberg is the co-founder and CEO of Meta (formerly Facebook).",
         "sundar pichai": "Sundar Pichai is the CEO of Google and Alphabet Inc.",
+
         "satya nadella": "Satya Nadella is the CEO of Microsoft, credited with its successful pivot to cloud computing.",
         "samsung galaxy s24 ultra": "Samsung Galaxy S24 Ultra este smartphone-ul flagship Samsung din 2024, cu procesor Snapdragon 8 Gen 3, cameră 200MP, S Pen integrat și AI Galaxy.",
         "samsung galaxy s25 ultra": "Samsung Galaxy S25 Ultra este cel mai avansat smartphone Samsung, lansat în 2025, cu procesor Snapdragon 8 Elite, AI avansat și cameră îmbunătățită.",
@@ -1488,6 +1561,7 @@ if "knowledge" not in st.session_state:
         "iphone 17 pro max": "iPhone 17 Pro Max este cel mai nou iPhone, lansat în 2025, cu design ultra-subțire, Dynamic Island îmbunătățit și cameră revoluționară.",
         "google pixel 9 pro": "Google Pixel 9 Pro este telefonul Google flagship cu procesor Tensor G4, cameră AI avansată și Android curat.",
         "oneplus 13": "OnePlus 13 este un flagship killer cu procesor Snapdragon 8 Elite, încărcare 100W și ecran AMOLED 120Hz.",
+
         "xiaomi 15 ultra": "Xiaomi 15 Ultra este telefonul premium Xiaomi cu cameră Leica, procesor Snapdragon 8 Elite și ecran AMOLED superb.",
         "huawei pura 70 ultra": "Huawei Pura 70 Ultra (fost P Series) este flagship-ul Huawei cu cameră retractabilă și procesor Kirin.",
         "nothing phone 3": "Nothing Phone 3 este telefonul inovator cu design transparent, Glyph Interface LED și sistem Android curat.",
@@ -1496,6 +1570,7 @@ if "knowledge" not in st.session_state:
         "apple watch ultra 3": "Apple Watch Ultra 3 este smartwatch-ul premium Apple pentru sportivi extremi, cu carcasă din titan, GPS precis și rezistență la scufundări.",
         "huawei watch": "Huawei Watch este o serie de ceasuri inteligente care rulează HarmonyOS, cunoscute pentru designul elegant, bateria de lungă durată (până la 14 zile) și monitorizarea detaliată a somnului și sănătății.",
         "google pixel watch 3": "Google Pixel Watch 3 este smartwatch-ul Google cu Wear OS, integrare Fitbit și design rotund elegant.",
+
         "garmin fenix 8": "Garmin Fenix 8 este un smartwatch premium pentru atleți, cu baterie solară, GPS multi-band și hărți topografice.",
         "smartwatch": "Un smartwatch este un ceas de mână digital care oferă funcții precum notificări, monitorizarea sănătății, GPS și control muzical, conectat la smartphone prin Bluetooth.",
         "wear os": "Wear OS este sistemul de operare Google pentru smartwatch-uri, folosit de mărci precum Samsung, Google Pixel Watch și Fossil.",
@@ -1506,10 +1581,12 @@ if "knowledge" not in st.session_state:
         "samsung galaxy book4 pro 360": "Samsung Galaxy Book4 Pro 360 este generația anterioară (2024) cu Intel Core Ultra Series 1, ecran AMOLED 2X și design convertibil.",
         "macbook pro 16": "MacBook Pro 16 este laptopul profesional Apple cu cip M4 Pro/Max, ecran Liquid Retina XDR, baterie 22 ore și macOS Sequoia.",
         "macbook air 15": "MacBook Air 15 este laptopul subțire Apple cu cip M4, ecran Liquid Retina 15.3\", design fanless și baterie 18 ore.",
+
         "dell xps 16": "Dell XPS 16 este laptopul premium Windows cu design futurist, ecran OLED 4K, Intel Core Ultra și trackpad invizibil.",
         "lenovo yoga 9i": "Lenovo Yoga 9i este un laptop convertibil premium cu soundbar rotativ Bowers & Wilkins, ecran OLED 4K și stylus inclus.",
         "hp spectre x360": "HP Spectre x360 este un laptop convertibil de lux cu ecran OLED 3K2K, design din aluminiu și cameră 9MP.",
         "asus zenbook duo": "ASUS Zenbook Duo are două ecrane OLED 14\" și tastatură detașabilă, perfect pentru multitasking extrem.",
+
         "microsoft surface laptop 7": "Microsoft Surface Laptop 7 este primul laptop Surface cu procesor Snapdragon X Elite ARM, baterie 20 ore și AI Copilot+.",
         "samsung galaxy tab s10 ultra": "Samsung Galaxy Tab S10 Ultra este cea mai mare tabletă Samsung, cu ecran Dynamic AMOLED 2X 14.6\", S Pen, AI Galaxy și mod DeX pentru productivitate.",
         "ipad pro m4": "iPad Pro M4 este cea mai puternică tabletă Apple, cu ecran Ultra Retina XDR (OLED tandem), cip M4 și Apple Pencil Pro.",
@@ -1521,6 +1598,7 @@ if "knowledge" not in st.session_state:
         "ios 19": "iOS 19 este cel mai nou sistem de operare Apple pentru iPhone (2025), cu Apple Intelligence, redesign și funcții AI avansate.",
         "macos sequoia": "macOS Sequoia este sistemul de operare Apple pentru Mac (2024-2025), cu iPhone Mirroring, Apple Intelligence și window tiling.",
         "windows 11": "Windows 11 este cel mai recent sistem de operare Microsoft, cu Copilot AI integrat, design modern și suport pentru aplicații Android.",
+
         "windows 12": "Windows 12 este următoarea versiune Windows (așteptată 2026-2027), promițând AI profund și design revoluționar.",
         "harmonyos next": "HarmonyOS NEXT este noul sistem de operare Huawei, complet independent de Android, cu AI nativ și ecosistem unificat.",
         "one ui 7": "One UI 7 este interfața Samsung peste Android, cu Galaxy AI, design simplificat și funcții exclusive pentru dispozitive Samsung.",
@@ -1529,11 +1607,13 @@ if "knowledge" not in st.session_state:
         "linux fedora": "Fedora este o distribuție Linux de vârf cu software nou, sponsorizată de Red Hat.",
         "linux mint": "Linux Mint este o distribuție Linux prietenoasă pentru începători, bazată pe Ubuntu, cu interfață Cinnamon.",
         "debian": "Debian este o distribuție Linux stabilă și fundamentală, baza pentru Ubuntu și multe altele.",
+
         "chrome os": "Chrome OS este sistemul de operare Google bazat pe cloud, folosit pe Chromebook-uri, simplu și rapid.",
         "google gemini": "Google Gemini este asistentul AI Google, integrat în Android, Search și Workspace, rival cu ChatGPT.",
         "chatgpt": "ChatGPT este asistentul AI creat de OpenAI, bazat pe GPT-4 și GPT-5, capabil de conversații și generare de conținut.",
         "samsung bixby": "Bixby este asistentul vocal Samsung, integrat în dispozitive Galaxy, cu Galaxy AI și control smart home.",
         "siri": "Siri este asistentul vocal Apple, integrat în iPhone, Mac și HomePod, acum cu Apple Intelligence.",
+
         "alexa": "Alexa este asistentul vocal Amazon, folosit pe dispozitive Echo pentru control smart home și informații.",
         "copilot microsoft": "Microsoft Copilot este asistentul AI Microsoft integrat în Windows 11, Edge și Office 365.",
         "galaxy ai": "Galaxy AI este suita de funcții AI de la Samsung, inclusiv Circle to Search, Live Translate și Photo Assist.",
@@ -1544,6 +1624,7 @@ if "knowledge" not in st.session_state:
         "meta quest 3": "Meta Quest 3 este casca VR/MR de la Meta cu procesor Snapdragon XR2 Gen 2, mixed reality și bibliotecă vastă de jocuri.",
         "playstation 6": "PlayStation 6 este viitoarea consolă Sony (așteptată după 2027), succesoarea PS5 cu grafică revoluționară.",
         "xbox next": "Next Xbox este viitoarea consolă Microsoft, promițând putere masivă și integrare cu cloud gaming.",
+
         "nintendo switch 2": "Nintendo Switch 2 este noua consolă hibridă Nintendo, lansată în 2025, cu hardware îmbunătățit și joy-con-uri magnetice.",
         "steam deck 2": "Steam Deck 2 este următoarea consolă portabilă Valve pentru jocuri PC, cu hardware mai puternic și baterie îmbunătățită.",
         "robotics": "Robotics is the interdisciplinary field of engineering and science that designs, builds, and operates robots.",
@@ -1558,6 +1639,7 @@ if "knowledge" not in st.session_state:
         "computer vision robot": "Computer vision in robotics allows machines to interpret visual data from cameras to navigate and manipulate objects.",
         "agv": "AGV (Automated Guided Vehicle) is a portable robot that follows markers or wires on the floor for material handling.",
         "drone": "A drone is an unmanned aerial vehicle (UAV) that can fly autonomously or be remotely controlled.",
+
         "humanoid robot": "A humanoid robot is designed to resemble the human body, often used for research and human-robot interaction.",
         "asimo": "ASIMO was Honda's humanoid robot, famous for walking, running, and interacting with humans.",
         "boston dynamics": "Boston Dynamics is a robotics company known for advanced robots like Spot (dog robot) and Atlas (humanoid robot).",
@@ -1570,12 +1652,14 @@ if "knowledge" not in st.session_state:
         "ar": "AR (Augmented Reality) overlays digital information onto the real world, viewed through smartphones or AR glasses.",
         "mr": "MR (Mixed Reality) blends real and virtual worlds where physical and digital objects interact in real-time.",
         "oculus": "Oculus is Meta's VR headset brand, now called Meta Quest, popular for gaming and social experiences.",
+
         "apple vision pro": "Apple Vision Pro is Apple's mixed reality headset, blending AR and VR with advanced spatial computing.",
         "microsoft hololens": "Microsoft HoloLens is an AR headset used in enterprise, medicine, and engineering for holographic computing.",
         "metaverse": "The Metaverse is a network of 3D virtual worlds focused on social connection, using VR and AR technologies.",
         "haptic": "Haptic technology provides tactile feedback (vibrations or forces) to simulate the sense of touch in virtual environments.",
         "spatial computing": "Spatial computing uses 3D space to interact with digital content, as seen in Apple Vision Pro.",
         "360 video": "360-degree video captures every direction simultaneously, allowing viewers to look around in VR.",
+
         "game engine": "A game engine is software for building video games, providing rendering, physics, and scripting. Examples: Unity, Unreal Engine.",
         "unity": "Unity is a cross-platform game engine used for 2D, 3D, VR, and AR game development.",
         "unreal engine": "Unreal Engine is a powerful 3D game engine by Epic Games known for high-fidelity graphics.",
@@ -1590,6 +1674,7 @@ if "knowledge" not in st.session_state:
         "epic games store": "Epic Games Store is a digital game distribution platform competing with Steam.",
         "minecraft": "Minecraft is the best-selling video game of all time, a sandbox game about building and exploring block worlds.",
         "roblox": "Roblox is an online platform where users create and play games made by other users.",
+
         "fortnite": "Fortnite is a popular battle royale game by Epic Games, known for its building mechanics and live events.",
         "green tech": "Green technology uses science to create products and services that are environmentally friendly.",
         "solar panel": "A solar panel converts sunlight into electricity using photovoltaic cells.",
@@ -1604,6 +1689,7 @@ if "knowledge" not in st.session_state:
         "url": "URL (Uniform Resource Locator) is the address used to access resources on the internet, like https://www.google.com.",
         "isp": "ISP (Internet Service Provider) is a company that provides internet access. Examples: RCS-RDS, Orange, Vodafone.",
         "lan": "LAN (Local Area Network) connects computers in a small area like a home, office, or school.",
+
         "wan": "WAN (Wide Area Network) spans a large geographic area, like the internet itself.",
         "vpn acronim": "VPN (Virtual Private Network) encrypts your internet connection and hides your IP address for privacy.",
         "gui": "GUI (Graphical User Interface) allows users to interact with computers using visual elements like windows and icons.",
@@ -1619,6 +1705,7 @@ if "knowledge" not in st.session_state:
         "podcast": "A podcast is a digital audio program available for streaming or download, covering countless topics.",
         "influencer": "An influencer is a person who uses social media to affect the purchasing decisions of followers.",
         "viral": "Viral content spreads rapidly and widely across the internet through social sharing.",
+
         "dark web": "The dark web is a hidden part of the internet requiring special software to access, often associated with anonymity.",
         "deep web": "The deep web includes all web pages not indexed by search engines, like private databases and email inboxes.",
         "async": "Asynchronous programming allows a program to handle multiple tasks concurrently without waiting for each to finish.",
@@ -1628,12 +1715,14 @@ if "knowledge" not in st.session_state:
         "generator": "A generator is a function in Python that yields values one at a time using `yield`, saving memory.",
         "virtual environment": "A virtual environment in Python isolates project dependencies to avoid conflicts between packages.",
         "pip": "pip is the package installer for Python, used to install and manage libraries from PyPI.",
+
         "pypi": "PyPI (Python Package Index) is the official repository of Python packages, hosting thousands of libraries.",
         "pep 8": "PEP 8 is the official style guide for Python code, promoting readability and consistency.",
         "jupyter": "Jupyter Notebook is an interactive web-based environment for writing and running Python code, popular in data science.",
         "anaconda": "Anaconda is a distribution of Python and R for scientific computing and data science.",
         "pandas": "Pandas is a Python library for data manipulation and analysis, especially with tabular data.",
         "numpy": "NumPy is a Python library for numerical computing, supporting arrays and mathematical functions.",
+
         "matplotlib": "Matplotlib is a Python library for creating static, animated, and interactive visualizations.",
         "scikit-learn": "Scikit-learn is a Python machine learning library with tools for classification, regression, and clustering.",
         "tensorflow": "TensorFlow is an open-source ML framework by Google for building and deploying AI models.",
@@ -1874,7 +1963,7 @@ if "knowledge" not in st.session_state:
         "shell": "A shell is a command-line interpreter that lets users interact with the operating system. Examples: Bash, Zsh, Fish, PowerShell.",
         "process": "A process is an instance of a running program, with its own memory space and system resources managed by the OS kernel.",
 
-                # --- 41. FRAMEWORKS WEB ---
+        # --- 41. FRAMEWORKS WEB ---
         "django rest framework": "Django REST Framework is a powerful toolkit for building Web APIs with Django, featuring serialization, authentication, and browsable APIs.",
         "spring boot": "Spring Boot is a Java framework that simplifies building production-ready applications with embedded servers and auto-configuration.",
         "laravel": "Laravel is a PHP web framework with elegant syntax, featuring Eloquent ORM, Blade templating, and Artisan CLI.",
@@ -2054,7 +2143,7 @@ if "knowledge" not in st.session_state:
         "lab grown meat": "Lab-grown meat is cultured from animal cells without slaughtering animals, offering sustainable protein production.",
         "vertical farming": "Vertical farming grows crops in stacked layers indoors, using LED lighting and hydroponics for year-round food production.",
 
-                # --- 56. INSTRUMENTE DE MONITORIZARE ---
+        # --- 56. INSTRUMENTE DE MONITORIZARE ---
         "nagios": "Nagios is an open-source monitoring system that watches hosts and services, alerting when problems occur.",
         "zabbix": "Zabbix is an enterprise monitoring platform for networks, servers, and applications with auto-discovery and visualization.",
         "datadog": "Datadog is a cloud monitoring and analytics platform providing infrastructure, application, and log monitoring.",
@@ -2294,7 +2383,7 @@ if "knowledge" not in st.session_state:
         "aws vpc": "VPC (Virtual Private Cloud) provides an isolated network section of AWS where resources can be launched securely.",
         "aws sagemaker": "SageMaker is a fully managed service to build, train, and deploy machine learning models at scale.",
 
-                # --- 76. AZURE CLOUD ---
+        # --- 76. AZURE CLOUD ---
         "azure functions": "Azure Functions is a serverless compute service running code on-demand without managing infrastructure.",
         "azure blob storage": "Azure Blob Storage stores massive amounts of unstructured data like images, videos, and backups.",
         "azure devops": "Azure DevOps provides CI/CD pipelines, Git repos, Kanban boards, and testing tools for development teams.",
@@ -2917,12 +3006,12 @@ if "knowledge" not in st.session_state:
         "gitlab ci cache": "Cache dependencies and build artifacts across pipeline runs to speed up execution.",
         "gitlab ci artifacts": "Artifacts are files generated by jobs that are stored and passed to subsequent jobs.",
         "gitlab ci needs": "`needs` keyword defines job dependencies to speed up pipelines with DAG execution.",
-        "gitlab ci rules": "Rules control when jobs run based on branch, variables, files, or custom conditions.",
+        "github actions cache": "`actions/cache` restores and saves cache (dependencies, build outputs) across workflow runs.",
         "github actions matrix strategy": "Matrix strategy runs a job with multiple versions of language, OS, or environment variables.",
         "github actions reusable workflows": "Reusable workflows are called by other workflows, reducing duplication.",
         "github actions composite actions": "Composite actions combine multiple steps into a single action without container overhead.",
-        "github action cache": `actions/cache` restores and saves cache (dependencies, build outputs) across workflow runs.",
         "github actions self-hosted runners": "Self-hosted runners run workflows on your own infrastructure for custom hardware or security.",
+
 
         # --- 116. PERFORMANȚĂ APLICAȚII AVANSATĂ ---
         "profiling tools": "Profilers (cProfile, py-spy, perf, valgrind) measure execution time and memory usage to find bottlenecks.",
@@ -3034,175 +3123,227 @@ if "knowledge" not in st.session_state:
         "intercepting proxies": "Tools like mitmproxy, Charles Proxy, and Fiddler intercept and modify HTTP/HTTPS traffic.",
         "web cache deception": "Cache deception exploits misconfigured caches to expose sensitive user data.",
     }
-
-# ---------- GESTIUNEA SESIUNII ----------
-if "logged_in" not in st.session_state: st.session_state.logged_in = False
-if "user_db" not in st.session_state: st.session_state.user_db = {}
-if "messages" not in st.session_state: st.session_state.messages = []
-if "chat_history" not in st.session_state: st.session_state.chat_history = {}
-if "user_level" not in st.session_state: st.session_state.user_level = "beginner"
-
-def hash_data(data): return hashlib.sha256(data.encode()).hexdigest()
-
-def kosandra_blade(query, num_results=1):
+# -----------------------------
+# FUNCȚII USER DATABASE
+# -----------------------------
+def load_user_db():
     try:
-        results = list(search(query, num_results=num_results, lang="en"))
-        return results[0] if results else None
+        if USERS_DB_PATH.exists():
+            with open(USERS_DB_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
     except:
-        return None
+        return {}
+    return {}
 
-# ---------- AUTENTIFICARE ----------
+def save_user_db(db):
+    tmp = USERS_DB_PATH.with_suffix(".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(db, f, ensure_ascii=False, indent=2)
+    tmp.replace(USERS_DB_PATH)
+
+def hash_pwd(password: str) -> str:
+    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+
+def verify_pwd(password: str, hashed: str) -> bool:
+    try:
+        return bcrypt.checkpw(password.encode(), hashed.encode())
+    except:
+        return False
+
+
+# -----------------------------
+# GESTIUNEA SESIUNII
+# -----------------------------
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+if "user" not in st.session_state:
+    st.session_state.user = None
+
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = {}
+
+if "user_level" not in st.session_state:
+    st.session_state.user_level = "beginner"
+
+if "failed_logins" not in st.session_state:
+    st.session_state.failed_logins = {}
+
+if "user_db" not in st.session_state:
+    st.session_state.user_db = load_user_db()
+
+
+# -----------------------------
+# AUTENTIFICARE
+# -----------------------------
+MAX_FAILED = 5
+LOCKOUT_SECONDS = 300  # 5 minute
+
+def is_locked(user):
+    info = st.session_state.failed_logins.get(user)
+    if not info:
+        return False
+    if info["count"] < MAX_FAILED:
+        return False
+    return time.time() - info["last"] < LOCKOUT_SECONDS
+
+def register_failed(user):
+    if not user:
+        user = "unknown"
+    info = st.session_state.failed_logins.get(user, {"count": 0, "last": 0})
+    info["count"] += 1
+    info["last"] = time.time()
+    st.session_state.failed_logins[user] = info
+
+def reset_failed(user):
+    if user in st.session_state.failed_logins:
+        del st.session_state.failed_logins[user]
+
 if not st.session_state.logged_in:
     auth_choice_label = translate_text("Autentificare sau Înregistrare", lang_map[st.session_state.lang])
     st.subheader(auth_choice_label)
+
     auth_option_1 = translate_text("Autentificare", lang_map[st.session_state.lang])
     auth_option_2 = translate_text("Creează Cont Nou", lang_map[st.session_state.lang])
-    auth_choice = st.radio(translate_text("Alege o opțiune:", lang_map[st.session_state.lang]), [auth_option_1, auth_option_2])
-    
+
+    auth_choice = st.radio(
+        translate_text("Alege o opțiune:", lang_map[st.session_state.lang]),
+        [auth_option_1, auth_option_2]
+    )
+
+    user_db = st.session_state.user_db
+
+    # LOGIN
     if auth_choice == auth_option_1:
         user = st.text_input(translate_text("👤 Utilizator", lang_map[st.session_state.lang]))
         pin = st.text_input(translate_text("🔑 Parolă", lang_map[st.session_state.lang]), type="password")
-        if st.button(translate_text("Autentificare", lang_map[st.session_state.lang])):
-            if user in st.session_state.user_db and st.session_state.user_db[user] == hash_data(pin):
+
+        if user and is_locked(user):
+            st.error(translate_text("Cont blocat temporar după prea multe încercări. Încearcă mai târziu.", lang_map[st.session_state.lang]))
+        elif st.button(translate_text("Autentificare", lang_map[st.session_state.lang])):
+            if user in user_db and verify_pwd(pin, user_db[user]["password"]):
+                reset_failed(user)
                 st.session_state.logged_in = True
                 st.session_state.user = user
                 st.session_state.messages = st.session_state.chat_history.get(user, [])
                 st.success(translate_text(f"Bun venit, {user}!", lang_map[st.session_state.lang]))
                 st.rerun()
-            else: st.error(translate_text("Autentificare eșuată.", lang_map[st.session_state.lang]))
+            else:
+                register_failed(user)
+                st.error(translate_text("Autentificare eșuată.", lang_map[st.session_state.lang]))
+
+    # REGISTER
     else:
         new_user = st.text_input(translate_text("👤 Alege un nume de utilizator", lang_map[st.session_state.lang]))
         new_pin = st.text_input(translate_text("🔑 Alege o parolă", lang_map[st.session_state.lang]), type="password")
+
         if st.button(translate_text("Creează Cont", lang_map[st.session_state.lang])):
-            if new_user in st.session_state.user_db: st.error(translate_text("Utilizator existent.", lang_map[st.session_state.lang]))
-            elif len(new_pin) < 4: st.error(translate_text("Parola minim 4 caractere.", lang_map[st.session_state.lang]))
+            if not new_user or not new_pin:
+                st.error(translate_text("Completează utilizator și parolă.", lang_map[st.session_state.lang]))
+            elif new_user in user_db:
+                st.error(translate_text("Utilizator existent.", lang_map[st.session_state.lang]))
+            elif len(new_pin) < 8:
+                st.error(translate_text("Parola minim 8 caractere.", lang_map[st.session_state.lang]))
             else:
-                st.session_state.user_db[new_user] = hash_data(new_pin)
+                user_db[new_user] = {
+                    "password": hash_pwd(new_pin),
+                    "created_at": time.time()
+                }
+                st.session_state.user_db = user_db
+                save_user_db(user_db)
                 st.success(translate_text("Cont creat!", lang_map[st.session_state.lang]))
 
 
-# ============================================
-# 🛡️ AEGIS FORTRESS — SELF-DEFENSE SYSTEM
-# ============================================
-class AegisFortress:
-    def __init__(self):
-        self.original_hash = None
-        self.intruders = []
-        self.authorized_keys = [
-            "AEGIS-ANDREDI-2026-KEY",  # Cheia ta principală
-            "AEGIS-DEVELOPER-ACCESS",   # Pentru developeri autorizați
-        ]
-        self.authorized = False
-        self.lock()
-    
-    def request_access(self, key):
-        """Cerere de acces pentru modificare"""
-        if key in self.authorized_keys:
-            self.authorized = True
-            return "✅ ACCES PERMIS — Ai 24 ore să modifici."
-        else:
-            self.authorized = False
-            return "🚫 ACCES REFUZAT — Cheie invalidă."
-    
-    def lock(self):
-        """Salvează amprenta originală a codului"""
-        try:
-            with open(__file__, 'r', encoding='utf-8') as f:
-                code = f.read()
-            self.original_hash = hashlib.sha256(code.encode()).hexdigest()
-            return True
-        except:
-            return False
-    
-    def verify(self):
-        """Verifică dacă codul a fost modificat"""
-        # Dacă are autorizație, permite modificarea
-        if self.authorized:
-            return True
-        
-        try:
-            with open(__file__, 'r', encoding='utf-8') as f:
-                current_code = f.read()
-            current_hash = hashlib.sha256(current_code.encode()).hexdigest()
-            if current_hash != self.original_hash:
-                self.intruders.append({
-                    'time': time.ctime(),
-                    'status': 'BLOCKED - No Authorization'
-                })
-                return False
-            return True
-        except:
-            return True
-    
-    def revoke_access(self):
-        """Revocă accesul și resetează hash-ul"""
-        self.authorized = False
-        self.lock()
-        return "🔒 ACCES REVOCAT — Fortress reactivat."
-    
-    def status_report(self):
-        return {
-            'fortress': '🟢 ACTIVE',
-            'authorized': '🔓 YES' if self.authorized else '🔒 NO',
-            'integrity': '✅ VERIFIED' if self.verify() else '⚠️ BREACH',
-            'intruders_blocked': len(self.intruders)
-        }
-
-fortress = AegisFortress()
-
-# ---------- INTERFAȚA PRINCIPALĂ ----------
+# -----------------------------
+# INTERFAȚA PRINCIPALĂ
+# -----------------------------
 else:
-    # 🛡️ FORTRESS CHECK
+    # 🛡️ FORTRESS CHECK — ANTI-TAMPERING
     if not fortress.verify():
         st.error("⚠️ AEGIS FORTRESS: Modificare neautorizată detectată!")
         st.code("Sistemul a fost blocat pentru protecție.")
         st.stop()
-    level_map = {"beginner": "🟢 Începător", "professional": "🟡 Profesionist", "expert": "🔴 Expert"}
-    st.session_state.user_level = st.selectbox("📊 Nivelul tău:", ["beginner", "professional", "expert"], format_func=lambda x: level_map[x])
-    
+
+    # UI principal
+    level_map = {
+        "beginner": "🟢 Începător",
+        "professional": "🟡 Profesionist",
+        "expert": "🔴 Expert"
+    }
+
+    st.session_state.user_level = st.selectbox(
+        "📊 Nivelul tău:",
+        ["beginner", "professional", "expert"],
+        format_func=lambda x: level_map[x]
+    )
+
     st.success(translate_text(f"Salut, {st.session_state.user}!", lang_map[st.session_state.lang]))
-    if st.button(translate_text("➕ Chat Nou", lang_map[st.session_state.lang])): st.session_state.messages = []; st.rerun()
-    
+
+    if st.button(translate_text("➕ Chat Nou", lang_map[st.session_state.lang])):
+        st.session_state.messages = []
+        st.rerun()
+
+    # Afișare mesaje existente
     for msg in st.session_state.messages:
-        with st.chat_message(msg["role"]): st.write(msg["content"])
-    
+        with st.chat_message(msg["role"]):
+            st.write(msg["content"])
+
+    # Input utilizator
     if prompt := st.chat_input(translate_text("Scrie un mesaj...", lang_map[st.session_state.lang])):
         st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"): st.write(prompt)
-        
+        with st.chat_message("user"):
+            st.write(prompt)
+
+        # Răspuns AEGIS
         with st.chat_message("assistant"):
             with st.spinner(translate_text("AEGIS se gândește...", lang_map[st.session_state.lang])):
                 prompt_ro = translate_text(prompt, "ro").lower()
                 found = False
                 response_ro = ""
-                
+
                 for key in st.session_state.knowledge:
                     if key in prompt_ro:
                         term_data = st.session_state.knowledge[key]
-                        
+
                         if isinstance(term_data, dict):
                             level = st.session_state.user_level
                             parts = [f"**📚 Definiție:**\n{term_data[level]}"]
-                            if "code" in term_data: parts.append(f"\n**💻 Cod:**\n```python\n{term_data['code']}\n```")
-                            if "real_world" in term_data: parts.append(f"\n**🌍 În viața reală:**\n{term_data['real_world']}")
+
+                            if "code" in term_data:
+                                parts.append(f"\n**💻 Cod:**\n```python\n{term_data['code']}\n```")
+
+                            if "real_world" in term_data:
+                                parts.append(f"\n**🌍 În viața reală:**\n{term_data['real_world']}")
+
                             if "quiz" in term_data:
-                                q = term_data['quiz']
+                                q = term_data["quiz"]
                                 parts.append(f"\n**🧠 Quiz:**\n{q['question']}")
-                                for opt in q['options']: parts.append(f"  {'✅' if opt == q['answer'] else '⬜'} {opt}")
-                            if "related" in term_data: parts.append(f"\n**🔗 Vezi și:** {', '.join(term_data['related'])}")
+                                for opt in q["options"]:
+                                    parts.append(f"  {'✅' if opt == q['answer'] else '⬜'} {opt}")
+
+                            if "related" in term_data:
+                                parts.append(f"\n**🔗 Vezi și:** {', '.join(term_data['related'])}")
+
                             response_ro = "\n".join(parts)
+
                         else:
                             response_ro = term_data
-                        
+
                         found = True
                         break
-                
+
                 if not found:
                     web_result = kosandra_blade(prompt_ro)
-                    response_ro = f"Am căutat în universul digital și am găsit: {web_result}" if web_result else translate_text("Nu am această informație încă.", lang_map[st.session_state.lang])
-                
+                    response_ro = (
+                        f"Am căutat în universul digital și am găsit: {web_result}"
+                        if web_result else translate_text("Nu am această informație încă.", lang_map[st.session_state.lang])
+                    )
+
                 final_response = translate_text(response_ro, lang_map[st.session_state.lang])
                 st.markdown(final_response)
                 st.session_state.messages.append({"role": "assistant", "content": final_response})
-        
+
         st.session_state.chat_history[st.session_state.user] = st.session_state.messages
