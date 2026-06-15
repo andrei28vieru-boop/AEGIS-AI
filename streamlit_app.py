@@ -39,11 +39,11 @@ st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
         
-        # ============================================
-          # 💎 AEGIS LEVEL — Interactive Mentor 
+            # ============================================
+        # 💎 AEGIS LEVEL — Interactive Mentor (90 terms)
         # ============================================
         
-            "api": {
+        "api": {
             "beginner": "Un API e ca un chelner într-un restaurant. Tu comanzi mâncarea, el merge la bucătărie și îți aduce farfuria. API-ul duce cererea ta la un server și aduce răspunsul înapoi.",
             "professional": "Un API (Application Programming Interface) este un set de reguli și protocoale care permite două aplicații software să comunice. API-urile REST folosesc HTTP și JSON pentru a transfera date între client și server.",
             "expert": "La nivel arhitectural, un API trebuie proiectat cu versionare, rate limiting, autentificare OAuth 2.0, și documentație OpenAPI. Performanța depinde de caching strategies, paginare și optimizarea query-urilor.",
@@ -53,7 +53,7 @@ if "knowledge" not in st.session_state:
             "related": ["api rest", "json", "oauth", "http"]
         },
         
-            "python": {
+        "python": {
             "beginner": "Python e ca un limbaj pe care îl vorbești cu computerul. E simplu, ca engleza. Scrii ce vrei să facă, iar el execută. E perfect pentru începători!",
             "professional": "Python este un limbaj de programare high-level, interpretat, cu tipare dinamică. Este folosit în web development, data science, AI/ML și automatizări.",
             "expert": "Python 3.x oferă async/await, GIL pentru thread safety, și un ecosistem vast prin PyPI. Arhitectura permite OOP și programare funcțională.",
@@ -63,7 +63,7 @@ if "knowledge" not in st.session_state:
             "related": ["variabilă", "funcție", "clasă", "pip", "django"]
         },
         
-            "ai": {
+        "ai": {
             "beginner": "Inteligența Artificială e ca un copil care învață. Îi arăți multe poze cu pisici, și el învață să recunoască o pisică. AI face același lucru — învață din date.",
             "professional": "AI este simularea proceselor de inteligență umană. Subdomenii: Machine Learning, Deep Learning, NLP, Computer Vision.",
             "expert": "Implementările moderne folosesc Transformer, difuzie și reinforcement learning. Optimizarea necesită GPU-uri și tehnici de fine-tuning.",
@@ -73,7 +73,7 @@ if "knowledge" not in st.session_state:
             "related": ["machine learning", "deep learning", "neural network", "nlp"]
         },
         
-            "samsung": {
+        "samsung": {
             "beginner": "Samsung e ca un magazin imens de tehnologie. Fac telefoane Galaxy, laptopuri Galaxy Book, ceasuri Galaxy Watch, și multe altele!",
             "professional": "Samsung Electronics este lider global în tehnologie: procesoare, ecrane AMOLED, memorii și dispozitive Galaxy.",
             "expert": "Samsung domină semiconductori (DRAM, NAND), display-uri și inovația pliabilă. Ecosistemul Galaxy integrează telefoane, tablete, laptopuri, watch-uri și IoT.",
@@ -83,7 +83,7 @@ if "knowledge" not in st.session_state:
             "related": ["samsung galaxy book5 pro 360", "galaxy ai", "one ui 7"]
         },
         
-            "cpu": {
+        "cpu": {
             "beginner": "CPU-ul e creierul computerului. Tot ce faci — click, tastare, deschidere aplicație — trece prin CPU.",
             "professional": "CPU execută instrucțiuni prin ciclul fetch-decode-execute. Performanța: frecvență, core-uri, cache, arhitectură.",
             "expert": "Procesoarele moderne (Intel Core Ultra, Apple M4) folosesc 3nm, NPU pentru AI, DDR5 și PCIe 5.0.",
@@ -93,7 +93,7 @@ if "knowledge" not in st.session_state:
             "related": ["gpu", "ram", "ssd", "intel", "amd"]
         },
         
-            "samsung galaxy book5 pro 360": {
+        "samsung galaxy book5 pro 360": {
             "beginner": "E laptopul visurilor tale, Andrei! Subțire, se pliază, ecran superb, baterie toată ziua. Perfect pentru AEGIS!",
             "professional": "Laptop convertibil premium: AMOLED 2X 16\", Intel Core Ultra 7 Series 2, 16GB DDR5, 1TB SSD, S Pen, Wi-Fi 7, 25 ore baterie.",
             "expert": "Arhitectura Lunar Lake cu NPU 48 TOPS, display 500 nits HDR 120Hz, vapor chamber cooling, 1.66 kg.",
@@ -103,7 +103,7 @@ if "knowledge" not in st.session_state:
             "related": ["samsung", "laptop", "intel", "windows 11"]
         },
         
-            "cloud": {
+        "cloud": {
             "beginner": "Cloud-ul e ca un hard disk uriaș pe internet. În loc să ții fișierele doar pe laptop, le pui 'în nor' și poți să le accesezi de oriunde, de pe orice dispozitiv.",
             "professional": "Cloud computing-ul livrează servicii de calcul (servere, stocare, baze de date, rețele) prin internet. Modele: IaaS (infrastructură), PaaS (platformă), SaaS (software). Lideri: AWS, Azure, Google Cloud.",
             "expert": "Arhitecturile cloud-native folosesc microservicii, containere (Docker, Kubernetes), serverless (AWS Lambda) și CI/CD. Optimizarea costurilor implică auto-scaling, reserved instances și FinOps.",
@@ -113,7 +113,7 @@ if "knowledge" not in st.session_state:
             "related": ["aws", "azure", "google cloud", "saas", "docker", "serverless"]
         },
 
-            "blockchain": {
+        "blockchain": {
             "beginner": "Blockchain-ul e ca un caiet de notițe pe care toată lumea poate scrie, dar nimeni nu poate șterge. Fiecare pagină e un 'bloc' legat de cel anterior — de aici 'lanț de blocuri'.",
             "professional": "Blockchain este un registru distribuit și descentralizat care înregistrează tranzacții immutable. Folosește consens (PoW, PoS), criptografie și smart contracts. Aplicații: criptomonede, DeFi, NFT-uri, supply chain.",
             "expert": "Implementările enterprise (Hyperledger, Corda) oferă blockchain privat. Scalabilitatea se rezolvă prin Layer 2 (Lightning Network, Polygon), sharding și rollups.",
@@ -123,7 +123,7 @@ if "knowledge" not in st.session_state:
             "related": ["bitcoin", "ethereum", "nft", "defi", "web3", "smart contract"]
         },
         
-            "cybersecurity": {
+        "cybersecurity": {
             "beginner": "Securitatea cibernetică e ca o alarmă pentru casa ta digitală. Te protejează de hoți (hackeri), încuie ușile (parole) și te avertizează când cineva încearcă să intre.",
             "professional": "Cybersecurity protejează sisteme, rețele și date împotriva atacurilor digitale. Domenii: network security, application security, cryptography, incident response. Amenințări: malware, phishing, ransomware, DDoS, zero-day.",
             "expert": "Strategiile defense-in-depth implementează multiple layere: firewall (L3/L4), WAF (L7), IDS/IPS, SIEM, EDR/XDR. Zero Trust Architecture elimină perimetrul tradițional.",
@@ -133,17 +133,7 @@ if "knowledge" not in st.session_state:
             "related": ["firewall", "vpn", "encryption", "malware", "phishing"]
         },
 
-            "git": {
-            "beginner": "Git e ca un jurnal al codului tău. De fiecare dată când faci o schimbare, Git o salvează. Dacă strici ceva, poți să te întorci la o versiune anterioară. E ca un 'undo' infinit!",
-            "professional": "Git este un sistem de versionare distribuit care urmărește modificările în codul sursă. Concepte: commit, branch, merge, rebase, pull request. Platforme: GitHub, GitLab, Bitbucket.",
-            "expert": "Git flow avansat: GitFlow, trunk-based development, semantic versioning, conventional commits. CI/CD integrat prin GitHub Actions/GitLab CI.",
-            "code": "# Comenzi Git\ngit init\ngit add .\ngit commit -m 'mesaj'\ngit push origin main\ngit pull\ngit branch nou\ngit checkout nou\ngit merge nou",
-            "real_world": "AEGIS e pe GitHub chiar acum! Toate companiile mari — Google, Microsoft, Facebook — folosesc Git pentru codul lor.",
-            "quiz": {"question": "Ce comandă Git salvează schimbările local?", "options": ["git push", "git commit", "git pull", "git merge"], "answer": "git commit"},
-            "related": ["github", "github actions", "gitlab", "devops", "ci/cd"]
-        },
-
-            "docker": {
+        "docker": {
             "beginner": "Docker e ca o cutie magică în care pui codul tău cu tot ce are nevoie ca să ruleze. Poți să muți cutia pe orice computer și va funcționa la fel. Gata cu 'pe laptopul meu merge'!",
             "professional": "Docker este o platformă de containerizare care pachetează aplicațiile cu toate dependențele într-un container izolat. Containerele sunt lightweight față de VM-uri și rulează pe Docker Engine.",
             "expert": "Arhitectura Docker: Dockerfile → Image → Container. Orchestration cu Kubernetes, Docker Compose pentru multi-container, registry cu Docker Hub. Best practices: multi-stage builds, layer caching, non-root users.",
@@ -153,7 +143,7 @@ if "knowledge" not in st.session_state:
             "related": ["kubernetes", "docker compose", "container", "devops", "serverless"]
         },
 
-            "machine learning": {
+        "machine learning": {
             "beginner": "Machine Learning e ca un copil care învață din exemple. Îi arăți 1000 de poze cu pisici, și el învață singur cum arată o pisică. Nu-i spui tu regulile — le descoperă singur!",
             "professional": "ML este un subset al AI unde algoritmii învață din date fără a fi programați explicit. Tipuri: supervised (date etichetate), unsupervised (pattern-uri ascunse), reinforcement (recompense).",
             "expert": "Algoritmi: Random Forest, XGBoost, SVM, Neural Networks. Optimizare: gradient descent, backpropagation. Evaluare: cross-validation, confusion matrix, ROC-AUC. Feature engineering și hyperparameter tuning.",
@@ -163,7 +153,7 @@ if "knowledge" not in st.session_state:
             "related": ["deep learning", "neural network", "ai", "data science", "tensorflow"]
         },
 
-            "firewall": {
+        "firewall": {
             "beginner": "Un firewall e ca un bodyguard la intrarea într-un club. El verifică pe toți cei care vor să intre. Dacă ești pe listă, intri. Dacă nu, rămâi afară. Firewall-ul face același lucru cu datele.",
             "professional": "Un firewall monitorizează și filtrează traficul de rețea pe baza unor reguli de securitate predefinite. Poate fi hardware sau software și operează la nivel de rețea (Layer 3/4) sau aplicație (Layer 7).",
             "expert": "Next-Generation Firewall (NGFW) integrează IPS, DPI, SSL inspection și application awareness. Arhitecturi: perimeter firewall, distributed firewall, cloud firewall (AWS Security Groups, Azure NSG).",
@@ -173,7 +163,7 @@ if "knowledge" not in st.session_state:
             "related": ["vpn", "ids", "ips", "encryption", "cybersecurity"]
         },
 
-            "neural network": {
+        "neural network": {
             "beginner": "O rețea neuronală e ca un creier artificial făcut din mulți 'neuroni' mici conectați între ei. Fiecare neuron primește informație, o procesează și o trimite mai departe. Împreună, rezolvă probleme complexe.",
             "professional": "O rețea neuronală artificială este inspirată de creierul uman, formată din straturi de neuroni interconectați. Fiecare conexiune are o pondere (weight) care se ajustează prin backpropagation.",
             "expert": "Arhitecturi: CNN (imagini), RNN/LSTM (secvențe), Transformer (NLP). Antrenare: forward pass, loss calculation, backward pass (gradient descent). Optimizare: Adam, SGD, learning rate scheduling.",
@@ -183,7 +173,7 @@ if "knowledge" not in st.session_state:
             "related": ["deep learning", "machine learning", "cnn", "rnn", "transformer"]
         },
 
-            "encryption": {
+        "encryption": {
             "beginner": "Criptarea e ca un limbaj secret. Scrii un mesaj, îl transformi în ceva de necitit (criptezi), și doar persoana care are 'cheia' poate să-l citească (decripteze).",
             "professional": "Criptarea transformă datele într-un format codificat folosind algoritmi matematici. Tipuri: simetrică (AES — aceeași cheie) și asimetrică (RSA — cheie publică + privată).",
             "expert": "Standarde: AES-256 (guvernamental), RSA-4096, ECC. TLS 1.3 pentru web. Criptarea end-to-end (Signal Protocol). Hashing: SHA-256, bcrypt. Quantum-resistant cryptography în dezvoltare.",
@@ -193,7 +183,7 @@ if "knowledge" not in st.session_state:
             "related": ["decryption", "aes", "rsa", "ssl", "tls", "https"]
         },
 
-            "kubernetes": {
+        "kubernetes": {
             "beginner": "Kubernetes e ca un dirijor de orchestră. Ai multe containere (muzicieni) și Kubernetes se asigură că toate cântă la timp, că niciunul nu lipsește și că totul sună perfect.",
             "professional": "Kubernetes (K8s) este o platformă open-source pentru automatizarea deployment-ului, scalării și managementului containerelor. Componente: Pods, Nodes, Services, Deployments, ConfigMaps.",
             "expert": "Arhitectură: Control Plane (API Server, etcd, Scheduler) + Worker Nodes (kubelet, kube-proxy). Networking: CNI (Calico, Cilium). Service Mesh: Istio. GitOps: ArgoCD, Flux.",
@@ -203,7 +193,7 @@ if "knowledge" not in st.session_state:
             "related": ["docker", "docker compose", "helm", "istio", "devops", "microservices"]
         },
 
-            "iot": {
+        "iot": {
             "beginner": "IoT (Internet of Things) e când obiectele din casa ta devin 'smart' și se conectează la internet. Frigiderul îți spune că ai rămas fără lapte, ceasul îți monitorizează somnul, becurile se aprind singure.",
             "professional": "IoT conectează dispozitive fizice (senzori, actuatori) la internet pentru colectare de date și control. Protocoale: MQTT, CoAP, Zigbee. Platforme: AWS IoT, Azure IoT Hub.",
             "expert": "Arhitecturi: Edge Computing (procesare locală), Fog Computing, Cloud IoT. Securitate: PKI pentru device-uri, OTA updates. Provocări: scalabilitate miliarde de device-uri, latență, interoperabilitate.",
@@ -213,7 +203,7 @@ if "knowledge" not in st.session_state:
             "related": ["arduino", "raspberry pi", "sensor", "cloud", "5g"]
         },
 
-            "5g": {
+        "5g": {
             "beginner": "5G e a cincea generație de internet mobil. E ca și cum ai trece de la o șosea cu 2 benzi la o autostradă cu 100 de benzi. Totul e mai rapid, mai instant.",
             "professional": "5G este standardul de rețea mobilă cu viteze de până la 20 Gbps, latență sub 1ms și capacitate pentru 1 milion de device-uri pe km². Benzi: low-band, mid-band, mmWave.",
             "expert": "Arhitectură 5G: Network Slicing (rețele virtuale dedicate), MEC (Multi-access Edge Computing), beamforming. 3GPP Release 17/18. Aplicații critice: V2X (vehicule autonome), remote surgery, Industry 4.0.",
@@ -223,7 +213,7 @@ if "knowledge" not in st.session_state:
             "related": ["iot", "wifi 7", "bandwidth", "latency", "network"]
         },
 
-            "wifi 7": {
+        "wifi 7": {
             "beginner": "Wi-Fi 7 e cea mai nouă și mai rapidă tehnologie de internet wireless. E ca Wi-Fi-ul pe care îl știi, dar pe steroizi. Perfect pentru gaming, streaming 8K și realitate virtuală.",
             "professional": "Wi-Fi 7 (802.11be) oferă viteze de până la 46 Gbps, canale de 320 MHz, 4096-QAM, Multi-Link Operation (MLO) și latență ultra-scăzută.",
             "expert": "MLO permite conectarea simultană pe mai multe benzi (2.4, 5, 6 GHz). 16x16 MU-MIMO, OFDMA îmbunătățit. Compatibilitate cu Wi-Fi 6/6E. Aplicații enterprise: AR/VR fără fir, Industry 4.0.",
@@ -233,7 +223,7 @@ if "knowledge" not in st.session_state:
             "related": ["5g", "bandwidth", "latency", "router", "network"]
         },
 
-            "ssd": {
+        "ssd": {
             "beginner": "SSD-ul e ca o bibliotecă ultra-rapidă pentru fișierele tale. Spre deosebire de HDD (care are piese care se învârt), SSD-ul nu are piese mișcătoare și e de 10 ori mai rapid.",
             "professional": "SSD (Solid State Drive) folosește memorie NAND flash pentru stocare persistentă. Interfețe: SATA III (până la 550 MB/s), NVMe PCIe 4.0/5.0 (până la 14 GB/s).",
             "expert": "Tehnologii: 3D NAND (straturi multiple), SLC/MLC/TLC/QLC caching, DRAM cache vs DRAM-less. NVMe 2.0, ZNS (Zoned Namespaces) pentru centre de date. Endurance: TBW (Total Bytes Written).",
@@ -242,7 +232,8 @@ if "knowledge" not in st.session_state:
             "quiz": {"question": "Ce interfață e mai rapidă pentru SSD?", "options": ["NVMe PCIe", "SATA III", "USB 3.0", "FireWire"], "answer": "NVMe PCIe"},
             "related": ["hdd", "ram", "nvme", "storage", "motherboard"]
         },
-            "html": {
+
+        "html": {
             "beginner": "HTML e ca scheletul unei case. Fiecare pagină web e construită pe un schelet HTML — el ține totul în picioare: texte, poze, butoane.",
             "professional": "HTML (HyperText Markup Language) este limbajul standard pentru structurarea paginilor web, folosind elemente și tag-uri pentru a defini conținutul.",
             "expert": "HTML5 aduce semantic elements (article, section, nav), suport multimedia nativ (video, audio), canvas pentru grafică și API-uri moderne (localStorage, Web Workers).",
@@ -252,7 +243,7 @@ if "knowledge" not in st.session_state:
             "related": ["css", "javascript", "dom", "frontend", "web development"]
         },
 
-            "css": {
+        "css": {
             "beginner": "Dacă HTML e scheletul casei, CSS e vopseaua, mobila și decorațiunile. CSS face site-urile să arate FRUMOS — culori, fonturi, layout-uri.",
             "professional": "CSS (Cascading Style Sheets) controlează prezentarea vizuală a paginilor web: layout, culori, fonturi, animații și responsive design.",
             "expert": "CSS modern include Flexbox și Grid pentru layout, custom properties (variabile), animații keyframe, media queries pentru responsive design și preprocesoare ca Sass.",
@@ -262,7 +253,7 @@ if "knowledge" not in st.session_state:
             "related": ["html", "javascript", "frontend", "responsive design", "bootstrap"]
         },
 
-            "javascript": {
+        "javascript": {
             "beginner": "JavaScript e magicianul paginii web. Face butoanele să reacționeze, animațiile să se miște și totul să fie INTERACTIV. E ca un creier pentru site-uri.",
             "professional": "JavaScript este un limbaj de scripting pentru web, permițând conținut dinamic, manipulare DOM și comunicare asincronă cu serverele.",
             "expert": "JS modern (ES2024+) suportă async/await, modules, arrow functions, destructuring, spread operators. Rulează pe server prin Node.js, Deno, Bun. Framework-uri: React, Vue, Angular.",
@@ -272,7 +263,7 @@ if "knowledge" not in st.session_state:
             "related": ["html", "css", "react", "node.js", "typescript"]
         },
 
-            "sql": {
+        "sql": {
             "beginner": "SQL e ca un bibliotecar care găsește orice carte într-o bibliotecă imensă. Îi spui ce cauți, și el știe exact unde e. SQL face același lucru cu datele.",
             "professional": "SQL (Structured Query Language) gestionează și interoghează baze de date relaționale. Operații: SELECT, INSERT, UPDATE, DELETE, JOIN-uri între tabele.",
             "expert": "Optimizare SQL: indexing (B-tree, hash), query execution plans, normalization vs denormalization, stored procedures, triggers, window functions, CTE-uri.",
@@ -282,7 +273,7 @@ if "knowledge" not in st.session_state:
             "related": ["database", "mysql", "postgresql", "nosql", "orm"]
         },
     
-            "react": {
+        "react": {
             "beginner": "React e ca un set de piese LEGO pentru site-uri. Construiești bucăți mici (componente) și le îmbini într-o pagină web interactivă și rapidă.",
             "professional": "React este o bibliotecă JavaScript pentru construirea interfețelor utilizator, bazată pe componente reutilizabile și Virtual DOM pentru performanță.",
             "expert": "React avansat: hooks (useState, useEffect, useContext), state management (Redux, Zustand), server components, Next.js pentru SSR, React Native pentru mobile.",
@@ -292,7 +283,7 @@ if "knowledge" not in st.session_state:
             "related": ["javascript", "angular", "vue", "frontend", "next.js"]
         },
 
-            "linux": {
+        "linux": {
             "beginner": "Linux e ca un motor invizibil care rulează lumea. Nu-l vezi, dar e în telefoane, servere, supercomputere și chiar în mașina Tesla. E gratuit și foarte puternic.",
             "professional": "Linux este un kernel open-source pentru sisteme de operare. Distribuții populare: Ubuntu, Fedora, Debian, Arch. Domină serverele, cloud-ul și dispozitivele embedded.",
             "expert": "Linux kernel: process scheduling (CFS), memory management, VFS, namespaces/cgroups pentru containere. Administrare: systemd, iptables/nftables, LVM, kernel tuning.",
@@ -302,7 +293,7 @@ if "knowledge" not in st.session_state:
             "related": ["ubuntu", "bash", "terminal", "kernel", "debian"]
         },
 
-            "vpn": {
+        "vpn": {
             "beginner": "Un VPN e ca un tunel secret între tine și internet. Nimeni nu poate vedea ce faci — nici hackerii, nici furnizorul de internet. E ca o pelerină de invizibilitate digitală.",
             "professional": "VPN (Virtual Private Network) criptează traficul de internet și îl direcționează printr-un server securizat, ascunzând adresa IP și protejând confidențialitatea.",
             "expert": "Protocoale VPN: WireGuard (modern, rapid), OpenVPN (flexibil), IKEv2/IPSec (mobil). Arhitecturi: site-to-site, remote access, split tunneling, kill switch.",
@@ -312,7 +303,7 @@ if "knowledge" not in st.session_state:
             "related": ["encryption", "cybersecurity", "firewall", "privacy", "proxy"]
         },
 
-            "android": {
+        "android": {
             "beginner": "Android e ca un sistem de operare care face telefonul tău să fie SMART. E creat de Google și e folosit de miliarde de telefoane, tablete și ceasuri din toată lumea.",
             "professional": "Android este un sistem de operare open-source bazat pe kernel Linux, dezvoltat de Google. Domină piața mobilă cu peste 70% cotă globală.",
             "expert": "Arhitectura Android: kernel Linux, HAL, Android Runtime (ART), framework Java/Kotlin. Componente: Activities, Services, Broadcast Receivers, Content Providers. Jetpack Compose pentru UI modern.",
@@ -322,7 +313,7 @@ if "knowledge" not in st.session_state:
             "related": ["ios", "kotlin", "flutter", "google play", "linux"]
         },
 
-            "windows": {
+        "windows": {
             "beginner": "Windows e ca un birou digital pe care îl folosești zilnic. E sistemul de operare care pornește când deschizi laptopul — cu pictograme, ferestre și bara de start.",
             "professional": "Microsoft Windows este cel mai popular sistem de operare pentru PC-uri. Windows 11 oferă Copilot AI, suport pentru aplicații Android și securitate avansată.",
             "expert": "Windows 11 arhitectură: kernel NT, Hyper-V virtualization, WSL2 pentru Linux, DirectStorage pentru gaming, TPM 2.0 pentru securitate. PowerShell pentru administrare avansată.",
@@ -332,7 +323,7 @@ if "knowledge" not in st.session_state:
             "related": ["linux", "macos", "powershell", "kernel", "uefi"]
         },
 
-            "github": {
+        "github": {
             "beginner": "GitHub e ca o bibliotecă uriașă unde programatorii își pun codul. E și o rețea socială pentru developeri — poți colabora, învăța și arăta ce ai construit.",
             "professional": "GitHub este cea mai mare platformă de găzduire a codului sursă, folosind Git pentru versionare. Oferă CI/CD prin GitHub Actions, code review și project management.",
             "expert": "GitHub avansat: Actions workflows, Codespaces, Dependabot, code scanning cu CodeQL, branch protection rules, GitHub Pages, API REST și GraphQL.",
@@ -342,7 +333,7 @@ if "knowledge" not in st.session_state:
             "related": ["git", "github actions", "devops", "ci/cd", "repository"]
         },
 
-            "json": {
+                "json": {
             "beginner": "JSON e ca un translator universal pentru computere. Orice limbaj de programare înțelege JSON — e modul în care aplicațiile vorbesc între ele pe internet.",
             "professional": "JSON (JavaScript Object Notation) este un format lightweight de schimb de date, ușor de citit pentru oameni și simplu de procesat pentru mașini. Folosește perechi cheie-valoare și array-uri.",
             "expert": "JSON suportă tipuri: string, number, boolean, null, object, array. Validare prin JSON Schema. Alternativă la XML, mai compact. JSON Lines pentru streaming. JSONB în PostgreSQL pentru interogări rapide.",
@@ -352,7 +343,7 @@ if "knowledge" not in st.session_state:
             "related": ["api", "xml", "api rest", "database", "mongodb"]
         },
 
-            "bitcoin": {
+        "bitcoin": {
             "beginner": "Bitcoin e ca aurul digital. Nu există fizic — e doar pe internet. Nimeni nu-l controlează: nici bănci, nici guverne. Oamenii îl trimit direct unul altuia, ca pe un email cu bani.",
             "professional": "Bitcoin (BTC) este prima criptomonedă descentralizată, creată în 2009 de Satoshi Nakamoto. Rulează pe tehnologia blockchain și folosește Proof of Work pentru securitate.",
             "expert": "Bitcoin: supply limitat la 21 milioane, mining cu SHA-256, halving la fiecare 210,000 blocuri, Lightning Network pentru Layer 2 scaling. UTXO model, non-Turing complete scripting.",
@@ -362,7 +353,7 @@ if "knowledge" not in st.session_state:
             "related": ["blockchain", "ethereum", "criptomonedă", "mining", "wallet"]
         },
 
-            "gpu": {
+        "gpu": {
             "beginner": "GPU-ul e ca un artist care pictează tot ce vezi pe ecran — jocuri, filmulețe, poze. Face asta de sute de ori pe secundă, mult mai rapid decât CPU-ul la grafică.",
             "professional": "GPU (Graphics Processing Unit) este un procesor specializat pentru calcule paralele masive, esențial pentru randare 3D, gaming, AI și mining crypto.",
             "expert": "GPU-urile moderne (NVIDIA CUDA, AMD ROCm) au mii de core-uri pentru parallel computing. Tensor Cores pentru AI, RT Cores pentru ray tracing. VRAM (GDDR6X, HBM3) oferă bandwidth masiv.",
@@ -372,7 +363,7 @@ if "knowledge" not in st.session_state:
             "related": ["cpu", "ram", "nvidia", "deep learning", "ssd"]
         },
 
-            "ram": {
+        "ram": {
             "beginner": "RAM-ul e ca un birou imens. Cu cât ai mai mult birou, cu atât poți lucra la mai multe lucruri simultan fără să se aglomereze. Când închizi calculatorul, biroul se golește.",
             "professional": "RAM (Random Access Memory) este memoria volatilă care stochează date temporar pentru procesor. DDR5 oferă viteze de până la 6400 MT/s cu consum redus.",
             "expert": "RAM arhitectură: canale (single/dual/quad), timing-uri CAS, XMP/EXPO pentru overclocking. ECC RAM pentru servere corectează erori. LPDDR5X în laptopuri oferă până la 8533 MT/s.",
@@ -382,7 +373,7 @@ if "knowledge" not in st.session_state:
             "related": ["cpu", "ssd", "gpu", "motherboard", "ddr5"]
         },
 
-            "nvidia": {
+        "nvidia": {
             "beginner": "NVIDIA e ca un magician al graficii. Fac plăci video care transformă codul în lumi 3D incredibile și antrenează inteligența artificială. Sunt creierul din spatele ChatGPT și al jocurilor video.",
             "professional": "NVIDIA este liderul mondial în GPU-uri și AI computing. Seria GeForce pentru gaming, RTX cu ray tracing, și CUDA pentru calcul paralel în deep learning.",
             "expert": "NVIDIA arhitecturi: Hopper (H100 — datacenter AI), Ada Lovelace (RTX 40 — consumer), Blackwell (2024 — next-gen). CUDA API permite GPU computing. TensorRT pentru inferență optimizată.",
@@ -392,27 +383,27 @@ if "knowledge" not in st.session_state:
             "related": ["gpu", "ai", "deep learning", "intel", "amd"]
         },
 
-            "intel": {
+        "intel": {
             "beginner": "Intel e ca un bucătar-șef care gătește procesoarele din majoritatea laptopurilor. E compania care a inventat microprocesorul și încă e una dintre cele mai mari din lume.",
             "professional": "Intel Corporation este cel mai mare producător de procesoare x86 pentru PC-uri și servere. Produce procesoare Core Ultra, Xeon și plăci grafice Arc.",
             "expert": "Intel arhitecturi: Lunar Lake (Core Ultra 200V — 3nm, AI NPU), Arrow Lake (desktop), Granite Rapids (Xeon server). Foundry services (Intel 18A). Gaudi acceleratoare AI.",
-            "code": "# Verifică CPU-ul Intel\nimport platform\ncpu = platform.processor()\nprint(f\"CPU: {cpu}\")\nprint(f\"Arhitectură: {platform.architecture()[0]}\")\n# Intel Core Ultra 7 256V — viitorul tău laptop!",
+            "code": "# Verifică CPU-ul Intel\nimport platform\ncpu = platform.processor()\nprint(f\"CPU: {cpu}\")\nprint(f\"Arhitectură: {platform.architecture()[0]}\")",
             "real_world": "Samsung Galaxy Book5 Pro 360 rulează pe Intel Core Ultra 7 256V. Intel procesoare sunt în miliarde de dispozitive — de la laptopuri la servere NASA.",
             "quiz": {"question": "Ce serie de procesoare Intel e în Book5 Pro 360?", "options": ["Core Ultra 7", "Core i9", "Pentium", "Atom"], "answer": "Core Ultra 7"},
             "related": ["cpu", "amd", "nvidia", "gpu", "motherboard"]
         },
 
-            "amd": {
+        "amd": {
             "beginner": "AMD e ca un underdog care a devenit campion. Era mereu pe locul 2 după Intel, dar acum face unele dintre cele mai rapide procesoare din lume. Și plăci video, și cipuri pentru console.",
             "professional": "AMD (Advanced Micro Devices) produce procesoare Ryzen (desktop/laptop), plăci grafice Radeon și cipuri pentru console (PlayStation 5, Xbox Series X).",
             "expert": "AMD arhitecturi: Zen 5 (Ryzen 9000), RDNA 3 (Radeon RX 7000), CDNA (instinct AI accelerators). Chiplet design pentru yield și costuri reduse. 3D V-Cache pentru gaming.",
-            "code": "# Verifică CPU AMD Ryzen\nimport platform\ncpu = platform.processor()\nprint(f\"CPU: {cpu}\")\n# AMD Ryzen — popular pentru gaming și productivitate",
+            "code": "# Verifică CPU AMD Ryzen\nimport platform\ncpu = platform.processor()\nprint(f\"CPU: {cpu}\")",
             "real_world": "PlayStation 5 și Xbox Series X rulează pe cipuri AMD. Toate consolele next-gen sunt AMD. Ryzen domină piața de desktop pentru gameri și creatori.",
             "quiz": {"question": "Care e concurentul principal al AMD?", "options": ["Intel", "NVIDIA", "Apple", "Samsung"], "answer": "Intel"},
             "related": ["cpu", "intel", "nvidia", "gpu", "motherboard"]
         },
 
-            "apple": {
+        "apple": {
             "beginner": "Apple e ca un designer de lux al tehnologiei. Fac iPhone, MacBook, iPad — toate scumpe, dar elegante și ușor de folosit. E ca Mercedes-ul din lumea tech.",
             "professional": "Apple Inc. este cea mai valoroasă companie din lume, cunoscută pentru iPhone, Mac, iPad și ecosistemul integrat de hardware și software.",
             "expert": "Apple Silicon: cipuri M-series (M4 — 3nm, Neural Engine). Arhitectură unificată memory. Ecosistem: iOS, macOS, watchOS, visionOS. App Store cu peste 2 milioane de aplicații.",
@@ -422,7 +413,7 @@ if "knowledge" not in st.session_state:
             "related": ["ios", "macos", "iphone 16 pro max", "samsung", "macbook pro 16"]
         },
 
-            "tesla": {
+        "tesla": {
             "beginner": "Tesla e ca un iPhone pe roți. Mașinile lor sunt electrice, rapide și pline de tehnologie. Se conduc singure pe autostradă și primesc update-uri ca un telefon.",
             "professional": "Tesla Inc. este lider în vehicule electrice și energie curată, fondată de Elon Musk. Produce Model S, 3, X, Y și Cybertruck cu tehnologie de conducere autonomă.",
             "expert": "Tesla Full Self-Driving (FSD) folosește computer vision și rețele neuronale antrenate pe miliarde de km. Dojo supercomputer pentru training AI. 4680 battery cells pentru eficiență.",
@@ -432,17 +423,17 @@ if "knowledge" not in st.session_state:
             "related": ["elon musk", "ev", "ai", "nvidia", "green tech"]
         },
 
-            "spotify": {
+        "spotify": {
             "beginner": "Spotify e ca un DJ personal care știe exact ce muzică îți place. Cauți orice melodie, asculți podcasturi, și descoperi artiști noi. E ca un radio infinit în buzunar.",
             "professional": "Spotify este cea mai mare platformă de streaming audio din lume cu peste 500 milioane de utilizatori. Oferă muzică, podcasturi și recomandări bazate pe AI.",
             "expert": "Spotify arhitectură: microservicii, Kafka pentru streaming de date, Cassandra pentru scalability, ML pentru Discover Weekly și algoritmi de recomandare. Codec Ogg Vorbis/AAC.",
             "code": "# Caută un artist pe Spotify API\nimport requests\nheaders = {'Authorization': 'Bearer YOUR_TOKEN'}\nresponse = requests.get(\n    'https://api.spotify.com/v1/search',\n    headers=headers,\n    params={'q': 'Depeche Mode', 'type': 'artist'}\n)\ndata = response.json()\nfor artist in data['artists']['items']:\n    print(f\"{artist['name']} — Popularitate: {artist['popularity']}\")",
             "real_world": "Spotify a schimbat industria muzicală. Artiștii sunt plătiți per stream. Playlist-uri ca Discover Weekly folosesc AI să-ți găsească muzică nouă în fiecare săptămână.",
             "quiz": {"question": "Câți utilizatori are Spotify?", "options": ["Peste 500 milioane", "100 milioane", "1 miliard", "50 milioane"], "answer": "Peste 500 milioane"},
-             "related": ["streaming", "ai", "machine learning", "podcast", "apple"]
+            "related": ["streaming", "ai", "machine learning", "podcast", "apple"]
         },
 
-            "database": {
+        "database": {
             "beginner": "O bază de date e ca o bibliotecă digitală imensă. În loc de cărți, ține informații organizate — nume, numere, poze. Când cauți ceva, găsești instant.",
             "professional": "O bază de date este o colecție structurată de date stocate electronic. Tipuri: relaționale (SQL) cu tabele și relații, și non-relaționale (NoSQL) cu documente, grafuri sau cheie-valoare.",
             "expert": "Arhitecturi de baze de date: master-slave replication, sharding pentru scalare orizontală, ACID vs BASE, indexing (B-tree, hash, GiST), query optimization cu EXPLAIN, connection pooling.",
@@ -452,7 +443,7 @@ if "knowledge" not in st.session_state:
             "related": ["sql", "mysql", "postgresql", "mongodb", "nosql"]
         },
 
-            "mysql": {
+        "mysql": {
             "beginner": "MySQL e ca un bibliotecar foarte rapid care organizează datele în tabele. E folosit de Facebook, YouTube și milioane de site-uri. E gratuit și foarte popular.",
             "professional": "MySQL este un sistem de management al bazelor de date relaționale (RDBMS) open-source. Folosește SQL pentru interogări și este parte a stivei LAMP (Linux, Apache, MySQL, PHP).",
             "expert": "MySQL: engine-uri InnoDB (ACID, foreign keys) și MyISAM (rapid, fără FK). Replication (master-slave, group replication). Indexing: B-tree, full-text. Partitioning, stored procedures, triggers, views.",
@@ -462,7 +453,7 @@ if "knowledge" not in st.session_state:
             "related": ["sql", "database", "postgresql", "mongodb", "orm"]
         },
 
-            "mongodb": {
+        "mongodb": {
             "beginner": "MongoDB e ca un caiet de notițe flexibil. În loc de tabele rigide, poți scrie orice fel de notiță, în orice format, și o găsești rapid. E baza de date preferată pentru aplicații moderne.",
             "professional": "MongoDB este o bază de date NoSQL orientată pe documente, stocând datele în format BSON (similar JSON). Ideală pentru date nestructurate și scalare orizontală.",
             "expert": "MongoDB: sharding pentru scalare, replica sets pentru high availability, aggregation pipeline pentru analytics. Indexing: compound, text, geospatial, TTL. Schema validation opțională.",
@@ -472,7 +463,7 @@ if "knowledge" not in st.session_state:
             "related": ["nosql", "database", "mysql", "json", "postgresql"]
         },
 
-            "node.js": {
+        "node.js": {
             "beginner": "Node.js e ca un motor care face JavaScript să ruleze pe server, nu doar în browser. Cu Node.js poți construi un site întreg — frontend și backend — folosind aceeași limbă.",
             "professional": "Node.js este un runtime JavaScript construit pe motorul V8 de la Chrome. Permite dezvoltarea de aplicații server-side cu JavaScript, folosind un model asincron non-blocant.",
             "expert": "Node.js: event loop pentru I/O non-blocant, libuv pentru operații asincrone, cluster module pentru multi-threading, streams pentru date mari. npm — cel mai mare ecosistem de pachete.",
@@ -482,7 +473,7 @@ if "knowledge" not in st.session_state:
             "related": ["javascript", "npm", "express", "backend", "react"]
         },
 
-            "typescript": {
+        "typescript": {
             "beginner": "TypeScript e ca JavaScript, dar cu super-puteri. Adaugă 'tipuri' — etichete care spun exact ce fel de date folosești. E ca și cum ai avea un corector care te avertizează înainte să greșești.",
             "professional": "TypeScript este un superset tipat al JavaScript, dezvoltat de Microsoft. Adaugă tipuri statice, interfețe, generice și compilare în JavaScript standard.",
             "expert": "TypeScript: type system avansat (union, intersection, conditional types), decorators, declaration files (.d.ts), strict mode, tsconfig pentru configurare. Integrare perfectă cu VS Code.",
@@ -492,7 +483,7 @@ if "knowledge" not in st.session_state:
             "related": ["javascript", "react", "angular", "node.js", "frontend"]
         },
 
-            "next.js": {
+        "next.js": {
             "beginner": "Next.js e ca un atelier magic pentru site-uri React. Face site-urile să se încarce instant și să fie găsite ușor de Google. E folosit de cele mai mari companii din lume.",
             "professional": "Next.js este un framework React pentru producție, oferind Server-Side Rendering (SSR), Static Site Generation (SSG) și routing bazat pe fișiere.",
             "expert": "Next.js 14+: App Router cu React Server Components, streaming cu Suspense, server actions pentru mutații, ISR (Incremental Static Regeneration), middleware pe edge. Optimizat pentru Vercel.",
@@ -502,7 +493,7 @@ if "knowledge" not in st.session_state:
             "related": ["react", "javascript", "typescript", "frontend", "ssr"]
         },
 
-            "express": {
+        "express": {
             "beginner": "Express e ca un schelet gata-făcut pentru servere web. În loc să construiești totul de la zero, Express îți dă piesele de bază și tu le aranjezi cum vrei. Simplu și rapid.",
             "professional": "Express.js este un framework minimalist pentru Node.js, oferind routing, middleware și suport pentru API-uri REST. Este cel mai popular framework Node.js.",
             "expert": "Express: middleware chain (req, res, next), error handling, route parameters, query strings. Combinat cu body-parser, cors, helmet pentru securitate. Alternativă modernă: Fastify.",
@@ -512,7 +503,7 @@ if "knowledge" not in st.session_state:
             "related": ["node.js", "javascript", "api rest", "backend", "fastapi"]
         },
 
-            "npm": {
+        "npm": {
             "beginner": "npm e ca un magazin imens cu piese gratuite pentru proiectele tale de cod. Ai nevoie de ceva — cauți pe npm, instalezi și folosești. E cel mai mare magazin de cod din lume.",
             "professional": "npm (Node Package Manager) este managerul de pachete implicit pentru Node.js, oferind acces la peste 2 milioane de pachete pentru dezvoltare JavaScript.",
             "expert": "npm: package.json pentru dependențe, semantic versioning (semver), lock files (package-lock.json), scripts personalizate, npm audit pentru securitate, npx pentru executare one-time.",
@@ -522,7 +513,7 @@ if "knowledge" not in st.session_state:
             "related": ["node.js", "javascript", "pip", "pypi", "express"]
         },
 
-            "rest api": {
+        "rest api": {
             "beginner": "Un REST API e ca un meniu într-un restaurant. Tu alegi din meniu (faci o cerere), chelnerul o duce la bucătărie (server), și primești mâncarea (răspunsul). Simplu și standardizat.",
             "professional": "REST (Representational State Transfer) este un stil arhitectural pentru API-uri web, folosind metode HTTP (GET, POST, PUT, DELETE) și resurse identificate prin URL-uri.",
             "expert": "REST principles: statelessness, cacheability, uniform interface, resource-based URLs. HATEOAS pentru descoperire. Versionare (v1/, header). Paginare, filtrare, rate limiting. OpenAPI/Swagger pentru documentație.",
@@ -532,7 +523,7 @@ if "knowledge" not in st.session_state:
             "related": ["api", "json", "http", "oauth", "express"]
         },
 
-            "http": {
+        "http": {
             "beginner": "HTTP e ca un poștaș al internetului. Când scrii un site în browser, HTTP duce cererea ta la server și aduce pagina înapoi. E fundamentul pe care rulează tot web-ul.",
             "professional": "HTTP (HyperText Transfer Protocol) este protocolul de comunicare la baza World Wide Web. Metode: GET, POST, PUT, DELETE. Status codes: 200 (OK), 404 (Not Found), 500 (Server Error).",
             "expert": "HTTP/2: multiplexing, header compression (HPACK), server push. HTTP/3: bazat pe QUIC (UDP), latență redusă. HTTPS = HTTP + TLS. Caching headers (ETag, Cache-Control), CORS, cookies.",
@@ -541,58 +532,58 @@ if "knowledge" not in st.session_state:
             "quiz": {"question": "Ce înseamnă status code 404?", "options": ["Not Found (Pagină negăsită)", "OK (Totul bine)", "Server Error", "Redirect"], "answer": "Not Found (Pagină negăsită)"},
             "related": ["https", "api", "dns", "tcp", "rest api"]
         },
-    
-            "dns": {
+
+        "dns": {
             "beginner": "DNS e ca o agendă telefonică a internetului. În loc să ții minte numere (adrese IP), scrii numele site-ului (google.com) și DNS-ul îl traduce automat în adresa corectă.",
             "professional": "DNS (Domain Name System) este sistemul care traduce numele de domenii în adrese IP. Funcționează ca o bază de date distribuită global, cu servere recursive și authoritative.",
             "expert": "DNS: record types (A, AAAA, CNAME, MX, TXT, NS, SOA), DNSSEC pentru autentificare, TTL pentru caching, Anycast pentru reziliență. DNS over HTTPS (DoH) și DNS over TLS (DoT) pentru confidențialitate.",
-            "code": "# Verifică înregistrări DNS cu Python\nimport socket\ndomain = 'google.com'\nip = socket.gethostbyname(domain)\nprint(f\"{domain} → {ip}\")\n# Output: google.com → 142.250.185.46",
-            "real_world": "De fiecare dată când scrii un site în browser, DNS-ul lucrează în fundal. Fără DNS, ar trebui să ții minte numere IP pentru fiecare site. E ca și cum ai ține minte toate numerele de telefon din lume.",
+            "code": "# Verifică înregistrări DNS cu Python\nimport socket\ndomain = 'google.com'\nip = socket.gethostbyname(domain)\nprint(f\"{domain} → {ip}\")",
+            "real_world": "De fiecare dată când scrii un site în browser, DNS-ul lucrează în fundal. Fără DNS, ar trebui să ții minte numere IP pentru fiecare site.",
             "quiz": {"question": "Ce face DNS-ul?", "options": ["Traduce nume de domenii în IP-uri", "Criptează date", "Stochează fișiere", "Rulează aplicații"], "answer": "Traduce nume de domenii în IP-uri"},
             "related": ["ip", "http", "https", "domain", "network"]
         },
 
-            "https": {
+        "https": {
             "beginner": "HTTPS e ca un plic securizat pentru datele tale pe internet. Când vezi lacătul verde în browser, înseamnă că nimeni nu poate citi ce trimiți — parolele și cardul tău sunt în siguranță.",
             "professional": "HTTPS (HyperText Transfer Protocol Secure) combină HTTP cu TLS/SSL pentru criptare end-to-end, autentificare a serverului și integritatea datelor transmise.",
             "expert": "TLS 1.3: handshake redus la 1-RTT, forward secrecy obligatorie, ciphersuite-uri moderne (AES-GCM, ChaCha20-Poly1305). Certificate X.509, PKI, Certificate Transparency. HSTS pentru forțare HTTPS.",
             "code": "# Verifică certificatul SSL al unui site\nimport ssl\nimport socket\nctx = ssl.create_default_context()\nwith ctx.wrap_socket(socket.socket(), server_hostname='google.com') as s:\n    s.connect(('google.com', 443))\n    cert = s.getpeercert()\n    print(f\"Emis de: {cert['issuer']}\")\n    print(f\"Expiră: {cert['notAfter']}\")",
-            "real_world": "Când faci cumpărături online sau intri pe internet banking, HTTPS îți protejează datele. Site-urile fără HTTPS sunt marcate ca 'Not Secure' de browsere.",
+            "real_world": "Când faci cumpărături online sau intri pe internet banking, HTTPS îți protejează datele. Site-urile fără HTTPS sunt marcate ca 'Not Secure'.",
             "quiz": {"question": "Ce indică lacătul verde în browser?", "options": ["Conexiune securizată HTTPS", "Site-ul e rapid", "Site-ul are viruși", "E nevoie de parolă"], "answer": "Conexiune securizată HTTPS"},
             "related": ["http", "ssl", "tls", "encryption", "certificate"]
         },
 
-            "tcp": {
+        "tcp": {
             "beginner": "TCP e ca un poștaș foarte atent. Nu doar că duce pachetele la destinație, dar verifică să ajungă TOATE și în ordinea corectă. Dacă unul se pierde, îl retrimite.",
             "professional": "TCP (Transmission Control Protocol) oferă comunicare fiabilă, orientată pe conexiune. Garantează livrarea pachetelor în ordine, fără erori, prin three-way handshake și acknowledgment.",
             "expert": "TCP: congestion control (Slow Start, Congestion Avoidance, Fast Retransmit, Fast Recovery), flow control cu sliding window, segmentare și reassembly. TCP vs UDP: fiabilitate vs viteză.",
             "code": "# Client TCP simplu în Python\nimport socket\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient.connect(('example.com', 80))\nclient.send(b'GET / HTTP/1.1\\r\\nHost: example.com\\r\\n\\r\\n')\nresponse = client.recv(4096)\nprint(response.decode())\nclient.close()",
-            "real_world": "Când descarci un fișier, trimiți un email, sau încarci o pagină web, TCP se asigură că fiecare bucățică de date ajunge corect și completă. E fundamentul internetului modern.",
+            "real_world": "Când descarci un fișier, trimiți un email, sau încarci o pagină web, TCP se asigură că fiecare bucățică de date ajunge corect și completă.",
             "quiz": {"question": "TCP garantează...?", "options": ["Livrare fiabilă în ordine", "Cea mai rapidă viteză", "Anonimitate", "Criptare automată"], "answer": "Livrare fiabilă în ordine"},
             "related": ["ip", "http", "dns", "udp", "network"]
         },
 
-            "ip address": {
+        "ip address": {
             "beginner": "O adresă IP e ca adresa casei tale, dar pe internet. Când trimiți un pachet de date, adresa IP spune exact unde trebuie să ajungă — ca un GPS pentru informație.",
             "professional": "IP (Internet Protocol) adrese identifică unic fiecare dispozitiv pe o rețea. IPv4: 32 biți (4 miliarde adrese). IPv6: 128 biți (adrese practic nelimitate).",
             "expert": "IPv6: adrese hexazecimale pe 8 grupuri, elimină nevoia de NAT, suportă autoconfigurare (SLAAC), IPsec nativ. Subnetting, CIDR notation, private vs public IP ranges (RFC 1918).",
-            "code": "# Verifică adresa IP publică și locală\nimport requests\nimport socket\n# IP public\npublic_ip = requests.get('https://api.ipify.org').text\nprint(f\"IP Public: {public_ip}\")\n# IP local\nlocal_ip = socket.gethostbyname(socket.gethostname())\nprint(f\"IP Local: {local_ip}\")",
-            "real_world": "Fiecare dispozitiv conectat la internet are o adresă IP — laptopul tău, telefonul Galaxy A56, serverele AEGIS. Poliția folosește IP-uri pentru a găsi infractori online.",
+            "code": "# Verifică adresa IP publică și locală\nimport requests\nimport socket\npublic_ip = requests.get('https://api.ipify.org').text\nprint(f\"IP Public: {public_ip}\")\nlocal_ip = socket.gethostbyname(socket.gethostname())\nprint(f\"IP Local: {local_ip}\")",
+            "real_world": "Fiecare dispozitiv conectat la internet are o adresă IP — laptopul tău, telefonul, serverele AEGIS. Poliția folosește IP-uri pentru a găsi infractori online.",
             "quiz": {"question": "Câte adrese are IPv6?", "options": ["Practic nelimitate (2^128)", "4 miliarde", "1 milion", "65,000"], "answer": "Practic nelimitate (2^128)"},
             "related": ["dns", "tcp", "http", "router", "network"]
         },
 
-            "router": {
+        "router": {
             "beginner": "Router-ul e ca un polițist de trafic pentru internetul din casa ta. Dirijează datele între dispozitivele tale și internet, asigurându-se că fiecare pachet ajunge unde trebuie.",
             "professional": "Un router direcționează pachetele de date între rețele, folosind tabele de rutare și protocoale ca OSPF, BGP. Router-ul de acasă combină funcții de routing, switch și access point Wi-Fi.",
             "expert": "Routing: static vs dynamic (RIP, OSPF, BGP), NAT/PAT pentru partajare IP public, port forwarding, QoS pentru prioritizare trafic, firewall integrat. MESH networking pentru acoperire extinsă.",
             "code": "# Verifică ruta către o destinație (traceroute)\nimport subprocess\nresult = subprocess.run(['tracert', 'google.com'], capture_output=True, text=True)\nprint(result.stdout)",
-            "real_world": "Router-ul tău de acasă conectează laptopul, telefonul și televizorul la internet simultan. Router-ele enterprise dirijează traficul pentru companii întregi și provideri de internet.",
+            "real_world": "Router-ul tău de acasă conectează laptopul, telefonul și televizorul la internet simultan. Router-ele enterprise dirijează traficul pentru companii întregi.",
             "quiz": {"question": "Ce face un router?", "options": ["Direcționează traficul între rețele", "Stochează fișiere", "Rulează aplicații", "Editează documente"], "answer": "Direcționează traficul între rețele"},
             "related": ["ip", "dns", "tcp", "wifi 7", "network"]
         },
 
-            "ethernet": {
+        "ethernet": {
             "beginner": "Ethernet e ca o șosea pentru date în interiorul casei tale. Conectează laptopul, PC-ul și router-ul prin cabluri, oferind internet stabil și rapid.",
             "professional": "Ethernet (IEEE 802.3) este tehnologia standard pentru rețele locale (LAN) prin cablu. Viteze: de la 10 Mbps (Ethernet) până la 400 Gbps (400 Gigabit Ethernet).",
             "expert": "Ethernet standards: 10GBASE-T (cupru), 100GBASE-LR4 (fibră), PoE pentru alimentare prin cablu. Frame structure: preamble, MAC dest/src, EtherType, payload, FCS. Switching vs routing la Layer 2.",
@@ -602,7 +593,7 @@ if "knowledge" not in st.session_state:
             "related": ["router", "ip", "wifi 7", "lan", "network"]
         },
 
-            "lan": {
+        "lan": {
             "beginner": "LAN-ul e ca o petrecere privată pentru dispozitivele din casa ta. Laptopul, telefonul și imprimanta vorbesc între ele prin LAN, fără să iasă pe internetul mare.",
             "professional": "LAN (Local Area Network) conectează dispozitive într-o zonă restrânsă (casă, birou). Folosește Ethernet și Wi-Fi, cu switch-uri și access point-uri pentru conectivitate.",
             "expert": "LAN topologii: star, mesh, bus. VLAN-uri pentru segmentare logică. Subnetting pentru organizare IP. Protocoale: ARP pentru rezolvare MAC, STP pentru prevenire bucle. 802.1X pentru autentificare de port.",
@@ -612,37 +603,37 @@ if "knowledge" not in st.session_state:
             "related": ["wan", "ethernet", "wifi 7", "router", "network"]
         },
 
-            "wan": {
+        "wan": {
             "beginner": "WAN-ul e ca o autostradă care leagă orașe întregi. În timp ce LAN-ul e casa ta, WAN-ul e internetul întreg — conectează milioane de LAN-uri din toată lumea.",
             "professional": "WAN (Wide Area Network) acoperă arii geografice extinse, conectând LAN-uri prin routere și link-uri de telecomunicații. Internetul este cel mai mare WAN.",
             "expert": "WAN technologies: MPLS, SD-WAN, VPN site-to-site, leased lines, satelit. Protocoale: BGP pentru rutare inter-domenii, MPLS pentru traffic engineering. SD-WAN optimizează traficul pe multiple link-uri.",
-            "code": "# Verifică latența către un server extern\nimport subprocess\nresult = subprocess.run(['ping', '-n', '4', 'google.com'], capture_output=True, text=True)\nprint(result.stdout)\n# Măsoară timpul de răspuns prin WAN",
+            "code": "# Verifică latența către un server extern\nimport subprocess\nresult = subprocess.run(['ping', '-n', '4', 'google.com'], capture_output=True, text=True)\nprint(result.stdout)",
             "real_world": "Când accesezi un site din America sau Asia, datele călătoresc prin WAN. Companiile cu birouri în mai multe țări folosesc WAN pentru a conecta echipele.",
             "quiz": {"question": "Internetul este un exemplu de...?", "options": ["WAN", "LAN", "PAN", "MAN"], "answer": "WAN"},
             "related": ["lan", "router", "ip", "dns", "network"]
         },
 
-            "subnet mask": {
+        "subnet mask": {
             "beginner": "Subnet mask e ca un separator care îți spune care parte din adresa IP e numele străzii și care e numărul casei. Ajută router-ul să știe unde să trimită datele.",
             "professional": "Subnet mask separă adresa IP în porțiunea de rețea și porțiunea de host. Notație: zecimală punctată (255.255.255.0) sau CIDR (/24).",
             "expert": "Subnetting: împărțirea unui spațiu IP în subrețele mai mici. VLSM (Variable Length Subnet Masking) pentru utilizare eficientă. Calcul: network address, broadcast address, usable hosts. Supernetting pentru agregare de rute.",
             "code": "# Calculează adresa de rețea dintr-un IP și subnet mask\nimport ipaddress\nip = ipaddress.IPv4Address('192.168.1.100')\nsubnet = ipaddress.IPv4Network('192.168.1.0/24', strict=False)\nprint(f\"Adresa IP: {ip}\")\nprint(f\"Rețea: {subnet.network_address}\")\nprint(f\"Broadcast: {subnet.broadcast_address}\")\nprint(f\"Host-uri utilizabile: {subnet.num_addresses - 2}\")",
-            "real_world": "Administratorii de rețea folosesc subnet mask-uri pentru a organiza rețelele pe departamente. Acasă, router-ul tău folosește de obicei 255.255.255.0 (254 de dispozitive maxime).",
+            "real_world": "Administratorii de rețea folosesc subnet mask-uri pentru a organiza rețelele pe departamente. Acasă, router-ul tău folosește de obicei 255.255.255.0.",
             "quiz": {"question": "Ce înseamnă /24 în notație CIDR?", "options": ["255.255.255.0", "255.0.0.0", "255.255.0.0", "255.255.255.255"], "answer": "255.255.255.0"},
             "related": ["ip address", "router", "lan", "dns", "network"]
         },
 
-            "mac address": {
+        "mac address": {
             "beginner": "Adresa MAC e ca o amprentă digitală unică pentru fiecare dispozitiv. Niciun telefon, laptop sau imprimantă nu are aceeași adresă MAC — e înscrisă în hardware din fabrică.",
             "professional": "MAC (Media Access Control) address este un identificator unic de 48 de biți asignat interfeței de rețea. Format: șase perechi hexazecimale (00:1A:2B:3C:4D:5E).",
             "expert": "MAC: OUI (Organizationally Unique Identifier) — primii 24 biți identifică producătorul. MAC filtering pentru securitate, MAC spoofing pentru bypass. ARP (Address Resolution Protocol) leagă IP-ul de MAC.",
-            "code": "# Obține adresa MAC a mașinii curente\nimport uuid\nmac = uuid.getnode()\nmac_address = ':'.join(f'{(mac >> 8*i) & 0xff:02x}' for i in range(5, -1, -1))\nprint(f\"Adresa MAC: {mac_address}\")\n# Primele 6 caractere identifică producătorul",
-            "real_world": "Când te conectezi la un Wi-Fi, router-ul îți înregistrează adresa MAC. Unele rețele folosesc MAC filtering pentru a permite doar dispozitivelor autorizate să se conecteze.",
+            "code": "# Obține adresa MAC a mașinii curente\nimport uuid\nmac = uuid.getnode()\nmac_address = ':'.join(f'{(mac >> 8*i) & 0xff:02x}' for i in range(5, -1, -1))\nprint(f\"Adresa MAC: {mac_address}\")",
+            "real_world": "Când te conectezi la un Wi-Fi, router-ul îți înregistrează adresa MAC. Unele rețele folosesc MAC filtering pentru a permite doar dispozitivelor autorizate.",
             "quiz": {"question": "Adresa MAC are...?", "options": ["48 biți (6 perechi hexa)", "32 biți (4 perechi)", "64 biți (8 perechi)", "16 biți (2 perechi)"], "answer": "48 biți (6 perechi hexa)"},
             "related": ["ip address", "ethernet", "router", "lan", "network"]
         },
 
-            "ssl": {
+                "ssl": {
             "beginner": "SSL e ca un bodyguard care-ți păzește conversațiile pe internet. Când vezi lacătul în browser, SSL-ul lucrează să țină hackerii departe de datele tale.",
             "professional": "SSL (Secure Sockets Layer) și succesorul său TLS criptează comunicarea între browser și server. TLS 1.3 este standardul actual, oferind securitate pentru HTTPS.",
             "expert": "TLS 1.3: elimină algoritmi slabi (RC4, MD5), suportă doar forward secrecy, handshake redus la 1-RTT. Certificate X.509, PKI, chain of trust, certificate pinning, OCSP stapling.",
@@ -652,7 +643,7 @@ if "knowledge" not in st.session_state:
             "related": ["https", "encryption", "certificate", "tls", "cybersecurity"]
         },
 
-            "tls": {
+        "tls": {
             "beginner": "TLS e versiunea modernă a SSL-ului. E ca un scut invizibil care-ți protejează parolele, mesajele și plățile online de ochii curioșilor.",
             "professional": "TLS (Transport Layer Security) asigură confidențialitatea, integritatea și autentificarea în comunicațiile web. TLS 1.3 oferă securitate îmbunătățită față de versiunile anterioare.",
             "expert": "TLS 1.3: elimină suportul pentru ciphersuite-uri nesigure, impune Perfect Forward Secrecy, reduce latența handshake-ului. 0-RTT pentru reconectări rapide. Certificate Transparency pentru detectarea certificatelor malițioase.",
@@ -662,7 +653,7 @@ if "knowledge" not in st.session_state:
             "related": ["ssl", "https", "encryption", "certificate", "cybersecurity"]
         },
 
-            "certificate": {
+        "certificate": {
             "beginner": "Un certificat digital e ca un pașaport pentru site-uri web. Demonstrează că site-ul este cine pretinde că e, nu un fals. E eliberat de autorități de încredere.",
             "professional": "Certificatele SSL/TLS (X.509) autentifică identitatea unui website și permit criptarea conexiunilor. Sunt emise de Certificate Authorities (CA) precum Let's Encrypt, DigiCert, Sectigo.",
             "expert": "Certificate: Domain Validation (DV), Organization Validation (OV), Extended Validation (EV). Chain of trust: root CA → intermediate CA → leaf certificate. Wildcard (*.domain.com), SAN (multi-domain). ACME protocol pentru automatizare (Let's Encrypt).",
@@ -672,7 +663,7 @@ if "knowledge" not in st.session_state:
             "related": ["ssl", "tls", "https", "certificate authority", "encryption"]
         },
 
-            "ssh": {
+        "ssh": {
             "beginner": "SSH e ca o cheie magică ce-ți deschide ușa către servere de la distanță. Poți controla un computer din altă parte a lumii, în siguranță, prin criptare.",
             "professional": "SSH (Secure Shell) oferă acces terminal criptat la servere remote. Înlocuiește Telnet și FTP nesecurizate. Folosește autentificare prin parolă sau chei publice/private.",
             "expert": "SSH: key-based auth (RSA 4096, Ed25519), agent forwarding, port forwarding (local/remote/dynamic), SSH tunneling, config file (~/.ssh/config), multiplexing pentru conexiuni rapide, SSHFP DNS records.",
@@ -682,7 +673,7 @@ if "knowledge" not in st.session_state:
             "related": ["encryption", "linux", "terminal", "ssl", "cybersecurity"]
         },
 
-            "flask": {
+        "flask": {
             "beginner": "Flask e ca un set de piese LEGO pentru site-uri web în Python. E atât de simplu încât poți face un site funcțional în doar 5 linii de cod.",
             "professional": "Flask este un micro-framework Python pentru aplicații web, oferind routing, template-uri Jinja2 și suport pentru extensii. Ideal pentru API-uri și aplicații mici până la medii.",
             "expert": "Flask: application factory pattern, blueprints pentru modularizare, context locals (request, session, g), before/after request hooks, error handlers. Extensii: Flask-SQLAlchemy, Flask-Migrate, Flask-Login, Flask-CORS.",
@@ -692,7 +683,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "django", "api rest", "json", "fastapi"]
         },
 
-            "django": {
+        "django": {
             "beginner": "Django e ca un supermarket complet pentru site-uri web. Vine cu TOT inclus — autentificare, bază de date, panou admin. E framework-ul Python preferat pentru proiecte mari.",
             "professional": "Django este un framework Python full-stack, urmând principiul 'batteries included'. Oferă ORM, admin panel, autentificare, formulare și securitate încorporată.",
             "expert": "Django: MTV architecture (Model-Template-View), QuerySet lazy evaluation, middleware stack, class-based views, Django REST Framework pentru API-uri. Migrații automate de schemă. Suport pentru PostgreSQL, MySQL, SQLite.",
@@ -702,7 +693,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "flask", "sql", "orm", "fastapi"]
         },
 
-            "fastapi": {
+        "fastapi": {
             "beginner": "FastAPI e ca Flask, dar pe steroizi. E cel mai rapid framework Python pentru API-uri și vine cu documentație automată. Scrii codul și primești un site de testare GRATIS.",
             "professional": "FastAPI este un framework Python modern pentru API-uri, folosind type hints și async/await. Oferă validare automată, documentație OpenAPI și performanță comparabilă cu Node.js.",
             "expert": "FastAPI: Pydantic pentru validare, Starlette pentru performanță asincronă, dependency injection, background tasks, WebSocket support. Generare automată de OpenAPI/Swagger docs. Testare cu TestClient.",
@@ -712,7 +703,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "flask", "django", "api rest", "json"]
         },
 
-            "pandas": {
+        "pandas": {
             "beginner": "Pandas e ca un Excel ultra-inteligent pentru programatori. Analizezi date, faci grafice, filtrezi informații — totul în câteva linii de cod Python.",
             "professional": "Pandas este o bibliotecă Python pentru manipularea și analiza datelor, oferind structuri DataFrame și Series pentru date tabulare și time series.",
             "expert": "Pandas: vectorized operations, groupby aggregation, merge/join/concat, pivot tables, handling missing data, multi-index, datetime operations. Integrare cu NumPy, Matplotlib, Scikit-learn. Performanță prin Cython backend.",
@@ -722,7 +713,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "numpy", "matplotlib", "data science", "machine learning"]
         },
 
-            "numpy": {
+        "numpy": {
             "beginner": "NumPy e ca un calculator științific ultra-rapid pentru Python. Face calcule matematice complexe în milisecunde — matrice, vectori, statistică.",
             "professional": "NumPy este fundamentul științei datelor în Python, oferind array-uri N-dimensionale și funcții matematice optimizate în C pentru performanță.",
             "expert": "NumPy: ndarray cu broadcasting, vectorization, slicing avansat, fancy indexing, universal functions (ufuncs), linear algebra (numpy.linalg), random sampling, FFT. Integrare cu C prin ctypes și Cython.",
@@ -732,7 +723,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "pandas", "matplotlib", "data science", "scikit-learn"]
         },
 
-            "tensorflow": {
+        "tensorflow": {
             "beginner": "TensorFlow e ca o fabrică de inteligență artificială creată de Google. Construiești modele AI care recunosc poze, traduc limbi și prezic viitorul — totul cu cod Python.",
             "professional": "TensorFlow este un framework open-source de la Google pentru machine learning și deep learning. Oferă Keras API pentru construirea rapidă de rețele neuronale.",
             "expert": "TensorFlow: static și dynamic graphs (Eager Execution), TensorBoard pentru vizualizare, TF Serving pentru deployment, TF Lite pentru mobile/IoT, distribuție pe GPU/TPU, mixed precision training.",
@@ -742,7 +733,7 @@ if "knowledge" not in st.session_state:
             "related": ["pytorch", "keras", "deep learning", "machine learning", "ai"]
         },
 
-            "pytorch": {
+        "pytorch": {
             "beginner": "PyTorch e ca un atelier de construit inteligență artificială creat de Facebook. E mai flexibil decât TensorFlow și preferat de cercetători pentru experimente rapide.",
             "professional": "PyTorch este un framework open-source de machine learning dezvoltat de Meta (Facebook). Oferă dynamic computation graphs și este lider în cercetarea AI.",
             "expert": "PyTorch: autograd pentru diferențiere automată, TorchScript pentru producție, distributed training (DDP, FSDP), mixed precision cu torch.cuda.amp, ONNX export. Domină conferințele AI (NeurIPS, ICML).",
@@ -752,7 +743,7 @@ if "knowledge" not in st.session_state:
             "related": ["tensorflow", "deep learning", "machine learning", "ai", "python"]
         },
 
-            "scikit-learn": {
+        "scikit-learn": {
             "beginner": "Scikit-learn e ca o cutie de instrumente gata-făcute pentru machine learning. Ai nevoie de un algoritm? E deja acolo. Importi, antrenezi, folosești — în 3 linii de cod.",
             "professional": "Scikit-learn este o bibliotecă Python pentru machine learning clasic, oferind algoritmi pentru clasificare, regresie, clustering și preprocessing.",
             "expert": "Scikit-learn: Pipeline API pentru workflows, cross-validation (KFold, Stratified), GridSearchCV/RandomizedSearchCV pentru hyperparameter tuning, feature engineering (OneHotEncoder, StandardScaler), metrics comprehensive.",
@@ -762,7 +753,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "pandas", "numpy", "machine learning", "tensorflow"]
         },
 
-            "jupyter": {
+        "jupyter": {
             "beginner": "Jupyter e ca un caiet de laborator digital. Scrii cod, vezi rezultatele imediat, adaugi notițe și grafice — totul într-un singur loc. Perfect pentru experimente și învățare.",
             "professional": "Jupyter Notebook este o aplicație web interactivă pentru crearea și partajarea documentelor cu cod live, ecuații, vizualizări și text narativ.",
             "expert": "Jupyter: kernel-uri multiple (Python, R, Julia), magics (%timeit, %%bash), widget-uri interactive, JupyterLab ca IDE complet, nbconvert pentru export (PDF, HTML, slides). Voilà pentru dashboard-uri.",
@@ -772,7 +763,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "pandas", "matplotlib", "data science", "anaconda"]
         },
 
-            "matplotlib": {
+        "matplotlib": {
             "beginner": "Matplotlib e ca un pictor pentru datele tale. Transformă numerele în grafice frumoase — linii, bare, puncte. E cel mai vechi și mai folosit tool de vizualizare din Python.",
             "professional": "Matplotlib este o bibliotecă Python pentru crearea de vizualizări statice, animate și interactive. Oferă control complet asupra fiecărui element al graficului.",
             "expert": "Matplotlib: Figure și Axes architecture, subplots, custom styling (rcParams), backends (Agg, TkAgg, interactive), animații (FuncAnimation), integrare cu Pandas și Seaborn.",
@@ -782,7 +773,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "numpy", "pandas", "seaborn", "data science"]
         },
 
-            "seaborn": {
+        "seaborn": {
             "beginner": "Seaborn e ca un designer de modă pentru grafice. Ia Matplotlib-ul de bază și îl face SUPERB — culori frumoase, stiluri elegante, totul automat.",
             "professional": "Seaborn este o bibliotecă Python de vizualizare statistică, construită peste Matplotlib. Oferă interfețe simplificate pentru grafice statistice complexe.",
             "expert": "Seaborn: heatmaps, pairplots, violin plots, swarm plots, facet grids pentru vizualizări multi-dimensionale. Integrare nativă cu Pandas DataFrames. Teme built-in (darkgrid, whitegrid, ticks).",
@@ -792,7 +783,7 @@ if "knowledge" not in st.session_state:
             "related": ["matplotlib", "pandas", "python", "data science", "numpy"]
         },
 
-            "opencv": {
+        "opencv": {
             "beginner": "OpenCV e ca un ochi magic pentru computer. Îl învață să vadă și să înțeleagă poze și video — recunoaște fețe, obiecte, mișcare.",
             "professional": "OpenCV (Open Source Computer Vision Library) este o bibliotecă open-source pentru computer vision și procesare de imagini, cu peste 2500 de algoritmi optimizați.",
             "expert": "OpenCV: image processing (filtre, morphing, thresholding), feature detection (SIFT, ORB, FAST), object detection (Haar cascades, DNN module), camera calibration, video analysis, integrare CUDA pentru GPU.",
@@ -802,7 +793,7 @@ if "knowledge" not in st.session_state:
             "related": ["python", "deep learning", "ai", "computer vision", "tensorflow"]
         },
 
-            "git": {
+        "git": {
             "beginner": "Git e ca un jurnal magic pentru codul tău. Salvează fiecare schimbare și poți să te întorci oricând la o versiune anterioară. E ca un 'undo' infinit și puternic.",
             "professional": "Git este un sistem de versionare distribuit care urmărește modificările în codul sursă. Concepte fundamentale: commit, branch, merge, rebase, remote.",
             "expert": "Git avansat: interactive rebase, cherry-pick, bisect pentru debugging, hooks (pre-commit, post-receive), submodules, worktrees, reflog pentru recuperare. GitFlow și trunk-based development workflows.",
@@ -812,7 +803,7 @@ if "knowledge" not in st.session_state:
             "related": ["github", "github actions", "devops", "version control", "ci/cd"]
         },
 
-            "github actions": {
+        "github actions": {
             "beginner": "GitHub Actions e ca un robot-asistent care lucrează pentru tine. De fiecare dată când pui cod nou pe GitHub, robotul îl testează automat și îți spune dacă e totul bine.",
             "professional": "GitHub Actions este o platformă CI/CD integrată în GitHub pentru automatizarea workflow-urilor: testare, build, deployment direct din repository.",
             "expert": "GitHub Actions: YAML workflows, events triggers (push, pull_request, schedule), matrix builds pentru testare multiplatformă, secrets management, self-hosted runners, marketplace cu acțiuni comunitare.",
@@ -822,7 +813,7 @@ if "knowledge" not in st.session_state:
             "related": ["github", "git", "devops", "ci/cd", "docker"]
         },
 
-            "ci/cd": {
+        "ci/cd": {
             "beginner": "CI/CD e ca o bandă rulantă magică pentru cod. Scrii codul, iar banda îl testează automat și îl pune pe internet. Fără muncă manuală, fără stres, fără erori.",
             "professional": "CI/CD (Continuous Integration / Continuous Delivery) automatizează testarea și deployment-ul codului, permițând livrări rapide și sigure în producție.",
             "expert": "CI/CD pipeline: build → test → stage → deploy. Tools: GitHub Actions, Jenkins, GitLab CI, CircleCI. Strategii: blue-green deployment, canary releases, feature flags. Infrastructure as Code pentru medii consistente.",
@@ -832,16 +823,299 @@ if "knowledge" not in st.session_state:
             "related": ["github actions", "devops", "git", "docker", "jenkins"]
         },
 
-            "devops": {
+        "devops": {
             "beginner": "DevOps e ca o punte între programatori și administratorii de servere. În loc să se certe, lucrează împreună să livreze cod mai repede și mai sigur.",
             "professional": "DevOps este o cultură și set de practici care unifică development-ul (Dev) și operațiunile (Ops), automatizând întregul ciclu de viață al aplicațiilor.",
             "expert": "DevOps practices: CI/CD, Infrastructure as Code (Terraform, Ansible), monitoring (Prometheus, Grafana), logging (ELK stack), containerization (Docker, Kubernetes). CALMS framework: Culture, Automation, Lean, Measurement, Sharing.",
-            "code": "# DevOps: Monitorizare simplă cu Prometheus\nfrom prometheus_client import start_http_server, Counter\n\nrequests_total = Counter('aegis_requests_total', 'Total requests to AEGIS')\n\n# Incrementăm la fiecare utilizare AEGIS\nrequests_total.inc()\nstart_http_server(8000)\nprint(\"Metrics available at http://localhost:8000\")",
+            "code": "# DevOps: Monitorizare simplă cu Prometheus\nfrom prometheus_client import start_http_server, Counter\n\nrequests_total = Counter('aegis_requests_total', 'Total requests to AEGIS')\nrequests_total.inc()\nstart_http_server(8000)\nprint(\"Metrics available at http://localhost:8000\")",
             "real_world": "Amazon, Netflix și Etsy au revoluționat DevOps. Companiile care adoptă DevOps deploy-ează de 200x mai frecvent și recuperează din incidente de 24x mai rapid.",
             "quiz": {"question": "DevOps unește...?", "options": ["Development și Operations", "Design și Operations", "Development și Optimization", "Database și Operations"], "answer": "Development și Operations"},
             "related": ["ci/cd", "docker", "kubernetes", "github actions", "terraform"]
+        }
+
+        
+            "graphql": {
+            "beginner": "GraphQL e ca un restaurant unde comanzi EXACT ce vrei, nici mai mult, nici mai puțin. În loc să primești un platou fix (ca la REST), tu scrii ce câmpuri vrei și le primești fix pe acelea.",
+            "professional": "GraphQL este un limbaj de interogare pentru API-uri care permite clientului să solicite exact datele de care are nevoie. Folosește un singur endpoint și un sistem de tipuri puternic definit.",
+            "expert": "GraphQL: schema definită cu tipuri, query-uri, mutații și subscription-uri. Resolvere, batching și caching cu DataLoader. Apollo Client/Server, Federation pentru microservicii. Persisted queries, security (depth limiting, rate limiting).",
+            "code": "# Query GraphQL\nquery {\n  user(id: \"1\") {\n    name\n    email\n    posts {\n      title\n    }\n  }\n}",
+            "real_world": "GitHub, Facebook, Shopify și multe altele folosesc GraphQL. În loc să faci 5 cereri REST, faci una singură și primești exact ce ai nevoie.",
+            "quiz": {"question": "GraphQL este alternativă la...?", "options": ["REST API", "SOAP", "gRPC", "WebSockets"], "answer": "REST API"},
+            "related": ["api rest", "apollo", "federation", "graphql client", "schema"]
         },
 
+        "redis": {
+            "beginner": "Redis e ca o memorie ultra-rapidă care ține minte date între sesiuni. Dacă un site e încet, Redis accelerează lucrurile stocând rezultatele în cache.",
+            "professional": "Redis este un magazin de structuri de date în-memory, folosit ca cache, message broker și bază de date NoSQL. Suportă string-uri, hash-uri, liste, set-uri, hyperloglogs, stream-uri.",
+            "expert": "Redis: persistare RDB/AOF, replicare master-slave, cluster, sentinel pentru HA. Operații atomice, Lua scripting, pub/sub. RedisJSON, RedisSearch, RedisTimeSeries ca module. Pipeline și tranzacții.",
+            "code": "# Redis cu Python (redis-py)\nimport redis\nr = redis.Redis(host='localhost', port=6379, db=0)\nr.set('user:1', 'Andrei')\nprint(r.get('user:1'))",
+            "real_world": "Twitter, GitHub, Stack Overflow folosesc Redis pentru cache. De asemenea, stochează sesiuni de utilizator, cozi de mesaje, și contoare în timp real.",
+            "quiz": {"question": "Redis stochează date în...?", "options": ["memorie (RAM)", "disc dur", "bandă magnetică", "nor"], "answer": "memorie (RAM)"},
+            "related": ["cache", "database", "message queue", "pub/sub", "memcached"]
+        },
+
+        "kafka": {
+            "beginner": "Kafka e ca o bandă rulantă de mesaje între aplicații. O aplicație pune mesaje la un capăt, alta le ia de la celălalt. Poate gestiona milioane de mesaje pe secundă.",
+            "professional": "Apache Kafka este o platformă distribuită de streaming de evenimente. Folosește topic-uri, producători, consumatori, brokeri. Oferă durabilitate, scalabilitate și ordonare.",
+            "expert": "Kafka: partiționare, replicare, offset management, exactly-once semantics, Kafka Streams, ksqlDB, Connect pentru integrare. ZooKeeper sau KRaft pentru consens. Raft în noile versiuni.",
+            "code": "# Producător Kafka simplu (Python)\nfrom kafka import KafkaProducer\nproducer = KafkaProducer(bootstrap_servers='localhost:9092')\nproducer.send('topic-test', b'Mesaj de la AEGIS')\nproducer.flush()",
+            "real_world": "LinkedIn, Netflix, Uber folosesc Kafka pentru procesare în timp real. De exemplu, când livrezi mâncare, Kafka transmite comanda între sisteme.",
+            "quiz": {"question": "Kafka este specializat în...?", "options": ["streaming de evenimente", "stocare de fișiere", "baze de date SQL", "machine learning"], "answer": "streaming de evenimente"},
+            "related": ["message queue", "streaming", "zookeeper", "event sourcing", "pub/sub"]
+        },
+
+        "elasticsearch": {
+            "beginner": "Elasticsearch e ca Google pentru datele tale. Cauți ceva în aplicație și găsești instant, chiar și în milioane de documente. E perfect pentru căutare și analiză rapidă.",
+            "professional": "Elasticsearch este un motor de căutare și analiză distribuit, bazat pe Lucene. Suportă text complet, agregări, geo-search, și este parte din stack-ul ELK.",
+            "expert": "Elasticsearch: cluster, noduri, shard-uri, replica-uri. Query DSL, bool queries, aggregations buckets/metrics, mapping, analizoare (stemming, tokenizare). Ingest pipelines, rollups, ILM. Securitate și audit.",
+            "code": "# Căutare în Elasticsearch (Python)\nfrom elasticsearch import Elasticsearch\nes = Elasticsearch(['http://localhost:9200'])\nres = es.search(index='articole', body={'query': {'match': {'titlu': 'AEGIS'}}})\nprint(res['hits']['hits'])",
+            "real_world": "Wikipedia, GitHub, eBay folosesc Elasticsearch pentru căutare. Este și baza pentru logging centralizat (ELK: Elasticsearch, Logstash, Kibana).",
+            "quiz": {"question": "Elasticsearch este bazat pe...?", "options": ["Lucene", "MySQL", "MongoDB", "Redis"], "answer": "Lucene"},
+            "related": ["kibana", "logstash", "elk", "search", "lucene"]
+        },
+
+        "prometheus": {
+            "beginner": "Prometheus e ca un monitor care urmărește sănătatea aplicațiilor. Colectează metrici (câte cereri, cât timp, erori) și te alertează când ceva nu merge bine.",
+            "professional": "Prometheus este un sistem open-source de monitorizare și alertare, cu model pull-based, metrici multi-dimensionale, și limbaj de interogare PromQL.",
+            "expert": "Prometheus: exposition metrics (client libraries), exporters, service discovery, TSDB, recording rules, Alertmanager. Integrare cu Grafana. Federation. Pushgateway pentru job-uri scurte.",
+            "code": "# Exporter simplu Python\nfrom prometheus_client import start_http_server, Counter\nc = Counter('requests_total', 'Total requests')\nc.inc()\nstart_http_server(8000)",
+            "real_world": "Kubernetes folosește Prometheus implicit pentru monitorizare. Multe companii monitorizează microserviciile cu Prometheus + Grafana.",
+            "quiz": {"question": "Prometheus folosește modelul...?", "options": ["pull (trage metrici)", "push (împinge metrici)", "batch", "real-time push"], "answer": "pull (trage metrici)"},
+            "related": ["grafana", "alertmanager", "metrics", "monitoring", "kubernetes"]
+        },
+
+        "grafana": {
+            "beginner": "Grafana e ca un tablou de bord superb pentru datele tale. Ia metrici din Prometheus, Elasticsearch și le arată în grafice colorate, ușor de citit.",
+            "professional": "Grafana este o platformă open-source pentru vizualizare și analiză de metrici. Suportă multiple surse de date (Prometheus, Loki, Elasticsearch, InfluxDB, MySQL).",
+            "expert": "Grafana: dashboard-uri, panel-uri, variabile, alertare, anotări, plugin-uri, provisionare (as code). Integrare cu Loki pentru loguri, Tempo pentru trace-uri. SSO și permisiuni RBAC.",
+            "code": "# Configurare sursă de date în Grafana (JSON)\n{\n  \"name\": \"Prometheus\",\n  \"type\": \"prometheus\",\n  \"url\": \"http://prometheus:9090\",\n  \"access\": \"proxy\"\n}",
+            "real_world": "Grafana este folosit de companii ca PayPal, Bloomberg, eBay pentru a monitoriza sănătatea sistemelor și a afișa KPI-uri executive.",
+            "quiz": {"question": "Grafana este folosit pentru...?", "options": ["vizualizare metrici", "bază de date", "server web", "compilator"], "answer": "vizualizare metrici"},
+            "related": ["prometheus", "loki", "dashboard", "monitoring", "timeseries"]
+        },
+
+        "terraform": {
+            "beginner": "Terraform e ca un arhitect care desenează toată infrastructura IT ca pe un plan. Cu câteva linii de cod, creezi servere, baze de date, rețele — totul la comandă.",
+            "professional": "Terraform este un tool Infrastructure as Code (IaC) de la HashiCorp, care folosește limbaj declarativ HCL pentru a provisiona resurse în cloud și on-premise.",
+            "expert": "Terraform: state management (local/remote), modules, providers (AWS, Azure, GCP), workspaces, import. Terragrunt pentru orchestrare. Plan/apply/destroy. Sentinel pentru policy as code.",
+            "code": "# Exemplu Terraform (AWS instance)\nresource \"aws_instance\" \"aegis\" {\n  ami           = \"ami-0c55b159cbfafe1f0\"\n  instance_type = \"t2.micro\"\n  tags = { Name = \"AEGIS-Server\" }\n}",
+            "real_world": "Netflix, Airbnb, Uber își gestionează infrastructura cu Terraform. În loc să configurezi manual servere, scrii cod și Terraform le creează pe toate.",
+            "quiz": {"question": "Terraform este un tool de...?", "options": ["Infrastructure as Code", "CI/CD", "Containerizare", "Machine Learning"], "answer": "Infrastructure as Code"},
+            "related": ["aws", "hcl", "state", "pulumi", "openstack"]
+        },
+
+        "ansible": {
+            "beginner": "Ansible e ca un robot care configurează automat servere. Vrei să instalezi același soft pe 100 de servere? Ansible face asta în câteva minute.",
+            "professional": "Ansible este un automation engine agentless, folosind SSH pentru a rula playbook-uri scrise în YAML. Folosit pentru configurare, deploy, orchestră.",
+            "expert": "Ansible: inventory, modules, playbooks, roles, ansible-vault pentru secrete, facts, handlers, tags. Tower/AWX pentru UI și orchestră avansată. Plugins de conexiune și inventar.",
+            "code": "# Playbook Ansible pentru instalare nginx\n- hosts: webservers\n  tasks:\n    - name: Install nginx\n      apt:\n        name: nginx\n        state: present",
+            "real_world": "Red Hat, NASA, Evernote folosesc Ansible. Este simplu și nu necesită agenți pe servere, doar SSH.",
+            "quiz": {"question": "Ansible este un tool de...?", "options": ["automatizare configurare", "bază de date", "server web", "design grafic"], "answer": "automatizare configurare"},
+            "related": ["devops", "automation", "ssh", "yaml", "terraform"]
+        },
+
+        "rust": {
+            "beginner": "Rust e un limbaj de programare care e și rapid ca C++, și sigur ca Python. Nu se blochează, nu are erori de memorie, și e iubit de programatori.",
+            "professional": "Rust este un limbaj de programare sistem care garantează siguranța memoriei fără garbage collector. Folosește ownership, borrowing, lifetimes. Performanță similară C++.",
+            "expert": "Rust: cargo (build system), crates, pattern matching, trait-uri, async/await, FFI cu C, WebAssembly. Zero-cost abstractions, fearless concurrency. Folosit în sisteme critice.",
+            "code": "fn main() {\n    let name = \"Andrei\";\n    println!(\"Salut, {}!\", name);\n}",
+            "real_world": "Firefox, Dropbox, Cloudflare folosesc Rust. De asemenea, Deno (runtime JS) e scris în Rust. Este cel mai iubit limbaj în sondaje de 8 ani consecutiv.",
+            "quiz": {"question": "Rust garantează...?", "options": ["siguranța memoriei", "viteză mică", "garbage collector", "interpretare"], "answer": "siguranța memoriei"},
+            "related": ["cargo", "systems programming", "memory safety", "c++", "webassembly"]
+        },
+
+        "webassembly": {
+            "beginner": "WebAssembly (WASM) e ca un super-putere pentru browser. Cod scris în C++, Rust, Go rulează aproape la fel de repede ca nativ în pagină web.",
+            "professional": "WebAssembly este un format de instrucțiuni binare portabil, care rulează în browser la viteză aproape nativă. Permite utilizarea de cod scris în limbaje low-level în web.",
+            "expert": "WASM: stack-based VM, liniară memorie, modul, import/export funcții. Compilare din C/C++ (Emscripten), Rust (wasm-pack), Go, AssemblyScript. WASI (System Interface) pentru outside browser.",
+            "code": "// Exemplu WASM în Rust (export)\n#[no_mangle]\npub extern \"C\" fn add(a: i32, b: i32) -> i32 {\n    a + b\n}",
+            "real_world": "Google Earth, Figma, Photoshop Web rulează WebAssembly pentru performanță mare în browser. De asemenea, jocuri și aplicații video.",
+            "quiz": {"question": "WebAssembly rulează în...?", "options": ["browser", "server", "bază de date", "sistem de operare"], "answer": "browser"},
+            "related": ["rust", "c++", "javascript", "wasm", "web performance"]
+        },
+
+        "grpc": {
+            "beginner": "gRPC e ca un curier ultra-rapid între microservicii. Folosește Protocol Buffers (un format comprimat) și HTTP/2 pentru viteză și streaming.",
+            "professional": "gRPC este un framework RPC open-source de la Google, bazat pe HTTP/2 și Protocol Buffers. Suportă streaming bidirecțional, autentificare, și generare de cod pentru mai multe limbaje.",
+            "expert": "gRPC: service definition .proto, server streaming, client streaming, bidirectional streaming. Interceptors, deadline, load balancing. Integrare cu Envoy, Kubernetes. gRPC-Web pentru browser.",
+            "code": "# .proto definitie\nservice AegisService {\n  rpc GetTerm (TermRequest) returns (TermResponse);\n}",
+            "real_world": "Netflix, Dropbox, CoreOS folosesc gRPC pentru comunicații între microservicii. Este mai rapid decât REST JSON.",
+            "quiz": {"question": "Ce format de serializare folosește gRPC?", "options": ["Protocol Buffers", "JSON", "XML", "YAML"], "answer": "Protocol Buffers"},
+            "related": ["protobuf", "http2", "rpc", "microservices", "grpc gateway"]
+        },
+
+        "protobuf": {
+            "beginner": "Protocol Buffers (protobuf) e ca o valiză super-eficientă pentru date. Împachetează informația mai mic și mai rapid decât JSON. E folosit de Google.",
+            "professional": "Protocol Buffers este un limbaj neutru, extensibil pentru serializarea datelor structurate. Produce mesaje binare mici și rapide, cu scheme .proto și generare de cod.",
+            "expert": "Protobuf: tipuri scalare, enum, mesaje nested, oneof, map. Compatibilitate înainte/înapoi cu câmpuri opționale. Well-known types (Timestamp, Any). gRPC folosește protobuf ca IDL.",
+            "code": "syntax = \"proto3\";\nmessage Person {\n  string name = 1;\n  int32 age = 2;\n}",
+            "real_world": "Google folosește protobuf intern pentru aproape toate serviciile. De asemenea, multe companii îl adoptă pentru performanță și compatibilitate.",
+            "quiz": {"question": "Protobuf produce date în format...?", "options": ["binar", "text", "JSON", "CSV"], "answer": "binar"},
+            "related": ["grpc", "serialization", "schema", "json", "messagepack"]
+        }
+
+                "hadoop": {
+            "beginner": "Hadoop e ca un sistem de depozitare și procesare pentru cantități uriașe de date, răspândite pe mai multe calculatoare.",
+            "professional": "Apache Hadoop este un framework open-source pentru stocarea și procesarea distribuită a big data, folosind HDFS și MapReduce.",
+            "expert": "Hadoop: HDFS pentru stocare distribuită, YARN pentru gestionarea resurselor, MapReduce pentru procesare batch. Ecosistem: Hive, Pig, HBase, Spark.",
+            "code": "# Exemplu simplu Hadoop MapReduce (Java)\npublic class WordCount {\n  public static void main(String[] args) throws Exception {\n    Job job = Job.getInstance();\n    job.setMapperClass(TokenizerMapper.class);\n    job.setReducerClass(IntSumReducer.class);\n    System.exit(job.waitForCompletion(true) ? 0 : 1);\n  }\n}",
+            "real_world": "Companii precum Facebook, Twitter, eBay folosesc Hadoop pentru a procesa petabytes de date de utilizatori.",
+            "quiz": {"question": "Ce înseamnă HDFS în Hadoop?", "options": ["Hadoop Distributed File System", "High Density File System", "Hadoop Data File System", "High Definition File System"], "answer": "Hadoop Distributed File System"},
+            "related": ["spark", "hive", "big data", "mapreduce", "hdfs"]
+        },
+        "spark": {
+            "beginner": "Spark e ca un motor ultra-rapid pentru prelucrarea datelor. Face calcule în memorie, de 100 de ori mai rapid decât Hadoop.",
+            "professional": "Apache Spark este un motor unificat de procesare a datelor pentru big data, cu API-uri în Java, Scala, Python, R. Suportă SQL, streaming, ML, graph.",
+            "expert": "Spark: RDD (Resilient Distributed Dataset), DataFrame, Dataset. Catalyst optimizer, Tungsten execution engine. Suportă procesare batch, streaming (Spark Streaming, Structured Streaming), MLlib, GraphX.",
+            "code": "# Spark cu Python (PySpark)\nfrom pyspark.sql import SparkSession\nspark = SparkSession.builder.appName(\"AEGIS\").getOrCreate()\ndf = spark.read.csv(\"date.csv\", header=True)\ndf.show()",
+            "real_world": "Netflix, Uber, Airbnb folosesc Spark pentru recomandări, analiză trafic, detectare fraudă.",
+            "quiz": {"question": "Spark procesează date în...?", "options": ["memorie (RAM)", "disc dur", "bază de date", "cloud"], "answer": "memorie (RAM)"},
+            "related": ["hadoop", "big data", "pyspark", "scala", "dataframe"]
+        },
+        "hive": {
+            "beginner": "Hive e ca un translator care îți permite să scrii comenzi SQL pentru datele din Hadoop, fără să știi programare complexă.",
+            "professional": "Apache Hive este un data warehouse construit peste Hadoop, care oferă un limbaj asemănător SQL (HiveQL) pentru interogarea datelor stocate în HDFS.",
+            "expert": "Hive: HiveQL compilat în MapReduce, Tez sau Spark. Metastore pentru metadate (bazat pe RDBMS). Suportă partiționare, bucket, UDF-uri.",
+            "code": "-- HiveQL\nCREATE TABLE users (id INT, name STRING)\nROW FORMAT DELIMITED FIELDS TERMINATED BY ',';\nLOAD DATA INPATH '/data/users.csv' INTO TABLE users;\nSELECT COUNT(*) FROM users;",
+            "real_world": "Amazon, Netflix, LinkedIn folosesc Hive pentru analize de date și rapoarte pe big data.",
+            "quiz": {"question": "Ce limbaj folosește Hive pentru interogări?", "options": ["HiveQL", "SQL", "MapReduce", "Java"], "answer": "HiveQL"},
+            "related": ["hadoop", "spark", "hql", "big data", "data warehouse"]
+        },
+        "pig": {
+            "beginner": "Pig e ca un script simplu pentru prelucrarea datelor mari. Scrii câteva comenzi, iar el le transformă în programe complexe.",
+            "professional": "Apache Pig este o platformă de analiză a datelor mari care folosește un limbaj procedural numit Pig Latin, transformând scripturile în job-uri MapReduce, Tez sau Spark.",
+            "expert": "Pig Latin: LOAD, FOREACH, FILTER, GROUP, JOIN, STORE. Permite UDF-uri în Java, Python, JavaScript. Suportă tipuri complexe (bag, tuple, map).",
+            "code": "-- Pig Latin\nusers = LOAD '/data/users.csv' USING PigStorage(',') AS (id:int, name:chararray);\ngrouped = GROUP users BY id;",
+            "real_world": "Yahoo, Twitter, LinkedIn au folosit Pig pentru a procesa fluxuri de date înaintea apariției Spark.",
+            "quiz": {"question": "Care este limbajul lui Apache Pig?", "options": ["Pig Latin", "SQL", "Java", "Python"], "answer": "Pig Latin"},
+            "related": ["hadoop", "hive", "big data", "mapreduce", "pig latin"]
+        },
+        "hbase": {
+            "beginner": "HBase e ca o bază de date distribuită care permite citiri și scrieri în timp real pe miliarde de rânduri, ca un Google Bigtable.",
+            "professional": "Apache HBase este o bază de date NoSQL distribuită, column-oriented, construită peste HDFS, care oferă acces în timp real la date mari.",
+            "expert": "HBase: model tabelar cu rânduri și coloane, chei de rând sortate. Suportă versionare, compresie, filtre. Folosește ZooKeeper pentru coordonare.",
+            "code": "# HBase shell\ncreate 'users', 'personal', 'professional'\nput 'users', 'row1', 'personal:name', 'Andrei'\nget 'users', 'row1'",
+            "real_world": "Facebook folosește HBase pentru sistemul de mesagerie, iar Twitter pentru analytics.",
+            "quiz": {"question": "HBase este o bază de date de tip...?", "options": ["column-oriented", "document", "key-value", "graph"], "answer": "column-oriented"},
+            "related": ["hadoop", "hdfs", "big data", "nosql", "zookeeper"]
+        },
+        "zookeeper": {
+            "beginner": "ZooKeeper e ca un organizator pentru sisteme distribuite. Ține evidența serverelor și ajută la coordonarea lor.",
+            "professional": "Apache ZooKeeper este un serviciu centralizat pentru menținerea configurației, denumirii și sincronizării în sisteme distribuite.",
+            "expert": "ZooKeeper: arhitectură master-slave, znode-uri (date), observatori, consens atomic. Folosit de Kafka, HBase, Hadoop, Solr.",
+            "code": "# Conectare ZooKeeper cu Python (kazoo)\nfrom kazoo.client import KazooClient\nzk = KazooClient(hosts='127.0.0.1:2181')\nzk.start()\nzk.create('/aegis', b'some_data')",
+            "real_world": "Apache Kafka, HBase și Solr folosesc ZooKeeper pentru a gestiona cluster-ele.",
+            "quiz": {"question": "Ce rol are ZooKeeper în sisteme distribuite?", "options": ["coordonare", "stocare date", "procesare batch", "streaming"], "answer": "coordonare"},
+            "related": ["kafka", "hbase", "distributed systems", "consensus", "apache"]
+        },
+        "airflow": {
+            "beginner": "Airflow e ca un ceas inteligent care programează și monitorizează fluxuri de lucru (workflow-uri) în lumea datelor.",
+            "professional": "Apache Airflow este o platformă open-source pentru crearea, programarea și monitorizarea workflow-urilor (DAG-uri) scrise în Python.",
+            "expert": "Airflow: DAG (Directed Acyclic Graph), operatori, senzori, hook-uri. UI pentru monitorizare, backfill, variabile, conexiuni. Executori: Sequential, Local, Celery, Kubernetes.",
+            "code": "# DAG simplu Airflow\nfrom airflow import DAG\nfrom airflow.operators.bash import BashOperator\nfrom datetime import datetime\nwith DAG('aegis_dag', start_date=datetime(2025,1,1)) as dag:\n    t1 = BashOperator(task_id='print_date', bash_command='date')",
+            "real_world": "Airbnb (creatorul), Spotify, Walmart folosesc Airflow pentru a programa pipeline-uri de date.",
+            "quiz": {"question": "Ce reprezintă DAG în Airflow?", "options": ["Directed Acyclic Graph", "Data Aggregation Graph", "Dynamic Algorithm Graph", "Distributed Access Gateway"], "answer": "Directed Acyclic Graph"},
+            "related": ["etl", "workflow", "python", "big data", "scheduler"]
+        },
+        "dbt": {
+            "beginner": "dbt e ca un instrument care te ajută să transformi datele din baze de date folosind doar SQL, ca un fel de control al versiunilor pentru date.",
+            "professional": "dbt (data build tool) este un instrument de transformare a datelor în depozitele de date, folosind SELECT-uri SQL și concepte de modularizare, testare și documentare.",
+            "expert": "dbt: modele (SQL), materializări (table, view, incremental, ephemeral), teste (unique, not null, relationships), documentație, lineage, CLI și Cloud.",
+            "code": "-- dbt model (models/users.sql)\nSELECT id, name, email FROM {{ ref('raw_users') }} WHERE status = 'active'",
+            "real_world": "GitLab, Snowflake, JetBlue folosesc dbt pentru analize de date și documentare.",
+            "quiz": {"question": "Ce limbaj se folosește în dbt pentru definirea modelelor?", "options": ["SQL", "Python", "Java", "Scala"], "answer": "SQL"},
+            "related": ["etl", "data warehouse", "snowflake", "bigquery", "analytics"]
+        },
+        "snowflake": {
+            "beginner": "Snowflake e ca un depozit de date în nor, care separă stocarea de calcul, astfel încât să poți crește independent și să plătești doar pentru ce folosești.",
+            "professional": "Snowflake este o platformă de date bazată pe cloud, cu arhitectură separată de stocare și calcul, suport pentru date semi-structurate și scalare aproape infinită.",
+            "expert": "Snowflake: virtual warehouses, micro-partitioning, time travel, zero-copy cloning, suport pentru JSON, Avro, Parquet. Integrare cu dbt, Spark, Airflow.",
+            "code": "-- SQL în Snowflake\nCREATE WAREHOUSE aegis_wh;\nCREATE DATABASE aegis_db;\nCREATE TABLE users (id INT, name STRING);\nSELECT * FROM users;",
+            "real_world": "5000+ companii, inclusiv Adobe, DoorDash, Netflix, folosesc Snowflake ca data cloud.",
+            "quiz": {"question": "Snowflake separă...?", "options": ["stocarea de calcul", "datele de metadate", "cloud de on-premise", "SQL de NoSQL"], "answer": "stocarea de calcul"},
+            "related": ["cloud", "data warehouse", "bigquery", "redshift", "databricks"]
+        },
+        "bigquery": {
+            "beginner": "BigQuery e ca un motor de căutare pentru date masive, în cloud-ul Google. Scrii SQL și el găsește răspunsuri rapid, chiar și în petabytes.",
+            "professional": "Google BigQuery este un data warehouse serverless, scalabil, care permite interogarea rapidă a seturilor mari de date folosind SQL, cu securitate și integrare în ecosistemul Google Cloud.",
+            "expert": "BigQuery: arhitectură coloane, clustering, partiționare, BI Engine, federated queries (Cloud Storage, Drive, Sheets), integrare cu Data Studio, Looker.",
+            "code": "# Python client pentru BigQuery\nfrom google.cloud import bigquery\nclient = bigquery.Client()\nquery = \"SELECT name FROM `project.dataset.users` LIMIT 10\"\ndf = client.query(query).to_dataframe()",
+            "real_world": "Twitter, Spotify, The New York Times folosesc BigQuery pentru analize de date în timp real.",
+            "quiz": {"question": "BigQuery este produs de...?", "options": ["Google", "Amazon", "Microsoft", "Snowflake"], "answer": "Google"},
+            "related": ["gcp", "data warehouse", "big data", "sql", "analytics"]
+        },
+        "databricks": {
+            "beginner": "Databricks e ca un mediu de lucru unificat pentru ingineri de date și oameni de știință, construit în jurul Apache Spark.",
+            "professional": "Databricks este o platformă unificată de analiză a datelor bazată pe cloud, care combină data engineering, data science și machine learning, creată de fondatorii Apache Spark.",
+            "expert": "Databricks: Delta Lake pentru stocare fiabilă, MLflow pentru ciclul ML, colaborare în notebook-uri, auto-scaling, cluster management, Unity Catalog.",
+            "code": "# PySpark în Databricks Notebook\ndf = spark.read.csv(\"/mnt/data.csv\", header=True)\ndf.createOrReplaceTempView(\"users\")\nresult = spark.sql(\"SELECT name FROM users\")",
+            "real_world": "Shell, HP, Comcast, Bank of America folosesc Databricks pentru transformarea datelor și AI.",
+            "quiz": {"question": "Databricks a fost fondat de creatorii...?", "options": ["Apache Spark", "Hadoop", "Kafka", "Airflow"], "answer": "Apache Spark"},
+            "related": ["spark", "delta lake", "mlflow", "lakehouse", "big data"]
+        },
+        "delta lake": {
+            "beginner": "Delta Lake e ca un strat de fiabilitate peste stocarea ta de date, asigurându-se că nu se corup și că poți face modificări în siguranță.",
+            "professional": "Delta Lake este un strat de stocare open-source care aduce fiabilitatea ACID a bazelor de date la lacurile de date (data lakes), suportând citiri și scrieri concurente.",
+            "expert": "Delta Lake: tranzacții ACID, time travel (versiuni), schema enforcement, schema evolution, merge (upsert/delete), streaming, integrare cu Spark.",
+            "code": "# Delta Lake în PySpark\ndf.write.format(\"delta\").save(\"/mnt/delta/users\")\ndf2 = spark.read.format(\"delta\").load(\"/mnt/delta/users\")\ndf2.createOrReplaceTempView(\"users\")",
+            "real_world": "Folosit intens de companii care construiesc data lakes fiabile, cum ar fi Apple, Samsung, Adobe.",
+            "quiz": {"question": "Ce oferă Delta Lake lacurilor de date?", "options": ["tranzacții ACID", "numai citire", "procesare în memorie", "indexare"], "answer": "tranzacții ACID"},
+            "related": ["spark", "databricks", "data lake", "iceberg", "hudi"]
+        },
+        "apache ice": {
+            "beginner": "Apache Iceberg e ca un catalog inteligent pentru tabele mari, care face căutările și actualizările mult mai rapide și eficiente.",
+            "professional": "Apache Iceberg este un format de tabel open-source pentru seturi de date uriașe, conceput pentru a îmbunătăți performanța și fiabilitatea în data lakes.",
+            "expert": "Iceberg: partiționare ascunsă, evoluția schemei, time travel, compatibilitate cu multiple engine-uri (Spark, Flink, Trino).",
+            "code": "-- Creare tabel Iceberg în Spark\nCREATE TABLE iceberg.default.users (id INT, name STRING) USING iceberg",
+            "real_world": "Netflix, Apple, LinkedIn folosesc Iceberg pentru a gestiona petabytes de date în mod eficient.",
+            "quiz": {"question": "Iceberg este un format de...?", "options": ["tabel", "fișier", "stream", "bază de date"], "answer": "tabel"},
+            "related": ["data lake", "spark", "flink", "trino", "lakehouse"]
+        },
+        "flink": {
+            "beginner": "Flink e ca un procesor de date în flux continuu (streaming), care reacționează la evenimente în timp real.",
+            "professional": "Apache Flink este un framework de procesare a fluxurilor de date (stream processing) cu latență scăzută, toleranță la erori și capabilități de procesare batch.",
+            "expert": "Flink: DataStream API, Table API, CEP (complex event processing), exactly-once semantics, checkpoints și savepoints, integrare cu Kafka, RabbitMQ.",
+            "code": "# Flink DataStream în Java\nDataStream<String> stream = env.addSource(new FlinkKafkaConsumer<>(\"topic\", new SimpleStringSchema(), props));\nstream.map(s -> s.toUpperCase()).print();",
+            "real_world": "Alibaba, Uber, Zalando folosesc Flink pentru sisteme de recomandare, monitorizare, fraude.",
+            "quiz": {"question": "Flink este specializat în...?", "options": ["stream processing", "batch processing", "data warehouse", "machine learning"], "answer": "stream processing"},
+            "related": ["kafka", "streaming", "spark streaming", "event driven", "real time"]
+        },
+        "kinesis": {
+            "beginner": "Kinesis e ca o conductă de date în cloud-ul Amazon, care transportă milioane de mesaje în timp real între aplicații.",
+            "professional": "Amazon Kinesis este o platformă de streaming de date în timp real, care permite colectarea, procesarea și analiza fluxurilor de date la scară largă pe AWS.",
+            "expert": "Kinesis: Kinesis Data Streams (shard-uri), Kinesis Data Firehose (încărcare în S3, Redshift, Elasticsearch), Kinesis Data Analytics (SQL, Flink).",
+            "code": "# Python boto3 pentru Kinesis\nimport boto3\nkinesis = boto3.client('kinesis')\nresponse = kinesis.put_record(StreamName='test', Data=b'data', PartitionKey='1')",
+            "real_world": "Netflix, Pinterest, Airbnb folosesc Kinesis pentru înregistrarea activităților utilizatorilor și monitorizare.",
+            "quiz": {"question": "Kinesis este serviciu de streaming de la...?", "options": ["Amazon AWS", "Google Cloud", "Microsoft Azure", "Apache"], "answer": "Amazon AWS"},
+            "related": ["aws", "streaming", "kafka", "firehose", "real time"]
+        },
+        "pubsub": {
+            "beginner": "Pub/Sub (Google) e ca un sistem de anunțuri între aplicații: una publică un mesaj, iar altele care sunt abonate îl primesc instant.",
+            "professional": "Google Cloud Pub/Sub este un serviciu de mesagerie asincronă, scalabil, care permite transmiterea de mesaje între aplicații, cu suport pentru at-least-once și exactly-once.",
+            "expert": "Pub/Sub: topic-uri, abonamente, pull/push, ordering, retry policies, dead-letter topics. Integrare cu Cloud Functions, Dataflow, GKE.",
+            "code": "# Python client pentru Pub/Sub\nfrom google.cloud import pubsub_v1\npublisher = pubsub_v1.PublisherClient()\ntopic_path = publisher.topic_path('project', 'topic')\nfuture = publisher.publish(topic_path, b'data')",
+            "real_world": "Spotify, Twitter, Google folosesc Pub/Sub pentru a decupla microserviciile și a construi sisteme event-driven.",
+            "quiz": {"question": "Pub/Sub este un serviciu de...?", "options": ["mesagerie asincronă", "bază de date", "streaming video", "calcul serverless"], "answer": "mesagerie asincronă"},
+            "related": ["gcp", "message queue", "kafka", "rabbitmq", "event driven"]
+        },
+        "rabbitmq": {
+            "beginner": "RabbitMQ e ca un poștaș pentru mesaje între aplicații. Trimiți o scrisoare (mesaj), iar el se asigură că ajunge la destinația corectă.",
+            "professional": "RabbitMQ este un message broker open-source, care implementează AMQP (Advanced Message Queuing Protocol), folosit pentru comunicare asincronă între servicii.",
+            "expert": "RabbitMQ: exchange (direct, topic, fanout, headers), queue, binding, durable messages, confirm, prefetch, cluster, management UI.",
+            "code": "# Python pika pentru RabbitMQ\nimport pika\nconnection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))\nchannel = connection.channel()\nchannel.queue_declare(queue='aegis')\nchannel.basic_publish(exchange='', routing_key='aegis', body='Hello')",
+            "real_world": "Reddit, Instagram, Pinterest folosesc RabbitMQ pentru a gestiona cozi de sarcini și actualizări în timp real.",
+            "quiz": {"question": "RabbitMQ implementează protocolul...?", "options": ["AMQP", "MQTT", "HTTP", "gRPC"], "answer": "AMQP"},
+            "related": ["message queue", "broker", "amqp", "celery", "microservices"]
+        },
+        "activemq": {
+            "beginner": "ActiveMQ e ca un alt poștaș pentru mesaje, asemănător cu RabbitMQ, dar mai vechi și folosit în aplicații enterprise Java.",
+            "professional": "Apache ActiveMQ este un message broker open-source, bazat pe Java, care suportă multiple protocoale: AMQP, MQTT, STOMP, OpenWire.",
+            "expert": "ActiveMQ: persistent messages, virtual topics, network of brokers, JMS (Java Message Service) compliant, integrare cu Spring.",
+            "code": "// Java JMS cu ActiveMQ\nimport javax.jms.*;\nConnectionFactory factory = new ActiveMQConnectionFactory(\"tcp://localhost:61616\");\nConnection conn = factory.createConnection();\nSession session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);\nMessageProducer producer = session.createProducer(new ActiveMQQueue(\"aegis\"));",
+            "real_world": "Folosit în multe aplicații enterprise Java, în special în sistemele bancare și de logistică.",
+            "quiz": {"question": "ActiveMQ este scris în...?", "options": ["Java", "C++", "Python", "Go"], "answer": "Java"},
+            "related": ["jms", "message queue", "broker", "activemq artemis", "stomp"]
+        },
 
         # ============================================
         # 📚 EXPERT TERMS — Quick Definitions
@@ -2319,9 +2593,447 @@ if "knowledge" not in st.session_state:
         "3d printing construction": "3D printing builds houses layer by layer, reducing costs and construction time significantly.",
         "digital twins in healthcare": "Digital twins of human organs enable personalized medicine and surgical planning.",
         "space manufacturing": "Manufacturing in microgravity (space) enables production of materials impossible on Earth.",
-       }
-    
-    
+
+         # --- 101. SECURITATE CLOUD NATIVĂ ---
+        "cloud security posture management": "CSPM continuously monitors cloud environments for misconfigurations and compliance violations.",
+        "cloud workload protection platform": "CWPP protects cloud workloads (VMs, containers, serverless) from threats and vulnerabilities.",
+        "cloud infrastructure entitlement management": "CIEM manages cloud permissions and identities to reduce excessive privileges and risk.",
+        "cloud native application protection platform": "CNAPP unifies CSPM, CWPP, and CIEM into a single cloud security platform.",
+        "service mesh security": "Service mesh security includes mTLS encryption, authorization policies, and zero-trust between microservices.",
+        "container security scanning": "Container scanning checks images for known vulnerabilities in OS packages and application libraries.",
+        "kubernetes security context": "Security context defines privilege and access control settings for pods and containers in Kubernetes.",
+        "admission controller security": "Admission controllers intercept API requests to enforce security policies before resources are created.",
+        "opa gatekeeper": "Open Policy Agent Gatekeeper enforces custom security policies on Kubernetes clusters using rego language.",
+        "kyverno": "Kyverno is a Kubernetes policy engine that validates, mutates, and generates configurations using YAML policies.",
+        "falco": "Falco detects abnormal behavior and security threats in Kubernetes containers and hosts at runtime.",
+        "tetragon": "Tetragon provides runtime security enforcement and observability using eBPF for deep kernel monitoring.",
+        "kube-bench": "Kube-bench checks Kubernetes clusters against CIS benchmarks for security best practices.",
+        "kube-hunter": "Kube-hunter hunts for security weaknesses in Kubernetes clusters from a penetration tester's perspective.",
+        "trivy": "Trivy scans container images, file systems, and Git repositories for vulnerabilities and misconfigurations.",
+        "clair": "Clair is an open-source container vulnerability scanner that analyzes image layers for known CVEs.",
+        "docker bench security": "Docker Bench Security checks Docker hosts against CIS benchmarks for configuration hardening.",
+        "notary": "Notary ensures supply chain security by signing and verifying container images using TUF framework.",
+        "cosign": "Cosign is a tool for signing and verifying container images in OCI registries with Sigstore.",
+        "slsa": "SLSA (Supply-chain Levels for Software Artifacts) is a framework for verifying artifact integrity and provenance.",
+
+        # --- 102. OBSERVABILITATE AVANSATĂ ---
+        "opentelemetry": "OpenTelemetry provides APIs and SDKs for collecting traces, metrics, and logs from applications.",
+        "jaeger": "Jaeger is a distributed tracing system for monitoring and troubleshooting microservices-based systems.",
+        "zipkin": "Zipkin is a distributed tracing system that helps gather timing data for latency troubleshooting.",
+        "tempo": "Grafana Tempo is a high-scale distributed tracing backend that indexes traces by ID.",
+        "loki": "Grafana Loki is a horizontally scalable log aggregation system designed for cost-effectiveness.",
+        "thanos": "Thanos provides global query, metrics compactions, and long-term storage for Prometheus metrics.",
+        "cortex": "Cortex is a horizontally scalable Prometheus-as-a-Service solution for metrics in multi-tenant environments.",
+        "mimir": "Grafana Mimir is a highly scalable, durable Prometheus backend for long-term metrics storage.",
+        "victoriametrics": "VictoriaMetrics is a fast, cost-effective monitoring solution and time-series database for Prometheus metrics.",
+        "signoz": "SigNoz is an open-source observability platform for logs, metrics, and traces in one unified interface.",
+        "honeycomb": "Honeycomb is a cloud-based observability platform for debugging complex, distributed systems.",
+        "datadog observability": "Datadog integrates metrics, traces, and logs into a single platform for full-stack observability.",
+        "new relic observability": "New Relic provides full-stack observability with APM, infrastructure monitoring, and log management.",
+        "dynatrace": "Dynatrace uses AI-powered observability to automatically detect performance anomalies in applications.",
+        "elastic apm": "Elastic APM collects performance metrics and traces from applications and stores them in Elasticsearch.",
+        "appdynamics": "AppDynamics is an application performance monitoring tool that correlates business transactions to code.",
+        "instana": "Instana provides automated application monitoring with one-second granularity for microservices.",
+        "lightstep": "Lightstep is a cloud-native observability platform focused on distributed tracing and service health.",
+        "splunk observability": "Splunk Observability Cloud combines metrics, traces, and logs with AI-driven analytics.",
+        "checkmk": "Checkmk is an open-source monitoring solution for IT infrastructure, applications, and cloud services.",
+
+        # --- 103. GESTIONAREA IDENTITĂȚII ȘI ACCESULUI (IAM) ---
+        "oauth2.0": "OAuth 2.0 is an authorization framework that allows third-party applications to access user data without passwords.",
+        "oidc": "OpenID Connect (OIDC) is an identity layer on top of OAuth 2.0 for user authentication and single sign-on.",
+        "saml2": "SAML 2.0 enables single sign-on between identity providers and service providers using XML assertions.",
+        "ldap vs active directory": "LDAP is a protocol for accessing directory services; Active Directory is Microsoft's implementation of LDAP.",
+        "federated identity": "Federated identity allows users to access multiple domains or organizations with a single credential.",
+        "zero trust network access": "ZTNA replaces VPNs by providing identity-based, least-privilege access to private applications.",
+        "beyondcorp": "BeyondCorp is Google's zero-trust security model that removes network perimeter trust for employees.",
+        "pam": "Privileged Access Management (PAM) controls and monitors privileged accounts to prevent credential abuse.",
+        "secret management": "Secret management securely stores and rotates API keys, passwords, certificates, and tokens.",
+        "hashicorp vault": "Vault manages secrets, encrypts data, and provides identity-based access control for systems.",
+        "aws secrets manager": "AWS Secrets Manager rotates and retrieves database credentials and API keys securely.",
+        "azure key vault": "Azure Key Vault safeguards cryptographic keys, certificates, and connection strings in the cloud.",
+        "gcp secret manager": "GCP Secret Manager stores API keys, passwords, and certificates with fine-grained access control.",
+        "keeper security": "Keeper Security is a zero-knowledge password and secrets management platform for enterprise.",
+        "bitwarden": "Bitwarden is an open-source password manager for individuals, teams, and organizations.",
+        "1password": "1Password is a password manager with secret automation and enterprise SSO integrations.",
+        "cyberark": "CyberArk is a privileged access security solution that protects credentials and sessions.",
+        "okta": "Okta is a cloud-based identity management service for single sign-on, MFA, and lifecycle management.",
+        "auth0": "Auth0 is an authentication and authorization platform for applications with customizable login flows.",
+        "azure ad b2c": "Azure AD B2C provides customer identity and access management for consumer-facing applications.",
+
+        # --- 104. DEVOPS AVANSAT ȘI SRE ---
+        "error budget": "Error budget is the amount of unreliability allowed within an SLO before improvements are required.",
+        "toil": "Toil is manual, repetitive, automatable work that scales linearly with service growth, to be minimized by SREs.",
+        "sli vs slo vs sla": "SLI measures performance, SLO sets a target, and SLA defines consequences for missing the target.",
+        "postmortem culture": "Postmortem culture involves blameless analysis of incidents to improve system resilience.",
+        "chaos engineering principles": "Chaos engineering experiments proactively test system tolerance to failures in production.",
+        "game days": "Game days are organized chaos experiments where teams simulate failures to practice incident response.",
+        "capacity planning": "Capacity planning forecasts resource needs to ensure performance and avoid outages under load.",
+        "performance testing pyramid": "The pyramid includes unit performance tests, integration tests, and end-to-end load tests.",
+        "distributed tracing in production": "Distributed tracing samples requests to analyze latency and failures in production services.",
+        "canary analysis": "Canary analysis automatically compares metrics of new version against baseline to decide rollback.",
+        "feature flag platforms": "LaunchDarkly, Flagsmith, Split.io enable gradual rollouts and experiments without code redeploys.",
+        "continuous verification": "Continuous verification monitors deployments in real-time and auto-rolls back on anomalies.",
+        "deployment strategies comparison": "Rolling, blue-green, canary, and recreate strategies balance risk, speed, and complexity.",
+        "kong api gateway": "Kong is a cloud-native API gateway with plugins for authentication, rate limiting, and observability.",
+        "traefik": "Traefik is a modern reverse proxy and load balancer designed for microservices and Kubernetes.",
+        "envoy proxy": "Envoy is a high-performance proxy for service meshes, edge gateways, and observability.",
+        "haproxy": "HAProxy is a reliable, high-performance TCP/HTTP load balancer for high-traffic websites.",
+        "consul": "Consul is a service mesh providing service discovery, configuration, and segmentation capabilities.",
+        "nomad": "Nomad is a flexible scheduler and orchestrator for containers, VMs, and standalone applications.",
+        "vault": "Vault manages secrets, encrypts data, and provides identity-based access control for systems.",
+
+        # --- 105. ANALIZA LOGURILOR AVANSATĂ ---
+        "structured logging": "Structured logging outputs logs as JSON or key-value pairs for easier parsing and querying.",
+        "centralized logging": "Centralized logging aggregates logs from multiple servers into a single searchable system.",
+        "log indexing": "Log indexing creates inverted indexes over log fields for fast full-text search and filtering.",
+        "log parsing": "Log parsing extracts structured fields from raw log lines using rules or regular expressions.",
+        "log filtering": "Log filtering discards noisy or low-value log entries before ingestion to reduce costs.",
+        "log sampling": "Log sampling retains only a fraction of high-volume logs while preserving representative data.",
+        "log aggregation tools": "Fluentd, Logstash, Vector collect, process, and forward logs to storage systems.",
+        "fluentd": "Fluentd is a unified logging layer that collects and processes logs from various sources.",
+        "fluentbit": "Fluent Bit is a lightweight log processor and forwarder for embedded and edge environments.",
+        "vector logging": "Vector is a high-performance observability data router for logs, metrics, and events.",
+        "logstash pipelines": "Logstash pipelines define inputs, filters, and outputs for processing log data.",
+        "graylog": "Graylog is an open-source log management platform with search, alerting, and dashboards.",
+        "humio": "Humio (now CrowdStrike LogScale) provides real-time streaming log analysis with live queries.",
+        "mezmo": "Mezmo (formerly LogDNA) offers cloud-based log management with instant search and alerts.",
+        "papertrail": "Papertrail is a cloud-hosted log management service with fast search and live tailing.",
+        "sematext": "Sematext provides log management, infrastructure monitoring, and real-time alerts.",
+        "logz.io": "Logz.io offers open-source observability platform with ELK, Prometheus, and Jaeger as a service.",
+        "scalyr": "Scalyr (acquired by SentinelOne) provides high-speed log analysis with fast search and alerts.",
+        "quickwit": "Quickwit is a cloud-native log management engine designed for distributed object storage.",
+        "parca": "Parca is a continuous profiling tool for Kubernetes infrastructure powered by eBPF.",
+
+        # --- 106. SECURITATE OFENSIVĂ (ETHICAL HACKING) ---
+        "reconnaissance": "Reconnaissance is the first phase of ethical hacking, gathering information about a target system or network.",
+        "footprinting": "Footprinting collects public information about a target using OSINT techniques without direct interaction.",
+        "scanning": "Scanning identifies live hosts, open ports, and running services on a target network using tools like Nmap.",
+        "enumeration": "Enumeration extracts detailed information about network resources, users, shares, and services from a target.",
+        "vulnerability assessment": "Vulnerability assessment systematically identifies and prioritizes security weaknesses in systems.",
+        "exploit development": "Exploit development involves creating code that leverages a specific vulnerability to gain unauthorized access.",
+        "reverse engineering malware": "Reverse engineering malware analyzes malicious code to understand its behavior and origin.",
+        "binary exploitation": "Binary exploitation uses memory corruption bugs (buffer overflow, use-after-free) to execute arbitrary code.",
+        "web application pentesting": "Web app pentesting tests for OWASP Top 10 vulnerabilities like SQLi, XSS, CSRF, and broken authentication.",
+        "mobile app pentesting": "Mobile app pentesting analyzes iOS and Android apps for insecure data storage, weak cryptography, and logic flaws.",
+        "api pentesting": "API pentesting checks REST, GraphQL, SOAP endpoints for broken object level authorization (BOLA), rate limiting, and injection.",
+        "cloud pentesting": "Cloud pentesting tests misconfigured storage buckets, IAM roles, and vulnerable serverless functions in AWS, Azure, GCP.",
+        "wireless pentesting": "Wireless pentesting cracks WPA2/WPA3, Evil Twin attacks, and rogue access points to compromise Wi-Fi networks.",
+        "social engineering": "Social engineering manipulates people into revealing credentials or performing actions against security policies.",
+        "phishing simulation": "Phishing simulation sends realistic fake emails to train employees and measure susceptibility to phishing attacks.",
+        "red team vs blue team": "Red team attacks, blue team defends, and purple team collaborates to improve overall security posture.",
+        "purple teaming": "Purple teaming combines red and blue teams to maximize detection and response capabilities through collaboration.",
+        "breach and attack simulation": "BAS tools continuously emulate attack techniques to validate security controls and find gaps.",
+        "adversary emulation": "Adversary emulation mimics known threat actor tactics, techniques, and procedures (TTPs) to test defenses.",
+        "threat modeling": "Threat modeling identifies potential threats and mitigation strategies during application design (STRIDE, DREAD, PASTA).",
+
+        # --- 107. FORENZICĂ DIGITALĂ ---
+        "disk forensics": "Disk forensics analyzes hard drives and SSDs to recover deleted files, partitions, and hidden data.",
+        "memory forensics": "Memory forensics examines RAM dumps to find malware, encryption keys, and processes that don't write to disk.",
+        "network forensics": "Network forensics captures and analyzes packets to reconstruct attacks and data exfiltration routes.",
+        "mobile forensics": "Mobile forensics extracts data from smartphones, including call logs, messages, locations, and app artifacts.",
+        "malware analysis sandbox": "Sandbox executes malware in isolated environments to observe behavior without risking real systems.",
+        "volatility framework": "Volatility is an open-source memory forensics framework for analyzing RAM dumps from Windows, Linux, Mac.",
+        "autopsy": "Autopsy is a digital forensics platform for hard drive investigation, file recovery, and timeline analysis.",
+        "sleuth kit": "The Sleuth Kit is a collection of command-line tools for file system forensics on NTFS, FAT, EXT, and HFS.",
+        "wireshark forensics": "Wireshark can reconstruct files, extract credentials, and identify malicious traffic from packet captures.",
+        "tshark": "tshark is the command-line version of Wireshark for scripting packet captures and analyzing pcap files.",
+        "tcpdump": "tcpdump captures raw network packets from the command line, compatible with libpcap format.",
+        "foremost": "Foremost recovers files based on their headers, footers, and internal data structures from disk images.",
+        "scalpel": "Scalpel is a high-performance file carving tool that extracts files without filesystem metadata.",
+        "photorec": "PhotoRec recovers lost files including videos, documents, and archives from hard disks and memory cards.",
+        "testdisk": "TestDisk repairs partition tables, recovers deleted partitions, and rebuilds boot sectors.",
+        "forensic hashing": "Forensic hashing (MD5, SHA256) ensures evidence integrity and verifies files haven't been altered.",
+        "write blocker": "Write blocker prevents accidental modification of evidence drives during forensic acquisition.",
+        "efs": "Encrypting File System (EFS) is Windows feature for encrypting files with user certificates.",
+        "luks": "LUKS (Linux Unified Key Setup) is disk encryption standard for Linux systems.",
+        "bitlocker forensics": "BitLocker forensics requires recovery key or memory dump to decrypt and analyze encrypted Windows drives.",
+
+        # --- 108. BLUE TEAM ȘI SECURITY OPERATIONS ---
+        "security orchestration automation response": "SOAR platforms automate incident response workflows, case management, and threat intelligence.",
+        "user and entity behavior analytics": "UEBA detects insider threats and compromised accounts using machine learning on behavioral patterns.",
+        "endpoint detection and response": "EDR continuously monitors endpoints for suspicious activity and enables remote threat hunting.",
+        "network detection and response": "NDR analyzes network traffic to detect lateral movement, C2 communication, and data exfiltration.",
+        "managed detection and response": "MDR outsources 24/7 threat detection and response to a third-party security team.",
+        "extended detection and response": "XDR correlates alerts across endpoints, networks, and cloud to provide unified detection.",
+        "security information and event management": "SIEM aggregates logs, normalizes data, and correlates events to detect security incidents.",
+        "security analytics": "Security analytics applies big data and ML to security data for advanced threat detection.",
+        "threat hunting": "Threat hunting proactively searches for hidden threats that evaded automated detection tools.",
+        "intrusion detection system": "IDS monitors network or system activities for malicious actions or policy violations.",
+        "intrusion prevention system": "IPS detects and blocks threats in real-time by dropping malicious packets.",
+        "host intrusion detection system": "HIDS monitors system logs, file integrity, and registry changes on individual hosts.",
+        "network intrusion detection system": "NIDS analyzes network traffic patterns and signatures to detect attacks.",
+        "snort": "Snort is an open-source NIDS with rule-based detection and packet logging capabilities.",
+        "suricata": "Suricata is a high-performance NIDS/NIPS that uses multi-threading and GPU acceleration.",
+        "zeek": "Zeek (formerly Bro) is a network security monitor for analyzing traffic and generating logs.",
+        "osquery": "osquery exposes operating systems as high-performance relational databases for security monitoring.",
+        "wazuh": "Wazuh is an open-source SIEM and XDR platform for threat detection and compliance monitoring.",
+        "elastic security": "Elastic Security provides SIEM, endpoint security, and cloud monitoring on the ELK stack.",
+        "splunk security": "Splunk Enterprise Security is a premium SIEM for threat detection and compliance reporting.",
+
+        # --- 109. CLOUD NATIVE SECURITY AVANSAT ---
+        "cloud security posture management": "CSPM detects misconfigurations and compliance violations across AWS, Azure, GCP.",
+        "cloud workload protection platform": "CWPP protects VMs, containers, and serverless workloads from runtime threats.",
+        "cloud infrastructure entitlement management": "CIEM identifies over-privileged identities and enforces least privilege.",
+        "cloud native application protection platform": "CNAPP unifies CSPM, CWPP, CIEM, and container security in single platform.",
+        "k8s pod security standards": "Pod Security Standards define privileged, baseline, and restricted security profiles for pods.",
+        "k8s network policies": "Network policies control pod-to-pod communication using labels and selectors in Kubernetes.",
+        "k8s pod security admission": "Pod Security Admission replaces PSPs and enforces pod security standards at namespace level.",
+        "k8s opa gatekeeper": "Gatekeeper enforces custom policies on Kubernetes clusters using Open Policy Agent.",
+        "k8s admission webhook": "Admission webhooks intercept and modify requests to the Kubernetes API server.",
+        "k8s runtime security with falco": "Falco detects runtime threats like privilege escalation, shell execution, and file writes.",
+        "k8s image scanning": "Image scanning in CI/CD finds vulnerabilities in container images before deployment.",
+        "k8s secrets encryption": "Encrypt Kubernetes secrets at rest using KMS providers or aescbc provider.",
+        "k8s audit logging": "Audit logs record all API requests to the Kubernetes control plane for compliance.",
+        "k8s cis benchmarks": "CIS Kubernetes Benchmark provides security configuration recommendations for clusters.",
+        "k8s pod security context": "Security context defines runAsNonRoot, readOnlyRootFilesystem, and privilege escalation for pods.",
+        "k8s apparmor": "AppArmor profiles limit container capabilities and system call access at the kernel level.",
+        "k8s seccomp": "Seccomp filters system calls to reduce attack surface of containers in Kubernetes.",
+        "aws security hub": "AWS Security Hub aggregates security findings from GuardDuty, Inspector, and Macie.",
+        "azure security center": "Azure Security Center provides unified security management and advanced threat protection.",
+        "gcp security command center": "SCC helps security teams find threats and misconfigurations across GCP resources.",
+
+        # --- 110. DEVOPS SECURITY (DEV SEC OPS) ---
+        "shift left security": "Shift left security integrates security testing early in the development lifecycle.",
+        "software supply chain security": "Supply chain security verifies the integrity of dependencies, build tools, and artifacts.",
+        "software bill of materials": "SBOM is a formal inventory of all components and dependencies in a software product.",
+        "sbom formats (spdx, cyclonedx, swid)": "SPDX, CycloneDX, and SWID are standard formats for exchanging SBOM data.",
+        "dependency scanning": "Dependency scanning finds known vulnerabilities in open-source libraries used by the application.",
+        "static application security testing": "SAST analyzes source code for security flaws without executing the program.",
+        "dynamic application security testing": "DAST tests running applications for vulnerabilities by sending malicious payloads.",
+        "interactive application security testing": "IAST combines SAST and DAST by instrumenting the runtime to detect vulnerabilities.",
+        "software composition analysis": "SCA identifies open-source components and licenses, and detects known vulnerabilities.",
+        "container image scanning in cicd": "Integrate image scanning in CI/CD pipelines (Trivy, Clair, Grype) before deployment.",
+        "infrastructure as code scanning": "IaC scanning (Checkov, tfsec, kics) finds misconfigurations in Terraform, CloudFormation, K8s YAML.",
+        "secret scanning": "Secret scanning detects API keys, passwords, tokens committed to source code repositories.",
+        "git hooks for security": "Git pre-commit hooks run linters, secret scanners, and SAST before code is committed.",
+        "pre-commit framework": "pre-commit is a framework for managing and maintaining multi-language pre-commit hooks.",
+        "github secret scanning": "GitHub scans repositories for known secret formats and alerts when secrets are exposed.",
+        "gitlab secret detection": "GitLab detects secrets in commits and prevents them from being pushed to the repository.",
+        "secret detection patterns": "Patterns include AWS keys, GitHub tokens, Stripe keys, and generic high-entropy strings.",
+        "secrets rotation automation": "Automate secret rotation using HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault.",
+        "audit logging for infrastructure": "Log all changes to infrastructure (Terraform plan/apply) for compliance and forensics.",
+        "compliance as code": "Compliance as code uses policy engines (OPA, Cloud Custodian) to enforce regulatory standards.",
+
+        # --- 111. INFRASTRUCTURĂ CA COD (IaC) AVANSAT ---
+        "terraform modules": "Terraform modules encapsulate groups of resources for reuse, standardization, and versioning.",
+        "terraform state backend": "Remote state backends (S3, GCS, Azure Storage, Terraform Cloud) enable team collaboration and state locking.",
+        "terraform workspaces": "Workspaces manage multiple environments (dev, staging, prod) within the same Terraform configuration.",
+        "terraform variables precedence": "Variable precedence from lowest to highest: defaults, tfvars files, environment variables, command-line flags.",
+        "terraform functions": "Built-in functions like concat, merge, lookup, file, yamlencode, and templatefile manipulate values dynamically.",
+        "terraform data sources": "Data sources fetch information from providers (e.g., current AWS region, AMI IDs) for use in configurations.",
+        "terraform provisioners": "Provisioners (file, local-exec, remote-exec) run scripts on resources after creation — use as last resort.",
+        "terraform import": "`terraform import` brings existing infrastructure under Terraform management without destroying it.",
+        "terraform taint and untaiunt": "`taint` forces resource recreation on next apply; `untaint` removes the tainted state.",
+        "terraform refresh": "`refresh` updates state file with real-world resource attributes without modifying infrastructure.",
+        "pulumi vs terraform": "Pulumi uses general-purpose languages (TypeScript, Python, Go, C#) while Terraform uses HCL.",
+        "pulumi automation api": "Automation API allows programmatic orchestration of Pulumi deployments from applications.",
+        "pulumi state backends": "Pulumi supports self-managed (AWS S3, Azure Storage) or managed (Pulumi Cloud) state backends.",
+        "pulumi stack references": "Stack references export and import outputs between different Pulumi stacks.",
+        "cdk (aws cdk)": "AWS CDK defines cloud infrastructure using familiar programming languages, synthesizing to CloudFormation.",
+        "cdk constructs": "Constructs are the basic building blocks of CDK apps: L1 (low-level), L2 (curated), and L3 (patterns).",
+        "cdk aspects": "Aspects apply operations (like adding tags or security checks) to all constructs in a scope.",
+        "cdk pipelines": "CDK Pipelines is a CDK construct for deploying CDK apps with CI/CD (CodePipeline, GitHub Actions, GitLab).",
+        "cdk assertions": "Assertions module validates synthesized CloudFormation templates in unit tests.",
+        "cdk migrate": "`cdk migrate` imports existing CloudFormation stacks into CDK applications.",        
+
+        # --- 112. AUTOMATIZARE AVANSATĂ CU ANSIBLE ---
+        "ansible dynamic inventory": "Dynamic inventory scripts pull host information from cloud providers, CMDB, or databases in real-time.",
+        "ansible vault encryption": "Ansible Vault encrypts sensitive variables and files using AES-256 with a single password.",
+        "ansible vault id": "Vault IDs allow using different passwords for different environments or files.",
+        "ansible galaxy": "Ansible Galaxy is a repository for sharing and downloading community roles and collections.",
+        "ansible collections": "Collections package modules, plugins, roles, and playbooks for distributing content.",
+        "ansible facts caching": "Fact caching stores gathered facts in Redis, memcached, or files to speed up subsequent playbook runs.",
+        "ansible pull mode": "Ansible-pull runs playbooks on nodes periodically from a Git repository without a central control machine.",
+        "ansible tower/awx": "AWX provides a web UI, REST API, and job scheduling for Ansible execution in enterprise environments.",
+        "ansible callback plugins": "Callback plugins alter playbook output, send notifications, or log results to external systems.",
+        "ansible filter plugins": "Filter plugins extend Jinja2 filters for custom data manipulation in templates.",
+        "ansible lookup plugins": "Lookup plugins retrieve data from external sources (files, environment variables, databases) during playbook runs.",
+        "ansible connection plugins": "Connection plugins define how Ansible communicates with hosts (ssh, winrm, local, docker).",
+        "ansible inventory plugins": "Inventory plugins parse sources (YAML, TOML, AWS EC2, GCP) to build host inventories.",
+        "ansible strategy plugins": "Strategy plugins control execution flow: linear (default), free (unordered), or custom.",
+        "ansible action plugins": "Action plugins run on the control node before modules execute on target hosts.",
+        "ansible cache plugins": "Cache plugins store facts and data in Redis, memcached, MongoDB, or file systems.",
+        "ansible vars plugins": "Variables plugins dynamically inject variables from external sources at runtime.",
+        "ansible module development": "Custom modules can be written in Python, PowerShell, or any language returning JSON.",
+        "ansible module documentation": "Module documentation includes DOCUMENTATION, EXAMPLES, and RETURN sections in YAML/JSON.",
+        "ansible testing with molecule": "Molecule is a testing framework for Ansible roles, supporting multiple instances and verifiers.",
+
+        # --- 113. MONITORIZARE AVANSATĂ ȘI ALERTARE ---
+        "prometheus service discovery": "Prometheus discovers scrape targets via file_sd, dns_sd, consul_sd, ec2_sd, and kubernetes_sd.",
+        "prometheus relabel config": "Relabel_configs drop, add, or modify labels before and after service discovery.",
+        "prometheus metric relabel": "Metric_relabel_configs modify metric names and labels before ingestion.",
+        "prometheus recording rules": "Recording rules precompute frequently used or computationally expensive expressions into new metrics.",
+        "prometheus alerting rules": "Alerting rules define conditions that trigger alerts to Alertmanager.",
+        "prometheus blackbox exporter": "Blackbox exporter probes endpoints (HTTP, HTTPS, DNS, TCP, ICMP) for availability and performance.",
+        "prometheus snmp exporter": "SNMP exporter collects metrics from network devices (routers, switches, firewalls).",
+        "prometheus pushgateway": "Pushgateway collects metrics from short-lived jobs that cannot be scraped directly.",
+        "prometheus query functions": "Functions include rate, irate, increase, avg_over_time, predict_linear, and histogram_quantile.",
+        "prometheus binary operators": "Operators include arithmetic (+, -), comparison, logical (and, or), and vector matching.",
+        "alertmanager routing tree": "Routing tree routes alerts based on labels (severity, service) to different receivers.",
+        "alertmanager inhibition rules": "Inhibition rules suppress notifications for non-critical alerts when critical alert fires.",
+        "alertmanager silence": "Silences temporarily mute alerts matching labels for maintenance periods.",
+        "alertmanager receiver integrations": "Receivers include Slack, PagerDuty, OpsGenie, WeChat, Email, and generic webhooks.",
+        "grafana annotations": "Annotations mark events (deploys, incidents, changes) directly on Grafana graphs.",
+        "grafana alerting": "Grafana Alerting evaluates rules against any datasource and supports multi-dimensional alerts.",
+        "grafana reporting": "Reporting generates PDF reports of dashboards for scheduled delivery via email.",
+        "grafana folders and permissions": "Folders organize dashboards; permissions grant view/edit/admin access at folder or dashboard level.",
+        "grafana provisioning": "Provision dashboards and datasources declaratively using YAML files for automation.",
+        "grafana variables": "Template variables (query, interval, custom) make dashboards interactive and reusable.",
+
+        # --- 114. BAZE DE DATE ȘI MESAGERIE ---
+        "redis persistence": "RDB (snapshots) and AOF (append-only file) persistence methods trade off performance vs durability.",
+        "redis replication": "Replica of master can be synchronous or asynchronous, providing high availability and read scalability.",
+        "redis sentinel": "Sentinel provides high availability, monitoring, notifications, and automatic failover for Redis.",
+        "redis cluster": "Redis Cluster shards data across 16384 hash slots, supporting horizontal scaling and partitioning.",
+        "redis stream": "Streams are append-only logs that implement consumer groups for reliable message processing.",
+        "redis pubsub": "Pub/Sub messaging pattern with channels, supports wildcard subscriptions but no persistence.",
+        "redis lua scripting": "Lua scripts run atomically on the server, reducing network round trips and ensuring consistency.",
+        "postgresql replication": "Physical (streaming) and logical (by table) replication for high availability and reporting.",
+        "postgresql pgpool": "Pgpool-II provides connection pooling, load balancing, and automatic failover for PostgreSQL.",
+        "postgresql partitioning": "Table partitioning by range, list, or hash improves query performance and data management.",
+        "postgresql vacuum": "VACUUM reclaims storage occupied by dead rows and updates transaction ID wraparound.",
+        "postgresql indexes": "Index types: B-tree, Hash, GiST, SP-GiST, GIN, BRIN — each optimized for different query patterns.",
+        "postgresql jsonb": "JSONB stores JSON data in binary format, supporting indexing and efficient query operations.",
+        "postgresql full text search": "Full-text search uses tsvector and tsquery with dictionaries and ranking functions.",
+        "postgresql explain analyze": "EXPLAIN ANALYZE shows actual execution plan and row counts for query tuning.",
+        "kafka topic compaction": "Topic compaction retains only the latest value for each key, useful for changelogs.",
+        "kafka partition rebalance": "Rebalance redistributes partitions among consumer group members after membership changes.",
+        "kafka idempotent producer": "Idempotent producers prevent duplicate messages by using producer ID and sequence numbers.",
+        "kafka exactly once semantics": "EOS ensures messages are processed exactly once across producers, brokers, and consumers.",
+        "kafka rbac authorization": "Kafka ACLs (resource-based access control) manage permissions for topics, consumer groups, and clusters.",
+
+        # --- 115. DEZVOLTARE SOFTWARE AVANSAT ---
+        "git worktree vs submodule": "Worktrees allow multiple branches checked out simultaneously; submodules link external repositories.",
+        "git bisect": "Bisect performs binary search through commit history to find which commit introduced a bug.",
+        "git reflog": "Reflog records all branch, HEAD, and reference updates; recovers lost commits.",
+        "git filter branch": "Filter-branch rewrites history (removes files, changes emails) but can be slow on large repos.",
+        "git replace": "Replace objects with alternate versions without rewriting history, useful for grafts.",
+        "git notes": "Notes attach additional metadata to commits without changing commit SHA.",
+        "git maintain": "Maintenance tasks (gc, prune, repack) optimize repository performance and size.",
+        "pre-commit hooks types": "Hook types include pre-commit, pre-push, commit-msg, post-checkout, pre-rebase, and post-merge.",
+        "semantic versioning rules": "MAJOR.MINOR.PATCH: MAJOR for breaking changes, MINOR for features, PATCH for bug fixes.",
+        "conventional commits": "Conventional Commits format: type(scope): description (feat, fix, docs, style, refactor, test, chore).",
+        "gitlab ci stages": "Stages define execution order (build, test, deploy) in GitLab CI pipelines.",
+        "gitlab ci cache": "Cache dependencies and build artifacts across pipeline runs to speed up execution.",
+        "gitlab ci artifacts": "Artifacts are files generated by jobs that are stored and passed to subsequent jobs.",
+        "gitlab ci needs": "`needs` keyword defines job dependencies to speed up pipelines with DAG execution.",
+        "gitlab ci rules": "Rules control when jobs run based on branch, variables, files, or custom conditions.",
+        "github actions matrix strategy": "Matrix strategy runs a job with multiple versions of language, OS, or environment variables.",
+        "github actions reusable workflows": "Reusable workflows are called by other workflows, reducing duplication.",
+        "github actions composite actions": "Composite actions combine multiple steps into a single action without container overhead.",
+        "github action cache": `actions/cache` restores and saves cache (dependencies, build outputs) across workflow runs.",
+        "github actions self-hosted runners": "Self-hosted runners run workflows on your own infrastructure for custom hardware or security.",
+
+        # --- 116. PERFORMANȚĂ APLICAȚII AVANSATĂ ---
+        "profiling tools": "Profilers (cProfile, py-spy, perf, valgrind) measure execution time and memory usage to find bottlenecks.",
+        "flame graphs": "Flame graphs visualize stack traces over time, identifying where applications spend most of their time.",
+        "apdex score": "Apdex (Application Performance Index) measures user satisfaction based on response time thresholds (tolerating, satisfied, frustrated).",
+        "distributed tracing standards": "W3C Trace Context, OpenTracing, OpenTelemetry standards propagate trace IDs across services.",
+        "sampling strategies": "Head-based (random, probabilistic) and tail-based (latency, error) sampling balance observability cost.",
+        "continuous profiling": "Continuous profiling captures application performance data in production for ongoing optimization.",
+        "pyroscope": "Pyroscope is a continuous profiling platform for finding performance issues in code.",
+        "parca profiling": "Parca is a continuous profiling tool for Kubernetes infrastructure powered by eBPF.",
+        "serverless cold start optimization": "Reduce cold starts with provisioned concurrency, smaller deployment packages, and faster runtimes.",
+        "database query tuning": "Indexing, query rewriting, denormalization, and partitioning optimize database response times.",
+        "connection pooling sizing": "Pool size formula: (max connections per core) * (number of cores) to avoid connection storms.",
+        "async patterns for performance": "Non-blocking I/O, event loops, coroutines, and async/await reduce thread pool usage.",
+        "cpu bound vs io bound": "CPU-bound needs faster processors; IO-bound benefits from concurrency and caching.",
+        "memory leak detection": "Heap profiling, GC logs, and object retention analysis identify memory leaks in applications.",
+        "garbage collection tuning": "Adjust GC strategy, heap size, and thresholds to minimize pause times in managed runtimes.",
+        "jvm tuning": "Tune heap sizes, garbage collectors (G1GC, ZGC), JIT compiler, and thread stacks for performance.",
+        "v8 engine optimization": "Hidden classes, inline caching, and JIT compilation optimize JavaScript execution in Node.js.",
+        "pypy vs cpython": "PyPy uses JIT compilation, often faster for long-running numeric workloads; CPython is default.",
+        "numba": "Numba translates Python functions to machine code using LLVM for numerical performance.",
+        "c profiling": "Tools like gprof, perf, Valgrind, and Intel VTune analyze C/C++ application performance.",
+
+        # --- 117. REȚELE ȘI PROTOCOALE AVANSATE ---
+        "http/2 server push": "Server push sends resources to the client before they are requested, reducing round trips.",
+        "http/2 stream prioritization": "Streams have priorities and dependencies to optimize resource delivery order.",
+        "http/3 quic": "QUIC replaces TCP+TLS with UDP, reducing connection establishment latency and improving loss recovery.",
+        "websocket compression": "permessage-deflate compresses WebSocket messages, reducing bandwidth at cost of CPU.",
+        "websocket subprotocols": "Subprotocols (like MQTT over WebSockets) negotiate application-level message formats.",
+        "grpc status codes": "gRPC uses standard codes (OK, CANCELLED, UNKNOWN, INVALID_ARGUMENT, DEADLINE_EXCEEDED, NOT_FOUND, etc.)",
+        "grpc compression": "gRPC supports gzip, snappy, and zstd compression for request and response messages.",
+        "grpc load balancing": "Client-side (pick_first, round_robin) and proxy-side (envoy, nginx) load balancing strategies.",
+        "protocol buffers encoding": "Varint, zigzag, length-delimited, and bit-packed encoding formats for protocol buffers.",
+        "protocol buffers oneof": "Oneof fields allow at most one member to be set, saving memory and simplifying messages.",
+        "protocol buffers maps": "Map fields are key-value pairs optimized for iteration order and serialization.",
+        "mqtt qos levels": "QoS 0 (at most once), QoS 1 (at least once), QoS 2 (exactly once) guarantee message delivery.",
+        "mqtt retained messages": "Retained messages are stored by the broker and sent to new subscribers immediately.",
+        "mqtt last will testament": "LWT message is sent by the broker when a client disconnects unexpectedly.",
+        "coap observe": "CoAP Observe allows clients to register for resource changes, similar to MQTT subscriptions.",
+        "coap blockwise transfer": "Blockwise transfer splits large payloads into multiple CoAP messages for constrained networks.",
+        "dns over tls": "DoT encrypts DNS queries over TLS on port 853 for privacy and integrity.",
+        "dns over https": "DoH encrypts DNS queries inside HTTP POST requests over HTTPS on port 443.",
+        "dnssec": "DNSSEC adds cryptographic signatures to DNS records to prevent spoofing and cache poisoning.",
+        "mpls l3vpn": "Layer 3 VPN using MPLS labels routes customer traffic across provider networks.",
+
+        # --- 118. ARHITECTURI SOFTWARE ȘI DESIGN PATTERNS AVANSAT ---
+        "eventual consistency patterns": "Patterns include conflict-free replicated data types (CRDTs), gossip protocols, and idempotent operations.",
+        "strong consistency patterns": "Two-phase commit (2PC), Paxos, Raft, and read-after-write achieve strong consistency.",
+        "circuit breaker states": "Closed (normal), Open (failing), Half-Open (probing recovery) states in circuit breaker pattern.",
+        "retry patterns": "Exponential backoff, jitter, and retry budget prevent cascading failures during retries.",
+        "bulkhead isolation strategies": "Thread pools, connection limits, and semaphores isolate resources per tenant or service.",
+        "compensating transactions": "Compensating actions revert failed operations in distributed sagas without distributed ACID.",
+        "cqs vs cqrs": "CQS separates commands (writes) from queries (reads) at method level; CQRS at architecture level.",
+        "event sourcing with snapshots": "Snapshots capture aggregate state periodically to reduce event replay time.",
+        "outbox pattern": "Outbox pattern ensures database updates and message publishing occur atomically.",
+        "inbox pattern": "Inbox pattern deduplicates messages to handle idempotent processing in distributed systems.",
+        "polling publisher": "Polling publisher periodically queries a database or API to detect new events.",
+        "change data capture": "CDC captures database changes (INSERT, UPDATE, DELETE) and streams them to downstream systems.",
+        "leader election algorithms": "Bully algorithm, Ring algorithm, ZooKeeper, etcd, and Raft elect cluster leaders.",
+        "lease mechanism": "Lease grants exclusive access for a time window, with renewal to handle failures.",
+        "distributed scheduler patterns": "FIFO, fair, priority, capacity, and gang schedulers allocate resources across nodes.",
+        "sharding key selection": "Partition keys influence data distribution, cross-shard queries, and hotspot avoidance.",
+        "consistent hashing": "Consistent hashing minimizes key redistribution when adding/removing nodes in distributed caches.",
+        "bloom filters in distributed systems": "Bloom filters reduce disk reads for missing keys in key-value stores.",
+        "merkle trees": "Merkle trees efficiently compare data replicas for consistency in distributed databases.",
+        "gossip membership protocols": "SWIM and Lifeguard protocols disseminate membership changes with low overhead.",
+
+        # --- 119. CLOUD NATIVE ȘI SERVERLESS AVANSAT ---
+        "serverless cold start mitigation": "Provisioned concurrency, keep-warm plugins, and smaller function sizes reduce cold starts.",
+        "serverless timeout strategies": "Break long-running tasks into steps, use async workflows, or orchestrate with Step Functions.",
+        "serverless vpc connectivity": "VPC connector or NAT gateway enables functions to access private resources.",
+        "serverless environment variables encryption": "Encrypt sensitive environment variables with KMS for functions.",
+        "serverless secret rotation": "Automate rotation of secrets used by serverless functions with Secrets Manager.",
+        "serverless log sampling": "Sample logs from serverless functions to reduce storage and observability costs.",
+        "serverless function chaining": "Orchestrate functions using queues, event bridge, or Step Functions to form workflows.",
+        "lambda layers": "Layers package common dependencies (libraries, runtimes) for reuse across multiple functions.",
+        "lambda container images": "Package and deploy Lambda functions as container images up to 10GB.",
+        "lambda snapstart": "SnapStart reduces cold start latency for Java functions by restoring from snapshots.",
+        "lambda response streaming": "Stream responses chunk by chunk to clients, reducing time to first byte (TTFB).",
+        "lambda extensions": "Extensions run alongside functions to integrate monitoring, security, and observability tools.",
+        "fargate spot": "Fargate Spot offers up to 70% discount for interruption-tolerant ECS/EKS tasks.",
+        "eks fargate profiles": "Fargate profiles select which EKS pods run on serverless compute capacity.",
+        "gcp cloud run cpu boost": "Cloud Run allows CPU boost during cold starts to improve startup time.",
+        "azure container apps revisions": "Revisions manage version history and traffic splitting for container apps.",
+        "knative serving": "Knative provides Kubernetes-based serverless platform with automatic scaling and revision management.",
+        "openfaas": "OpenFaaS is a serverless framework for Kubernetes with container-native workflows.",
+        "fission": "Fission is a fast serverless framework for Kubernetes with short cold start times.",
+        "fn project": "Fn Project is an event-driven, container-native serverless platform.",
+
+        # --- 120. BUG BOUNTY ȘI SECURITATE OFENSIVĂ (AVANSAT) ---
+        "bug bounty disclosure policy": "Safe Harbor policy protects researchers from legal action when following program rules.",
+        "bug bounty triage": "Triage validates, reproduces, and prioritizes bug reports before developer assignment.",
+        "bug bounty reward structure": "Rewards based on severity (P1-P5), impact, exploit complexity, and asset criticality.",
+        "responsible disclosure process": "Standard 90-day disclosure timeline before public release of vulnerability details.",
+        "vulnerability severity ratings": "CVSS v3 metrics (attack vector, complexity, privileges, user interaction, scope, impact).",
+        "zero-day exploit pricing": "Zero-day exploits market ranges from $50,000 (web) to $2.5M+ (mobile/OS) for exclusive rights.",
+        "ghidra": "Ghidra is NSA's reverse engineering framework for analyzing malware and binaries.",
+        "idapro": "IDA Pro is a commercial disassembler and debugger for binary analysis.",
+        "binary ninja": "Binary Ninja is an intermediate-level reverse engineering platform with intuitive UI.",
+        "radare2": "Radare2 is an open-source reverse engineering framework with scripting capabilities.",
+        "x64dbg": "x64dbg is an open-source x64/x32 debugger for Windows with plugin support.",
+        "gdb peda": "PEDA (Python Exploit Development Assistance) enhances GDB for exploit development.",
+        "pwntools": "pwntools is a CTF framework and exploit development library for Python.",
+        "ropper": "Ropper searches for ROP gadgets and assembly instructions in binaries.",
+        "qemu user mode emulation": "QEMU user mode emulation runs foreign architecture binaries on host for debugging.",
+        "frida instrumentation": "Frida dynamically instruments running processes for analysis and bypassing security.",
+        "burp suite extension development": "Burp extensions (Python, Java, Ruby) automate custom attack scanning and testing.",
+        "zap scripting": "ZAP scripts (Groovy, JavaScript, Python) automate security testing flows.",
+        "intercepting proxies": "Tools like mitmproxy, Charles Proxy, and Fiddler intercept and modify HTTP/HTTPS traffic.",
+        "web cache deception": "Cache deception exploits misconfigured caches to expose sensitive user data.",
+    }
 
 # ---------- GESTIUNEA SESIUNII ----------
 if "logged_in" not in st.session_state: st.session_state.logged_in = False
