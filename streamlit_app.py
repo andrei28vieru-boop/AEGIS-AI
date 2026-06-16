@@ -76,7 +76,7 @@ st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
         
-         # ============================================
+        # ============================================
         # 💎 AEGIS LEVEL — Interactive Mentor (90 terms)
         # ============================================
         
@@ -1154,8 +1154,3519 @@ if "knowledge" not in st.session_state:
             "related": ["jms", "message queue", "broker", "activemq artemis", "stomp"]
         },
 
+        # ------------------
+        # EXPERT TERMS
+        # ------------------
         
-       
+        "variable": {
+            "beginner": "O variabilă este ca o cutie în care pui o valoare. Poți schimba ce e în cutie oricând vrei.",
+            "professional": "O variabilă este un identificator care referă o zonă de memorie ce conține o valoare. Tipul și durata ei depind de limbajul de programare.",
+            "expert": "O variabilă reprezintă un binding între un nume și o locație de memorie, gestionată prin reguli de scope, lifetime și tipare statice sau dinamice. În runtime, poate fi optimizată prin register allocation, escape analysis și constant folding."
+        }
+        "function": {
+          "beginner": "O funcție este ca o rețetă: îi dai ingrediente și îți dă un rezultat.",
+          "professional": "O funcție este un bloc de cod reutilizabil care primește argumente și returnează o valoare.",
+          "expert": "O funcție este o abstracție de ordin superior, suportând closures, currying și optimizări precum inlining."
+        }
+        "class": {
+          "beginner": "O clasă este un plan după care construiești obiecte.",
+          "professional": "O clasă definește proprietăți și metode pentru obiecte într-un sistem OOP.",
+          "expert": "O clasă este un tip compus cu mecanisme de meta‑programare, moștenire, polimorfism și reflecție."
+        }
+        "object": {
+          "beginner": "Un obiect este ceva construit după o clasă.",
+          "professional": "Un obiect este o instanță cu stare și comportament definit de clasă.",
+          "expert": "Un obiect este o entitate cu identitate, stare și metode, gestionată prin referințe și model de memorie."
+        }
+        "array": {
+          "beginner": "Un array este o listă ordonată de valori.",
+          "professional": "Un array este o structură de date indexată, cu elemente de același tip.",
+          "expert": "Un array este o zonă contiguă de memorie, optimizată pentru acces O(1) și operații vectorizate."
+        }
+        "list": {
+          "beginner": "O listă este o colecție de valori puse una după alta.",
+          "professional": "O listă este o structură de date dinamică ce poate crește sau micșora.",
+          "expert": "O listă poate fi implementată ca array dinamic sau linked list, cu trade‑off-uri între acces și inserare."
+        }
+        "dictionary": {
+          "beginner": "Un dicționar păstrează informații în perechi: cheie și valoare.",
+          "professional": "Un dictionary este o mapare hash între chei unice și valori.",
+          "expert": "Un dictionary folosește hashing, rezolvarea coliziunilor și rehashing pentru performanță amortizată O(1)."
+        }
+        "string": {
+          "beginner": "Un string este un șir de litere.",
+          "professional": "Un string este o secvență de caractere, de obicei imutabilă.",
+          "expert": "Un string este o structură optimizată pentru encoding, slicing și interning, cu modele de memorie specifice limbajului."
+        }
+        "boolean": {
+          "beginner": "Un boolean poate fi doar adevărat sau fals.",
+          "professional": "Un boolean reprezintă o valoare logică binară.",
+          "expert": "Un boolean este o reprezentare logică optimizată pentru branching, short‑circuiting și evaluare condițională."
+        }
+        "if_statement": {
+          "beginner": "Un if verifică o condiție și decide ce se întâmplă.",
+          "professional": "Un if controlează fluxul programului în funcție de expresii logice.",
+          "expert": "Un if este o ramificație condițională ce poate afecta predicția de ramură și performanța CPU."
+        }
+        "algorithm": {
+          "beginner": "Un algoritm este un set de pași pentru a rezolva o problemă.",
+          "professional": "Un algoritm este o procedură bine definită cu complexitate temporală și spațială.",
+          "expert": "Un algoritm este o strategie optimizată pentru performanță, analizată prin Big‑O, amortizare și comportament probabilistic."
+        }
+        "data_structure": {
+          "beginner": "O structură de date organizează informația.",
+          "professional": "O structură de date definește modul de stocare și acces al datelor.",
+          "expert": "O structură de date este o abstracție optimizată pentru operații specifice, cu trade‑off-uri între timp și memorie."
+        }
+        "recursion": {
+          "beginner": "Recursia este când o funcție se apelează pe ea însăși.",
+          "professional": "Recursia rezolvă probleme împărțindu-le în sub‑probleme mai mici.",
+          "expert": "Recursia implică call stack, optimizări tail‑call și transformări în iterație pentru performanță."
+        }
+        "oop": {
+          "beginner": "OOP este modul de a organiza codul în obiecte.",
+          "professional": "OOP folosește clase, obiecte și principii ca moștenirea și polimorfismul.",
+          "expert": "OOP este un model bazat pe abstracții, cu dispatch dinamic, encapsulare și meta‑programe."
+        }
+        "inheritance": {
+          "beginner": "Moștenirea permite unei clase să preia lucruri din altă clasă.",
+          "professional": "Moștenirea permite reutilizarea codului și extinderea comportamentului.",
+          "expert": "Moștenirea implementează ierarhii de tipuri, cu multiple inheritance, virtualizare și probleme ca diamond pattern."
+        }
+        "polymorphism": {
+          "beginner": "Polimorfismul permite aceluiași lucru să se comporte diferit.",
+          "professional": "Polimorfismul permite apelarea aceleiași metode pe obiecte diferite.",
+          "expert": "Polimorfismul include dynamic dispatch, overloading, overriding și sisteme avansate de tipare."
+        }
+        "encapsulation": {
+          "beginner": "Încapsularea ascunde detaliile și arată doar ce e important.",
+          "professional": "Încapsularea protejează datele prin acces controlat.",
+          "expert": "Încapsularea definește limite clare între API și implementare, permițând invariants și optimizări interne."
+        }
+        "abstraction": {
+          "beginner": "Abstracția simplifică lucrurile complicate.",
+          "professional": "Abstracția ascunde detaliile interne și expune doar funcționalitatea.",
+          "expert": "Abstracția creează niveluri conceptuale, reducând complexitatea prin contracte și interfețe."
+        }
+        "exception_handling": {
+          "beginner": "Gestionarea excepțiilor te ajută când apare o eroare.",
+          "professional": "Exception handling tratează erorile prin try, catch și finally.",
+          "expert": "Exception handling gestionează fluxul de control în situații anormale, cu costuri de runtime și modele de propagare."
+        }
+        "compiler": {
+          "beginner": "Un compiler transformă codul tău în ceva ce înțelege calculatorul.",
+          "professional": "Un compiler traduce codul sursă în cod mașină sau bytecode.",
+          "expert": "Un compiler implementează parsing, semantic analysis, optimizări IR și generare de cod pentru arhitecturi specifice."
+        }
+        "interpreter": {
+          "beginner": "Un interpreter execută codul linie cu linie.",
+          "professional": "Un interpreter analizează și rulează codul direct, fără compilare prealabilă.",
+          "expert": "Un interpreter poate folosi JIT, bytecode și optimizări dinamice pentru performanță."
+        }
+        "syntax": {
+          "beginner": "Sintaxa este modul corect de a scrie cod.",
+          "professional": "Sintaxa definește regulile formale ale limbajului.",
+          "expert": "Sintaxa este descrisă prin gramatici formale precum BNF și analizată prin parsere LL/LR."
+        }
+        "runtime": {
+          "beginner": "Runtime-ul este momentul când codul rulează.",
+          "professional": "Runtime-ul este mediul care gestionează execuția programului.",
+          "expert": "Runtime-ul include memory model, GC, thread scheduling și ABI‑uri specifice platformei."
+        }
+        "debugger": {
+          "beginner": "Un debugger te ajută să găsești greșeli în cod.",
+          "professional": "Un debugger permite inspectarea variabilelor și execuției pas cu pas.",
+          "expert": "Un debugger interacționează cu simboluri, breakpoints hardware și registre CPU."
+        }
+        "framework": {
+          "beginner": "Un framework te ajută să construiești aplicații mai ușor.",
+          "professional": "Un framework oferă structuri și reguli pentru dezvoltare.",
+          "expert": "Un framework definește un inversion of control, lifecycle hooks și extensibilitate modulară."
+        }
+        "library": {
+          "beginner": "O librărie este o colecție de funcții gata făcute.",
+          "professional": "O librărie oferă funcționalități reutilizabile pentru aplicații.",
+          "expert": "O librărie poate fi statică sau dinamică, cu ABI stabil și linking la runtime."
+        }
+        "api_call": {
+          "beginner": "Un API call este când ceri informații de la alt program.",
+          "professional": "Un API call este o cerere către un endpoint pentru date sau acțiuni.",
+          "expert": "Un API call implică protocoale, serializare, rate limiting și modele de autentificare."
+        }
+        "thread": {
+          "beginner": "Un thread este ca un mini-program care rulează în același timp cu altele.",
+          "professional": "Un thread este o unitate de execuție în cadrul unui proces.",
+          "expert": "Un thread implică scheduling, context switching și sincronizare prin primitive precum mutex și semafor."
+        }
+        "process": {
+          "beginner": "Un proces este un program care rulează.",
+          "professional": "Un proces are memorie proprie și resurse izolate.",
+          "expert": "Un proces include spațiu de adrese virtual, descriptorii de fișiere și contextul CPU."
+        }
+        "pointer": {
+          "beginner": "Un pointer arată către o locație din memorie.",
+          "professional": "Un pointer stochează adresa unei valori.",
+          "expert": "Pointerii permit aritmetică, dereferențiere și control fin al memoriei, dar implică riscuri precum dangling pointers."
+        }
+        "memory_allocation": {
+          "beginner": "Alocarea memoriei înseamnă să rezervi spațiu pentru date.",
+          "professional": "Memory allocation gestionează heap și stack.",
+          "expert": "Include algoritmi precum buddy system, slab allocator și garbage collection generational."
+        }
+        "garbage_collection": {
+          "beginner": "GC curăță memoria pe care nu o mai folosești.",
+          "professional": "Garbage collection eliberează automat obiectele neutilizate.",
+          "expert": "GC implementează mark‑and‑sweep, generational GC, compaction și write barriers."
+        }
+        "module": {
+          "beginner": "Un modul este un fișier cu cod organizat.",
+          "professional": "Un modul este o unitate logică de cod reutilizabil.",
+          "expert": "Modulele definesc namespace-uri, sisteme de import și izolare a dependențelor."
+        }
+        "package": {
+          "beginner": "Un pachet este o colecție de module.",
+          "professional": "Un package organizează modulele într-o structură coerentă.",
+          "expert": "Include metadata, versionare semantică și sisteme de distribuție precum pip sau npm."
+        }
+        "version_control": {
+          "beginner": "Version control salvează istoricul codului.",
+          "professional": "Un sistem de versionare gestionează modificările în proiect.",
+          "expert": "Git folosește DAG-uri, hashing și branching pentru colaborare distribuită."
+        }
+        "commit": {
+          "beginner": "Un commit salvează o schimbare în cod.",
+          "professional": "Un commit reprezintă un snapshot al proiectului.",
+          "expert": "Un commit este un nod într-un DAG Git, cu hash SHA‑1 și metadate."
+        }
+        "branch": {
+          "beginner": "Un branch este o linie separată de lucru.",
+          "professional": "Un branch permite dezvoltarea paralelă.",
+          "expert": "Un branch este un pointer mutabil către un commit, optimizat pentru operații O(1)."
+        }
+        "merge": {
+          "beginner": "Merge combină două linii de cod.",
+          "professional": "Merge integrează schimbările dintr-un branch în altul.",
+          "expert": "Merge folosește algoritmi de diff, trei‑căi și rezolvarea conflictelor."
+        }
+        "pull_request": {
+          "beginner": "Un pull request cere aprobarea pentru a adăuga cod.",
+          "professional": "Un PR permite review și integrare controlată.",
+          "expert": "Un PR include CI pipelines, code review și politici de protecție a branch‑urilor."
+        }
+        "unit_test": {
+          "beginner": "Un test verifică dacă o parte mică din cod funcționează.",
+          "professional": "Unit testing validează funcții individuale.",
+          "expert": "Unit tests folosesc mocking, coverage analysis și test runners."
+        }
+        "integration_test": {
+          "beginner": "Testele de integrare verifică dacă părțile lucrează împreună.",
+          "professional": "Integration tests validează interacțiunea modulelor.",
+          "expert": "Implică orchestrare, fixtures și medii izolate."
+        }
+        "deployment": {
+          "beginner": "Deployment înseamnă să pui aplicația online.",
+          "professional": "Deployment este procesul de livrare a aplicației către utilizatori.",
+          "expert": "Include CI/CD, rollback, blue‑green și canary releases."
+        }
+        "refactoring": {
+          "beginner": "Refactoring înseamnă să îmbunătățești codul fără să schimbi ce face.",
+          "professional": "Refactoring optimizează structura internă a codului.",
+          "expert": "Include patterns, code smells și tehnici precum extract method și dependency inversion."
+        }
+        "design_pattern": {
+          "beginner": "Un pattern este o soluție gata făcută pentru o problemă comună.",
+          "professional": "Design patterns sunt modele reutilizabile de arhitectură.",
+          "expert": "Include creational, structural și behavioral patterns, cu trade‑off-uri clare."
+        }
+        "event_loop": {
+          "beginner": "Event loop-ul gestionează acțiuni care se întâmplă în timp.",
+          "professional": "Event loop-ul procesează evenimente asincrone.",
+          "expert": "Implementat prin queue-uri, epoll/kqueue și cooperative scheduling."
+        }
+        "async_await": {
+          "beginner": "Async/await te ajută să faci lucruri în paralel.",
+          "professional": "Async/await gestionează operații asincrone fără blocking.",
+          "expert": "Implică coroutines, state machines și event-driven concurrency."
+        }
+        "lambda_function": {
+          "beginner": "O lambda este o funcție scurtă scrisă rapid.",
+          "professional": "O lambda este o funcție anonimă folosită pentru operații simple.",
+          "expert": "Lambda-urile sunt closures cu captură lexicală și optimizări inline."
+        }
+        "immutable": {
+          "beginner": "Imutabil înseamnă că nu poți schimba valoarea.",
+          "professional": "Un obiect imutabil nu poate fi modificat după creare.",
+          "expert": "Imutabilitatea permite optimizări, thread safety și structural sharing."
+        }
+        "mutable": {
+          "beginner": "Mutabil înseamnă că poți schimba valoarea.",
+          "professional": "Un obiect mutabil își poate modifica starea.",
+          "expert": "Mutabilitatea implică modele de memorie, aliasing și sincronizare."
+        }
+        "reconnaissance": {
+          "beginner": "Reconnaissance înseamnă să aduni informații despre o țintă.",
+          "professional": "Reconnaissance colectează date pasive și active pentru a înțelege suprafața de atac.",
+          "expert": "Reconnaissance include OSINT, footprinting, enumeration, passive DNS și tehnici stealth pentru evitarea detecției."
+        }
+        "footprinting": {
+          "beginner": "Footprinting înseamnă să afli detalii despre o companie sau un sistem.",
+          "professional": "Footprinting identifică domenii, IP-uri, servere și tehnologii expuse pentru a înțelege suprafața de atac.",
+          "expert": "Footprinting folosește DNS zone transfers, ASN mapping, certificate transparency, passive DNS și extragere de metadata pentru profilarea completă a țintei."
+        }
+        "enumeration": {
+          "beginner": "Enumeration înseamnă să descoperi ce servicii are o țintă.",
+          "professional": "Enumeration extrage utilizatori, porturi, servicii și versiuni.",
+          "expert": "Include SMB enumeration, LDAP queries, SNMP walks și protocol fingerprinting."
+        },
+        
+        "vulnerability_scanning": {
+          "beginner": "Scanezi ca să vezi dacă există probleme.",
+          "professional": "Detectează versiuni vulnerabile și configurări greșite.",
+          "expert": "Folosește CVE mapping, plugin engines, authenticated scans și scoring CVSS."
+        },
+        
+        "penetration_testing": {
+          "beginner": "Penetration testing testează securitatea unui sistem.",
+          "professional": "Simulează atacuri reale pentru a identifica vulnerabilități.",
+          "expert": "Include OSSTMM, PTES, chain-exploits, pivoting și privilege escalation."
+        },
+        
+        "exploit_development": {
+          "beginner": "Exploit înseamnă să profiți de o problemă.",
+          "professional": "Creează cod care declanșează vulnerabilități.",
+          "expert": "Include ROP chains, shellcode crafting, heap spraying și bypass-uri ASLR/DEP."
+        },
+        
+        "buffer_overflow": {
+          "beginner": "Apare când bagi prea multe date într-un spațiu mic.",
+          "professional": "Poate suprascrie memorie și executa cod arbitrar.",
+          "expert": "Include stack smashing, return-to-libc, NX bypass și mitigări moderne."
+        },
+        
+        "sql_injection": {
+          "beginner": "SQL injection păcălește baza de date.",
+          "professional": "Manipulează interogări SQL prin input nevalidat.",
+          "expert": "Include UNION-based, error-based, blind, time-based și WAF evasion."
+        },
+        
+        "xss": {
+          "beginner": "XSS permite injectarea de cod în pagini web.",
+          "professional": "Exploatează lipsa sanitizării inputului.",
+          "expert": "Include reflected, stored, DOM-based, CSP bypass și payload chaining."
+        },
+        
+        "csrf": {
+          "beginner": "CSRF păcălește un utilizator să facă acțiuni fără să vrea.",
+          "professional": "Exploatează sesiuni active prin cereri forțate.",
+          "expert": "Include SameSite bypass, token prediction și pre-flight manipulation."
+        },
+        
+        "rce": {
+          "beginner": "RCE permite atacatorului să execute comenzi.",
+          "professional": "Remote Code Execution compromite complet sistemul.",
+          "expert": "Include gadget chains, deserialization attacks și sandbox escapes."
+        },
+        
+        "privilege_escalation": {
+          "beginner": "Obții acces mai mare decât ar trebui.",
+          "professional": "Exploatează configurări greșite sau vulnerabilități.",
+          "expert": "Include kernel exploits, token impersonation și misconfig chaining."
+        },
+        
+        "pivoting": {
+          "beginner": "Pivoting înseamnă să treci dintr-o rețea în alta.",
+          "professional": "Folosești un sistem compromis ca punct de acces.",
+          "expert": "Include tunneling, SOCKS proxies, port forwarding și lateral movement."
+        },
+        
+        "lateral_movement": {
+          "beginner": "Te muți prin rețea.",
+          "professional": "Extinzi accesul folosind credențiale și sesiuni.",
+          "expert": "Include Pass-the-Hash, Kerberoasting, DCSync și AD abuse."
+        },
+        
+        "malware_analysis": {
+          "beginner": "Analizezi cum funcționează un virus.",
+          "professional": "Include analiză statică și dinamică.",
+          "expert": "Folosește disassembly, sandboxing, unpacking și behavior signatures."
+        },
+        
+        "reverse_engineering": {
+          "beginner": "Vezi cum e făcut un program.",
+          "professional": "Analizezi binare, protocoale și structuri interne.",
+          "expert": "Include decompilare, debugging avansat, hooking și patching."
+        },
+        
+        "siem": {
+          "beginner": "SIEM colectează loguri.",
+          "professional": "Corelează evenimente pentru detectarea atacurilor.",
+          "expert": "Include rule engines, UEBA, threat intel feeds și real-time correlation."
+        },
+        
+        "ids_ips": {
+          "beginner": "IDS/IPS detectează sau blochează atacuri.",
+          "professional": "IDS monitorizează, IPS previne.",
+          "expert": "Include signature-based, anomaly-based, packet inspection și tuning."
+        },
+        
+        "edr": {
+          "beginner": "EDR protejează calculatoarele.",
+          "professional": "Monitorizează comportamente și activități suspecte.",
+          "expert": "Include telemetry, behavioral analytics, memory scanning și rollback."
+        },
+        
+        "zero_day": {
+          "beginner": "O vulnerabilitate necunoscută.",
+          "professional": "Exploatată înainte de patch.",
+          "expert": "Include exploit chains, brokers, weaponization și obfuscation."
+        },
+        
+        "threat_hunting": {
+          "beginner": "Cauți atacuri ascunse.",
+          "professional": "Analizezi loguri și comportamente pentru anomalii.",
+          "expert": "Include hypothesis-driven hunting, YARA rules și memory forensics."
+        },
+        
+        "forensics": {
+          "beginner": "Investighezi ce s-a întâmplat pe un sistem.",
+          "professional": "Colectezi și analizezi dovezi digitale.",
+          "expert": "Include chain of custody, timeline analysis, carving și volatile memory forensics."
+        },
+        
+        "mitre_attck": {
+          "beginner": "O listă cu tehnici folosite de hackeri.",
+          "professional": "Framework pentru clasificarea tacticilor și tehnicilor adversarilor.",
+          "expert": "Include mapping, detection engineering și adversary emulation."
+        },
+        
+        "ddos": {
+          "beginner": "Atac care supraîncarcă un server.",
+          "professional": "Folosește trafic masiv pentru a bloca servicii.",
+          "expert": "Include botnets, amplification, reflection și mitigări CDN/WAF."
+        },
+        
+        "botnet": {
+          "beginner": "Rețea de calculatoare controlate de un hacker.",
+          "professional": "Botnet-urile execută atacuri coordonate.",
+          "expert": "Include C2 servers, fast-flux DNS și peer-to-peer botnets."
+        },
+        
+        "phishing": {
+          "beginner": "Mesaje false care încearcă să te păcălească.",
+          "professional": "Atac ce fură date prin social engineering.",
+          "expert": "Include spear phishing, whaling, clone phishing și payload obfuscation."
+        },
+        
+        "social_engineering": {
+          "beginner": "Atacatorul te păcălește să îi dai informații.",
+          "professional": "Manipulează comportamentul uman pentru acces.",
+          "expert": "Include pretexting, elicitation, vishing și psychological profiling."
+        },
+        
+        "ransomware": {
+          "beginner": "Virus care îți blochează fișierele.",
+          "professional": "Criptează date și cere răscumpărare.",
+          "expert": "Include double extortion, lateral spread, encryption routines și negotiation tactics."
+        },
+        
+        "keylogger": {
+          "beginner": "Program care îți înregistrează tastele.",
+          "professional": "Monitorizează input-ul utilizatorului.",
+          "expert": "Include kernel-level hooks, API interception și stealth persistence."
+        },
+        
+        "rootkit": {
+          "beginner": "Software ascuns care controlează sistemul.",
+          "professional": "Ascunde procese, fișiere și activități.",
+          "expert": "Include kernel patching, hypervisor rootkits și firmware persistence."
+        },
+        
+        "supply_chain_attack": {
+          "beginner": "Atac printr-un furnizor.",
+          "professional": "Compromite un element din lanțul software.",
+          "expert": "Include dependency poisoning, CI/CD compromise și signed malware injection."
+        },
+        
+        "waf": {
+          "beginner": "Protejează site-urile de atacuri.",
+          "professional": "Filtrează trafic HTTP pentru atacuri web.",
+          "expert": "Include rule tuning, anomaly detection și bypass techniques."
+        },
+        
+        "honeypot": {
+          "beginner": "Sistem capcană pentru hackeri.",
+          "professional": "Atrag atacatori pentru analiză.",
+          "expert": "Include high-interaction honeypots, deception grids și threat intelligence feeds."
+        },
+        
+        "tls": {
+          "beginner": "Criptează conexiunile.",
+          "professional": "Asigură confidențialitate și integritate.",
+          "expert": "Include handshake, cipher suites, PFS și certificate pinning."
+        },
+        
+        "hashing": {
+          "beginner": "Transformă datele într-un cod unic.",
+          "professional": "Asigură integritate și verificare.",
+          "expert": "Include SHA‑256, salting, peppering și collision resistance."
+        },
+        
+        "firewall": {
+          "beginner": "Blochează accesul nedorit.",
+          "professional": "Controlează traficul între rețele.",
+          "expert": "Include stateful inspection, NGFW, DPI și segmentation."
+        },
+        
+        "vpn": {
+          "beginner": "Ascunde traficul tău online.",
+          "professional": "Creează tunel criptat între două puncte.",
+          "expert": "Include IPSec, OpenVPN, WireGuard și key exchange."
+        },
+        
+        "incident_response": {
+          "beginner": "Reacționezi la un atac.",
+          "professional": "Urmezi proceduri pentru a limita daunele.",
+          "expert": "Include triage, containment, eradication, recovery și post-mortem."
+        },
+        
+        "threat_intelligence": {
+          "beginner": "Informații despre hackeri.",
+          "professional": "Analizează indicatori și campanii.",
+          "expert": "Include IOC feeds, TTP mapping, enrichment și automation."
+        },
+        
+        "data_exfiltration": {
+          "beginner": "Furt de date.",
+          "professional": "Transfer neautorizat de informații.",
+          "expert": "Include covert channels, DNS tunneling și encrypted exfil."
+        },
+        
+        "air_gap_bypass": {
+          "beginner": "Treci de un sistem fără internet.",
+          "professional": "Exploatezi canale fizice sau electromagnetice.",
+          "expert": "Include ultrasonic exfil, LED modulation și power-line signaling."
+        },
+        
+        "bruteforce": {
+          "beginner": "Încerci toate parolele până găsești una bună.",
+          "professional": "Atac automatizat asupra autentificării.",
+          "expert": "Include credential stuffing, rate limiting bypass și GPU cracking."
+        },
+        
+        "password_spraying": {
+          "beginner": "Încerci o parolă pe mulți utilizatori.",
+          "professional": "Evită blocarea conturilor.",
+          "expert": "Include timing attacks, federation abuse și stealth automation."
+        },
+        
+        "kerberoasting": {
+          "beginner": "Atac asupra autentificării Windows.",
+          "professional": "Extrage bilete Kerberos pentru crack.",
+          "expert": "Include SPN enumeration, RC4-HMAC cracking și AD privilege escalation."
+        },
+        
+        "dns_spoofing": {
+          "beginner": "Redirecționezi utilizatorii către site-uri false.",
+          "professional": "Manipulezi răspunsurile DNS.",
+          "expert": "Include cache poisoning, MITM și DNSSEC bypass."
+        },
+        
+        "mitm": {
+          "beginner": "Te pui între două persoane care comunică.",
+          "professional": "Interceptezi și modifici traficul.",
+          "expert": "Include ARP spoofing, SSL stripping și rogue APs."
+        },
+        
+        "session_hijacking": {
+          "beginner": "Furi sesiunea unui utilizator.",
+          "professional": "Exploatezi cookie-uri sau token-uri.",
+          "expert": "Include fixation, prediction și token replay."
+        },
+        
+        "secure_coding": {
+          "beginner": "Scrii cod fără vulnerabilități.",
+          "professional": "Aplici reguli pentru a preveni atacuri.",
+          "expert": "Include input validation, sanitization, memory safety și threat modeling."
+        }
+        "machine_learning": {
+          "beginner": "Machine learning înseamnă să înveți calculatorul să recunoască modele.",
+          "professional": "ML folosește algoritmi care învață din date pentru a face predicții.",
+          "expert": "Include supervised, unsupervised, reinforcement learning, optimizări și tuning avansat."
+        },
+        
+        "deep_learning": {
+          "beginner": "Deep learning folosește rețele neuronale mari.",
+          "professional": "DL antrenează modele cu multe straturi pentru sarcini complexe.",
+          "expert": "Include CNN, RNN, Transformers, backpropagation și optimizări GPU."
+        },
+        
+        "neural_network": {
+          "beginner": "O rețea neuronală imită creierul.",
+          "professional": "Este formată din straturi de neuroni artificiali conectați.",
+          "expert": "Include activări, regularizare, initialization strategies și gradient flow."
+        },
+        
+        "supervised_learning": {
+          "beginner": "Modelul învață din exemple cu răspuns corect.",
+          "professional": "Folosește date etichetate pentru clasificare și regresie.",
+          "expert": "Include loss functions, sampling, imbalance handling și generalization theory."
+        },
+        
+        "unsupervised_learning": {
+          "beginner": "Modelul învață fără răspunsuri corecte.",
+          "professional": "Descoperă structuri ascunse în date.",
+          "expert": "Include clustering, dimensionality reduction și density estimation."
+        },
+        
+        "reinforcement_learning": {
+          "beginner": "Modelul învață prin încercări și greșeli.",
+          "professional": "Optimizează acțiuni pentru a maximiza o recompensă.",
+          "expert": "Include Q-learning, policy gradients, actor-critic și exploration strategies."
+        },
+        
+        "transformer": {
+          "beginner": "Transformer-ul este un model folosit în AI modern.",
+          "professional": "Folosește self-attention pentru procesarea secvențelor.",
+          "expert": "Include multi-head attention, positional encoding și arhitecturi encoder-decoder."
+        },
+        
+        "self_attention": {
+          "beginner": "Modelul se uită la toate cuvintele din propoziție.",
+          "professional": "Calculează relații între tokeni pentru context.",
+          "expert": "Include scaled dot-product attention, masking și optimizări hardware."
+        },
+        
+        "embedding": {
+          "beginner": "Embedding-ul transformă cuvintele în numere.",
+          "professional": "Reprezintă datele în vectori densi cu semnificație semantică.",
+          "expert": "Include word2vec, GloVe, positional embeddings și vector spaces."
+        },
+        
+        "tokenization": {
+          "beginner": "Împarte textul în bucăți mici.",
+          "professional": "Transformă textul în tokeni pentru modele.",
+          "expert": "Include BPE, WordPiece, SentencePiece și subword segmentation."
+        },
+        
+        "optimizer": {
+          "beginner": "Optimizer-ul ajută modelul să învețe.",
+          "professional": "Ajustează parametrii pentru a minimiza loss-ul.",
+          "expert": "Include AdamW, momentum, learning rate schedules și gradient clipping."
+        },
+        
+        "loss_function": {
+          "beginner": "Loss-ul arată cât de greșit este modelul.",
+          "professional": "Măsoară diferența dintre predicții și realitate.",
+          "expert": "Include cross-entropy, MSE, KL divergence și custom loss design."
+        },
+        
+        "regularization": {
+          "beginner": "Ajută modelul să nu învețe greșit.",
+          "professional": "Previne overfitting prin penalizări.",
+          "expert": "Include dropout, L1/L2, early stopping și data augmentation."
+        },
+        
+        "overfitting": {
+          "beginner": "Modelul învață prea mult și greșește pe date noi.",
+          "professional": "Se potrivește excesiv pe setul de antrenare.",
+          "expert": "Include variance analysis, complexity control și validation strategies."
+        },
+        
+        "underfitting": {
+          "beginner": "Modelul nu învață destul.",
+          "professional": "Nu capturează structura datelor.",
+          "expert": "Include bias analysis, model capacity și feature engineering."
+        },
+        
+        "gradient_descent": {
+          "beginner": "Modelul învață pas cu pas.",
+          "professional": "Optimizează parametrii prin coborârea pe gradient.",
+          "expert": "Include SGD, mini-batch, momentum și adaptive optimizers."
+        },
+        
+        "backpropagation": {
+          "beginner": "Modelul află unde a greșit.",
+          "professional": "Calculează gradientul pentru fiecare parametru.",
+          "expert": "Include chain rule, computational graphs și gradient stability."
+        },
+        
+        "batch_normalization": {
+          "beginner": "Stabilizează învățarea.",
+          "professional": "Normalizează activările pe batch.",
+          "expert": "Include internal covariate shift, inference mode și training dynamics."
+        },
+        
+        "layer_normalization": {
+          "beginner": "Normalizează fiecare strat.",
+          "professional": "Funcționează bine în Transformers.",
+          "expert": "Include per-token normalization și stabilitate în modele mari."
+        },
+        
+        "dropout": {
+          "beginner": "Oprește temporar neuroni.",
+          "professional": "Previne overfitting prin randomizare.",
+          "expert": "Include dropout masks, inference scaling și variational dropout."
+        },
+        
+        "cnn": {
+          "beginner": "CNN procesează imagini.",
+          "professional": "Folosește filtre pentru a extrage caracteristici.",
+          "expert": "Include convoluții, pooling, receptive fields și arhitecturi moderne."
+        },
+        
+        "rnn": {
+          "beginner": "RNN procesează text sau secvențe.",
+          "professional": "Păstrează contextul în timp.",
+          "expert": "Include LSTM, GRU, vanishing gradients și sequence modeling."
+        },
+        
+        "lstm": {
+          "beginner": "LSTM ține minte mai mult timp.",
+          "professional": "Folosește celule cu gating pentru memorie.",
+          "expert": "Include forget/input/output gates și stabilitate pe secvențe lungi."
+        },
+        
+        "gru": {
+          "beginner": "GRU e ca LSTM dar mai simplu.",
+          "professional": "Folosește două gate-uri pentru memorie.",
+          "expert": "Include update/reset gates și eficiență computațională."
+        },
+        
+        "autoencoder": {
+          "beginner": "Autoencoderul comprimă și reconstruiește date.",
+          "professional": "Învață reprezentări latente.",
+          "expert": "Include variational autoencoders, bottlenecks și latent space modeling."
+        },
+        
+        "vae": {
+          "beginner": "VAE generează date noi.",
+          "professional": "Folosește distribuții probabilistice.",
+          "expert": "Include reparametrization trick, KL loss și latent sampling."
+        },
+        
+        "gan": {
+          "beginner": "GAN generează imagini sau date.",
+          "professional": "Folosește generator și discriminator.",
+          "expert": "Include training instability, mode collapse și arhitecturi moderne."
+        },
+        
+        "diffusion_model": {
+          "beginner": "Model care generează imagini foarte realiste.",
+          "professional": "Inversează un proces de zgomot pentru a crea date.",
+          "expert": "Include UNet, noise schedulers, sampling steps și guidance."
+        },
+        
+        "prompt_engineering": {
+          "beginner": "Scrii instrucțiuni pentru AI.",
+          "professional": "Optimizezi inputul pentru rezultate mai bune.",
+          "expert": "Include chain-of-thought, few-shot, role prompting și control al modelelor mari."
+        },
+        
+        "fine_tuning": {
+          "beginner": "Îmbunătățești un model deja antrenat.",
+          "professional": "Adaptezi modelul la un set nou de date.",
+          "expert": "Include LoRA, QLoRA, PEFT și training eficient pe GPU."
+        },
+        
+        "lora": {
+          "beginner": "Metodă de antrenare rapidă.",
+          "professional": "Adaugă straturi mici pentru a modifica modelul.",
+          "expert": "Include rank decomposition, adapters și memory-efficient training."
+        },
+        
+        "quantization": {
+          "beginner": "Face modelul mai mic.",
+          "professional": "Reduce precizia numerelor pentru performanță.",
+          "expert": "Include INT8, FP8, GPTQ și quantization-aware training."
+        },
+        
+        "model_compression": {
+          "beginner": "Micșorezi modelul.",
+          "professional": "Optimizezi parametrii și structura.",
+          "expert": "Include pruning, distillation și weight sharing."
+        },
+        
+        "knowledge_distillation": {
+          "beginner": "Un model mare învață un model mic.",
+          "professional": "Transferă cunoștințe între modele.",
+          "expert": "Include teacher-student training, soft targets și compression pipelines."
+        },
+        
+        "rag": {
+          "beginner": "Modelul caută informații înainte să răspundă.",
+          "professional": "Combină LLM cu un sistem de căutare.",
+          "expert": "Include vector stores, embeddings, retrievers și context optimization."
+        },
+        
+        "vector_database": {
+          "beginner": "Stochează informații ca vectori.",
+          "professional": "Permite căutare semantică rapidă.",
+          "expert": "Include HNSW, IVF, PQ și indexing avansat."
+        },
+        
+        "semantic_search": {
+          "beginner": "Căutare după sens, nu după cuvinte.",
+          "professional": "Folosește embeddings pentru relevanță.",
+          "expert": "Include similarity metrics, ANN search și reranking."
+        },
+        
+        "model_serving": {
+          "beginner": "Pui modelul online.",
+          "professional": "Servești inferențe prin API.",
+          "expert": "Include batching, quantization, GPU scheduling și autoscaling."
+        },
+        
+        "inference_optimization": {
+          "beginner": "Modelul răspunde mai repede.",
+          "professional": "Optimizezi latența și costul.",
+          "expert": "Include tensor fusion, KV caching, speculative decoding și graph optimization."
+        },
+        
+        "speculative_decoding": {
+          "beginner": "Modelul ghicește mai repede următoarele cuvinte.",
+          "professional": "Folosește modele mici pentru accelerare.",
+          "expert": "Include draft models, verification steps și parallel decoding."
+        },
+        
+        "multimodal_ai": {
+          "beginner": "AI care înțelege imagini, text și sunet.",
+          "professional": "Combină mai multe tipuri de date.",
+          "expert": "Include cross-attention, fusion layers și alignment training."
+        },
+        
+        "alignment": {
+          "beginner": "AI-ul trebuie să se comporte corect.",
+          "professional": "Asiguri că modelul respectă reguli.",
+          "expert": "Include RLHF, preference modeling și safety constraints."
+        },
+        
+        "rlhf": {
+          "beginner": "Oamenii învață AI-ul cum să răspundă.",
+          "professional": "Optimizează modelul după preferințe umane.",
+          "expert": "Include reward models, PPO și feedback loops."
+        },
+        
+        "hallucination": {
+          "beginner": "AI-ul inventează lucruri.",
+          "professional": "Apare când modelul nu are informații corecte.",
+          "expert": "Include uncertainty modeling, retrieval grounding și consistency checks."
+        },
+        
+        "ai_safety": {
+          "beginner": "AI-ul trebuie să fie sigur.",
+          "professional": "Previne comportamente nedorite.",
+          "expert": "Include red-teaming, guardrails, interpretability și risk mitigation."
+        }
+        "cloud_computing": {
+          "beginner": "Cloud-ul îți permite să folosești servere pe internet.",
+          "professional": "Cloud computing oferă resurse scalabile: compute, storage, networking.",
+          "expert": "Include arhitecturi cloud-native, autoscaling, multi-region, cost optimization și microservicii."
+        },
+        
+        "iaas": {
+          "beginner": "Primești servere virtuale în cloud.",
+          "professional": "Infrastructure as a Service oferă VM-uri, rețele și stocare.",
+          "expert": "Include provisioning automat, VPC design, load balancing și securitate granulară."
+        },
+        
+        "paas": {
+          "beginner": "Primești o platformă gata pentru aplicații.",
+          "professional": "Platform as a Service gestionează runtime, scaling și deployment.",
+          "expert": "Include buildpacks, managed runtimes, autoscaling și CI/CD integrat."
+        },
+        
+        "saas": {
+          "beginner": "Folosești aplicații direct din browser.",
+          "professional": "Software as a Service livrează aplicații complet gestionate.",
+          "expert": "Include multi-tenancy, API integration, SSO și SLA-uri enterprise."
+        },
+        
+        "devops": {
+          "beginner": "DevOps unește programatorii și administratorii.",
+          "professional": "DevOps automatizează livrarea software-ului.",
+          "expert": "Include CI/CD, IaC, observability, pipelines și release automation."
+        },
+        
+        "cicd": {
+          "beginner": "CI/CD livrează cod automat.",
+          "professional": "Automatizează build, test și deployment.",
+          "expert": "Include pipelines declarative, canary releases, blue-green și rollback automat."
+        },
+        
+        "docker": {
+          "beginner": "Docker pune aplicațiile în containere.",
+          "professional": "Containerele rulează izolat și portabil.",
+          "expert": "Include images, layers, registries, multi-stage builds și security hardening."
+        },
+        
+        "container": {
+          "beginner": "Un container e o aplicație împachetată complet.",
+          "professional": "Rulează izolat folosind namespace-uri și cgroups.",
+          "expert": "Include OCI standards, runtime-uri și optimizări de resurse."
+        },
+        
+        "kubernetes": {
+          "beginner": "Kubernetes gestionează containerele.",
+          "professional": "Orchestrează deployment, scaling și networking.",
+          "expert": "Include control plane, pods, services, ingress, operators și service mesh."
+        },
+        
+        "helm": {
+          "beginner": "Helm instalează aplicații în Kubernetes.",
+          "professional": "Folosește charts pentru deployment-uri complexe.",
+          "expert": "Include templating, versioning, releases și dependency management."
+        },
+        
+        "terraform": {
+          "beginner": "Terraform construiește infrastructură automat.",
+          "professional": "IaC declarativ pentru cloud providers.",
+          "expert": "Include state management, modules, workspaces și pipelines GitOps."
+        },
+        
+        "ansible": {
+          "beginner": "Ansible configurează servere automat.",
+          "professional": "Folosește playbooks pentru provisioning.",
+          "expert": "Include idempotency, roles, inventories și orchestration avansat."
+        },
+        
+        "gitops": {
+          "beginner": "Git controlează infrastructura.",
+          "professional": "Deployment-urile sunt gestionate prin Git.",
+          "expert": "Include ArgoCD, Flux, reconciliation loops și declarative operations."
+        },
+        
+        "serverless": {
+          "beginner": "Rulezi cod fără servere.",
+          "professional": "Funcțiile se execută la cerere.",
+          "expert": "Include event-driven design, cold starts, concurrency și cost optimization."
+        },
+        
+        "lambda": {
+          "beginner": "Lambda rulează funcții în AWS.",
+          "professional": "Funcții serverless integrate cu AWS services.",
+          "expert": "Include triggers, layers, IAM policies și orchestration Step Functions."
+        },
+        
+        "load_balancer": {
+          "beginner": "Împarte traficul între servere.",
+          "professional": "Asigură disponibilitate și performanță.",
+          "expert": "Include L4/L7 balancing, health checks, sticky sessions și autoscaling."
+        },
+        
+        "autoscaling": {
+          "beginner": "Serverele cresc sau scad automat.",
+          "professional": "Scalează resursele în funcție de trafic.",
+          "expert": "Include predictive scaling, HPA, VPA și cluster autoscaler."
+        },
+        
+        "microservices": {
+          "beginner": "Aplicația e împărțită în bucăți mici.",
+          "professional": "Servicii independente comunică prin API-uri.",
+          "expert": "Include service discovery, resilience patterns și distributed tracing."
+        },
+        
+        "service_mesh": {
+          "beginner": "Controlează traficul dintre microservicii.",
+          "professional": "Oferă observability, routing și securitate.",
+          "expert": "Include sidecars, mTLS, retries, circuit breaking și Istio/Linkerd."
+        },
+        
+        "api_gateway": {
+          "beginner": "Un singur punct de intrare pentru API-uri.",
+          "professional": "Gestionează routing, rate limiting și auth.",
+          "expert": "Include JWT validation, caching, transformations și multi-region routing."
+        },
+        
+        "observability": {
+          "beginner": "Vezi ce face aplicația.",
+          "professional": "Include logs, metrics și traces.",
+          "expert": "Include OpenTelemetry, dashboards, SLO-uri și distributed tracing."
+        },
+        
+        "monitoring": {
+          "beginner": "Monitorizezi serverele.",
+          "professional": "Colectezi metrici și alerte.",
+          "expert": "Include Prometheus, Grafana, exporters și alert rules."
+        },
+        
+        "logging": {
+          "beginner": "Salvezi ce se întâmplă în aplicație.",
+          "professional": "Centralizezi loguri pentru analiză.",
+          "expert": "Include ELK stack, log pipelines și retention policies."
+        },
+        
+        "distributed_tracing": {
+          "beginner": "Urmărești cererile prin microservicii.",
+          "professional": "Analizezi latența și erorile.",
+          "expert": "Include spans, context propagation și Jaeger/Zipkin."
+        },
+        
+        "high_availability": {
+          "beginner": "Sistemul nu cade.",
+          "professional": "Folosește redundanță și failover.",
+          "expert": "Include multi-AZ, multi-region, quorum și replication."
+        },
+        
+        "scalability": {
+          "beginner": "Sistemul crește când ai nevoie.",
+          "professional": "Scalează orizontal sau vertical.",
+          "expert": "Include sharding, load distribution și elasticity."
+        },
+        
+        "fault_tolerance": {
+          "beginner": "Sistemul rezistă la probleme.",
+          "professional": "Continuă să funcționeze chiar dacă ceva cade.",
+          "expert": "Include retries, circuit breakers și redundancy patterns."
+        },
+        
+        "blue_green_deployment": {
+          "beginner": "Două versiuni ale aplicației, una activă.",
+          "professional": "Schimbi traficul între versiuni fără downtime.",
+          "expert": "Include traffic shifting, rollback instant și environment parity."
+        },
+        
+        "canary_deployment": {
+          "beginner": "Testezi noua versiune pe puțini utilizatori.",
+          "professional": "Monitorizezi impactul înainte de rollout complet.",
+          "expert": "Include progressive delivery, metrics gating și automated rollback."
+        },
+        
+        "rolling_update": {
+          "beginner": "Actualizezi serverele pe rând.",
+          "professional": "Eviți downtime-ul.",
+          "expert": "Include surge/availability settings și batch strategies."
+        },
+        
+        "reverse_proxy": {
+          "beginner": "Trimite cererile către servere.",
+          "professional": "Optimizează routing și caching.",
+          "expert": "Include Nginx, Envoy, TLS termination și load distribution."
+        },
+        
+        "cdn": {
+          "beginner": "Face site-urile mai rapide.",
+          "professional": "Servește conținut din locații apropiate.",
+          "expert": "Include edge caching, invalidation și global routing."
+        },
+        
+        "vpc": {
+          "beginner": "Rețea privată în cloud.",
+          "professional": "Controlezi subrețele, rute și securitate.",
+          "expert": "Include NACLs, security groups, peering și private endpoints."
+        },
+        
+        "subnet": {
+          "beginner": "O parte din rețea.",
+          "professional": "Împarte VPC-ul în zone logice.",
+          "expert": "Include public/private subnets, routing și isolation."
+        },
+        
+        "iam": {
+          "beginner": "Controlezi cine are acces.",
+          "professional": "Gestionezi permisiuni și roluri.",
+          "expert": "Include least privilege, policies, STS și identity federation."
+        },
+        
+        "secrets_manager": {
+          "beginner": "Ține parolele în siguranță.",
+          "professional": "Stochează și rotește secrete.",
+          "expert": "Include encryption, rotation policies și audit logging."
+        },
+        
+        "load_testing": {
+          "beginner": "Testezi cât trafic suportă aplicația.",
+          "professional": "Simulezi utilizatori reali.",
+          "expert": "Include stress, soak, spike testing și performance baselines."
+        },
+        
+        "edge_computing": {
+          "beginner": "Procesare aproape de utilizator.",
+          "professional": "Reduce latența și traficul.",
+          "expert": "Include edge nodes, caching, serverless edge și IoT integration."
+        },
+        
+        "multi_cloud": {
+          "beginner": "Folosești mai mulți provideri cloud.",
+          "professional": "Distribui workload-uri între platforme.",
+          "expert": "Include portability, abstraction layers și failover cross-cloud."
+        },
+        
+        "hybrid_cloud": {
+          "beginner": "Combini cloud-ul cu serverele tale.",
+          "professional": "Integrezi on-prem cu cloud public.",
+          "expert": "Include VPN, Direct Connect, identity sync și workload migration."
+        },
+        
+        "orchestration": {
+          "beginner": "Automatizezi procese.",
+          "professional": "Coordonezi servicii și resurse.",
+          "expert": "Include workflows, DAGs, Airflow și event-driven pipelines."
+        },
+        
+        "configuration_management": {
+          "beginner": "Configurezi servere automat.",
+          "professional": "Menții consistența mediilor.",
+          "expert": "Include Ansible, Puppet, Chef și declarative configs."
+        },
+        
+        "release_management": {
+          "beginner": "Controlezi lansările aplicației.",
+          "professional": "Planifici și automatizezi release-uri.",
+          "expert": "Include versioning, approvals, rollback și governance."
+        },
+        
+        "finops": {
+          "beginner": "Controlezi costurile din cloud.",
+          "professional": "Optimizezi consumul și bugetele.",
+          "expert": "Include cost allocation, rightsizing și forecasting."
+        }
+        "networking": {
+          "beginner": "Networking înseamnă conectarea calculatoarelor între ele.",
+          "professional": "Networking gestionează comunicarea între dispozitive prin protocoale și infrastructură.",
+          "expert": "Include routing, switching, subnetting, QoS, SDN și arhitecturi enterprise."
+        },
+        
+        "ip_address": {
+          "beginner": "IP-ul este adresa calculatorului tău pe internet.",
+          "professional": "IP identifică unic un dispozitiv într-o rețea. Versiuni: IPv4, IPv6.",
+          "expert": "Include subnetting, CIDR, NAT traversal și IPv6 addressing schemes."
+        },
+        
+        "subnetting": {
+          "beginner": "Împarți o rețea în bucăți mai mici.",
+          "professional": "Subnetting optimizează utilizarea adreselor IP.",
+          "expert": "Include VLSM, CIDR, route summarization și design enterprise."
+        },
+        
+        "cidr": {
+          "beginner": "CIDR arată câte adrese are o rețea.",
+          "professional": "Classless Inter-Domain Routing definește prefixele IP.",
+          "expert": "Include route aggregation, efficient addressing și ISP-level routing."
+        },
+        
+        "mac_address": {
+          "beginner": "MAC este numărul unic al plăcii de rețea.",
+          "professional": "Identificator hardware de 48 biți pentru nivelul 2.",
+          "expert": "Include OUI lookup, spoofing, filtering și L2 security."
+        },
+        
+        "arp": {
+          "beginner": "ARP găsește adresa MAC după IP.",
+          "professional": "Address Resolution Protocol mapează IP → MAC.",
+          "expert": "Include ARP cache poisoning, mitigation și gratuitous ARP."
+        },
+        
+        "dhcp": {
+          "beginner": "DHCP dă automat IP-uri.",
+          "professional": "Dynamic Host Configuration Protocol alocă IP, gateway, DNS.",
+          "expert": "Include DHCP relay, reservations, scopes și security hardening."
+        },
+        
+        "dns": {
+          "beginner": "DNS traduce nume în IP-uri.",
+          "professional": "Domain Name System rezolvă domenii prin zone și recorduri.",
+          "expert": "Include DNSSEC, caching, zone transfers și load balancing."
+        },
+        
+        "routing": {
+          "beginner": "Routing-ul trimite datele pe drumul corect.",
+          "professional": "Routerele decid traseul pachetelor între rețele.",
+          "expert": "Include static/dynamic routing, ECMP, BGP, OSPF și convergence."
+        },
+        
+        "switching": {
+          "beginner": "Switch-ul conectează dispozitive într-o rețea locală.",
+          "professional": "Switching operează la Layer 2 folosind MAC forwarding.",
+          "expert": "Include VLANs, STP, trunking, LACP și port security."
+        },
+        
+        "vlan": {
+          "beginner": "VLAN împarte rețeaua în zone separate.",
+          "professional": "Virtual LAN izolează traficul logic.",
+          "expert": "Include tagging 802.1Q, trunking, inter-VLAN routing și segmentation."
+        },
+        
+        "stp": {
+          "beginner": "STP previne buclele în rețea.",
+          "professional": "Spanning Tree Protocol creează o topologie fără bucle.",
+          "expert": "Include RSTP, MSTP, BPDU guard și root bridge optimization."
+        },
+        
+        "lacp": {
+          "beginner": "LACP combină mai multe cabluri într-unul mai rapid.",
+          "professional": "Link Aggregation Control Protocol crește banda și redundanța.",
+          "expert": "Include LAG hashing, active/passive modes și failover."
+        },
+        
+        "nat": {
+          "beginner": "NAT ascunde IP-urile interne.",
+          "professional": "Network Address Translation mapează IP-uri private ↔ publice.",
+          "expert": "Include PAT, static NAT, hairpinning și firewall integration."
+        },
+        
+        "firewall_rules": {
+          "beginner": "Regulile firewall decid ce intră și ce iese.",
+          "professional": "Permit/deny pe porturi, IP-uri și protocoale.",
+          "expert": "Include L3/L4 filtering, stateful inspection și zero trust."
+        },
+        
+        "tcp": {
+          "beginner": "TCP trimite date în ordine și fără pierderi.",
+          "professional": "Protocol orientat pe conexiune cu handshake 3-way.",
+          "expert": "Include congestion control, window scaling și retransmission logic."
+        },
+        
+        "udp": {
+          "beginner": "UDP trimite date rapid, fără verificări.",
+          "professional": "Protocol fără conexiune, folosit pentru streaming.",
+          "expert": "Include packet loss handling, NAT traversal și low-latency design."
+        },
+        
+        "http": {
+          "beginner": "HTTP este limbajul web-ului.",
+          "professional": "Protocol pentru transferul paginilor web.",
+          "expert": "Include HTTP/2 multiplexing, HTTP/3 QUIC și caching strategies."
+        },
+        
+        "https": {
+          "beginner": "HTTPS este HTTP securizat.",
+          "professional": "Folosește TLS pentru criptare.",
+          "expert": "Include certificate pinning, HSTS și handshake optimization."
+        },
+        
+        "load_balancing": {
+          "beginner": "Împarte traficul între servere.",
+          "professional": "Crește performanța și disponibilitatea.",
+          "expert": "Include L4/L7 balancing, health checks și global load balancing."
+        },
+        
+        "qos": {
+          "beginner": "QoS prioritizează traficul important.",
+          "professional": "Quality of Service gestionează latența și banda.",
+          "expert": "Include DSCP, shaping, policing și queue management."
+        },
+        
+        "mtu": {
+          "beginner": "MTU este mărimea maximă a unui pachet.",
+          "professional": "Afectează performanța și fragmentarea.",
+          "expert": "Include jumbo frames, PMTUD și optimization."
+        },
+        
+        "packet_sniffing": {
+          "beginner": "Sniffing înseamnă să vezi traficul din rețea.",
+          "professional": "Analizezi pachete cu Wireshark.",
+          "expert": "Include deep packet inspection, filters și protocol analysis."
+        },
+        
+        "wireshark": {
+          "beginner": "Wireshark arată tot traficul din rețea.",
+          "professional": "Analizor de pachete pentru debugging.",
+          "expert": "Include display filters, dissectors și capture optimization."
+        },
+        
+        "bgp": {
+          "beginner": "BGP conectează internetul.",
+          "professional": "Border Gateway Protocol gestionează rutele globale.",
+          "expert": "Include AS paths, route reflectors, peering și traffic engineering."
+        },
+        
+        "ospf": {
+          "beginner": "OSPF găsește cel mai scurt drum.",
+          "professional": "Protocol interior de routing pe link-state.",
+          "expert": "Include areas, LSAs, DR/BDR și fast convergence."
+        },
+        
+        "ethernet": {
+          "beginner": "Ethernet este cablul de rețea.",
+          "professional": "Standard pentru rețele LAN.",
+          "expert": "Include 802.3 standards, PoE, full-duplex și frame structure."
+        },
+        
+        "poe": {
+          "beginner": "PoE trimite curent prin cablul de rețea.",
+          "professional": "Power over Ethernet alimentează camere, AP-uri, telefoane.",
+          "expert": "Include PoE+, PoE++, power budgets și negotiation."
+        },
+        
+        "vpn_tunnel": {
+          "beginner": "VPN creează un tunel securizat.",
+          "professional": "Criptează traficul între două locații.",
+          "expert": "Include IPSec, SSL VPN, IKEv2 și split tunneling."
+        },
+        
+        "ssid": {
+          "beginner": "SSID este numele rețelei Wi-Fi.",
+          "professional": "Identifică un WLAN.",
+          "expert": "Include hidden SSID, multi-SSID și VLAN mapping."
+        },
+        
+        "wpa3": {
+          "beginner": "WPA3 securizează Wi-Fi-ul.",
+          "professional": "Standard modern de criptare wireless.",
+          "expert": "Include SAE handshake, forward secrecy și enterprise mode."
+        },
+        
+        "mesh_network": {
+          "beginner": "Mesh conectează mai multe routere între ele.",
+          "professional": "Extinde acoperirea Wi-Fi.",
+          "expert": "Include dynamic routing, self-healing și multi-hop optimization."
+        },
+        
+        "latency": {
+          "beginner": "Latența este timpul de răspuns.",
+          "professional": "Afectează gaming, streaming și VoIP.",
+          "expert": "Include jitter, bufferbloat și QoS tuning."
+        },
+        
+        "bandwidth": {
+          "beginner": "Banda este cât trafic poate trece.",
+          "professional": "Măsurată în Mbps sau Gbps.",
+          "expert": "Include throughput, congestion și capacity planning."
+        },
+        
+        "throughput": {
+          "beginner": "Throughput este viteza reală.",
+          "professional": "Cantitatea efectivă de date transferate.",
+          "expert": "Include TCP efficiency, retransmissions și bottlenecks."
+        },
+        
+        "packet_loss": {
+          "beginner": "Pachetele se pierd pe drum.",
+          "professional": "Afectează calitatea conexiunii.",
+          "expert": "Include diagnostics, jitter buffers și redundancy."
+        },
+        
+        "icmp": {
+          "beginner": "ICMP testează conexiuni.",
+          "professional": "Protocol pentru mesaje de control.",
+          "expert": "Include ping, traceroute, rate limiting și filtering."
+        },
+        
+        "traceroute": {
+          "beginner": "Traceroute arată drumul pachetelor.",
+          "professional": "Diagnostică probleme de rețea.",
+          "expert": "Include TTL manipulation, ICMP/UDP modes și path analysis."
+        },
+        
+        "sdn": {
+          "beginner": "SDN controlează rețeaua prin software.",
+          "professional": "Software-Defined Networking separă control plane de data plane.",
+          "expert": "Include OpenFlow, controllers și network automation."
+        },
+        
+        "load_sharing": {
+          "beginner": "Împarți traficul pe mai multe rute.",
+          "professional": "Crește performanța și redundanța.",
+          "expert": "Include ECMP, hashing și failover."
+        },
+        
+        "ipv6": {
+          "beginner": "IPv6 este noua versiune de IP.",
+          "professional": "128 biți, spațiu imens de adrese.",
+          "expert": "Include SLAAC, link-local, dual-stack și transition mechanisms."
+        },
+        
+        "proxy": {
+          "beginner": "Proxy-ul trimite cererile în locul tău.",
+          "professional": "Ascunde identitatea și filtrează traficul.",
+          "expert": "Include forward/reverse proxy, caching și filtering."
+        },
+        
+        "nat_traversal": {
+          "beginner": "NAT traversal ajută dispozitivele să se conecteze prin NAT.",
+          "professional": "Folosit în VoIP și gaming.",
+          "expert": "Include STUN, TURN, ICE și hole punching."
+        },
+        
+        "wan": {
+          "beginner": "WAN conectează orașe sau țări.",
+          "professional": "Wide Area Network folosește linkuri mari.",
+          "expert": "Include MPLS, SD-WAN, QoS și redundancy."
+        },
+        
+        "lan": {
+          "beginner": "LAN este rețeaua din casă sau birou.",
+          "professional": "Local Area Network conectează dispozitive apropiate.",
+          "expert": "Include switching, VLANs și segmentation."
+        },
+        
+        "sd_wan": {
+          "beginner": "SD-WAN optimizează conexiunile între locații.",
+          "professional": "Folosește software pentru routing inteligent.",
+          "expert": "Include path selection, encryption și cloud integration."
+        }
+        "web_components": {
+          "beginner": "Web Components sunt elemente personalizate pe care le poți folosi ca piese LEGO în pagini web.",
+          "professional": "Web Components folosesc Custom Elements, Shadow DOM și HTML Templates pentru UI reutilizabil.",
+          "expert": "Shadow DOM oferă izolare, Custom Elements definesc lifecycle hooks, iar Templates optimizează rendering-ul."
+        },
+        
+        "shadow_dom": {
+          "beginner": "Shadow DOM este o zonă ascunsă în interiorul unui element HTML.",
+          "professional": "Shadow DOM izolează stilurile și structura internă a unui component.",
+          "expert": "Include encapsulation strictă, event retargeting și moduri open/closed pentru controlul accesului."
+        },
+        
+        "isomorphic_javascript": {
+          "beginner": "Același cod rulează și pe server, și în browser.",
+          "professional": "Isomorphic JS permite partajarea logicii între Node.js și client.",
+          "expert": "Folosit în SSR frameworks, implică hydration, environment differences și optimizări de performanță."
+        },
+        
+        "hydration": {
+          "beginner": "Browserul activează HTML-ul generat pe server.",
+          "professional": "Hydration atașează event listeners peste markup-ul SSR.",
+          "expert": "Include partial hydration, resumability, mismatch detection și optimizări pentru LCP."
+        },
+        
+        "micro_frontends": {
+          "beginner": "Un site mare împărțit în bucăți independente.",
+          "professional": "Arhitectură unde echipe diferite livrează module separate.",
+          "expert": "Include Module Federation, runtime integration, shared dependencies și isolation patterns."
+        },
+        
+        "module_federation": {
+          "beginner": "Două aplicații își pot împărți codul.",
+          "professional": "Webpack 5 permite încărcarea dinamică a modulelor remote.",
+          "expert": "Include version negotiation, host/remote architecture și runtime sharing."
+        },
+        
+        "vite": {
+          "beginner": "Un tool foarte rapid pentru proiecte web.",
+          "professional": "Dev server bazat pe ES Modules și Rollup pentru build.",
+          "expert": "Include HMR instant, pre-bundling cu esbuild și plugin API avansat."
+        },
+        
+        "astro_islands": {
+          "beginner": "Doar părțile interactive ale paginii primesc JavaScript.",
+          "professional": "Island architecture combină HTML static cu componente interactive izolate.",
+          "expert": "Include partial hydration, zero-JS by default și rendering multi-framework."
+        },
+        
+        "service_worker_lifecycle": {
+          "beginner": "Un mic robot care rulează în fundal.",
+          "professional": "Stări: install, activate, idle, fetch, terminate.",
+          "expert": "Include caching strategies, background sync, skipWaiting și clients.claim."
+        },
+        
+        "background_sync": {
+          "beginner": "Site-ul sincronizează datele când revii online.",
+          "professional": "API pentru retry logic al request-urilor eșuate.",
+          "expert": "Include periodic sync, permission model și optimizări pentru consumul de baterie."
+        },
+        
+        "pwa": {
+          "beginner": "Site-uri care se comportă ca aplicații.",
+          "professional": "Progressive Web Apps folosesc manifest, service workers și caching.",
+          "expert": "Include offline-first, background sync, push notifications și installability."
+        },
+        
+        "web_manifest": {
+          "beginner": "Fișier care spune browserului cum arată aplicația.",
+          "professional": "Definește iconuri, culori, orientare și mod de afișare.",
+          "expert": "Include adaptive icons, shortcuts, scope control și integration cu OS."
+        },
+        
+        "responsive_design": {
+          "beginner": "Site-ul se adaptează la orice ecran.",
+          "professional": "Folosește media queries, layout fluid și unități relative.",
+          "expert": "Include container queries, fluid typography și mobile-first architecture."
+        },
+        
+        "css_grid": {
+          "beginner": "O metodă de a aranja elementele în grilă.",
+          "professional": "CSS Grid oferă layout bidimensional flexibil.",
+          "expert": "Include subgrid, named areas, auto-placement și responsive patterns."
+        },
+        
+        "flexbox": {
+          "beginner": "Flexbox aliniază elementele ușor.",
+          "professional": "Oferă control asupra direcției, alinierii și distribuției spațiului.",
+          "expert": "Include flex-flow, alignment strategies și complex nesting."
+        },
+        
+        "dom": {
+          "beginner": "DOM este structura paginii web.",
+          "professional": "Document Object Model reprezintă elementele ca noduri.",
+          "expert": "Include tree traversal, mutation observers și virtual DOM optimizations."
+        },
+        
+        "virtual_dom": {
+          "beginner": "O copie rapidă a paginii pentru actualizări eficiente.",
+          "professional": "Framework-urile folosesc VDOM pentru diffing și rendering optim.",
+          "expert": "Include reconciliation, fiber architecture și batching updates."
+        },
+        
+        "reactivity": {
+          "beginner": "Pagina se actualizează automat când datele se schimbă.",
+          "professional": "Reactivitatea urmărește dependențele și actualizează UI-ul.",
+          "expert": "Include fine-grained reactivity, signals, proxies și dependency tracking."
+        },
+        
+        "spa": {
+          "beginner": "Site care se încarcă o singură dată.",
+          "professional": "Single Page Applications folosesc routing client-side.",
+          "expert": "Include hydration, code splitting, prefetching și state management."
+        },
+        
+        "ssr": {
+          "beginner": "Serverul generează HTML-ul înainte să ajungă la tine.",
+          "professional": "Server-Side Rendering îmbunătățește SEO și TTFB.",
+          "expert": "Include streaming SSR, partial hydration și edge rendering."
+        },
+        
+        "csr": {
+          "beginner": "Browserul construiește pagina din JavaScript.",
+          "professional": "Client-Side Rendering oferă interactivitate completă.",
+          "expert": "Include lazy loading, bundling optimizat și hydration strategies."
+        },
+        
+        "nextjs": {
+          "beginner": "Un framework modern pentru React.",
+          "professional": "Oferă SSR, SSG, API routes și routing avansat.",
+          "expert": "Include app router, server components, edge functions și RSC streaming."
+        },
+        
+        "nuxt": {
+          "beginner": "Framework pentru Vue.",
+          "professional": "Oferă SSR, SSG, routing automat și module.",
+          "expert": "Include Nitro engine, hybrid rendering și server islands."
+        },
+        
+        "svelte": {
+          "beginner": "Framework foarte rapid pentru UI.",
+          "professional": "Compilează componentele în cod minimal.",
+          "expert": "Include reactivity granulară, transitions și zero-VDOM architecture."
+        },
+        
+        "sveltekit": {
+          "beginner": "Framework complet pentru Svelte.",
+          "professional": "Oferă routing, SSR, endpoints și adaptors.",
+          "expert": "Include server actions, streaming, edge deployment și hybrid rendering."
+        },
+        
+        "tailwind_css": {
+          "beginner": "CSS gata făcut, doar îl combini.",
+          "professional": "Utility-first CSS pentru styling rapid.",
+          "expert": "Include JIT engine, design tokens și theming avansat."
+        },
+        
+        "css_variables": {
+          "beginner": "Variabile în CSS.",
+          "professional": "Permit reutilizarea valorilor și theming.",
+          "expert": "Include dynamic updates, cascading și integration cu JS."
+        },
+        
+        "web_sockets": {
+          "beginner": "Conexiune live între client și server.",
+          "professional": "Protocol full-duplex pentru comunicare în timp real.",
+          "expert": "Include multiplexing, binary frames și fallback strategies."
+        },
+        
+        "web_rtc": {
+          "beginner": "Video și audio direct între două browsere.",
+          "professional": "Real-Time Communication cu STUN/TURN.",
+          "expert": "Include ICE negotiation, SDP și peer-to-peer optimization."
+        },
+        
+        "fetch_api": {
+          "beginner": "Metodă modernă de a cere date de la server.",
+          "professional": "Promisiuni, streaming și control al request-urilor.",
+          "expert": "Include AbortController, caching, retries și progressive streaming."
+        },
+        
+        "rest_api": {
+          "beginner": "API care folosește HTTP.",
+          "professional": "Folosește resurse, metode și status codes.",
+          "expert": "Include pagination, rate limiting, versioning și HATEOAS."
+        },
+        
+        "graphql": {
+          "beginner": "API unde ceri exact datele de care ai nevoie.",
+          "professional": "Query language pentru API-uri flexibile.",
+          "expert": "Include resolvers, schema stitching și caching avansat."
+        },
+        
+        "web_assembly": {
+          "beginner": "Cod foarte rapid în browser.",
+          "professional": "WASM rulează aproape nativ în sandbox.",
+          "expert": "Include memory management, imports/exports și streaming compilation."
+        },
+        
+        "bundling": {
+          "beginner": "Împachetezi fișierele într-unul singur.",
+          "professional": "Optimizezi codul pentru producție.",
+          "expert": "Include tree-shaking, code splitting și minification."
+        },
+        
+        "minification": {
+          "beginner": "Micșorezi fișierele.",
+          "professional": "Elimini spații, comentarii și nume lungi.",
+          "expert": "Include dead code removal și compression pipelines."
+        },
+        
+        "code_splitting": {
+          "beginner": "Împarți codul în bucăți mai mici.",
+          "professional": "Încărcare la cerere pentru performanță.",
+          "expert": "Include dynamic imports, route-based splitting și prefetching."
+        },
+        
+        "lazy_loading": {
+          "beginner": "Încarci ceva doar când ai nevoie.",
+          "professional": "Optimizează performanța și reduce TTI.",
+          "expert": "Include intersection observers, priority hints și predictive loading."
+        },
+        
+        "dom_events": {
+          "beginner": "Acțiuni precum click sau tastare.",
+          "professional": "Event bubbling, capturing și listeners.",
+          "expert": "Include delegation, passive listeners și event optimization."
+        },
+        
+        "cookies": {
+          "beginner": "Fișiere mici salvate de site-uri.",
+          "professional": "Folosite pentru sesiuni și preferințe.",
+          "expert": "Include SameSite, HttpOnly, Secure și expirare controlată."
+        },
+        
+        "local_storage": {
+          "beginner": "Salvezi date în browser.",
+          "professional": "Persistă până la ștergere manuală.",
+          "expert": "Include quotas, serialization și security considerations."
+        },
+        
+        "session_storage": {
+          "beginner": "Date salvate doar cât timp ai pagina deschisă.",
+          "professional": "Scope per-tab, izolare strictă.",
+          "expert": "Include storage events și fallback strategies."
+        },
+        
+        "indexeddb": {
+          "beginner": "O bază de date în browser.",
+          "professional": "Stochează obiecte mari și structurate.",
+          "expert": "Include transactions, cursors și versioning."
+        },
+        
+        "csp": {
+          "beginner": "Reguli care protejează site-ul.",
+          "professional": "Content Security Policy previne XSS.",
+          "expert": "Include nonce-uri, hashing și strict-dynamic."
+        },
+        
+        "web_performance": {
+          "beginner": "Cât de rapid se încarcă site-ul.",
+          "professional": "Metrici: LCP, FID, CLS.",
+          "expert": "Include preloading, compression, caching și edge rendering."
+        },
+        
+        "seo": {
+          "beginner": "Cum te găsește Google.",
+          "professional": "Optimizare pentru crawlere și ranking.",
+          "expert": "Include structured data, sitemaps și canonicalization."
+        },
+        
+        "accessibility": {
+          "beginner": "Site-uri ușor de folosit pentru toți.",
+          "professional": "WCAG, ARIA roles și semantic HTML.",
+          "expert": "Include keyboard navigation, screen readers și contrast rules."
+        }
+        "cpu_architecture": {
+          "beginner": "Arhitectura CPU este modul în care este construit procesorul.",
+          "professional": "Definește setul de instrucțiuni, pipeline-ul, cache-urile și modul de execuție.",
+          "expert": "Include superscalar, out-of-order execution, branch prediction și micro-op fusion."
+        },
+        
+        "gpu": {
+          "beginner": "GPU-ul desenează imaginile pe ecran.",
+          "professional": "Procesor paralel optimizat pentru calcule grafice și AI.",
+          "expert": "Include CUDA cores, tensor cores, rasterization, ray tracing și compute shaders."
+        },
+        
+        "npu": {
+          "beginner": "NPU accelerează AI-ul.",
+          "professional": "Neural Processing Unit optimizează inferența modelelor.",
+          "expert": "Include INT8/FP8 pipelines, tensor accelerators și low-power AI compute."
+        },
+        
+        "ram": {
+          "beginner": "RAM este memoria rapidă a calculatorului.",
+          "professional": "Stochează date temporare pentru procese active.",
+          "expert": "Include DDR5, dual-channel, latency CL, bandwidth și XMP/EXPO profiles."
+        },
+        
+        "ddr5": {
+          "beginner": "DDR5 este cea mai nouă memorie RAM.",
+          "professional": "Oferă frecvențe mari și eficiență energetică.",
+          "expert": "Include PMIC onboard, dual 32-bit channels și on-die ECC."
+        },
+        
+        "cache_memory": {
+          "beginner": "Cache-ul este memoria ultra-rapidă a CPU-ului.",
+          "professional": "Niveluri: L1, L2, L3 pentru reducerea latenței.",
+          "expert": "Include inclusive/exclusive cache, victim cache și prefetching."
+        },
+        
+        "motherboard": {
+          "beginner": "Placa de bază leagă toate componentele.",
+          "professional": "Conține chipset, sloturi RAM, PCIe, VRM și conectori.",
+          "expert": "Include PCIe 5.0 lanes, DDR5 topology, VRM phases și BIOS/UEFI firmware."
+        },
+        
+        "chipset": {
+          "beginner": "Chipset-ul controlează comunicarea componentelor.",
+          "professional": "Determină suportul pentru CPU, RAM și PCIe.",
+          "expert": "Include PCH architecture, DMI bandwidth și lane allocation."
+        },
+        
+        "pcie": {
+          "beginner": "PCIe conectează plăcile video și SSD-urile.",
+          "professional": "Standard de comunicație de mare viteză.",
+          "expert": "Include PCIe 4.0/5.0, lane bifurcation și resizable BAR."
+        },
+        
+        "nvme": {
+          "beginner": "NVMe este un tip rapid de SSD.",
+          "professional": "Folosește PCIe pentru viteze mari.",
+          "expert": "Include NVMe 2.0, queue depth, ZNS și low-latency controllers."
+        },
+        
+        "thermal_paste": {
+          "beginner": "Pasta termică ajută procesorul să se răcească.",
+          "professional": "Umple golurile dintre CPU și cooler.",
+          "expert": "Include compuși metalici, ceramic, liquid metal și conductivitate W/mK."
+        },
+        
+        "cooler": {
+          "beginner": "Cooler-ul răcește procesorul.",
+          "professional": "Tipuri: air cooling, AIO liquid cooling.",
+          "expert": "Include heatpipes, pump RPM, radiator FPI și airflow optimization."
+        },
+        
+        "psu": {
+          "beginner": "PSU este sursa de alimentare.",
+          "professional": "Transformă curentul pentru componente.",
+          "expert": "Include 80+ ratings, single/multi-rail, ripple suppression și OCP/OVP protecții."
+        },
+        
+        "vrm": {
+          "beginner": "VRM controlează energia pentru CPU.",
+          "professional": "Voltage Regulator Module stabilizează tensiunea.",
+          "expert": "Include phases, MOSFETs, chokes și load-line calibration."
+        },
+        
+        "bios": {
+          "beginner": "BIOS pornește calculatorul.",
+          "professional": "Inițializează hardware-ul și bootloader-ul.",
+          "expert": "Include UEFI, secure boot, ACPI tables și firmware modules."
+        },
+        
+        "uefi": {
+          "beginner": "UEFI este versiunea modernă a BIOS-ului.",
+          "professional": "Oferă interfață grafică și suport GPT.",
+          "expert": "Include drivers, secure boot keys și runtime services."
+        },
+        
+        "storage_controller": {
+          "beginner": "Controlează stocarea.",
+          "professional": "Gestionează SATA, NVMe și RAID.",
+          "expert": "Include AHCI, NVMe queues și hardware RAID accelerators."
+        },
+        
+        "raid": {
+          "beginner": "RAID protejează datele.",
+          "professional": "Combinație de discuri pentru performanță sau redundanță.",
+          "expert": "Include RAID 0/1/5/10, parity calculations și hot spare."
+        },
+        
+        "hdd": {
+          "beginner": "HDD este un hard disk cu piese care se învârt.",
+          "professional": "Stocare magnetică de capacitate mare.",
+          "expert": "Include platters, RPM, seek time și SMR/CMR technologies."
+        },
+        
+        "fan_curve": {
+          "beginner": "Controlează viteza ventilatoarelor.",
+          "professional": "Reglează RPM în funcție de temperatură.",
+          "expert": "Include hysteresis, PWM tuning și noise optimization."
+        },
+        
+        "thermal_throttling": {
+          "beginner": "Procesorul încetinește când se încălzește.",
+          "professional": "Protecție automată împotriva supraîncălzirii.",
+          "expert": "Include power limits, temperature targets și dynamic frequency scaling."
+        },
+        
+        "power_limit": {
+          "beginner": "Limita de energie a procesorului.",
+          "professional": "PL1/PL2 controlează performanța CPU.",
+          "expert": "Include tau timing, EPP profiles și adaptive boost."
+        },
+        
+        "overclocking": {
+          "beginner": "Faci procesorul să meargă mai repede.",
+          "professional": "Crești frecvența și tensiunea.",
+          "expert": "Include voltage curves, LLC, stability testing și thermal headroom."
+        },
+        
+        "undervolting": {
+          "beginner": "Procesorul consumă mai puțin.",
+          "professional": "Reduci tensiunea pentru eficiență.",
+          "expert": "Include V/F curves, stability margins și power efficiency tuning."
+        },
+        
+        "integrated_graphics": {
+          "beginner": "GPU-ul integrat în procesor.",
+          "professional": "Folosește RAM-ul sistemului.",
+          "expert": "Include Xe graphics, RDNA iGPU și shared memory bandwidth."
+        },
+        
+        "dedicated_gpu": {
+          "beginner": "Placă video separată.",
+          "professional": "Are memorie și procesor propriu.",
+          "expert": "Include VRAM GDDR6X, PCIe bandwidth și cooling triple-fan."
+        },
+        
+        "vram": {
+          "beginner": "Memoria plăcii video.",
+          "professional": "Stochează texturi și cadre.",
+          "expert": "Include GDDR6X, memory bus width și effective bandwidth."
+        },
+        
+        "die_shrink": {
+          "beginner": "Procesorul devine mai mic și mai eficient.",
+          "professional": "Reducerea nanometrilor crește performanța.",
+          "expert": "Include 3nm, EUV lithography și transistor density."
+        },
+        
+        "lithography": {
+          "beginner": "Tehnologia de fabricare a cipului.",
+          "professional": "Definește dimensiunea tranzistorilor.",
+          "expert": "Include EUV, DUV, FinFET și GAAFET."
+        },
+        
+        "gaafet": {
+          "beginner": "Un tip nou de tranzistor.",
+          "professional": "Gate-All-Around îmbunătățește controlul curentului.",
+          "expert": "Include nanosheets, stacking și leakage reduction."
+        },
+        
+        "finfet": {
+          "beginner": "Tranzistor 3D modern.",
+          "professional": "Reduce consumul și crește performanța.",
+          "expert": "Include fin pitch, gate length și scaling limits."
+        },
+        
+        "chiplet": {
+          "beginner": "Procesor format din bucăți mai mici.",
+          "professional": "Chiplet design îmbunătățește costul și scalabilitatea.",
+          "expert": "Include Infinity Fabric, interposers și 3D stacking."
+        },
+        
+        "3d_vcache": {
+          "beginner": "Cache pus unul peste altul.",
+          "professional": "Crește masiv memoria L3.",
+          "expert": "Include TSV bonding, latency optimization și thermal constraints."
+        },
+        
+        "memory_controller": {
+          "beginner": "Controlează memoria RAM.",
+          "professional": "Integrează canale și frecvențe.",
+          "expert": "Include IMC tuning, gear modes și signal integrity."
+        },
+        
+        "signal_integrity": {
+          "beginner": "Semnalele trebuie să fie clare.",
+          "professional": "Afectează stabilitatea componentelor.",
+          "expert": "Include impedance matching, crosstalk și trace routing."
+        },
+        
+        "pcb_layers": {
+          "beginner": "Placa de bază are mai multe straturi.",
+          "professional": "Straturile transportă semnale și energie.",
+          "expert": "Include 6–12 layer stackups, ground planes și EMI shielding."
+        },
+        
+        "emi": {
+          "beginner": "Interferențe electrice.",
+          "professional": "Afectează semnalele hardware.",
+          "expert": "Include shielding, filtering și compliance standards."
+        },
+        
+        "power_delivery": {
+          "beginner": "Energia ajunge la componente.",
+          "professional": "Include VRM, MOSFETs și cabluri.",
+          "expert": "Include transient response, load balancing și PSU rail design."
+        },
+        
+        "heatpipe": {
+          "beginner": "Țeavă care mută căldura.",
+          "professional": "Folosește evaporare și condensare.",
+          "expert": "Include capillary action, vapor chambers și thermal conductivity."
+        },
+        
+        "vapor_chamber": {
+          "beginner": "Placă care răcește uniform.",
+          "professional": "Distribuie căldura pe suprafață mare.",
+          "expert": "Include wick structure, phase change și high-TDP cooling."
+        },
+        
+        "fan_bearing": {
+          "beginner": "Mecanismul ventilatorului.",
+          "professional": "Tipuri: sleeve, ball, fluid dynamic.",
+          "expert": "Include lifespan, noise curves și lubrication systems."
+        },
+        
+        "power_connector": {
+          "beginner": "Cablurile care alimentează componentele.",
+          "professional": "Tipuri: ATX, EPS, PCIe.",
+          "expert": "Include 12VHPWR, current limits și pin durability."
+        },
+        
+        "12vhpwr": {
+          "beginner": "Conector nou pentru plăci video.",
+          "professional": "Suportă până la 600W.",
+          "expert": "Include sense pins, cable bending rules și safety specs."
+        },
+        
+        "firmware": {
+          "beginner": "Software-ul din hardware.",
+          "professional": "Controlează funcțiile de bază.",
+          "expert": "Include microcode updates, secure firmware și hardware abstraction."
+        },
+        
+        "microcode": {
+          "beginner": "Instrucțiuni interne ale CPU.",
+          "professional": "Corectează erori și optimizează execuția.",
+          "expert": "Include patching, speculative execution fixes și ISA translation."
+        }
+        "operating_system": {
+          "beginner": "Un sistem de operare este programul principal care controlează calculatorul.",
+          "professional": "OS gestionează hardware-ul, procesele, memoria, fișierele și securitatea.",
+          "expert": "Include kernel design, scheduling, memory management, IPC, drivers și virtualization."
+        },
+        
+        "kernel": {
+          "beginner": "Kernelul este inima sistemului de operare.",
+          "professional": "Gestionează resursele hardware și comunicarea cu aplicațiile.",
+          "expert": "Include monolithic kernels, microkernels, hybrid kernels și modular drivers."
+        },
+        
+        "monolithic_kernel": {
+          "beginner": "Kernel mare cu multe funcții în interior.",
+          "professional": "Toate serviciile rulează în spațiul kernel pentru performanță.",
+          "expert": "Include Linux kernel, syscall interface, module loading și low-level memory control."
+        },
+        
+        "microkernel": {
+          "beginner": "Kernel mic cu funcții minime.",
+          "professional": "Majoritatea serviciilor rulează în user space pentru stabilitate.",
+          "expert": "Include message passing IPC, fault isolation și modular OS design."
+        },
+        
+        "process": {
+          "beginner": "Un proces este un program care rulează.",
+          "professional": "Include cod, memorie, resurse și thread-uri.",
+          "expert": "Include PCB, scheduling states, context switching și isolation."
+        },
+        
+        "thread": {
+          "beginner": "Un thread este o parte dintr-un proces.",
+          "professional": "Rulează în paralel în același spațiu de memorie.",
+          "expert": "Include multithreading, synchronization, race conditions și thread pools."
+        },
+        
+        "context_switch": {
+          "beginner": "Calculatorul schimbă între procese.",
+          "professional": "Salvează și restaurează starea proceselor.",
+          "expert": "Include register saving, TLB flush, scheduling overhead și optimization."
+        },
+        
+        "scheduler": {
+          "beginner": "Decide ce proces rulează.",
+          "professional": "Folosește algoritmi precum RR, FIFO, priority scheduling.",
+          "expert": "Include CFS (Linux), preemption, load balancing și CPU affinity."
+        },
+        
+        "memory_management": {
+          "beginner": "OS gestionează memoria RAM.",
+          "professional": "Include paginare, segmente și alocare.",
+          "expert": "Include virtual memory, TLB, page faults și NUMA optimization."
+        },
+        
+        "virtual_memory": {
+          "beginner": "Memorie mai mare decât RAM-ul real.",
+          "professional": "Folosește pagini și swap pentru extindere.",
+          "expert": "Include demand paging, copy-on-write și memory overcommit."
+        },
+        
+        "paging": {
+          "beginner": "Împarte memoria în pagini mici.",
+          "professional": "Mapează pagini virtuale la pagini fizice.",
+          "expert": "Include multi-level page tables, huge pages și TLB caching."
+        },
+        
+        "swap": {
+          "beginner": "Spațiu pe disc folosit ca memorie.",
+          "professional": "Mută pagini inactive pe storage.",
+          "expert": "Include swap partitions, zswap, zram și memory pressure handling."
+        },
+        
+        "filesystem": {
+          "beginner": "Organizează fișierele pe disc.",
+          "professional": "Include directoare, permisiuni și metadata.",
+          "expert": "Include journaling, inodes, ext4, NTFS, APFS și copy-on-write."
+        },
+        
+        "inode": {
+          "beginner": "Un inode descrie un fișier.",
+          "professional": "Conține metadata: owner, size, timestamps.",
+          "expert": "Include block pointers, indirect blocks și filesystem indexing."
+        },
+        
+        "permissions": {
+          "beginner": "Controlează cine poate accesa fișierele.",
+          "professional": "Include read/write/execute pentru user, group, others.",
+          "expert": "Include ACLs, SELinux, AppArmor și capability-based security."
+        },
+        
+        "bootloader": {
+          "beginner": "Programul care pornește sistemul.",
+          "professional": "Încarcă kernelul în memorie.",
+          "expert": "Include GRUB, UEFI boot manager, chainloading și secure boot."
+        },
+        
+        "system_call": {
+          "beginner": "Aplicațiile cer ajutor de la OS.",
+          "professional": "Syscalls oferă acces la kernel: read, write, fork.",
+          "expert": "Include syscall tables, traps, interrupts și context transitions."
+        },
+        
+        "interrupt": {
+          "beginner": "Semnal care întrerupe procesorul.",
+          "professional": "Folosit pentru hardware events și scheduling.",
+          "expert": "Include ISR, interrupt vector table, masking și prioritization."
+        },
+        
+        "driver": {
+          "beginner": "Driverul ajută OS-ul să comunice cu hardware-ul.",
+          "professional": "Software low-level pentru dispozitive.",
+          "expert": "Include kernel modules, DMA, interrupts și hardware abstraction."
+        },
+        
+        "dma": {
+          "beginner": "Transfer de date fără CPU.",
+          "professional": "Direct Memory Access optimizează performanța.",
+          "expert": "Include DMA channels, burst mode și zero-copy operations."
+        },
+        
+        "semaphore": {
+          "beginner": "Ajută thread-urile să nu se calce pe picioare.",
+          "professional": "Mecanism de sincronizare cu contor.",
+          "expert": "Include binary semaphores, deadlocks și priority inversion."
+        },
+        
+        "mutex": {
+          "beginner": "Un lacăt pentru thread-uri.",
+          "professional": "Permite acces exclusiv la resurse.",
+          "expert": "Include spinlocks, recursive mutexes și lock contention."
+        },
+        
+        "deadlock": {
+          "beginner": "Două procese se blochează reciproc.",
+          "professional": "Apare când resursele sunt cerute circular.",
+          "expert": "Include avoidance, detection și recovery algorithms."
+        },
+        
+        "init_system": {
+          "beginner": "Programul care pornește serviciile.",
+          "professional": "Init gestionează procesele de boot.",
+          "expert": "Include systemd, runlevels, targets și service supervision."
+        },
+        
+        "systemd": {
+          "beginner": "Manager modern de servicii.",
+          "professional": "Controlează boot-ul, logurile și procesele.",
+          "expert": "Include unit files, journald, timers și cgroups integration."
+        },
+        
+        "cgroups": {
+          "beginner": "Limitează resursele pentru procese.",
+          "professional": "Control groups gestionează CPU, RAM, I/O.",
+          "expert": "Include cgroups v2, unified hierarchy și container isolation."
+        },
+        
+        "namespaces": {
+          "beginner": "Separă resursele între procese.",
+          "professional": "Folosit în containere pentru izolare.",
+          "expert": "Include PID, NET, MNT, IPC, UTS și USER namespaces."
+        },
+        
+        "containerization": {
+          "beginner": "Rulezi aplicații izolate.",
+          "professional": "Containerele folosesc kernel-ul hostului.",
+          "expert": "Include OCI runtime, overlayfs și namespace isolation."
+        },
+        
+        "hypervisor": {
+          "beginner": "Software care rulează mașini virtuale.",
+          "professional": "Tipuri: Type 1 (bare-metal), Type 2 (hosted).",
+          "expert": "Include KVM, Xen, VMware ESXi, VT-x și nested virtualization."
+        },
+        
+        "virtual_machine": {
+          "beginner": "Calculator în interiorul altui calculator.",
+          "professional": "Rulează un OS complet izolat.",
+          "expert": "Include virtual hardware, snapshots, passthrough și paravirtualization."
+        },
+        
+        "paravirtualization": {
+          "beginner": "VM care colaborează cu hypervisorul.",
+          "professional": "OS-ul știe că rulează virtualizat.",
+          "expert": "Include Xen PV, virtio drivers și optimized I/O."
+        },
+        
+        "filesystem_journaling": {
+          "beginner": "Protejează fișierele în caz de oprire bruscă.",
+          "professional": "Jurnalizează operațiile înainte de scriere.",
+          "expert": "Include ordered mode, writeback mode și metadata journaling."
+        },
+        
+        "copy_on_write": {
+          "beginner": "Copiază doar când modifici.",
+          "professional": "Optimizează memoria și storage-ul.",
+          "expert": "Include Btrfs, ZFS, snapshots și deduplication."
+        },
+        
+        "zfs": {
+          "beginner": "Un sistem de fișiere foarte avansat.",
+          "professional": "Include RAID, snapshots și verificare integrității.",
+          "expert": "Include ARC cache, copy-on-write, scrubbing și self-healing."
+        },
+        
+        "btrfs": {
+          "beginner": "Sistem modern de fișiere Linux.",
+          "professional": "Oferă snapshots și subvolumes.",
+          "expert": "Include COW, RAID, send/receive și checksumming."
+        },
+        
+        "ntfs": {
+          "beginner": "Sistemul de fișiere Windows.",
+          "professional": "Include ACLs, journaling și compression.",
+          "expert": "Include MFT, reparse points și transactional NTFS."
+        },
+        
+        "apfs": {
+          "beginner": "Sistemul de fișiere Apple.",
+          "professional": "Optimizat pentru SSD-uri.",
+          "expert": "Include snapshots, clones, encryption și space sharing."
+        },
+        
+        "process_isolation": {
+          "beginner": "Procesele nu se amestecă între ele.",
+          "professional": "OS protejează memoria fiecărui proces.",
+          "expert": "Include ASLR, DEP, sandboxing și seccomp."
+        },
+        
+        "sandboxing": {
+          "beginner": "Rulezi programe în siguranță.",
+          "professional": "Izolează aplicațiile de sistem.",
+          "expert": "Include App Sandbox, Flatpak, Snap și browser sandboxes."
+        },
+        
+        "aslr": {
+          "beginner": "Mută memoria ca hackerii să nu o ghicească.",
+          "professional": "Address Space Layout Randomization previne exploit-uri.",
+          "expert": "Include PIE binaries, stack randomization și entropy tuning."
+        },
+        
+        "dep": {
+          "beginner": "Blochează executarea codului rău.",
+          "professional": "Data Execution Prevention protejează memoria.",
+          "expert": "Include NX bit, W^X policies și hardware enforcement."
+        },
+        
+        "ipc": {
+          "beginner": "Procesele comunică între ele.",
+          "professional": "Include pipes, sockets, shared memory.",
+          "expert": "Include message queues, futexes și high-performance IPC."
+        },
+        
+        "shell": {
+          "beginner": "Programul unde scrii comenzi.",
+          "professional": "Interpretează comenzi și rulează procese.",
+          "expert": "Include Bash, Zsh, shellscripting și job control."
+        },
+        
+        "initrd": {
+          "beginner": "Mini-sistem care pornește înainte de OS.",
+          "professional": "Conține drivere și scripturi de boot.",
+          "expert": "Include initramfs, early userspace și kernel modules loading."
+        }
+        "database": {
+          "beginner": "O bază de date stochează informații organizate.",
+          "professional": "Gestionează date structurate sau nestructurate prin modele și interfețe.",
+          "expert": "Include ACID, CAP, replicare, sharding, indexing și optimizare de performanță."
+        },
+        
+        "sql": {
+          "beginner": "SQL este limbajul pentru baze de date.",
+          "professional": "Structured Query Language permite interogări, inserări și actualizări.",
+          "expert": "Include query planning, joins complexe, indexing și optimizări de execuție."
+        },
+        
+        "nosql": {
+          "beginner": "NoSQL stochează date fără tabele.",
+          "professional": "Modele: document, key-value, columnar, graph.",
+          "expert": "Include sharding automat, replicare, consistency tuning și distributed queries."
+        },
+        
+        "acid": {
+          "beginner": "ACID garantează că datele sunt corecte.",
+          "professional": "Atomicity, Consistency, Isolation, Durability.",
+          "expert": "Include isolation levels, write-ahead logging și recovery algorithms."
+        },
+        
+        "cap_theorem": {
+          "beginner": "Nu poți avea totul în același timp.",
+          "professional": "CAP: Consistency, Availability, Partition Tolerance.",
+          "expert": "Include trade-offs pentru sisteme distribuite și modele CP/AP."
+        },
+        
+        "index": {
+          "beginner": "Indexul face căutările mai rapide.",
+          "professional": "Structuri precum B-Tree și Hash Index optimizează query-urile.",
+          "expert": "Include covering indexes, partial indexes și index selectivity."
+        },
+        
+        "b_tree": {
+          "beginner": "O structură de date pentru căutări rapide.",
+          "professional": "Folosită în majoritatea indexurilor SQL.",
+          "expert": "Include B+Tree, node splitting și disk page optimization."
+        },
+        
+        "query_optimizer": {
+          "beginner": "Optimizerul decide cum rulează o interogare.",
+          "professional": "Creează planuri de execuție eficiente.",
+          "expert": "Include cost-based optimization, statistics și join reordering."
+        },
+        
+        "join": {
+          "beginner": "Join combină date din două tabele.",
+          "professional": "Tipuri: INNER, LEFT, RIGHT, FULL.",
+          "expert": "Include hash join, merge join, nested loops și join elimination."
+        },
+        
+        "normalization": {
+          "beginner": "Organizezi datele ca să nu se repete.",
+          "professional": "Forme normale: 1NF, 2NF, 3NF, BCNF.",
+          "expert": "Include dependency analysis și schema optimization."
+        },
+        
+        "denormalization": {
+          "beginner": "Uneori duplici date pentru viteză.",
+          "professional": "Reduce join-urile pentru performanță.",
+          "expert": "Include materialized views și precomputed aggregates."
+        },
+        
+        "replication": {
+          "beginner": "Creezi copii ale bazei de date.",
+          "professional": "Tipuri: master-slave, multi-master.",
+          "expert": "Include sync/async replication, quorum și conflict resolution."
+        },
+        
+        "sharding": {
+          "beginner": "Împarți baza de date în bucăți.",
+          "professional": "Distribuie datele pe mai multe servere.",
+          "expert": "Include range/hash sharding, rebalancing și routing logic."
+        },
+        
+        "partitioning": {
+          "beginner": "Împarți tabelele mari în părți.",
+          "professional": "Tipuri: range, list, hash.",
+          "expert": "Include pruning, partition keys și hot partition mitigation."
+        },
+        
+        "transaction": {
+          "beginner": "Un set de operații care se execută împreună.",
+          "professional": "Asigură consistență și rollback.",
+          "expert": "Include isolation levels, locks și concurrency control."
+        },
+        
+        "isolation_levels": {
+          "beginner": "Controlează cum procesele văd datele.",
+          "professional": "Read Uncommitted, Read Committed, Repeatable Read, Serializable.",
+          "expert": "Include phantom reads, MVCC și snapshot isolation."
+        },
+        
+        "mvcc": {
+          "beginner": "Fiecare vede versiunea lui de date.",
+          "professional": "Multi-Version Concurrency Control evită blocările.",
+          "expert": "Include vacuuming, tuple versions și conflict detection."
+        },
+        
+        "locking": {
+          "beginner": "Blocările previn conflictele.",
+          "professional": "Shared vs exclusive locks.",
+          "expert": "Include deadlocks, lock escalation și row-level locking."
+        },
+        
+        "write_ahead_log": {
+          "beginner": "Scrii întâi în jurnal, apoi în disc.",
+          "professional": "WAL asigură durabilitate.",
+          "expert": "Include checkpoints, fsync și crash recovery."
+        },
+        
+        "materialized_view": {
+          "beginner": "O vedere salvată ca tabel.",
+          "professional": "Optimizează interogările complexe.",
+          "expert": "Include refresh strategies și incremental updates."
+        },
+        
+        "stored_procedure": {
+          "beginner": "Cod salvat în baza de date.",
+          "professional": "Rulează logică pe server.",
+          "expert": "Include triggers, execution plans și security contexts."
+        },
+        
+        "trigger": {
+          "beginner": "Cod care rulează automat.",
+          "professional": "Se execută la insert/update/delete.",
+          "expert": "Include cascading triggers și audit logic."
+        },
+        
+        "cursor": {
+          "beginner": "Parcurgi rândurile unul câte unul.",
+          "professional": "Folosit pentru procesare secvențială.",
+          "expert": "Include performance tuning și cursor types."
+        },
+        
+        "redis": {
+          "beginner": "Redis este o bază de date foarte rapidă.",
+          "professional": "Key-value store în memorie.",
+          "expert": "Include persistence, clustering, pub/sub și Lua scripting."
+        },
+        
+        "mongodb": {
+          "beginner": "MongoDB stochează documente JSON.",
+          "professional": "Document store cu schema flexibilă.",
+          "expert": "Include aggregation pipeline, sharding și replica sets."
+        },
+        
+        "postgresql": {
+          "beginner": "PostgreSQL este o bază de date puternică.",
+          "professional": "SQL avansat, extensibil, open-source.",
+          "expert": "Include JSONB, full-text search, partitioning și logical replication."
+        },
+        
+        "mysql": {
+          "beginner": "MySQL este o bază de date populară.",
+          "professional": "Folosită în aplicații web.",
+          "expert": "Include InnoDB engine, replication și query optimization."
+        },
+        
+        "sqlite": {
+          "beginner": "SQLite este o bază de date mică.",
+          "professional": "Stochează totul într-un singur fișier.",
+          "expert": "Include WAL mode, virtual tables și embedded usage."
+        },
+        
+        "cassandra": {
+          "beginner": "Cassandra este o bază de date distribuită.",
+          "professional": "Column-family NoSQL pentru scalare masivă.",
+          "expert": "Include tunable consistency, gossip protocol și LSM trees."
+        },
+        
+        "elastic_search": {
+          "beginner": "Elastic caută rapid în date.",
+          "professional": "Engine de căutare bazat pe documente.",
+          "expert": "Include inverted indexes, analyzers și distributed search."
+        },
+        
+        "graph_database": {
+          "beginner": "Stochează date ca noduri și conexiuni.",
+          "professional": "Ideal pentru relații complexe.",
+          "expert": "Include Cypher, traversal optimization și graph algorithms."
+        },
+        
+        "neo4j": {
+          "beginner": "Neo4j este o bază de date grafică.",
+          "professional": "Folosește limbajul Cypher.",
+          "expert": "Include clustering, pathfinding și graph analytics."
+        },
+        
+        "columnar_database": {
+          "beginner": "Stochează date pe coloane.",
+          "professional": "Ideal pentru analytics.",
+          "expert": "Include vectorized execution și compression encoding."
+        },
+        
+        "bigquery": {
+          "beginner": "BigQuery analizează date mari.",
+          "professional": "Data warehouse serverless Google.",
+          "expert": "Include columnar storage, Dremel engine și distributed execution."
+        },
+        
+        "snowflake": {
+          "beginner": "Snowflake este un depozit de date în cloud.",
+          "professional": "Separă compute de storage.",
+          "expert": "Include micro-partitions, time travel și zero-copy cloning."
+        },
+        
+        "data_warehouse": {
+          "beginner": "Stochează date pentru analiză.",
+          "professional": "Optimizat pentru query-uri complexe.",
+          "expert": "Include ETL/ELT, star schema și OLAP cubes."
+        },
+        
+        "oltp": {
+          "beginner": "Pentru tranzacții rapide.",
+          "professional": "Online Transaction Processing.",
+          "expert": "Include row storage, ACID și high concurrency."
+        },
+        
+        "olap": {
+          "beginner": "Pentru analiză de date.",
+          "professional": "Online Analytical Processing.",
+          "expert": "Include cubes, rollup, drill-down și columnar storage."
+        },
+        
+        "etl": {
+          "beginner": "Extragi, transformi și încarci date.",
+          "professional": "Folosit în data warehouses.",
+          "expert": "Include pipelines, orchestration și incremental loads."
+        },
+        
+        "elt": {
+          "beginner": "Extragi, încarci și apoi transformi.",
+          "professional": "Folosit în cloud data warehouses.",
+          "expert": "Include pushdown optimization și distributed compute."
+        },
+        
+        "data_lake": {
+          "beginner": "Un loc mare pentru toate datele.",
+          "professional": "Stochează date brute în orice format.",
+          "expert": "Include lakehouse, Delta Lake și schema-on-read."
+        },
+        
+        "consistency_model": {
+          "beginner": "Cum vede fiecare datele.",
+          "professional": "Tipuri: strong, eventual, causal.",
+          "expert": "Include quorum reads, vector clocks și CRDTs."
+        },
+        
+        "crdt": {
+          "beginner": "Structuri care se sincronizează singure.",
+          "professional": "Conflict-free replicated data types.",
+          "expert": "Include G-Counter, OR-Set și distributed convergence."
+        },
+        
+        "lsm_tree": {
+          "beginner": "Structură pentru scrieri rapide.",
+          "professional": "Folosită în Cassandra, RocksDB.",
+          "expert": "Include compaction, SSTables și bloom filters."
+        },
+        
+        "bloom_filter": {
+          "beginner": "Test rapid dacă ceva există.",
+          "professional": "Probabilistic data structure.",
+          "expert": "Include false positives, hashing și memory optimization."
+        }
+        "abacus": {
+          "beginner": "Abacul este unul dintre primele instrumente de calcul.",
+          "professional": "Folosit pentru operații aritmetice în civilizații antice.",
+          "expert": "A influențat dezvoltarea algoritmilor timpurii și a conceptelor de numărare pozițională."
+        },
+        
+        "analytical_engine": {
+          "beginner": "O mașină de calcul imaginată de Charles Babbage.",
+          "professional": "Primul design de calculator programabil mecanic.",
+          "expert": "Include unitate aritmetică, memorie, control logic și conceptul de program stocat."
+        },
+        
+        "ada_lovelace": {
+          "beginner": "Ada Lovelace a fost prima programatoare.",
+          "professional": "A scris primul algoritm pentru Analytical Engine.",
+          "expert": "A introdus conceptul de programare simbolică și ideea de mașini generice."
+        },
+        
+        "turing_machine": {
+          "beginner": "Un model teoretic de calculator.",
+          "professional": "Alan Turing a definit un sistem abstract pentru procesarea logică.",
+          "expert": "Fundamentul calculabilității, al algoritmilor și al complexității computaționale."
+        },
+        
+        "eniac": {
+          "beginner": "Primul calculator electronic general-purpose.",
+          "professional": "Folosea tuburi vidate și era programat manual.",
+          "expert": "A introdus arhitecturi paralele și a influențat designul calculatoarelor moderne."
+        },
+        
+        "transistor": {
+          "beginner": "Transistorul a înlocuit tuburile vidate.",
+          "professional": "Componentă electronică esențială pentru circuite moderne.",
+          "expert": "A permis miniaturizarea, fiabilitatea și apariția microprocesoarelor."
+        },
+        
+        "integrated_circuit": {
+          "beginner": "Un cip care conține multe componente electronice.",
+          "professional": "A integrat tranzistori pe o singură plăcuță de siliciu.",
+          "expert": "A permis scalarea exponențială conform Legii lui Moore."
+        },
+        
+        "moores_law": {
+          "beginner": "Puterea calculatoarelor se dublează periodic.",
+          "professional": "Numărul tranzistorilor se dublează la ~2 ani.",
+          "expert": "A ghidat industria semiconductorilor timp de decenii."
+        },
+        
+        "arpanet": {
+          "beginner": "Precursorul internetului.",
+          "professional": "Rețea creată pentru comunicații reziliente.",
+          "expert": "A introdus packet switching și protocoale distribuite."
+        },
+        
+        "http_protocol": {
+          "beginner": "Protocolul care permite paginilor web să funcționeze.",
+          "professional": "HyperText Transfer Protocol definește cereri și răspunsuri.",
+          "expert": "A evoluat în HTTP/2 și HTTP/3 pentru performanță și multiplexare."
+        },
+        
+        "world_wide_web": {
+          "beginner": "Web-ul este colecția de site-uri de pe internet.",
+          "professional": "Inventat de Tim Berners-Lee în 1989.",
+          "expert": "A introdus HTML, URL și HTTP, fundamentul internetului modern."
+        },
+        
+        "first_browser": {
+          "beginner": "Primul browser web.",
+          "professional": "WorldWideWeb (1990) a fost primul client web.",
+          "expert": "A stabilit paradigma hyperlinkurilor și navigării vizuale."
+        },
+        
+        "unix": {
+          "beginner": "Un sistem de operare vechi și influent.",
+          "professional": "Creat la Bell Labs, bazat pe simplitate și portabilitate.",
+          "expert": "A inspirat Linux, macOS și standardele POSIX."
+        },
+        
+        "linux": {
+          "beginner": "Un sistem de operare open-source.",
+          "professional": "Creat de Linus Torvalds în 1991.",
+          "expert": "A devenit fundamentul serverelor, cloud-ului și dispozitivelor embedded."
+        },
+        
+        "open_source_movement": {
+          "beginner": "Software gratuit și deschis pentru toți.",
+          "professional": "Promovează colaborarea și transparența.",
+          "expert": "Include GPL, BSD, MIT și ecosisteme globale de contribuție."
+        },
+        
+        "first_microprocessor": {
+          "beginner": "Primul procesor pe un singur cip.",
+          "professional": "Intel 4004 (1971) a integrat toate funcțiile CPU.",
+          "expert": "A deschis era calculatoarelor personale și a embedded systems."
+        },
+        
+        "apple_1": {
+          "beginner": "Primul computer Apple.",
+          "professional": "Creat de Steve Wozniak în 1976.",
+          "expert": "A influențat designul PC-urilor și cultura hackerilor."
+        },
+        
+        "ibm_pc": {
+          "beginner": "Primul PC standardizat.",
+          "professional": "IBM PC (1981) a definit arhitectura x86.",
+          "expert": "A creat ecosistemul compatibil PC care domină piața."
+        },
+        
+        "gui": {
+          "beginner": "Interfață cu ferestre și iconițe.",
+          "professional": "GUI a fost popularizată de Xerox, Apple și Microsoft.",
+          "expert": "A schimbat paradigma interacțiunii om-calculator."
+        },
+        
+        "smartphone_revolution": {
+          "beginner": "Telefoanele au devenit computere.",
+          "professional": "iPhone (2007) a redefinit mobile computing.",
+          "expert": "A creat ecosisteme de aplicații, touch UI și conectivitate permanentă."
+        },
+        
+        "cloud_computing_history": {
+          "beginner": "Cloud-ul a schimbat modul în care folosim computerele.",
+          "professional": "AWS (2006) a introdus infrastructura ca serviciu.",
+          "expert": "A permis scalare globală, serverless și microservicii."
+        },
+        
+        "ai_winter": {
+          "beginner": "Perioade când AI-ul a stagnat.",
+          "professional": "Lipsa progresului și finanțării în anii '70 și '90.",
+          "expert": "A influențat cercetarea modernă și modelele statistice."
+        },
+        
+        "deep_learning_revival": {
+          "beginner": "AI-ul a devenit din nou popular.",
+          "professional": "Rețelele neuronale au renăscut datorită GPU-urilor.",
+          "expert": "Include ImageNet (2012), backprop modern și arhitecturi avansate."
+        },
+        
+        "transformer_revolution": {
+          "beginner": "Modelele AI au devenit mult mai inteligente.",
+          "professional": "Transformers au înlocuit RNN-urile.",
+          "expert": "Au permis LLM-uri, multimodalitate și scaling laws."
+        },
+        
+        "first_programming_language": {
+          "beginner": "Primul limbaj de programare.",
+          "professional": "Fortran (1957) pentru calcule științifice.",
+          "expert": "A introdus compilatoare, optimizări și paradigme moderne."
+        },
+        
+        "c_language_history": {
+          "beginner": "C este un limbaj vechi și puternic.",
+          "professional": "Creat la Bell Labs pentru Unix.",
+          "expert": "A influențat C++, Java, Rust și arhitectura sistemelor."
+        },
+        
+        "object_oriented_history": {
+          "beginner": "Programarea orientată pe obiecte.",
+          "professional": "Smalltalk și Simula au introdus OOP.",
+          "expert": "A influențat design patterns, encapsulation și arhitecturi enterprise."
+        },
+        
+        "javascript_history": {
+          "beginner": "JavaScript a fost creat pentru web.",
+          "professional": "Lansat în 1995 de Brendan Eich.",
+          "expert": "A evoluat în ecosistem global cu Node.js și framework-uri moderne."
+        },
+        
+        "python_history": {
+          "beginner": "Python este un limbaj ușor de învățat.",
+          "professional": "Creat de Guido van Rossum în 1991.",
+          "expert": "A devenit dominant în AI, scripting și educație."
+        },
+        
+        "first_database_system": {
+          "beginner": "Primele baze de date erau simple.",
+          "professional": "IBM IMS (1966) a introdus modele ierarhice.",
+          "expert": "A influențat SQL, relaționalul și NoSQL."
+        },
+        
+        "relational_model": {
+          "beginner": "Modelul relațional folosește tabele.",
+          "professional": "Propus de Edgar Codd în 1970.",
+          "expert": "A definit SQL, normalizarea și teoria bazelor de date."
+        },
+        
+        "first_video_game": {
+          "beginner": "Primul joc video.",
+          "professional": "Pong (1972) a popularizat gaming-ul.",
+          "expert": "A creat industria jocurilor și hardware dedicat."
+        },
+        
+        "gpu_history": {
+          "beginner": "GPU-urile au început cu grafică simplă.",
+          "professional": "NVIDIA a introdus GPU-ul programabil.",
+          "expert": "A dus la AI accelerators și ray tracing."
+        },
+        
+        "semiconductor_revolution": {
+          "beginner": "Cipurile au schimbat lumea.",
+          "professional": "Tranzistorii au înlocuit tuburile vidate.",
+          "expert": "A permis miniaturizare, mobilitate și computere personale."
+        },
+        
+        "dotcom_bubble": {
+          "beginner": "O perioadă de boom pe internet.",
+          "professional": "Companiile tech au crescut rapid între 1995–2000.",
+          "expert": "A dus la investiții masive, eșecuri și maturizarea industriei."
+        },
+        
+        "social_media_evolution": {
+          "beginner": "Rețelele sociale au schimbat comunicarea.",
+          "professional": "MySpace, Facebook, Twitter au redefinit interacțiunea.",
+          "expert": "Au influențat marketing, politică și comportamentul global."
+        },
+        
+        "smart_home_history": {
+          "beginner": "Casele au devenit inteligente.",
+          "professional": "IoT a conectat dispozitivele casnice.",
+          "expert": "Include protocoale, edge computing și automatizare."
+        },
+        
+        "robotics_history": {
+          "beginner": "Primele roboți erau simpli.",
+          "professional": "Industrial robots au apărut în anii '60.",
+          "expert": "Include autonomie, senzori, actuatori și AI integrat."
+        },
+        
+        "quantum_computing_history": {
+          "beginner": "Calculatoarele cuantice sunt foarte diferite.",
+          "professional": "Bazate pe qubiți și superpoziție.",
+          "expert": "Include algoritmi Shor, Grover și erori cuantice."
+        },
+        
+        "encryption_history": {
+          "beginner": "Criptarea protejează informațiile.",
+          "professional": "De la cifrul lui Caesar la RSA.",
+          "expert": "Include criptografie modernă, ECC și quantum-safe algorithms."
+        },
+        
+        "blockchain_history": {
+          "beginner": "Blockchain stochează date în lanțuri.",
+          "professional": "Bitcoin (2009) a introdus ledger-ul distribuit.",
+          "expert": "Include PoW, PoS, smart contracts și Web3."
+        },
+        
+        "vr_history": {
+          "beginner": "VR te pune într-o lume virtuală.",
+          "professional": "Primele sisteme au apărut în anii '90.",
+          "expert": "Include tracking, rendering și haptics."
+        },
+        
+        "ar_history": {
+          "beginner": "AR adaugă elemente digitale în lumea reală.",
+          "professional": "Google Glass și HoloLens au popularizat conceptul.",
+          "expert": "Include SLAM, spatial mapping și occlusion."
+        },
+        
+        "ai_assistant_history": {
+          "beginner": "Asistenții AI ajută utilizatorii.",
+          "professional": "De la Siri la modele mari de limbaj.",
+          "expert": "Include NLP, multimodalitate și reasoning avansat."
+        }
+        "software_engineering": {
+          "beginner": "Software engineering înseamnă să construiești programe într-un mod organizat.",
+          "professional": "Aplică principii, procese și metodologii pentru dezvoltarea software-ului.",
+          "expert": "Include arhitectură, design patterns, CI/CD, testare, scalabilitate și mentenanță pe termen lung."
+        },
+        
+        "software_development_lifecycle": {
+          "beginner": "Ciclul de viață al software-ului arată pașii de la idee la produs.",
+          "professional": "Faze: planificare, analiză, design, implementare, testare, deployment, mentenanță.",
+          "expert": "Include SDLC models, governance, risk management și continuous improvement."
+        },
+        
+        "agile": {
+          "beginner": "Agile înseamnă să lucrezi rapid și flexibil.",
+          "professional": "Metodologie bazată pe iterații, feedback și colaborare.",
+          "expert": "Include Scrum, Kanban, ceremonies, velocity și incremental delivery."
+        },
+        
+        "scrum": {
+          "beginner": "Scrum este o metodă de lucru în echipă.",
+          "professional": "Roluri: Product Owner, Scrum Master, Development Team.",
+          "expert": "Include sprint planning, backlog refinement, burndown charts și empirical process control."
+        },
+        
+        "kanban": {
+          "beginner": "Kanban folosește un panou cu coloane pentru a urmări munca.",
+          "professional": "Optimizează fluxul de lucru prin limitarea WIP.",
+          "expert": "Include lead time, cycle time, throughput și continuous flow."
+        },
+        
+        "waterfall": {
+          "beginner": "Waterfall este un proces în pași fixați.",
+          "professional": "Fiecare fază trebuie terminată înainte de următoarea.",
+          "expert": "Include requirements freeze, documentation-heavy workflows și predictability trade-offs."
+        },
+        
+        "requirements_engineering": {
+          "beginner": "Stabilești ce trebuie să facă software-ul.",
+          "professional": "Include elicitation, analiză, documentare și validare.",
+          "expert": "Include use cases, user stories, acceptance criteria și traceability."
+        },
+        
+        "use_case": {
+          "beginner": "Un use case descrie cum folosește cineva aplicația.",
+          "professional": "Definește interacțiuni între actor și sistem.",
+          "expert": "Include scenarios, extensions și UML diagrams."
+        },
+        
+        "user_story": {
+          "beginner": "O propoziție care spune ce vrea utilizatorul.",
+          "professional": "Format: As a…, I want…, so that…",
+          "expert": "Include acceptance criteria, INVEST principles și backlog refinement."
+        },
+        
+        "acceptance_criteria": {
+          "beginner": "Reguli care spun când o funcție e gata.",
+          "professional": "Definește comportamentul așteptat.",
+          "expert": "Include Gherkin syntax, BDD și testable requirements."
+        },
+        
+        "system_design": {
+          "beginner": "Planul pentru cum funcționează un sistem mare.",
+          "professional": "Include arhitectură, baze de date, API-uri și scalare.",
+          "expert": "Include load balancing, caching, queues, microservices și distributed systems."
+        },
+        
+        "architecture_patterns": {
+          "beginner": "Modele pentru a organiza software-ul.",
+          "professional": "Include layered, microservices, event-driven.",
+          "expert": "Include CQRS, hexagonal architecture și domain-driven design."
+        },
+        
+        "design_patterns": {
+          "beginner": "Soluții gata făcute pentru probleme comune.",
+          "professional": "Categorii: creational, structural, behavioral.",
+          "expert": "Include Singleton, Factory, Adapter, Observer, Strategy."
+        },
+        
+        "solid": {
+          "beginner": "Reguli pentru a scrie cod bun.",
+          "professional": "Principii pentru design modular și extensibil.",
+          "expert": "Include SRP, OCP, LSP, ISP, DIP aplicate în arhitecturi mari."
+        },
+        
+        "clean_code": {
+          "beginner": "Cod ușor de citit.",
+          "professional": "Include naming, structuri clare și evitarea duplicării.",
+          "expert": "Include refactoring, readability metrics și maintainability."
+        },
+        
+        "refactoring": {
+          "beginner": "Îmbunătățești codul fără să schimbi funcționalitatea.",
+          "professional": "Elimini duplicări și complexitate.",
+          "expert": "Include code smells, patterns și continuous refactoring."
+        },
+        
+        "technical_debt": {
+          "beginner": "Lucruri făcute rapid care trebuie reparate mai târziu.",
+          "professional": "Compromisuri care afectează mentenanța.",
+          "expert": "Include debt tracking, prioritization și remediation strategies."
+        },
+        
+        "version_control": {
+          "beginner": "Un sistem care salvează toate versiunile codului.",
+          "professional": "Git este standardul industriei.",
+          "expert": "Include branching strategies, merge conflicts și CI integration."
+        },
+        
+        "git_flow": {
+          "beginner": "O metodă de a organiza branch-urile.",
+          "professional": "Include develop, feature, release, hotfix.",
+          "expert": "Include automation, tagging și release governance."
+        },
+        
+        "continuous_integration": {
+          "beginner": "Codul este testat automat când îl trimiți.",
+          "professional": "CI rulează build-uri și teste la fiecare commit.",
+          "expert": "Include pipelines, caching, parallel jobs și quality gates."
+        },
+        
+        "continuous_delivery": {
+          "beginner": "Software-ul poate fi lansat oricând.",
+          "professional": "Automatizează deploy-ul până la producție.",
+          "expert": "Include blue-green, canary, approvals și rollback."
+        },
+        
+        "continuous_deployment": {
+          "beginner": "Software-ul se lansează automat.",
+          "professional": "Fiecare commit valid ajunge în producție.",
+          "expert": "Include monitoring, auto-rollback și deployment safety."
+        },
+        
+        "testing": {
+          "beginner": "Testezi ca să vezi dacă software-ul merge.",
+          "professional": "Tipuri: unit, integration, system, acceptance.",
+          "expert": "Include TDD, mocks, coverage, flaky test mitigation."
+        },
+        
+        "unit_test": {
+          "beginner": "Testezi bucăți mici de cod.",
+          "professional": "Izolezi funcții și clase.",
+          "expert": "Include mocking, stubbing și deterministic tests."
+        },
+        
+        "integration_test": {
+          "beginner": "Testezi cum lucrează părțile împreună.",
+          "professional": "Include API-uri, baze de date și servicii.",
+          "expert": "Include contract testing și environment parity."
+        },
+        
+        "system_test": {
+          "beginner": "Testezi tot sistemul.",
+          "professional": "Simulezi scenarii reale.",
+          "expert": "Include end-to-end automation și performance validation."
+        },
+        
+        "tdd": {
+          "beginner": "Scrii testul înainte de cod.",
+          "professional": "Ciclul: Red → Green → Refactor.",
+          "expert": "Include test design, mocking strategies și maintainability."
+        },
+        
+        "bdd": {
+          "beginner": "Teste scrise ca propoziții.",
+          "professional": "Behavior-Driven Development folosește Gherkin.",
+          "expert": "Include living documentation și collaboration workflows."
+        },
+        
+        "code_review": {
+          "beginner": "Cineva verifică codul tău.",
+          "professional": "Îmbunătățește calitatea și găsește erori.",
+          "expert": "Include review guidelines, automation și knowledge sharing."
+        },
+        
+        "api_design": {
+          "beginner": "Creezi reguli pentru cum comunică aplicațiile.",
+          "professional": "Include endpoints, metode, status codes.",
+          "expert": "Include versioning, pagination, rate limiting și OpenAPI."
+        },
+        
+        "microservices": {
+          "beginner": "Aplicația e împărțită în bucăți mici.",
+          "professional": "Servicii independente comunică prin API-uri.",
+          "expert": "Include service discovery, resilience, observability și distributed tracing."
+        },
+        
+        "monolith": {
+          "beginner": "Totul într-o singură aplicație.",
+          "professional": "Simplu de început, greu de scalat.",
+          "expert": "Include modular monolith, boundaries și refactoring către microservices."
+        },
+        
+        "event_driven_architecture": {
+          "beginner": "Sistemele reacționează la evenimente.",
+          "professional": "Folosește mesaje și pub/sub.",
+          "expert": "Include Kafka, event sourcing și eventual consistency."
+        },
+        
+        "domain_driven_design": {
+          "beginner": "Construiești software după reguli de business.",
+          "professional": "Include entities, value objects, aggregates.",
+          "expert": "Include bounded contexts, ubiquitous language și strategic design."
+        },
+        
+        "scalability": {
+          "beginner": "Sistemul poate crește când ai mulți utilizatori.",
+          "professional": "Scale vertical sau orizontal.",
+          "expert": "Include sharding, caching, load balancing și distributed systems."
+        },
+        
+        "performance_engineering": {
+          "beginner": "Optimizezi ca software-ul să fie rapid.",
+          "professional": "Include profiling, caching și optimizări.",
+          "expert": "Include latency budgets, throughput tuning și bottleneck analysis."
+        },
+        
+        "observability": {
+          "beginner": "Vezi ce face aplicația.",
+          "professional": "Include logs, metrics, traces.",
+          "expert": "Include OpenTelemetry, dashboards și SLO management."
+        },
+        
+        "logging": {
+          "beginner": "Salvezi ce se întâmplă în aplicație.",
+          "professional": "Include nivele: info, warn, error.",
+          "expert": "Include structured logs, correlation IDs și retention policies."
+        },
+        
+        "metrics": {
+          "beginner": "Numere care arată cum merge aplicația.",
+          "professional": "Include CPU, memorie, trafic.",
+          "expert": "Include RED/USE metrics și time-series databases."
+        },
+        
+        "tracing": {
+          "beginner": "Urmărești cererile prin sistem.",
+          "professional": "Analizezi latența și erorile.",
+          "expert": "Include spans, context propagation și distributed tracing."
+        },
+        
+        "security_engineering": {
+          "beginner": "Protejezi aplicația.",
+          "professional": "Include autentificare, autorizare, criptare.",
+          "expert": "Include threat modeling, secure coding și zero trust."
+        },
+        
+        "devops": {
+          "beginner": "DevOps unește programatorii și administratorii.",
+          "professional": "Automatizează livrarea software-ului.",
+          "expert": "Include CI/CD, IaC, monitoring și release automation."
+        },
+        
+        "site_reliability_engineering": {
+          "beginner": "SRE menține site-urile în viață.",
+          "professional": "Include SLO, SLA, error budgets.",
+          "expert": "Include incident response, on-call, chaos engineering."
+        },
+        
+        "chaos_engineering": {
+          "beginner": "Testezi ce se întâmplă când ceva se strică.",
+          "professional": "Simulezi erori pentru a crește reziliența.",
+          "expert": "Include fault injection, chaos experiments și steady-state validation."
+        },
+        
+        "documentation": {
+          "beginner": "Scrii explicații pentru software.",
+          "professional": "Include README, API docs, arhitectură.",
+          "expert": "Include living documentation, ADRs și knowledge bases."
+        },
+        
+        "software_maintenance": {
+          "beginner": "Ai grijă de software după lansare.",
+          "professional": "Include bug fixing, updates, improvements.",
+          "expert": "Include lifecycle management, refactoring și long-term support."
+        }
+
+        "algorithm": {
+          "beginner": "Un algoritm este un set de pași pentru a rezolva o problemă.",
+          "professional": "Algoritmii sunt proceduri bine definite cu complexitate temporală și spațială.",
+          "expert": "Include analiză Big-O, amortizare, probabilistic behavior și optimizări avansate."
+        },
+        
+        "time_complexity": {
+          "beginner": "Arată cât durează un algoritm.",
+          "professional": "Măsoară creșterea timpului în funcție de input.",
+          "expert": "Include O(1), O(n), O(n log n), O(n²), best/average/worst case și lower bounds."
+        },
+        
+        "space_complexity": {
+          "beginner": "Arată câtă memorie folosește un algoritm.",
+          "professional": "Include memorie auxiliară și totală.",
+          "expert": "Include trade-off-uri timp–spațiu și optimizări de memorie."
+        },
+        
+        "big_o_notation": {
+          "beginner": "Big-O arată cât de repede crește timpul unui algoritm.",
+          "professional": "Măsoară limite superioare ale performanței.",
+          "expert": "Include O, Ω, Θ, analiza amortizată și comparații între clase de complexitate."
+        },
+        
+        "recursion": {
+          "beginner": "Recursia este când o funcție se apelează pe ea însăși.",
+          "professional": "Rezolvă probleme împărțindu-le în subprobleme.",
+          "expert": "Include call stack, tail-call optimization și transformări în iterație."
+        },
+        
+        "divide_and_conquer": {
+          "beginner": "Împarți problema în bucăți mai mici.",
+          "professional": "Folosit în algoritmi precum merge sort și quicksort.",
+          "expert": "Include recurențe, Master Theorem și optimizări pentru subprobleme."
+        },
+        
+        "dynamic_programming": {
+          "beginner": "Salvezi rezultatele ca să nu le calculezi din nou.",
+          "professional": "Folosește memoizare și tabulare.",
+          "expert": "Include optimizări spațiale, DP pe grafuri și tehnici avansate precum bitmask DP."
+        },
+        
+        "greedy_algorithm": {
+          "beginner": "Alegi mereu cea mai bună opțiune la fiecare pas.",
+          "professional": "Funcționează când soluția locală duce la soluția globală.",
+          "expert": "Include matroizi, greedy choice property și optimizări pentru grafuri."
+        },
+        
+        "backtracking": {
+          "beginner": "Încerci soluții și te întorci dacă nu merg.",
+          "professional": "Folosit în probleme combinatoriale.",
+          "expert": "Include pruning, branch-and-bound și optimizări pentru search space."
+        },
+        
+        "branch_and_bound": {
+          "beginner": "Tai ramurile care nu duc la soluție.",
+          "professional": "Optimizează căutarea în spații mari.",
+          "expert": "Include bounding functions, heuristici și reducerea complexității."
+        },
+        
+        "data_structure": {
+          "beginner": "O structură de date organizează informația.",
+          "professional": "Definește modul de stocare și acces al datelor.",
+          "expert": "Include trade-off-uri între timp și memorie, implementări optimizate și structuri hibride."
+        },
+        
+        "array": {
+          "beginner": "O listă de elemente puse unul lângă altul.",
+          "professional": "Acces O(1), inserare/ștergere costisitoare.",
+          "expert": "Include cache locality, slicing și optimizări pentru vectori mari."
+        },
+        
+        "linked_list": {
+          "beginner": "Elemente legate între ele prin pointeri.",
+          "professional": "Inserare/ștergere rapidă, acces lent.",
+          "expert": "Include doubly linked lists, sentinel nodes și memory fragmentation."
+        },
+        
+        "stack": {
+          "beginner": "Structură LIFO: ultimul intrat, primul ieșit.",
+          "professional": "Folosit în recursie, parsing și evaluarea expresiilor.",
+          "expert": "Include stack frames, overflow/underflow și implementări optimizate."
+        },
+        
+        "queue": {
+          "beginner": "Structură FIFO: primul intrat, primul ieșit.",
+          "professional": "Folosit în scheduling și BFS.",
+          "expert": "Include circular buffers, deque și lock-free queues."
+        },
+        
+        "deque": {
+          "beginner": "Coada cu acces la ambele capete.",
+          "professional": "Inserare/ștergere O(1) la ambele capete.",
+          "expert": "Include implementări double-ended și optimizări pentru sliding window."
+        },
+        
+        "hash_table": {
+          "beginner": "Structură care găsește rapid elemente.",
+          "professional": "Folosește hashing și buckets.",
+          "expert": "Include collision resolution, rehashing și load factor tuning."
+        },
+        
+        "binary_tree": {
+          "beginner": "Fiecare nod are maxim doi copii.",
+          "professional": "Folosit pentru căutare și organizare.",
+          "expert": "Include traversări, balansare și optimizări pentru memorie."
+        },
+        
+        "binary_search_tree": {
+          "beginner": "Arbore unde stânga < nod < dreapta.",
+          "professional": "Căutare, inserare, ștergere O(log n) în medie.",
+          "expert": "Include balansare, rotații și degenerare în listă."
+        },
+        
+        "avl_tree": {
+          "beginner": "Arbore care se auto-balansază.",
+          "professional": "Menține diferența de înălțime între subarbori.",
+          "expert": "Include rotații, rebalancing și complexitate garantată."
+        },
+        
+        "red_black_tree": {
+          "beginner": "Arbore balansat cu reguli de culoare.",
+          "professional": "Folosit în multe biblioteci standard.",
+          "expert": "Include invariants, rotații și garantarea O(log n)."
+        },
+        
+        "heap": {
+          "beginner": "Structură unde elementul cel mai mare sau mic e sus.",
+          "professional": "Folosit în priority queues.",
+          "expert": "Include binary heap, Fibonacci heap și optimizări pentru Dijkstra."
+        },
+        
+        "priority_queue": {
+          "beginner": "Coada unde elementele au prioritate.",
+          "professional": "Folosește heap pentru extragere rapidă.",
+          "expert": "Include pairing heaps, binomial heaps și lazy deletion."
+        },
+        
+        "trie": {
+          "beginner": "Arbore pentru cuvinte.",
+          "professional": "Folosit în autocomplete și căutări rapide.",
+          "expert": "Include compressed tries, suffix tries și optimizări de memorie."
+        },
+        
+        "suffix_array": {
+          "beginner": "Listă cu toate sufixele unui șir.",
+          "professional": "Folosit în căutări rapide în text.",
+          "expert": "Include LCP array, Kasai algorithm și pattern matching avansat."
+        },
+        
+        "suffix_tree": {
+          "beginner": "Arbore care conține toate sufixele.",
+          "professional": "Căutare în O(m).",
+          "expert": "Include Ukkonen’s algorithm și aplicații în bioinformatică."
+        },
+        
+        "graph": {
+          "beginner": "Noduri conectate prin muchii.",
+          "professional": "Poate fi orientat sau neorientat.",
+          "expert": "Include reprezentări, traversări și algoritmi avansați."
+        },
+        
+        "bfs": {
+          "beginner": "Parcurge graful pe niveluri.",
+          "professional": "Folosit pentru distanțe minime în grafuri neponderate.",
+          "expert": "Include BFS bidirecțional și optimizări pentru grafuri sparse."
+        },
+        
+        "dfs": {
+          "beginner": "Parcurge graful în adâncime.",
+          "professional": "Folosit pentru componente conexe și detectarea ciclurilor.",
+          "expert": "Include DFS recursiv/iterativ și tree/forward/back edges."
+        },
+        
+        "dijkstra": {
+          "beginner": "Găsește cel mai scurt drum.",
+          "professional": "Folosește priority queue.",
+          "expert": "Include optimizări cu Fibonacci heap și grafuri sparse."
+        },
+        
+        "bellman_ford": {
+          "beginner": "Găsește drumuri scurte chiar cu valori negative.",
+          "professional": "Mai lent decât Dijkstra.",
+          "expert": "Include detectarea ciclurilor negative și optimizări."
+        },
+        
+        "floyd_warshall": {
+          "beginner": "Găsește toate drumurile scurte între toate nodurile.",
+          "professional": "Algoritm O(n³).",
+          "expert": "Include path reconstruction și optimizări pentru matrici."
+        },
+        
+        "topological_sort": {
+          "beginner": "Ordine pentru grafuri fără cicluri.",
+          "professional": "Folosit în scheduling și compilatoare.",
+          "expert": "Include Kahn’s algorithm și detectarea ciclurilor."
+        },
+        
+        "minimum_spanning_tree": {
+          "beginner": "Cel mai ieftin arbore care conectează toate nodurile.",
+          "professional": "Algoritmi: Kruskal, Prim.",
+          "expert": "Include DSU optimizat și implementări pentru grafuri dense."
+        },
+        
+        "kruskal": {
+          "beginner": "Construiește MST alegând muchii mici.",
+          "professional": "Folosește sortare și DSU.",
+          "expert": "Include union by rank și path compression."
+        },
+        
+        "prim": {
+          "beginner": "Construiește MST extinzând un nod.",
+          "professional": "Folosește priority queue.",
+          "expert": "Include implementări optimizate pentru grafuri sparse."
+        },
+        
+        "disjoint_set_union": {
+          "beginner": "Structură care unește grupuri.",
+          "professional": "Operații: find, union.",
+          "expert": "Include path compression și union by rank."
+        },
+        
+        "string_matching": {
+          "beginner": "Cauți un cuvânt într-un text.",
+          "professional": "Algoritmi: KMP, Rabin-Karp.",
+          "expert": "Include automata, suffix arrays și Z-algorithm."
+        },
+        
+        "kmp": {
+          "beginner": "Căutare rapidă în text.",
+          "professional": "Folosește prefix function.",
+          "expert": "Include optimizări pentru pattern-uri repetitive."
+        },
+        
+        "rabin_karp": {
+          "beginner": "Căutare cu hashing.",
+          "professional": "Rapid pentru multiple pattern-uri.",
+          "expert": "Include rolling hash și collision handling."
+        },
+        
+        "z_algorithm": {
+          "beginner": "Calculează potriviri în text.",
+          "professional": "Folosit în pattern matching.",
+          "expert": "Include Z-array și optimizări pentru string processing."
+        },
+        
+        "bit_manipulation": {
+          "beginner": "Lucrezi direct cu biți.",
+          "professional": "Folosit pentru optimizări și structuri compacte.",
+          "expert": "Include bitmasks, popcount și trick-uri avansate."
+        },
+        
+        "sliding_window": {
+          "beginner": "Te miști printr-un șir cu o fereastră.",
+          "professional": "Optimizează probleme cu subsecvențe.",
+          "expert": "Include two-pointer techniques și optimizări pentru O(n)."
+        },
+        
+        "two_pointers": {
+          "beginner": "Folosești doi indici care se mișcă.",
+          "professional": "Folosit în probleme cu șiruri și intervale.",
+          "expert": "Include optimizări pentru sortare și căutare."
+        },
+        
+        "binary_search": {
+          "beginner": "Cauți rapid într-o listă sortată.",
+          "professional": "Împarte intervalul în două.",
+          "expert": "Include lower_bound, upper_bound și aplicații pe răspuns."
+        },
+        
+        "segment_tree": {
+          "beginner": "Structură pentru intervale.",
+          "professional": "Suportă query-uri și update-uri rapide.",
+          "expert": "Include lazy propagation și structuri hibride."
+        },
+        
+        "fenwick_tree": {
+          "beginner": "Structură pentru sume parțiale.",
+          "professional": "Fenwick Tree oferă update și query în O(log n).",
+          "expert": "Include optimizări pentru prefix sums și memory layout."
+        }
+
+        "mathematics_for_cs": {
+          "beginner": "Matematica pentru informatică te ajută să înțelegi cum funcționează algoritmii și calculatoarele.",
+          "professional": "Include logică, probabilități, algebră, grafuri, combinatorică și analiză.",
+          "expert": "Fundamentul AI, criptografiei, optimizării, complexității și sistemelor distribuite."
+        },
+        
+        "set_theory": {
+          "beginner": "Mulțimile sunt colecții de obiecte.",
+          "professional": "Include operații: uniune, intersecție, diferență.",
+          "expert": "Include cardinalitate, relații, funcții și infinite sets."
+        },
+        
+        "logic": {
+          "beginner": "Logica te ajută să iei decizii corecte.",
+          "professional": "Include propoziții, predicate, tabele de adevăr.",
+          "expert": "Include logică de ordinul întâi, cuantificatori și demonstrații formale."
+        },
+        
+        "boolean_algebra": {
+          "beginner": "Lucrezi cu adevărat și fals.",
+          "professional": "Operații: AND, OR, NOT.",
+          "expert": "Include simplificare, Karnaugh maps și circuite logice."
+        },
+        
+        "proof_methods": {
+          "beginner": "Demonstrezi că ceva e adevărat.",
+          "professional": "Metode: inducție, contradicție, contrapozitivă.",
+          "expert": "Include dovezi constructive, non-constructive și reducții."
+        },
+        
+        "induction": {
+          "beginner": "Demonstrezi ceva pentru toate numerele.",
+          "professional": "Include baza și pasul inductiv.",
+          "expert": "Include inducție puternică și inducție structurală."
+        },
+        
+        "combinatorics": {
+          "beginner": "Numărăm posibilități.",
+          "professional": "Include permutări, combinații, aranjamente.",
+          "expert": "Include principii avansate, counting arguments și bijections."
+        },
+        
+        "permutations": {
+          "beginner": "Ordine diferite ale acelorași elemente.",
+          "professional": "n! permutări pentru n elemente.",
+          "expert": "Include permutări cu repetiție și cicluri."
+        },
+        
+        "combinations": {
+          "beginner": "Alegi elemente fără să conteze ordinea.",
+          "professional": "Formula C(n, k).",
+          "expert": "Include identități combinatorice și binomial theorem."
+        },
+        
+        "binomial_theorem": {
+          "beginner": "Extinzi (a + b)^n.",
+          "professional": "Coeficienții sunt numere binomiale.",
+          "expert": "Include Pascal triangle, combinatorics și probabilități."
+        },
+        
+        "probability": {
+          "beginner": "Probabilitatea arată cât de posibil e un eveniment.",
+          "professional": "Include evenimente, distribuții, independență.",
+          "expert": "Include Bayes, Markov chains și probabilități condiționate."
+        },
+        
+        "bayes_theorem": {
+          "beginner": "Actualizezi probabilități când afli informații noi.",
+          "professional": "P(A|B) = P(B|A)P(A)/P(B).",
+          "expert": "Include inferență bayesiană și modele probabilistice."
+        },
+        
+        "random_variable": {
+          "beginner": "O variabilă care ia valori la întâmplare.",
+          "professional": "Include discrete și continue.",
+          "expert": "Include distribuții, așteptare și varianță."
+        },
+        
+        "expected_value": {
+          "beginner": "Media rezultatelor posibile.",
+          "professional": "E[X] = sum(x * p).",
+          "expert": "Include linearity of expectation și aplicații în algoritmi."
+        },
+        
+        "variance": {
+          "beginner": "Cât de împrăștiate sunt valorile.",
+          "professional": "Var(X) = E[X²] - (E[X])².",
+          "expert": "Include covarianță și matrice de covarianță."
+        },
+        
+        "distributions": {
+          "beginner": "Moduri în care apar valorile.",
+          "professional": "Distribuții: uniformă, normală, binomială.",
+          "expert": "Include Poisson, exponentială, gamma și heavy-tailed."
+        },
+        
+        "normal_distribution": {
+          "beginner": "Curba în formă de clopot.",
+          "professional": "Media și deviația standard definesc forma.",
+          "expert": "Include CLT, Z-scores și probabilități continue."
+        },
+        
+        "central_limit_theorem": {
+          "beginner": "Media multor valori devine normală.",
+          "professional": "Suma variabilelor independente converge la normală.",
+          "expert": "Fundamental în statistică și machine learning."
+        },
+        
+        "linear_algebra": {
+          "beginner": "Lucrezi cu vectori și matrici.",
+          "professional": "Include operații, transformări și sisteme liniare.",
+          "expert": "Include eigenvalues, SVD și optimizări pentru ML."
+        },
+        
+        "vector": {
+          "beginner": "O listă de numere.",
+          "professional": "Reprezintă direcții și mărimi.",
+          "expert": "Include spații vectoriale și norme."
+        },
+        
+        "matrix": {
+          "beginner": "O tabelă de numere.",
+          "professional": "Folosită în transformări și sisteme liniare.",
+          "expert": "Include factorizări, inversare și decompoziții."
+        },
+        
+        "matrix_multiplication": {
+          "beginner": "Combini două matrici.",
+          "professional": "Folosit în grafuri și ML.",
+          "expert": "Include optimizări, Strassen și algoritmi rapizi."
+        },
+        
+        "determinant": {
+          "beginner": "Un număr asociat unei matrici.",
+          "professional": "Arată dacă matricea e invertibilă.",
+          "expert": "Include proprietăți, cofactori și aplicații geometrice."
+        },
+        
+        "eigenvalues": {
+          "beginner": "Numere speciale ale unei matrici.",
+          "professional": "Axele principale ale transformărilor.",
+          "expert": "Include diagonalizare, PCA și stabilitate."
+        },
+        
+        "svd": {
+          "beginner": "Împarți o matrice în trei părți.",
+          "professional": "Singular Value Decomposition.",
+          "expert": "Include reducere dimensională și optimizări ML."
+        },
+        
+        "calculus": {
+          "beginner": "Studiul schimbării.",
+          "professional": "Include derivate și integrale.",
+          "expert": "Include optimizare, limite și analize avansate."
+        },
+        
+        "derivative": {
+          "beginner": "Cât de repede se schimbă ceva.",
+          "professional": "Folosit în optimizare.",
+          "expert": "Include gradient, Hessian și optimizare convexă."
+        },
+        
+        "gradient": {
+          "beginner": "Direcția de creștere maximă.",
+          "professional": "Folosit în machine learning.",
+          "expert": "Include descent, momentum și optimizări."
+        },
+        
+        "optimization": {
+          "beginner": "Găsești cea mai bună soluție.",
+          "professional": "Include funcții obiectiv și constrângeri.",
+          "expert": "Include convexitate, Lagrange și algoritmi numerici."
+        },
+        
+        "convexity": {
+          "beginner": "Formă fără gropi.",
+          "professional": "Funcțiile convexe au minime globale.",
+          "expert": "Include subgradienți și optimizare convexă."
+        },
+        
+        "lagrange_multipliers": {
+          "beginner": "Optimizezi cu restricții.",
+          "professional": "Include funcția Lagrangian.",
+          "expert": "Include KKT conditions și optimizare avansată."
+        },
+        
+        "number_theory": {
+          "beginner": "Studiul numerelor.",
+          "professional": "Include divizibilitate, prime și congruențe.",
+          "expert": "Fundamental în criptografie."
+        },
+        
+        "prime_numbers": {
+          "beginner": "Numere care se împart doar la ele și la 1.",
+          "professional": "Folosite în algoritmi și criptografie.",
+          "expert": "Include primality testing și distribuția primelor."
+        },
+        
+        "modular_arithmetic": {
+          "beginner": "Aritmetică pe resturi.",
+          "professional": "Folosită în hashing și criptografie.",
+          "expert": "Include invers modular, RSA și grupuri finite."
+        },
+        
+        "gcd": {
+          "beginner": "Cel mai mare divizor comun.",
+          "professional": "Folosit în simplificări.",
+          "expert": "Include algoritmul Euclid și extins."
+        },
+        
+        "euclidean_algorithm": {
+          "beginner": "Găsește GCD rapid.",
+          "professional": "Folosește împărțiri repetate.",
+          "expert": "Include versiunea extinsă pentru RSA."
+        },
+        
+        "cryptographic_math": {
+          "beginner": "Matematica din spatele criptării.",
+          "professional": "Include modulo, exponențiere și prime.",
+          "expert": "Include ECC, RSA și discrete logarithms."
+        },
+        
+        "graph_theory": {
+          "beginner": "Studiul nodurilor și conexiunilor.",
+          "professional": "Folosit în rețele și algoritmi.",
+          "expert": "Include arbori, cicluri și grafuri orientate."
+        },
+        
+        "tree": {
+          "beginner": "Un graf fără cicluri.",
+          "professional": "Folosit în structuri de date.",
+          "expert": "Include arbori binari, AVL și spanning trees."
+        },
+        
+        "markov_chain": {
+          "beginner": "Proces unde următorul pas depinde doar de cel curent.",
+          "professional": "Include matrice de tranziție.",
+          "expert": "Include steady-state, ergodicitate și modele probabilistice."
+        },
+        
+        "information_theory": {
+          "beginner": "Studiul informației.",
+          "professional": "Include entropie și codare.",
+          "expert": "Include mutual information și limite fundamentale."
+        },
+        
+        "entropy": {
+          "beginner": "Cât de imprevizibil e ceva.",
+          "professional": "Folosit în compresie și ML.",
+          "expert": "Include Shannon entropy și cross-entropy."
+        },
+        
+        "fourier_transform": {
+          "beginner": "Împarți un semnal în frecvențe.",
+          "professional": "Folosit în audio, imagini și ML.",
+          "expert": "Include FFT, convoluții și spectre."
+        },
+        
+        "complex_numbers": {
+          "beginner": "Numere cu partea imaginară.",
+          "professional": "Folosit în semnale și fizică.",
+          "expert": "Include planul complex și transformări."
+        },
+        
+        "matrices_in_ml": {
+          "beginner": "Matricile sunt folosite în AI.",
+          "professional": "Reprezintă date și modele.",
+          "expert": "Include operații tensoriale și GPU acceleration."
+        }
+
+
+        
+
+
+     
 # -----------------------------
 # FUNCȚII USER DATABASE
 # -----------------------------
