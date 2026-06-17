@@ -74,7 +74,7 @@ st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 
 # ---- BAZA DE CUNOȘTINȚE HYBRID ----
 if "knowledge" not in st.session_state:
-    st.session_state.knowledge = {
+    st.session_state.knowledge = {}
         
         # ============================================
         # 💎 AEGIS LEVEL — Interactive Mentor (90 terms)
