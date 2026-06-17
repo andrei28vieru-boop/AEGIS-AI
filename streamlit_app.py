@@ -107,12 +107,11 @@ if "knowledge" not in st.session_state:
             "related": ["ml", "deep learning", "transformers", "neural networks"]
         }
     }
-
         
         # ============================================
-        # 💎 AEGIS LEVEL — Interactive Mentor (90 terms)
+        # 💎 AEGIS LEVEL — Interactive Mentor (90 terms) 
         # ============================================
-        
+       
         "api": {
             "beginner": "Un API e ca un chelner într-un restaurant. Tu comanzi mâncarea, el merge la bucătărie și îți aduce farfuria. API-ul duce cererea ta la un server și aduce răspunsul înapoi.",
             "professional": "Un API (Application Programming Interface) este un set de reguli și protocoale care permite două aplicații software să comunice. API-urile REST folosesc HTTP și JSON pentru a transfera date între client și server.",
@@ -5654,8 +5653,7 @@ if "knowledge" not in st.session_state:
             "professional": "Optimizează o familie de distribuții pentru a apropia posteriorul.",
             "expert": "Este baza VAEs, modelelor probabilistice și ML generativ."
           },
-
-
+        
 
 
 # -----------------------------
