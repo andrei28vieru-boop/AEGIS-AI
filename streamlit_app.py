@@ -4,6 +4,8 @@ import bcrypt
 import json
 import time
 from pathlib import Path
+from deep_translator import GoogleTranslator
+
 
 # -----------------------------
 # CONSTANTE PERSISTENTE
