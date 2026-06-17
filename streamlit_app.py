@@ -74,7 +74,38 @@ st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 
 # ---- BAZA DE CUNOȘTINȚE HYBRID ----
 if "knowledge" not in st.session_state:
-    st.session_state.knowledge = {}
+    st.session_state.knowledge = {
+        "api": {
+            "beginner": "Un API e ca un chelner într-un restaurant. Tu comanzi mâncarea, el merge la bucătărie și îți aduce farfuria. API-ul duce cererea ta la un server și îți aduce răspunsul înapoi.",
+            "professional": "Un API (Application Programming Interface) este un set de reguli și protocoale care permite două aplicații software să comunice. API-urile REST folosesc HTTP și JSON pentru a transfera date între client și server.",
+            "expert": "La nivel arhitectural, un API trebuie proiectat cu versionare, rate limiting, autentificare OAuth 2.0, și documentație OpenAPI. Performanța depinde de caching strategies, paginare și optimizarea query-urilor.",
+            "code": "# Exemplu Python: Apelarea unui API\nimport requests\nresponse = requests.get('https://api.example.com/data')\ndata = response.json()\nprint(data)",
+            "real_world": "Când folosești aplicația Meteo, ea folosește un API să ceară date de la serverul de vreme. Când postezi pe Instagram, aplicația folosește API-ul Instagram să trimită poza ta.",
+            "quiz": {"question": "Ce protocol folosesc majoritatea API-urilor moderne?", "options": ["HTTP", "FTP", "SMTP", "SSH"], "answer": "HTTP"},
+            "related": ["api rest", "json", "oauth", "http"]
+        },
+
+        "python": {
+            "beginner": "Python e ca un limbaj pe care îl vorbești cu computerul. E simplu, ca engleza. Scrii ce vrei să facă, iar el execută. E perfect pentru începători!",
+            "professional": "Python e un limbaj de programare high-level, interpretat, cu tipare dinamică. Este folosit în web development, data science, AI/ML și automatizări.",
+            "expert": "Python 3.x oferă async/await, GIL pentru thread safety, și un ecosistem vast prin PyPI. Arhitectura permite OOP și programare funcțională.",
+            "code": "print('Salut, lume!')\nprint('Bun venit, {nume}!'.format(nume='Andrei'))",
+            "real_world": "Python e folosit de NASA, Google, Netflix și Spotify.",
+            "quiz": {"question": "Ce cuvânt cheie definește o funcție în Python?", "options": ["func", "def", "function", "define"], "answer": "def"},
+            "related": ["variabilă", "funcție", "clasă", "pip", "django"]
+        },
+
+        "ai": {
+            "beginner": "Inteligența Artificială e ca un copil care învață. Îi arăți multe poze cu pisici, și el învață să recunoască o pisică.",
+            "professional": "AI include subdomenii precum Machine Learning, Deep Learning, NLP și Computer Vision.",
+            "expert": "Implementările moderne folosesc transformere, diffusion models și reinforcement learning. Optimizarea necesită GPU-uri și tehnici de fine-tuning.",
+            "code": "# Exemplu simplu de AI\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()",
+            "real_world": "AI este folosit în Tesla Autopilot, ChatGPT, Google Photos și sisteme medicale.",
+            "quiz": {"question": "Ce tip de AI folosește rețele neuronale profunde?", "options": ["Machine Learning", "Deep Learning", "NLP", "Vision"], "answer": "Deep Learning"},
+            "related": ["ml", "deep learning", "transformers", "neural networks"]
+        }
+    }
+
         
         # ============================================
         # 💎 AEGIS LEVEL — Interactive Mentor (90 terms)
