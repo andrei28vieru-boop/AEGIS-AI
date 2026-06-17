@@ -5653,32 +5653,7 @@ if "knowledge" not in st.session_state:
             "expert": "Este baza VAEs, modelelor probabilistice și ML generativ."
           },
 
-# -----------------------------
-# FUNCȚII USER DATABASE
-# -----------------------------
-def load_user_db():
-    try:
-        if USERS_DB_PATH.exists():
-            with open(USERS_DB_PATH, "r", encoding="utf-8") as f:
-                return json.load(f)
-    except:
-        return {}
-    return {}
 
-def save_user_db(db):
-    tmp = USERS_DB_PATH.with_suffix(".tmp")
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(db, f, ensure_ascii=False, indent=2)
-    tmp.replace(USERS_DB_PATH)
-
-def hash_pwd(password: str) -> str:
-    return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
-
-def verify_pwd(password: str, hashed: str) -> bool:
-    try:
-        return bcrypt.checkpw(password.encode(), hashed.encode())
-    except:
-        return False
 
 
 # -----------------------------
