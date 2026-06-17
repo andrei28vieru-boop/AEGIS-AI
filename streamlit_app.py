@@ -4660,13 +4660,968 @@ if "knowledge" not in st.session_state:
           "beginner": "Matricile sunt folosite în AI.",
           "professional": "Reprezintă date și modele.",
           "expert": "Include operații tensoriale și GPU acceleration."
-        }
+        },
 
-
+          "tensors": {
+            "beginner": "Un tensor este ca o matrice extinsă în mai multe dimensiuni.",
+            "professional": "Un tensor este o structură multidimensională de date folosită în calcule numerice și rețele neuronale.",
+            "expert": "Tensori reprezintă obiecte multilineare definite pe spații vectoriale, optimizate pentru operații GPU și paralelizare."
+          },
         
+          "vector_spaces": {
+            "beginner": "Un spațiu vectorial este un loc unde vectorii pot fi adunați și înmulțiți cu numere.",
+            "professional": "Un vector space este o structură algebrică definită prin axiome de adunare și scalare.",
+            "expert": "Spațiile vectoriale sunt fundația pentru transformări liniare, baze, dimensiuni și decompoziții spectrale."
+          },
+        
+          "dot_product": {
+            "beginner": "Dot product arată cât de asemănați sunt doi vectori.",
+            "professional": "Produsul scalar este suma produselor componentelor vectorilor.",
+            "expert": "Dot product este o formă biliniară ce definește unghiuri, norme și proiecții în spații euclidiene."
+          },
+        
+          "cross_product": {
+            "beginner": "Cross product dă un vector perpendicular pe doi vectori.",
+            "professional": "Produsul vectorial returnează un vector ortogonal cu magnitudine proporțională cu aria paralelogramului.",
+            "expert": "Cross product este o operație specifică spațiului tridimensional, derivată din algebra exterioră."
+          },
+        
+          "norms": {
+            "beginner": "Norma arată cât de mare este un vector.",
+            "professional": "O normă este o funcție care măsoară lungimea unui vector.",
+            "expert": "Normele L1, L2 și L∞ definesc geometrii diferite și influențează regularizarea în ML."
+          },
+        
+          "eigenvalues": {
+            "beginner": "Un eigenvalue arată cât de mult se întinde un vector după o transformare.",
+            "professional": "Eigenvalue este un scalar asociat unei transformări liniare care scalează un eigenvector.",
+            "expert": "Spectrul unei matrice determină stabilitatea, convergența și comportamentul sistemelor dinamice."
+          },
+        
+          "eigenvectors": {
+            "beginner": "Un eigenvector își păstrează direcția după transformare.",
+            "professional": "Un eigenvector este un vector care este scalat, nu rotit, de o matrice.",
+            "expert": "Eigenvectorii formează baze spectrale folosite în PCA, diagonalizare și decompoziții ortogonale."
+          },
+        
+          "jacobian": {
+            "beginner": "Jacobianul arată cum se schimbă o funcție cu multe variabile.",
+            "professional": "Jacobianul este matricea derivatelor parțiale ale unei funcții vectoriale.",
+            "expert": "Jacobianul este esențial în optimizare, transformări de coordonate și backpropagation."
+          },
+        
+          "hessian": {
+            "beginner": "Hessianul arată cât de curbată este o funcție.",
+            "professional": "Hessianul este matricea derivatelor parțiale de ordinul doi.",
+            "expert": "Hessianul determină convexitatea, punctele de șa și direcțiile de curbură în optimizare."
+          },
+        
+          "gradient": {
+            "beginner": "Gradientul arată direcția în care crește cel mai mult o funcție.",
+            "professional": "Gradientul este vectorul derivatelor parțiale ale unei funcții.",
+            "expert": "Gradientul este folosit în optimizare, descent methods și analiza suprafețelor de pierdere."
+          },
+        
+          "derivatives": {
+            "beginner": "Derivata arată cât de repede se schimbă ceva.",
+            "professional": "Derivata măsoară rata de variație a unei funcții.",
+            "expert": "Derivatele sunt fundamentale în analiza funcțională, optimizare și modele continue."
+          },
+        
+          "partial_derivatives": {
+            "beginner": "O derivată parțială arată cum se schimbă o funcție când modifici doar o variabilă.",
+            "professional": "Derivatele parțiale sunt derivate aplicate funcțiilor cu mai multe variabile.",
+            "expert": "Sunt esențiale în gradient descent, optimizare multivariată și modele probabilistice."
+          },
+        
+          "optimization": {
+            "beginner": "Optimizarea înseamnă să găsești cea mai bună soluție.",
+            "professional": "Optimization caută minimul sau maximul unei funcții.",
+            "expert": "Optimizarea convexă, neliniară și stocastică stă la baza ML modern."
+          },
+        
+          "convexity": {
+            "beginner": "O funcție convexă are forma unui bol.",
+            "professional": "Convexitatea garantează existența unui minim global unic.",
+            "expert": "Analiza convexă permite optimizare eficientă și stabilitate în algoritmi ML."
+          },
+        
+          "probability_distributions": {
+            "beginner": "O distribuție arată cât de probabil este un rezultat.",
+            "professional": "Distribuțiile modelează variabile aleatoare discrete sau continue.",
+            "expert": "Distribuțiile Gauss, Bernoulli, Poisson și Exponential sunt fundamentale în ML și statistici."
+          },
+        
+          "bayes_theorem": {
+            "beginner": "Teorema lui Bayes arată cum se schimbă probabilitatea când aflăm informații noi.",
+            "professional": "Bayes combină probabilități condiționate pentru a actualiza credințe.",
+            "expert": "Bayesian inference stă la baza modelelor probabilistice și a ML generativ."
+          },
+        
+          "expected_value": {
+            "beginner": "Valoarea așteptată este media rezultatelor posibile.",
+            "professional": "Expected value este media ponderată a tuturor valorilor posibile.",
+            "expert": "EV este un operator liniar esențial în decizii, risc și modele statistice."
+          },
+        
+          "variance": {
+            "beginner": "Varianța arată cât de împrăștiate sunt valorile.",
+            "professional": "Variance măsoară dispersia unei distribuții.",
+            "expert": "Varianța este critică în ML pentru bias-variance tradeoff și regularizare."
+          },
+        
+          "covariance": {
+            "beginner": "Covarianța arată dacă două lucruri cresc împreună.",
+            "professional": "Covariance măsoară relația liniară dintre două variabile.",
+            "expert": "Covarianța este baza PCA, decompozițiilor spectrale și modelelor multivariate."
+          },
+        
+          "correlation": {
+            "beginner": "Corelația arată cât de legate sunt două variabile.",
+            "professional": "Correlation este covarianța normalizată între două variabile.",
+            "expert": "Corelația Pearson, Spearman și Kendall sunt folosite în analiză statistică avansată."
+          },
+        
+          "svd": {
+            "beginner": "SVD împarte o matrice în trei părți mai simple.",
+            "professional": "Singular Value Decomposition exprimă o matrice ca UΣVᵀ.",
+            "expert": "SVD este fundamental în reducerea dimensionalității, regularizare și analiza spectrului matricial."
+          },
 
+          "pca": {
+            "beginner": "PCA reduce numărul de informații păstrând ce e important.",
+            "professional": "Principal Component Analysis proiectează datele pe direcții de variație maximă.",
+            "expert": "PCA folosește eigenvectors ai matricei de covarianță pentru compresie și noise reduction."
+          },
+        
+          "entropy": {
+            "beginner": "Entropia arată cât de haotice sunt datele.",
+            "professional": "Entropy măsoară incertitudinea unei distribuții.",
+            "expert": "Entropia Shannon este baza teoriei informației și a modelelor generative."
+          },
+        
+          "kl_divergence": {
+            "beginner": "KL arată cât de diferite sunt două distribuții.",
+            "professional": "KL Divergence măsoară pierderea de informație între două distribuții.",
+            "expert": "KL este folosit în VAEs, optimizare variatională și modele probabilistice."
+          },
+        
+          "softmax": {
+            "beginner": "Softmax transformă numerele în probabilități.",
+            "professional": "Softmax normalizează vectori în distribuții discrete.",
+            "expert": "Softmax este derivabil, stabil numeric și folosit în clasificare multi‑clasă."
+          },
+        
+          "sigmoid": {
+            "beginner": "Sigmoid transformă orice număr într-o valoare între 0 și 1.",
+            "professional": "Sigmoid este o funcție logistică folosită în modele binare.",
+            "expert": "Sigmoid suferă de vanishing gradients și este înlocuită în rețele profunde."
+          },
+        
+          "relu": {
+            "beginner": "ReLU lasă doar valorile pozitive.",
+            "professional": "ReLU este o funcție de activare rapidă și simplă.",
+            "expert": "ReLU îmbunătățește convergența, dar poate cauza dead neurons."
+          },
+        
+          "leaky_relu": {
+            "beginner": "Leaky ReLU lasă și valori negative mici.",
+            "professional": "Leaky ReLU previne blocarea neuronilor la zero.",
+            "expert": "Este o variantă stabilă pentru rețele adânci și modele generative."
+          },
+        
+          "loss_function": {
+            "beginner": "Loss arată cât de greșește modelul.",
+            "professional": "Loss function măsoară diferența dintre predicții și valori reale.",
+            "expert": "Loss-ul definește suprafața de optimizare și influențează convergența."
+          },
+        
+          "mse": {
+            "beginner": "MSE măsoară cât de departe sunt predicțiile de valori reale.",
+            "professional": "Mean Squared Error penalizează erorile mari.",
+            "expert": "MSE este convex, derivabil și folosit în regresie și optimizare numerică."
+          },
+        
+          "cross_entropy": {
+            "beginner": "Cross-entropy măsoară cât de bine prezice modelul clasele.",
+            "professional": "Este o măsură între distribuția reală și cea prezisă.",
+            "expert": "Cross-entropy este standard în clasificare și modele probabilistice."
+          },
+        
+          "gradient_descent": {
+            "beginner": "Gradient descent caută minimul unei funcții pas cu pas.",
+            "professional": "GD actualizează parametrii în direcția opusă gradientului.",
+            "expert": "GD are variante precum SGD, Momentum, RMSProp și Adam pentru convergență rapidă."
+          },
+        
+          "learning_rate": {
+            "beginner": "Learning rate spune cât de mari sunt pașii în învățare.",
+            "professional": "LR controlează viteza de actualizare a parametrilor.",
+            "expert": "LR scheduling, warmup și decay sunt critice pentru stabilitate."
+          },
+        
+          "momentum": {
+            "beginner": "Momentum ajută modelul să nu se blocheze.",
+            "professional": "Momentum adaugă o componentă din gradientul anterior.",
+            "expert": "Reduce oscilațiile și accelerează convergența în direcții consistente."
+          },
+        
+          "adam_optimizer": {
+            "beginner": "Adam este un optimizer foarte folosit în AI.",
+            "professional": "Adam combină momentum cu adaptarea ratei de învățare.",
+            "expert": "Adam folosește estimări ale momentelor gradientului pentru stabilitate și performanță."
+          },
+        
+          "l1_regularization": {
+            "beginner": "L1 ajută modelul să fie mai simplu.",
+            "professional": "L1 penalizează valorile mari ale parametrilor.",
+            "expert": "L1 produce modele sparse și selectează automat caracteristici."
+          },
+        
+          "l2_regularization": {
+            "beginner": "L2 previne supraînvățarea.",
+            "professional": "L2 penalizează pătratul parametrilor.",
+            "expert": "L2 stabilizează optimizarea și reduce variabilitatea modelului."
+          },
+        
+          "bias_variance_tradeoff": {
+            "beginner": "Bias-variance arată de ce un model poate greși.",
+            "professional": "Este echilibrul între simplitate și flexibilitate.",
+            "expert": "Tradeoff-ul determină generalizarea și performanța modelelor ML."
+          },
+        
+          "stochastic_processes": {
+            "beginner": "Un proces stocastic este ceva care se schimbă aleator în timp.",
+            "professional": "Procesele stocastice modelează evoluții aleatoare.",
+            "expert": "Markov chains, Brownian motion și procesele Gaussiene sunt fundamentale în ML."
+          },
+        
+          "markov_chains": {
+            "beginner": "Un lanț Markov depinde doar de starea curentă.",
+            "professional": "Markov chains modelează tranziții între stări cu probabilități fixe.",
+            "expert": "Sunt baza modelelor secvențiale, RL și generative probabilistice."
+          },  
 
-     
+          "gaussian_distribution": {
+            "beginner": "Distribuția Gaussiană arată ca un clopot.",
+            "professional": "Distribuția normală este definită de media și deviația standard.",
+            "expert": "Gaussianele sunt fundamentale în inferență, modele liniare și procese stocastice."
+          },
+        
+          "standard_deviation": {
+            "beginner": "Deviația standard arată cât de împrăștiate sunt valorile.",
+            "professional": "Este rădăcina pătrată a varianței.",
+            "expert": "Deviația standard este esențială în estimări, intervale de încredere și ML statistic."
+          },
+        
+          "z_score": {
+            "beginner": "Z-score arată cât de departe e o valoare de medie.",
+            "professional": "Z-score normalizează datele în funcție de deviația standard.",
+            "expert": "Z-score este folosit în detectarea anomaliilor și standardizarea dataset-urilor."
+          },
+        
+          "covariance_matrix": {
+            "beginner": "O matrice de covarianță arată cum se mișcă variabilele împreună.",
+            "professional": "Este o matrice simetrică ce conține covarianțele tuturor perechilor de variabile.",
+            "expert": "Covariance matrix este baza PCA, SVD și modelelor multivariate Gaussiene."
+          },
+        
+          "correlation_matrix": {
+            "beginner": "O matrice de corelație arată cât de legate sunt variabilele.",
+            "professional": "Normalizează covarianțele pentru a obține valori între -1 și 1.",
+            "expert": "Este folosită în statistici, ML, finanțe și analiza dependențelor."
+          },
+        
+          "law_of_large_numbers": {
+            "beginner": "Cu cât faci mai multe măsurători, cu atât media devine mai precisă.",
+            "professional": "LLN spune că media eșantionului converge către media populației.",
+            "expert": "Este fundamentul estimării statistice și al modelelor probabilistice."
+          },
+        
+          "central_limit_theorem": {
+            "beginner": "Media multor valori devine o distribuție în formă de clopot.",
+            "professional": "CLT spune că suma variabilelor independente converge spre o distribuție normală.",
+            "expert": "Este baza inferenței statistice și a aproximărilor Gaussiene."
+          },
+        
+          "log_likelihood": {
+            "beginner": "Log-likelihood arată cât de bine se potrivește un model cu datele.",
+            "professional": "Este logaritmul funcției de verosimilitate.",
+            "expert": "Maximization of log-likelihood este fundamentul ML statistic și al modelelor generative."
+          },
+        
+          "maximum_likelihood_estimation": {
+            "beginner": "MLE găsește valorile care explică cel mai bine datele.",
+            "professional": "MLE maximizează funcția de verosimilitate pentru parametri.",
+            "expert": "MLE este baza modelelor statistice, regresiei și distribuțiilor parametrice."
+          },
+        
+          "gradient_flow": {
+            "beginner": "Gradient flow arată cum se schimbă parametrii în timp.",
+            "professional": "Este o formulare continuă a gradient descent.",
+            "expert": "Gradient flow analizează dinamica optimizării și stabilitatea modelelor."
+          },
+        
+          "laplace_distribution": {
+            "beginner": "Laplace seamănă cu o distribuție normală, dar cu cozi mai groase.",
+            "professional": "Este o distribuție cu densitate exponențială simetrică.",
+            "expert": "Laplace este folosită în L1 regularization și modele robuste."
+          },
+        
+          "poisson_distribution": {
+            "beginner": "Poisson modelează evenimente rare.",
+            "professional": "Este o distribuție discretă pentru număr de evenimente într-un interval.",
+            "expert": "Poisson este folosită în modele de trafic, rețele și procese stocastice."
+          },
+        
+          "exponential_distribution": {
+            "beginner": "Exponențiala modelează timpul până la un eveniment.",
+            "professional": "Este o distribuție continuă cu rată constantă.",
+            "expert": "Este baza proceselor Poisson și a modelelor de hazard."
+          },
+        
+          "markov_property": {
+            "beginner": "Markov înseamnă că viitorul depinde doar de prezent.",
+            "professional": "Markov property definește procese cu memorie zero.",
+            "expert": "Este fundamentul lanțurilor Markov, RL și modelelor secvențiale."
+          },
+        
+          "bayesian_inference": {
+            "beginner": "Bayesian înseamnă să actualizezi probabilitățile când afli informații noi.",
+            "professional": "Bayesian inference folosește prior, likelihood și posterior.",
+            "expert": "Este baza modelelor probabilistice, MCMC și variational inference."
+          },
+        
+          "monte_carlo_methods": {
+            "beginner": "Monte Carlo folosește aleatorul ca să rezolve probleme.",
+            "professional": "Metodele Monte Carlo estimează valori prin eșantionare repetată.",
+            "expert": "Sunt folosite în integrare, simulări, MCMC și modele generative."
+          },
+        
+          "mcmc": {
+            "beginner": "MCMC generează valori aleatorii care respectă o distribuție.",
+            "professional": "Markov Chain Monte Carlo eșantionează distribuții complexe.",
+            "expert": "Algoritmi: Metropolis-Hastings, Gibbs Sampling, HMC."
+          },
+        
+          "information_gain": {
+            "beginner": "Information gain arată câtă informație câștigi când afli ceva.",
+            "professional": "IG măsoară reducerea entropiei după o împărțire.",
+            "expert": "Este folosit în decizii, arbori de clasificare și teoria informației."
+          },
+        
+          "fisher_information": {
+            "beginner": "Fisher arată cât de multă informație conțin datele despre un parametru.",
+            "professional": "Fisher Information măsoară sensibilitatea likelihood-ului.",
+            "expert": "Este baza estimării eficiente și a teoriei statistice avansate."
+          },
+        
+          "chi_square_distribution": {
+            "beginner": "Chi-square este folosit pentru teste statistice.",
+            "professional": "Este distribuția sumei pătratelor variabilelor normale standard.",
+            "expert": "Este folosită în testele de independență, varianță și modele statistice."
+          },
+            
+          "fourier_transform": {
+            "beginner": "Fourier transform împarte un semnal în frecvențe.",
+            "professional": "Transformata Fourier convertește funcții din domeniul timp în domeniul frecvență.",
+            "expert": "FT este baza procesării semnalelor, convoluțiilor și modelelor spectrale."
+          },
+        
+          "discrete_fourier_transform": {
+            "beginner": "DFT analizează frecvențele dintr-un set finit de valori.",
+            "professional": "DFT este versiunea discretă a transformatei Fourier.",
+            "expert": "DFT este implementată eficient prin FFT și folosită în ML, audio și imagini."
+          },
+        
+          "fft": {
+            "beginner": "FFT este o metodă rapidă de a calcula DFT.",
+            "professional": "Fast Fourier Transform reduce complexitatea de la O(n²) la O(n log n).",
+            "expert": "FFT este esențială în procesare de semnal, convoluții rapide și modele spectrale."
+          },
+        
+          "laplacian_operator": {
+            "beginner": "Laplacianul arată cât de mult se schimbă o funcție în jurul unui punct.",
+            "professional": "Operatorul Laplace este suma derivatelor parțiale de ordinul doi.",
+            "expert": "Este folosit în PDEs, optimizare, grafuri și regularizare geometrică."
+          },
+        
+          "gradient_norm": {
+            "beginner": "Norma gradientului arată cât de abruptă e o funcție.",
+            "professional": "Gradient norm măsoară magnitudinea vectorului gradient.",
+            "expert": "Este folosită în stabilitate, optimizare și detectarea platourilor."
+          },
+        
+          "jacobian_determinant": {
+            "beginner": "Jacobian determinant arată cât se întinde spațiul după o transformare.",
+            "professional": "Determinantul Jacobianului măsoară schimbarea volumului.",
+            "expert": "Este esențial în schimbări de variabile, modele generative și fluxuri normale."
+          },
+        
+          "normalizing_flows": {
+            "beginner": "Normalizing flows transformă distribuții simple în unele complexe.",
+            "professional": "Sunt modele generative bazate pe transformări invertibile cu Jacobian calculabil.",
+            "expert": "NF folosesc bijecții parametrizate pentru modelarea densităților complexe."
+          },
+        
+          "softplus": {
+            "beginner": "Softplus este o versiune netedă a ReLU.",
+            "professional": "Softplus este o funcție de activare derivabilă peste tot.",
+            "expert": "Este folosită în modele probabilistice și rețele stabile numeric."
+          },
+        
+          "swish": {
+            "beginner": "Swish este o funcție de activare modernă.",
+            "professional": "Swish = x * sigmoid(x), oferind tranziții line.",
+            "expert": "Swish îmbunătățește performanța în rețele adânci și modele vizuale."
+          },
+        
+          "elu": {
+            "beginner": "ELU ajută rețelele să învețe mai repede.",
+            "professional": "Exponential Linear Unit reduce biasul activărilor negative.",
+            "expert": "ELU stabilizează gradientul și accelerează convergența în rețele profunde."
+          },
+        
+          "hinge_loss": {
+            "beginner": "Hinge loss este folosit în clasificare.",
+            "professional": "Este funcția de pierdere pentru SVM-uri.",
+            "expert": "Hinge loss maximizează marginile și îmbunătățește separabilitatea."
+          },
+        
+          "logistic_loss": {
+            "beginner": "Logistic loss este folosit pentru clasificare binară.",
+            "professional": "Este derivat din log-likelihood pentru distribuția Bernoulli.",
+            "expert": "Este baza regresiei logistice și a modelelor probabilistice binare."
+          },
+        
+          "jacobi_method": {
+            "beginner": "Jacobi rezolvă sisteme de ecuații pas cu pas.",
+            "professional": "Este o metodă iterativă pentru sisteme liniare Ax=b.",
+            "expert": "Jacobi este folosit în optimizare numerică și metode iterative paralele."
+          },
+        
+          "gauss_seidel": {
+            "beginner": "Gauss-Seidel îmbunătățește metoda Jacobi.",
+            "professional": "Folosește valori actualizate imediat pentru convergență mai rapidă.",
+            "expert": "Este eficient în sisteme sparse și metode numerice avansate."
+          },
+        
+          "newton_method": {
+            "beginner": "Newton găsește rapid rădăcinile unei funcții.",
+            "professional": "Folosește derivata pentru a aproxima soluții.",
+            "expert": "Newton este baza optimizării de ordinul doi și a metodelor Hessian-based."
+          },
+        
+          "bfgs": {
+            "beginner": "BFGS este o metodă avansată de optimizare.",
+            "professional": "Este un quasi-Newton method ce aproximează Hessianul.",
+            "expert": "BFGS este standard în optimizare neliniară și ML numeric."
+          },
+        
+          "line_search": {
+            "beginner": "Line search caută cât de mare să fie pasul în optimizare.",
+            "professional": "Optimizează step size pentru convergență stabilă.",
+            "expert": "Folosește criterii precum Wolfe și Armijo pentru stabilitate numerică."
+          },
+        
+          "lipschitz_continuity": {
+            "beginner": "Lipschitz arată cât de repede poate crește o funcție.",
+            "professional": "O funcție este Lipschitz dacă diferențele sunt limitate de o constantă.",
+            "expert": "Este esențială în stabilitate, convergență și analiza modelelor ML."
+          },
+        
+          "manifold_learning": {
+            "beginner": "Manifold learning descoperă structuri ascunse în date.",
+            "professional": "Modelele presupun că datele trăiesc pe o varietate de dimensiune mică.",
+            "expert": "Este baza algoritmilor precum t-SNE, UMAP și embedding-urilor geometrice."
+          },
+        
+          "t_sne": {
+            "beginner": "t-SNE reduce dimensiunea datelor pentru vizualizare.",
+            "professional": "t-SNE păstrează structura locală a datelor în spații mici.",
+            "expert": "Folosește distribuții Student-t și gradient descent pentru embedding-uri ne-liniare."
+          },       
+          
+           "umap": {
+            "beginner": "UMAP reduce dimensiunea datelor pentru vizualizare.",
+            "professional": "UMAP folosește grafuri și topologie pentru embedding-uri.",
+            "expert": "UMAP optimizează structura locală și globală prin manifold approximation."
+          },
+        
+          "cosine_similarity": {
+            "beginner": "Cosine similarity arată cât de asemănați sunt doi vectori.",
+            "professional": "Este măsura unghiului dintre doi vectori normalizați.",
+            "expert": "Cosine similarity este folosită în NLP, embeddings și modele vectoriale."
+          },
+        
+          "matrix_rank": {
+            "beginner": "Rank arată câte informații unice are o matrice.",
+            "professional": "Rangul este numărul de coloane liniar independente.",
+            "expert": "Rank determină soluțiile sistemelor liniare și proprietățile transformărilor."
+          },
+        
+          "condition_number": {
+            "beginner": "Condition number arată cât de sensibilă este o matrice.",
+            "professional": "Este raportul dintre valorile singulare maxime și minime.",
+            "expert": "Cond. number determină stabilitatea numerică și erorile în optimizare."
+          },
+        
+          "matrix_inverse": {
+            "beginner": "Inversele anulează efectul unei matrice.",
+            "professional": "A⁻¹ există doar pentru matrici pătrate și ne-singulare.",
+            "expert": "Inversarea este instabilă numeric; se preferă factorizări precum LU."
+          },
+        
+          "lu_decomposition": {
+            "beginner": "LU împarte o matrice în două părți mai simple.",
+            "professional": "A = LU, unde L este triunghiulară inferioară și U superioară.",
+            "expert": "LU este folosită în sisteme liniare, inversare și factorizări numerice."
+          },
+        
+          "qr_decomposition": {
+            "beginner": "QR împarte o matrice în rotații și scalări.",
+            "professional": "A = QR, unde Q este ortogonală și R triunghiulară.",
+            "expert": "QR este stabilă numeric și folosită în regresie și SVD."
+          },
+        
+          "cholesky_decomposition": {
+            "beginner": "Cholesky este o factorizare rapidă pentru matrici speciale.",
+            "professional": "A = LLᵀ pentru matrici simetrice pozitive definite.",
+            "expert": "Este extrem de eficientă în optimizare și modele Gaussiene."
+          },
+        
+          "positive_definite_matrix": {
+            "beginner": "O matrice pozitiv definită are valori pozitive speciale.",
+            "professional": "xᵀAx > 0 pentru orice vector nenul.",
+            "expert": "Este esențială în optimizare, kernel methods și modele Gaussiene."
+          },
+        
+          "kernel_functions": {
+            "beginner": "Kernelurile transformă datele în forme noi.",
+            "professional": "Kernel trick permite modelelor să lucreze în spații de dimensiuni mari.",
+            "expert": "Kernels definesc spații Hilbert reproducing și modele SVM avansate."
+          },
+        
+          "hilbert_space": {
+            "beginner": "Hilbert space este un spațiu matematic foarte mare.",
+            "professional": "Este un spațiu vectorial complet cu produs scalar.",
+            "expert": "Hilbert spaces sunt baza modelelor kernel și a analizei funcționale."
+          },
+        
+          "l2_space": {
+            "beginner": "L2 este spațiul funcțiilor cu energie finită.",
+            "professional": "L2 conține funcții cu integrală pătratică finită.",
+            "expert": "Este un Hilbert space fundamental în ML și procesarea semnalelor."
+          },
+        
+          "convolution": {
+            "beginner": "Convoluția combină două semnale.",
+            "professional": "Convolution este o integrală ce măsoară suprapunerea funcțiilor.",
+            "expert": "Este baza CNN-urilor, filtrării și procesării semnalelor."
+          },
+        
+          "autocorrelation": {
+            "beginner": "Autocorrelation arată cât de asemănător e un semnal cu el însuși.",
+            "professional": "Măsoară dependența dintre valori la diferite momente.",
+            "expert": "Este folosită în time series, semnale și modele ARIMA."
+          },
+        
+          "cross_correlation": {
+            "beginner": "Cross-correlation compară două semnale.",
+            "professional": "Măsoară similaritatea dintre două serii temporale.",
+            "expert": "Este folosită în NLP, audio, vizual și analiza semnalelor."
+          },
+        
+          "arima": {
+            "beginner": "ARIMA prezice valori viitoare dintr-o serie temporală.",
+            "professional": "ARIMA combină autoregresie, diferențiere și medie mobilă.",
+            "expert": "Este un model statistic avansat pentru time series forecasting."
+          },
+        
+          "stationarity": {
+            "beginner": "Stationarity înseamnă că datele nu se schimbă în timp.",
+            "professional": "O serie este staționară dacă media și varianța sunt constante.",
+            "expert": "Staționaritatea este necesară pentru ARIMA și modele stocastice."
+          },
+        
+          "spectral_density": {
+            "beginner": "Spectral density arată ce frecvențe există într-un semnal.",
+            "professional": "Este distribuția energiei în funcție de frecvență.",
+            "expert": "Este folosită în time series, semnale și modele Gaussiene."
+          },
+        
+          "brownian_motion": {
+            "beginner": "Brownian motion este o mișcare aleatorie continuă.",
+            "professional": "Este un proces stocastic cu variație infinită.",
+            "expert": "Este baza modelelor Gaussiene, SDEs și proceselor continue."
+          },
+        
+          "stochastic_differential_equations": {
+            "beginner": "SDE-urile descriu sisteme cu aleator în timp.",
+            "professional": "SDE combină ecuații diferențiale cu zgomot stocastic.",
+            "expert": "Sunt folosite în RL, modele financiare și procese Gaussiene."
+          },
+
+          "graph_theory": {
+            "beginner": "Graph theory studiază noduri și conexiuni.",
+            "professional": "Grafurile sunt structuri formate din noduri și muchii.",
+            "expert": "Teoria grafurilor este baza algoritmilor de rețea, optimizare și ML pe grafuri."
+          },
+        
+          "adjacency_matrix": {
+            "beginner": "O matrice care arată ce noduri sunt conectate.",
+            "professional": "Adjacency matrix reprezintă grafuri prin valori binare sau ponderi.",
+            "expert": "Este folosită în GNN-uri, spectrul grafurilor și analiza structurală."
+          },
+        
+          "laplacian_matrix": {
+            "beginner": "Laplacianul unui graf arată cum se răspândesc lucrurile pe el.",
+            "professional": "L = D - A, unde D este gradul și A matricea de adiacență.",
+            "expert": "Laplacianul este baza spectral graph theory și GNN-urilor moderne."
+          },
+        
+          "spectral_graph_theory": {
+            "beginner": "Studiază grafurile folosind matematică avansată.",
+            "professional": "Folosește valorile proprii ale Laplacianului pentru a analiza grafuri.",
+            "expert": "Este esențială în clustering, GNN-uri și decompoziții spectrale."
+          },
+        
+          "markov_decision_process": {
+            "beginner": "MDP ajută la luarea deciziilor pas cu pas.",
+            "professional": "MDP modelează acțiuni, stări, tranziții și recompense.",
+            "expert": "Este baza Reinforcement Learning și a optimizării secvențiale."
+          },
+        
+          "bellman_equation": {
+            "beginner": "Bellman arată cum se calculează valoarea unei decizii.",
+            "professional": "Bellman definește relația recursivă dintre stări și recompense.",
+            "expert": "Este fundamentul RL, dynamic programming și optimizării secvențiale."
+          },
+        
+          "value_iteration": {
+            "beginner": "Value iteration găsește cea mai bună strategie.",
+            "professional": "Actualizează valorile stărilor până la convergență.",
+            "expert": "Este un algoritm esențial în MDP-uri și RL discret."
+          },
+        
+          "policy_iteration": {
+            "beginner": "Policy iteration îmbunătățește o strategie pas cu pas.",
+            "professional": "Alternează între evaluarea și îmbunătățirea politicii.",
+            "expert": "Converge rapid în MDP-uri și modele RL clasice."
+          },
+        
+          "expected_return": {
+            "beginner": "Expected return arată cât câștigi în medie.",
+            "professional": "Este suma recompenselor viitoare ponderate.",
+            "expert": "Este baza funcțiilor de valoare în RL și optimizare secvențială."
+          },
+        
+          "discount_factor": {
+            "beginner": "Discount factor spune cât valorează viitorul.",
+            "professional": "Gamma controlează importanța recompenselor viitoare.",
+            "expert": "Afectează stabilitatea, convergența și comportamentul politicilor."
+          },
+        
+          "information_theory": {
+            "beginner": "Teoria informației studiază câtă informație conține ceva.",
+            "professional": "Include entropie, codare și transmiterea optimă a datelor.",
+            "expert": "Este baza ML, compresiei, modelelor generative și RL."
+          },
+        
+          "mutual_information": {
+            "beginner": "Mutual information arată cât de mult știu două lucruri unul despre altul.",
+            "professional": "MI măsoară dependența dintre două variabile.",
+            "expert": "Este folosită în selecția caracteristicilor, clustering și modele generative."
+          },
+        
+          "fisher_kernel": {
+            "beginner": "Fisher kernel combină statistica cu ML.",
+            "professional": "Folosește gradientul log-likelihood pentru reprezentări.",
+            "expert": "Este folosit în modele generative, SVM-uri și embedding-uri statistice."
+          },
+        
+          "borel_sigma_algebra": {
+            "beginner": "O structură matematică pentru a defini probabilități.",
+            "professional": "Sigma-algebra conține mulțimi măsurabile.",
+            "expert": "Este baza teoriei măsurii și a probabilităților riguroase."
+          },
+        
+          "measure_theory": {
+            "beginner": "Measure theory spune cum măsurăm lucruri abstracte.",
+            "professional": "Generalizează lungimea, aria și volumul.",
+            "expert": "Este fundamentul probabilităților moderne și al modelelor continue."
+          },
+        
+          "lebesgue_integral": {
+            "beginner": "Lebesgue este o metodă avansată de integrare.",
+            "professional": "Integrează funcții folosind măsuri, nu intervale.",
+            "expert": "Este esențial în probabilități, ML continuu și analiza funcțională."
+          },
+        
+          "functional_analysis": {
+            "beginner": "Studiază funcții ca obiecte matematice.",
+            "professional": "Analizează spații de funcții și operatori liniari.",
+            "expert": "Este baza kernel methods, Hilbert spaces și modelelor avansate."
+          },
+        
+          "banach_space": {
+            "beginner": "Banach space este un spațiu matematic complet.",
+            "professional": "Este un spațiu vectorial normat complet.",
+            "expert": "Banach spaces sunt fundamentale în optimizare și analiza numerică."
+          },
+        
+          "operator_norm": {
+            "beginner": "Operator norm arată cât de mult poate întinde un operator.",
+            "professional": "Măsoară magnitudinea transformărilor liniare.",
+            "expert": "Este folosită în stabilitate, optimizare și analiza operatorilor."
+          },
+        
+          "spectral_radius": {
+            "beginner": "Spectral radius arată cât de puternică e o matrice.",
+            "professional": "Este valoarea proprie cu magnitudinea maximă.",
+            "expert": "Determină stabilitatea sistemelor dinamice și convergența metodelor iterative."
+          },
+            
+           "riemannian_geometry": {
+            "beginner": "Riemannian geometry studiază suprafețe curbate.",
+            "professional": "Folosește metrici pentru a măsura distanțe pe varietăți.",
+            "expert": "Este baza optimizării pe manifolduri și a modelelor geometrice în ML."
+          },
+        
+          "manifold": {
+            "beginner": "Un manifold este o suprafață care local arată ca un spațiu obișnuit.",
+            "professional": "Este o structură topologică ce permite coordonate locale.",
+            "expert": "Manifoldurile sunt fundamentale în geometrie, ML și embedding-uri."
+          },
+        
+          "geodesic": {
+            "beginner": "O geodezică este cel mai scurt drum pe o suprafață curbată.",
+            "professional": "Geodesicele minimizează distanța în metrici Riemanniene.",
+            "expert": "Sunt folosite în optimizare geometrică și modele pe manifolduri."
+          },
+        
+          "jacobian_vector_product": {
+            "beginner": "JVP arată cum se schimbă o funcție într-o direcție.",
+            "professional": "Este produsul dintre Jacobian și un vector.",
+            "expert": "JVP este esențial în backpropagation eficient și autodif."
+          },
+        
+          "hessian_vector_product": {
+            "beginner": "HVP arată cum se schimbă gradientul într-o direcție.",
+            "professional": "Este produsul dintre Hessian și un vector.",
+            "expert": "HVP permite optimizare de ordinul doi fără a calcula Hessianul complet."
+          },
+        
+          "proximal_operator": {
+            "beginner": "Proximal operator ajută la optimizare cu reguli speciale.",
+            "professional": "Este o generalizare a proiecțiilor în optimizare convexă.",
+            "expert": "Proximal methods sunt baza algoritmilor moderni de optimizare."
+          },
+        
+          "subgradient": {
+            "beginner": "Subgradientul este o versiune extinsă a gradientului.",
+            "professional": "Este folosit pentru funcții care nu sunt derivabile.",
+            "expert": "Subgradient methods sunt critice în optimizare convexă și L1."
+          },
+        
+          "lagrange_multiplier": {
+            "beginner": "Lagrange ajută la optimizare cu restricții.",
+            "professional": "Folosește multipli pentru a încorpora constrângeri.",
+            "expert": "Este baza optimizării neliniare și a dualității."
+          },
+        
+          "duality_gap": {
+            "beginner": "Duality gap arată cât de aproape e soluția de optim.",
+            "professional": "Este diferența dintre soluția primală și duală.",
+            "expert": "Este folosit în optimizare convexă și validarea soluțiilor."
+          },
+        
+          "wasserstein_distance": {
+            "beginner": "Wasserstein arată cât costă să transformi o distribuție în alta.",
+            "professional": "Este o distanță între distribuții bazată pe transport optim.",
+            "expert": "Este folosită în GAN-uri, modele generative și geometrie statistică."
+          },
+        
+          "earth_movers_distance": {
+            "beginner": "EMD arată cât efort trebuie să muți masa unei distribuții.",
+            "professional": "Este o implementare practică a distanței Wasserstein.",
+            "expert": "Este folosită în vizualizare, clustering și modele generative."
+          },
+        
+          "barycenter": {
+            "beginner": "Barycenter este media unor puncte.",
+            "professional": "Este un punct care minimizează distanțele ponderate.",
+            "expert": "Wasserstein barycenters sunt folosiți în modele generative și transport optim."
+          },
+        
+          "sobolev_space": {
+            "beginner": "Sobolev space este un spațiu de funcții speciale.",
+            "professional": "Conține funcții cu derivate slabe integrabile.",
+            "expert": "Este baza PDEs, optimizării și modelelor continue."
+          },
+        
+          "fourier_series": {
+            "beginner": "Fourier series descompune funcții în unde simple.",
+            "professional": "Reprezintă funcții periodice ca sumă de sinusoide.",
+            "expert": "Este folosită în semnale, PDEs și modele spectrale."
+          },
+        
+          "bessel_functions": {
+            "beginner": "Bessel functions apar în probleme circulare.",
+            "professional": "Sunt soluții ale ecuațiilor diferențiale speciale.",
+            "expert": "Apar în fizică, semnale și modele matematice avansate."
+          },
+        
+          "gamma_function": {
+            "beginner": "Gamma este o versiune extinsă a factorialului.",
+            "professional": "Generalizează factorialul pentru numere reale și complexe.",
+            "expert": "Este folosită în distribuții statistice și modele matematice."
+          },
+        
+          "beta_function": {
+            "beginner": "Beta este o funcție specială legată de Gamma.",
+            "professional": "Este definită printr-o integrală simetrică.",
+            "expert": "Apare în distribuții, probabilități și analiza funcțională."
+          },
+        
+          "stirling_approximation": {
+            "beginner": "Stirling aproximează factoriale mari.",
+            "professional": "n! ≈ sqrt(2πn) (n/e)^n.",
+            "expert": "Este folosită în entropie, combinatorică și ML statistic."
+          },
+        
+          "combinatorics": {
+            "beginner": "Combinatorica studiază moduri de a combina lucruri.",
+            "professional": "Include permutări, combinații și numărări.",
+            "expert": "Este baza probabilităților, grafurilor și modelelor discrete."
+          },
+        
+          "generating_functions": {
+            "beginner": "Generating functions transformă secvențe în funcții.",
+            "professional": "Sunt instrumente pentru analiză combinatorică.",
+            "expert": "Folosite în probabilități, recurențe și modele discrete."
+          },
+
+          "tensor_decomposition": {
+            "beginner": "Tensor decomposition împarte un tensor în părți mai simple.",
+            "professional": "Include CP, Tucker și alte factorizări pentru date multidimensionale.",
+            "expert": "Este folosită în modele generative, compresie și analiză de date de ordin înalt."
+          },
+        
+          "tucker_decomposition": {
+            "beginner": "Tucker reduce dimensiunea unui tensor.",
+            "professional": "Descompune tensorul în factori și un nucleu central.",
+            "expert": "Este baza compresiei tensoriale și a modelelor multilineare."
+          },
+        
+          "cp_decomposition": {
+            "beginner": "CP împarte un tensor în componente simple.",
+            "professional": "Canonical Polyadic decomposition exprimă tensorul ca sumă de produse exterioare.",
+            "expert": "Este folosită în analiză latentă, recomandări și modele probabilistice."
+          },
+        
+          "kronecker_product": {
+            "beginner": "Kronecker combină două matrici într-una mare.",
+            "professional": "Este un produs matricial special folosit în structuri bloc.",
+            "expert": "Apare în modele tensoriale, grafuri și optimizare numerică."
+          },
+        
+          "hadamard_product": {
+            "beginner": "Hadamard înmulțește element cu element.",
+            "professional": "Produsul Hadamard este operația element-wise între matrici.",
+            "expert": "Este folosit în ML, convoluții și modele numerice."
+          },
+        
+          "sparse_matrices": {
+            "beginner": "Sparse matrices au multe zerouri.",
+            "professional": "Sunt optimizate pentru memorie și viteză.",
+            "expert": "Critice în grafuri, NLP, rețele mari și optimizare numerică."
+          },
+        
+          "sparse_coding": {
+            "beginner": "Sparse coding reprezintă datele cu cât mai puține valori.",
+            "professional": "Optimizează reprezentări sparse pentru semnale și imagini.",
+            "expert": "Este baza dictionary learning și modelelor generative sparse."
+          },
+        
+          "wavelet_transform": {
+            "beginner": "Wavelet transform analizează semnale la diferite scări.",
+            "professional": "Folosește funcții wavelet pentru decompoziții multi‑rezoluție.",
+            "expert": "Este folosită în compresie, denoising și modele spectrale."
+          },
+        
+          "haar_wavelet": {
+            "beginner": "Haar este cea mai simplă wavelet.",
+            "professional": "Folosește funcții pătrate pentru decompoziții rapide.",
+            "expert": "Este baza multor algoritmi de compresie și analiză discretă."
+          },
+        
+          "sobol_sequences": {
+            "beginner": "Sobol sequences sunt numere pseudo-aleatoare speciale.",
+            "professional": "Sunt secvențe low-discrepancy pentru eșantionare eficientă.",
+            "expert": "Folosite în Monte Carlo, simulări și optimizare globală."
+          },
+        
+          "latin_hypercube_sampling": {
+            "beginner": "LHS e o metodă de a alege puncte dintr-un spațiu.",
+            "professional": "Împarte spațiul în intervale egale pentru eșantionare uniformă.",
+            "expert": "Este folosită în optimizare, simulări și modele probabilistice."
+          },
+        
+          "curse_of_dimensionality": {
+            "beginner": "În dimensiuni mari, totul devine greu.",
+            "professional": "Datele devin sparse, distanțele devin neintuitive.",
+            "expert": "Afectează clustering, optimizare, ML și modele statistice."
+          },
+        
+          "random_projection": {
+            "beginner": "Random projection reduce dimensiunea datelor.",
+            "professional": "Folosește matrici aleatoare pentru a păstra distanțele.",
+            "expert": "Se bazează pe Johnson–Lindenstrauss lemma pentru embedding-uri eficiente."
+          },
+        
+          "johnson_lindenstrauss_lemma": {
+            "beginner": "JL spune că poți reduce dimensiunea fără să pierzi distanțele.",
+            "professional": "Asigură păstrarea aproximativă a distanțelor în spații mici.",
+            "expert": "Este baza random projections și a ML pe date mari."
+          },
+        
+          "graph_embeddings": {
+            "beginner": "Graph embeddings transformă nodurile în vectori.",
+            "professional": "Reprezintă structura grafurilor în spații continue.",
+            "expert": "Folosite în GNN-uri, recomandări și modele relaționale."
+          },
+        
+          "positional_encoding": {
+            "beginner": "Positional encoding arată ordinea elementelor.",
+            "professional": "Transformers folosesc funcții sinusoidale pentru poziții.",
+            "expert": "Este baza modelelor secvențiale moderne și a atenției."
+          },
+        
+          "attention_weights": {
+            "beginner": "Attention arată ce este important într-o secvență.",
+            "professional": "Calculează relevanța dintre elemente prin produse scalare.",
+            "expert": "Este fundamentul Transformers, LLM-urilor și modelelor moderne."
+          },
+        
+          "soft_attention": {
+            "beginner": "Soft attention este o versiune netedă a atenției.",
+            "professional": "Folosește softmax pentru a normaliza scorurile.",
+            "expert": "Este complet derivabil și folosit în toate modelele moderne."
+          },
+        
+          "hard_attention": {
+            "beginner": "Hard attention alege doar câteva elemente importante.",
+            "professional": "Folosește selecție discretă și sampling.",
+            "expert": "Necesită tehnici precum REINFORCE pentru antrenare."
+          },
+        
+          "variational_inference": {
+            "beginner": "VI aproximează distribuții greu de calculat.",
+            "professional": "Optimizează o familie de distribuții pentru a apropia posteriorul.",
+            "expert": "Este baza VAEs, modelelor probabilistice și ML generativ."
+          },
+
 # -----------------------------
 # FUNCȚII USER DATABASE
 # -----------------------------
