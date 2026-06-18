@@ -1352,7 +1352,7 @@ aegis_level = {
         
 
         
- EXPERT_TERMS = {
+EXPERT_TERMS = {
 
 "variable": {
     "beginner": "O variabilă este ca o cutie în care pui o valoare. Poți schimba ce e în cutie oricând vrei.",
