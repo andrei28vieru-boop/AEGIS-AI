@@ -8,13 +8,13 @@ from deep_translator import GoogleTranslator
 
 
 # -----------------------------
-# CONSTANTE PERSISTENTE
+CONSTANTE PERSISTENTE
 # -----------------------------
 USERS_DB_PATH = Path("users_db.json")
 FORTRESS_STATE_PATH = Path("aegis_fortress.json")
 
 # -----------------------------
-# FUNCȚII USER DATABASE
+FUNCȚII USER DATABASE
 # -----------------------------
 def load_user_db():
     try:
@@ -46,7 +46,7 @@ st.set_page_config(page_title="AEGIS AI - The Ultimate IT Mentor", page_icon="�
 st.title("💎 AEGIS AI")
 st.caption("The Ultimate IT Mentor — Learn. Build. Conquer.")
 
-# ---------- SECȚIUNEA DE LIMBI ----------
+ ---------- SECȚIUNEA DE LIMBI ----------
 if "lang" not in st.session_state:
     st.session_state.lang = "Romanian"
 
@@ -74,7 +74,7 @@ Este un mentor IT interactiv — te învață, te testează, te ghidează.
 """
 st.markdown(translate_text(about_text_ro, lang_map[st.session_state.lang]))
 
-# ---- BAZA DE CUNOȘTINȚE HYBRID ----
+ ---- BAZA DE CUNOȘTINȚE HYBRID ----
 if "knowledge" not in st.session_state:
     st.session_state.knowledge = {
         "api": {
