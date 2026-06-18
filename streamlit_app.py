@@ -7,15 +7,15 @@ from pathlib import Path
 from deep_translator import GoogleTranslator
 
 
-# -----------------------------
+ -----------------------------
 CONSTANTE PERSISTENTE
-# -----------------------------
+ -----------------------------
 USERS_DB_PATH = Path("users_db.json")
 FORTRESS_STATE_PATH = Path("aegis_fortress.json")
 
-# -----------------------------
+ -----------------------------
 FUNCȚII USER DATABASE
-# -----------------------------
+ -----------------------------
 def load_user_db():
     try:
         if USERS_DB_PATH.exists():
@@ -5650,9 +5650,9 @@ EXPERT_TERMS = {
         
 
 
-# -----------------------------
+ -----------------------------
  GESTIUNEA SESIUNII
-# -----------------------------
+ -----------------------------
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
@@ -5675,9 +5675,9 @@ if "user_db" not in st.session_state:
     st.session_state.user_db = load_user_db()
 
 
-# -----------------------------
+ -----------------------------
  AUTENTIFICARE
-# -----------------------------
+ -----------------------------
 MAX_FAILED = 5
 LOCKOUT_SECONDS = 300
 
