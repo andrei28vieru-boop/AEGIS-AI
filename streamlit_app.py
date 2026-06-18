@@ -1350,8 +1350,6 @@ aegis_level = {
         
        
         
-
-        
 EXPERT_TERMS = {
 
 "variable": {
@@ -5653,7 +5651,7 @@ EXPERT_TERMS = {
 
 
 # -----------------------------
-# GESTIUNEA SESIUNII
+ GESTIUNEA SESIUNII
 # -----------------------------
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -5678,7 +5676,7 @@ if "user_db" not in st.session_state:
 
 
 # -----------------------------
-# AUTENTIFICARE
+ AUTENTIFICARE
 # -----------------------------
 MAX_FAILED = 5
 LOCKOUT_SECONDS = 300
@@ -5756,9 +5754,9 @@ if not st.session_state.logged_in:
                 st.success(translate_text("Cont creat!", lang_map[st.session_state.lang]))
 
 
-# -----------------------------
-# INTERFAȚA PRINCIPALĂ
-# -----------------------------
+ -----------------------------
+INTERFAȚA PRINCIPALĂ
+ -----------------------------
 else:
     if not fortress.verify():
         st.error("⚠️ AEGIS FORTRESS: Modificare neautorizată detectată!")
